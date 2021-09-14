@@ -1,0 +1,272 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Js14" table="JS14" >
+	<id name="js0100" type="string">
+            <column name="JS0100" length="64" />
+            <generator class="assigned" />
+    </id>
+    <property name="dc001" type="string">
+            <column name="DC001" length="64" >
+                <comment>分类ID</comment>
+            </column>
+    </property>
+    <property name="rbId" type="string">
+            <column name="RB_ID" length="64" >
+                <comment>任免批次ID</comment>
+            </column>
+    </property>
+    <property name="js1401" type="string">
+            <column name="JS1401" length="200" >
+                <comment>考察单位</comment>
+            </column>
+    </property>
+    <property name="js1402" type="string">
+            <column name="JS1402" length="8" >
+                <comment>考察时间</comment>
+            </column>
+    </property>
+    <property name="js1403" type="string">
+            <column name="JS1403" length="500" >
+                <comment>民主测评、评议范围和要求</comment>
+            </column>
+    </property>
+    <property name="js1404" type="string">
+            <column name="JS1404" length="500" >
+                <comment>个别谈话对象范围</comment>
+            </column>
+    </property>
+    <property name="js1405" type="string">
+            <column name="JS1405" length="128" >
+                <comment>考察组成员</comment>
+            </column>
+    </property>
+    <property name="js1406" type="string">
+            <column name="JS1406" length="1000" >
+                <comment>备注</comment>
+            </column>
+    </property>
+    <property name="js1407" type="string">
+            <column name="JS1407" length="5" >
+                <comment>是否集体研究确定考察人选（1是、0否）</comment>
+            </column>
+    </property>
+    <property name="js1408" type="string">
+            <column name="JS1408" length="10" >
+                <comment>民主测评优称率%</comment>
+            </column>
+    </property>
+    <property name="js1409" type="string">
+            <column name="JS1409" length="1000" >
+                <comment>征求意见情况</comment>
+            </column>
+    </property>
+    <property name="js1410" type="string">
+            <column name="JS1410" length="1000" >
+                <comment>纪检（监察）鉴定意见</comment>
+            </column>
+    </property>
+    <property name="js1411" type="string">
+            <column name="JS1411" length="1000" >
+                <comment>考察期间有无举报</comment>
+            </column>
+    </property>
+    <property name="js1412" type="string">
+            <column name="JS1412" length="1000" >
+                <comment>查核情况</comment>
+            </column>
+    </property>
+    <property name="js1413" type="string">
+            <column name="JS1413" length="1000" >
+                <comment>近三年年度考核情况</comment>
+            </column>
+    </property>
+    <property name="js1414" type="string">
+            <column name="JS1414" length="1000" >
+                <comment>干部档案及“三龄两历一身份”审核情况</comment>
+            </column>
+    </property>
+    <property name="js1415" type="string">
+            <column name="JS1415" length="1000" >
+                <comment>执行事前报告情况</comment>
+            </column>
+    </property>
+    <property name="js1416" type="string">
+            <column name="JS1416" length="1000" >
+                <comment>个人有关事项报告查核情况</comment>
+            </column>
+    </property>
+    <property name="js1417" type="string">
+            <column name="JS1417" length="1000" >
+                <comment>个人自我评价意见(主要表现)</comment>
+            </column>
+    </property>
+    <property name="js1418" type="string">
+            <column name="JS1418" length="1000" >
+                <comment>个人自我评价意见(存在不足)</comment>
+            </column>
+    </property>
+    <property name="js1419" type="string">
+            <column name="JS1419" length="10" >
+                <comment>民主测评汇总结果(好占比%)</comment>
+            </column>
+    </property>
+    <property name="js1420" type="string">
+            <column name="JS1420" length="10" >
+                <comment>民主测评汇总结果(较好占比%)</comment>
+            </column>
+    </property>
+    <property name="js1421" type="string">
+            <column name="JS1421" length="10" >
+                <comment>民主测评汇总结果(好、较好两项总占比%)</comment>
+            </column>
+    </property>
+    <property name="js1422" type="string">
+            <column name="JS1422" length="10" >
+                <comment>民主测评汇总结果(一般占比%)</comment>
+            </column>
+    </property>
+    <property name="js1423" type="string">
+            <column name="JS1423" length="10" >
+                <comment>民主测评汇总结果(差占比%)</comment>
+            </column>
+    </property>
+    <property name="js1424" type="string">
+            <column name="JS1424" length="10" >
+                <comment>民主测评汇总结果(一般、差两项总占比%)</comment>
+            </column>
+    </property>
+    <property name="js1425" type="string">
+            <column name="JS1425" length="10" >
+                <comment>民主测评汇总结果(不存在占比%)</comment>
+            </column>
+    </property>
+    <property name="js1426" type="string">
+            <column name="JS1426" length="10" >
+                <comment>民主测评汇总结果(偶尔存在占比%)</comment>
+            </column>
+    </property>
+    <property name="js1427" type="string">
+            <column name="JS1427" length="10" >
+                <comment>民主测评汇总结果(不存在、偶尔存在两项总占比%)</comment>
+            </column>
+    </property>
+    <property name="js1428" type="string">
+            <column name="JS1428" length="10" >
+                <comment>民主测评汇总结果(一定程度存在占比%)</comment>
+            </column>
+    </property>
+    <property name="js1429" type="string">
+            <column name="JS1429" length="10" >
+                <comment>民主测评汇总结果(存在占比%)</comment>
+            </column>
+    </property>
+    <property name="js1430" type="string">
+            <column name="JS1430" length="10" >
+                <comment>民主测评汇总结果(一定程度存在、存在两项总占比%)</comment>
+            </column>
+    </property>
+    <property name="js1431" type="string">
+            <column name="JS1431" length="1000" >
+                <comment>民主测评汇总结果(反映比较集中的问题)</comment>
+            </column>
+    </property>
+    <property name="js1432" type="string">
+            <column name="JS1432" length="5" >
+                <comment>支部评价情况(等次：健康1、亚健康2、不健康3)</comment>
+            </column>
+    </property>
+    <property name="js1433" type="string">
+            <column name="JS1433" length="10" >
+                <comment>相关领导评价意见(正向评价汇总结果-参评人数)</comment>
+            </column>
+    </property>
+    <property name="js1434" type="string">
+            <column name="JS1434" length="10" >
+                <comment>相关领导评价意见(正向评价汇总结果-好评价数)</comment>
+            </column>
+    </property>
+    <property name="js1435" type="string">
+            <column name="JS1435" length="10" >
+                <comment>相关领导评价意见(正向评价汇总结果-较好评价数)</comment>
+            </column>
+    </property>
+    <property name="js1436" type="string">
+            <column name="JS1436" length="10" >
+                <comment>相关领导评价意见(正向评价汇总结果-一般评价数)</comment>
+            </column>
+    </property>
+    <property name="js1437" type="string">
+            <column name="JS1437" length="10" >
+                <comment>相关领导评价意见(正向评价汇总结果-差评价数)</comment>
+            </column>
+    </property>
+    <property name="js1438" type="string">
+            <column name="JS1438" length="10" >
+                <comment>相关领导评价意见(反向评价汇总结果-参评人数)</comment>
+            </column>
+    </property>
+    <property name="js1439" type="string">
+            <column name="JS1439" length="10" >
+                <comment>相关领导评价意见(反向评价汇总结果-不存在人数)</comment>
+            </column>
+    </property>
+    <property name="js1440" type="string">
+            <column name="JS1440" length="10" >
+                <comment>相关领导评价意见(反向评价汇总结果-偶尔存在人数)</comment>
+            </column>
+    </property>
+    <property name="js1441" type="string">
+            <column name="JS1441" length="10" >
+                <comment>相关领导评价意见(反向评价汇总结果-一定程度存在人数)</comment>
+            </column>
+    </property>
+    <property name="js1442" type="string">
+            <column name="JS1442" length="10" >
+                <comment>相关领导评价意见(反向评价汇总结果-存在人数)</comment>
+            </column>
+    </property>
+    <property name="js1443" type="string">
+            <column name="JS1443" length="1000" >
+                <comment>相关领导评价意见(反应的主要问题)</comment>
+            </column>
+    </property>
+    <property name="js1444" type="string">
+            <column name="JS1444" length="5" >
+                <comment>考察议情况(等次：健康1，亚健康2，不健康3)</comment>
+            </column>
+    </property>
+    <property name="js1445" type="string">
+            <column name="JS1445" length="1000" >
+                <comment>组织诊情况(个人有关事项查核情况)</comment>
+            </column>
+    </property>
+    <property name="js1446" type="string">
+            <column name="JS1446" length="1000" >
+                <comment>组织诊情况(征求相关部门意见情况)</comment>
+            </column>
+    </property>
+    <property name="js1447" type="string">
+            <column name="JS1447" length="1000" >
+                <comment>组织诊情况(反应问题合适情况)</comment>
+            </column>
+    </property>
+    <property name="js1448" type="string">
+            <column name="JS1448" length="1000" >
+                <comment>组织诊情况(考察对象政治表现意见)</comment>
+            </column>
+    </property>
+    <property name="js1449" type="string">
+            <column name="JS1449" length="5" >
+                <comment>组织诊情况(体检结论：健康1，亚健康2，不健康3)</comment>
+            </column>
+    </property>
+    <property name="js1414a" type="string">
+            <column name="JS1414A" length="1" >
+                <comment>干部档案及“三龄两历一身份”审核情况</comment>
+            </column>
+    </property>
+  </class>
+</hibernate-mapping>

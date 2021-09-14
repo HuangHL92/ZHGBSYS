@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.AttachmentInfo"
+    lazy="false"
+    table="ATTACHMENT_INFO">
+  	<id column="ID" name="id" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="PERSONID" length="60" name="personid" type="java.lang.String" />
+    <property column="PERSONNAME" length="60" name="personname" type="java.lang.String" />
+    <property column="UPLOADDATE" length="32" name="uploaddate" type="java.lang.String" />
+    <property column="FILEPATH" length="500" name="filepath" type="java.lang.String" />
+    <property column="FILETYPE" length="2" name="filetype" type="java.lang.String" />
+    <property column="FILENAME" length="100" name="filename" type="java.lang.String" />
+    <property column="USERID" length="36" name="userid" type="java.lang.String" />
+    <property column="USERNAME" length="36" name="username" type="java.lang.String" />
+    <property column="ATTRIBUTE1" length="32" name="attribute1" type="java.lang.String" />
+    <property column="ATTRIBUTE2" length="32" name="attribute2" type="java.lang.String" />
+    <property column="ATTRIBUTE3" length="32" name="attribute3" type="java.lang.String" />
+    <property column="ATTRIBUTE4" length="32" name="attribute4" type="java.lang.String" />
+    <property column="OBJECTID" length="60" name="objectid" type="java.lang.String" />
+    <property column="IDCARD" length="25" name="idcard" type="java.lang.String" />
+    <property column="BEIZHU" length="50" name="beizhu" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

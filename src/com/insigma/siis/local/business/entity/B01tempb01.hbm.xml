@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.B01tempb01"
+    lazy="false"
+    table="B01TEMP_B01">
+    <id column="TEMP_RID" name="temprid" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="IMPRECORDID" length="36" name="imprecordid" type="java.lang.String" />
+    <property column="NEW_B0111" length="199" name="newb0111" type="java.lang.String" />
+    <property column="TEMP_B0111" length="199" name="tempb0111" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

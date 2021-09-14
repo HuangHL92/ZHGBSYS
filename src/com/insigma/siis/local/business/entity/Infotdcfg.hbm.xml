@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Infotdcfg"
+    lazy="false"
+    table="INFOTODOCFG">
+    <id column="ITDC000" name="itdc000" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="ITDC001" length="50"  name="itdc001" type="java.lang.String" />
+    <property column="ITDC002" length="100" name="itdc002" type="java.lang.String" />
+    <property column="ITDC003" length="10"  name="itdc003" type="java.lang.String" />
+  	<property column="ITDC004" length="300" name="itdc004" type="java.lang.String" />
+	<property column="ITDC005" length="32"  name="itdc005" type="java.lang.String" />
+	<property column="ITDC006" length="200" name="itdc006" type="java.lang.String" />
+	<property column="ITDC007" length="200" name="itdc007" type="java.lang.String" />
+	<property column="ITDC008" length="100" name="itdc008" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

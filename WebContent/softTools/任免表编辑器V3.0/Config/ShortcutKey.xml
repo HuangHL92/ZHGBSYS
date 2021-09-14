@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--快捷键配置文件目录-->
+<keys>
+  <key name="打开"  char="O"   control="1" alt="" tooltip=""  desc="支持同时编辑50个任免表。" />
+  <key name="新建"  char="N"    control="1" alt=""  tooltip="" desc="新建任免表文件。"  />
+  <key name="保存"  char="S"   control="1" alt=""   tooltip="" desc="保存当前任免表文件。" />
+  <key name="另存为"  char="L"    control="1" alt=""   tooltip="" desc="另存当前任免表文件。" />
+  <key name="关闭"  char="D"    control="1" alt=""   tooltip=""  desc="关闭当前任免表文件。" />
+  <key name="打印预览"  char="Y"    control="1" alt=""  tooltip=""  desc="支持任免表预览、打印、页面设置等操作。"  />
+  <key name="打印全部"  char="P"   control="1" alt=""  tooltip=""  desc="打印所有已打开任免表。" />
+  <key name="打印当前页"  char="U"    control="1" alt=""  tooltip=""  desc="打印当前任免表当前页。" />
+  <key name="打印当前表"  char="W"   control="1" alt=""  tooltip=""  desc="打印当前任免表正面和背面。" />
+  <key name="浏览记录"  char="R"    control="1" alt=""   tooltip=""  desc="浏览最近打开的文件记录，并支持在再次打开文件。"/>
+  <key name="批量修改"  char="E"    control="1" alt=""  tooltip=""  desc="批量修改或清空指定信息项的内容。" />
+  <key name="帮助"  char="F1"    control="" alt=""  tooltip=""  desc=""/>
+  <key name="退出"  char="T"    control="1" alt=""  tooltip="" desc="" />
+  <key name="首页"  char="Up"    control="1" alt=""   tooltip="首页（Ctrl+↑键）" desc=""/>
+  <key name="末页"  char="Down"    control="1" alt=""  tooltip="末页（Ctrl+↓键）"  desc=""/>
+  <key name="上一页"  char="Left"    control="1" alt=""  tooltip="上一页（Ctrl+←键）"  desc=""/>
+  <key name="下一页"  char="Right"    control="1" alt=""  tooltip="下一页（Ctrl+→键）"  desc=""/>
+</keys>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Validate>
+	<!-- 样例（支持代码表）
+	<rule name="uploadExcelSample" entityClass="com.lbs.leaf.samples.upload.excel.ExcelData">
+		<conf col="1" propertyName="functionid" depends="required" codeName="aaa001" title="身份证号码"/>
+		<conf col="5" propertyName="location" depends="card"/>
+		<conf col="3" propertyName="title" depends="required"/>
+		<conf col="4" propertyName="parent"/>
+		<conf col="2" propertyName="orderno"/>
+	</rule>
+	 -->
+	<rule name="junitTestRule" entityClass="com.lbs.leaf.util.ExcelUtilTest$ExcelDTO">
+	<!--
+	col与colHeader两个属性至少有一个不能为空，如果两个属性同时存在，则col属性为高优先级
+	 -->
+		<conf col="2" propertyName="aac002" required="false" depends="required,card" title="身份证号码"/>
+		<conf col="3" propertyName="aac001" />
+		<conf col="4" propertyName="aac040" />
+		<conf colHeader="test" propertyName="test" />
+		<conf colHeader="测试列" propertyName="card" />
+	</rule>
+	<rule name="uploadExcelSample" entityClass="com.lbs.leaf.samples.upload.excel.ExcelData">
+		<conf col="1" propertyName="functionid" depends="required"/>
+		<conf col="5" propertyName="location" depends="card"/>
+		<conf col="3" propertyName="title" depends="required"/>
+		<conf col="4" propertyName="parent"/>
+		<conf col="2" propertyName="orderno"/>
+	</rule>
+	<rule name="employee" entityClass="com.lbs.cp.sysmanager.entity.SysFunction">
+		<conf col="1" propertyName="functionid" depends="required"/>
+		<conf col="2" propertyName="link" depends="card"/>
+		<conf col="3" propertyName="title" depends="required"/>
+		<conf col="4" propertyName="parent"/>
+		<conf col="5" propertyName="orderno"/>
+		<conf col="6" propertyName="type"/>
+		<conf col="7" propertyName="description"/>
+		<conf col="8" propertyName="log"/>
+		<conf col="9" propertyName="owner"/>
+	</rule>
+</Validate>

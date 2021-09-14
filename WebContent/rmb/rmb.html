@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<script src="jquery-1.7.2.min.js"> </script>
+    <link href="css/main.css" rel="stylesheet">
+    <title>个人简历</title>
+</head>
+<body>
+	<div class="main_div">
+		<div class="inner_div left_div">
+			<div class="top_div">
+				<div style="float:left;width:56%;height:100%;">
+					<div id="tabs1" class="top_tab_style active" onclick="tabSwitch('tabs','page',1)">任免审批表(一)</div>
+					<div id="tabs2" class="top_tab_style" onclick="tabSwitch('tabs','page',2)">任免审批表(二)</div>
+					<div id="tabs3" class="top_tab_style" style="width:90px;" onclick="tabSwitch('tabs','page',3)">其他信息</div>
+				</div>
+				<div style="float:right;width:44%;height:100%;">
+					<div class="top_btn_style">上一人</div>
+					<div class="top_btn_style">下一人</div>
+					<div class="top_btn_style" style="width:100px;background-color:#67BF08">打印任免表</div>
+				</div>
+			</div>
+			<div class="resume_div" id="table_div">
+				<table id="person_resume" cellpadding="0px;">
+					<tbody id="page1">
+						<tr>
+							<td class="width-60 height-40 fontConfig label_color">姓名</td>
+							<td class="width-80 height-40">
+								<div class="width-80 height-40 no-y-scroll" id="out_a0101" style="overflow:hidden;display:block;">
+									<div class="TAwrap width-80 height-40 no-y-scroll" id="wrapdiv_a0101">   
+										<div class="TAsubwrap">   
+											<div class="TAcontent" id="div_a0101"></div>   
+										</div>   
+									</div>
+								</div>
+								<textarea id="comboxArea_a0101" name="comboxArea_a0101" style="display:none;text-align:center;" class="width-80 height-40 no-y-scroll cellbgclor x-form-field" required="true" label="姓名" title="姓名字数不能超过18"></textarea>
+							</td>
+							<td class="width-60 height-40 fontConfig label_color">性别</td>
+							<td class="width-80 height-40 ">
+								<input name="a0104" id="a0104" type="hidden" value="1">
+								<div class="width-80 height-40 no-y-scroll" id="out_a0104" style="overflow:hidden;display:block;">
+									<div class="TAwrap width-80 height-40 no-y-scroll" id="wrapdiv_a0104">   
+										<div class="TAsubwrap">   
+											<div class="TAcontent" id="div_a0104"></div>   
+										</div>   
+									</div>
+								</div>
+								<div class="DivSelect width5" id="comboxArea_a0104" style="display:none;">
+									<select id="comobox_a0104" class="SelectList width7" style="cursor:pointer;" onchange="onSelectedEvent('comboxArea_a0104','out_a0104','div_a0104','wrapdiv_a0104','comobox_a0104','a0104')">
+										<option value='0'>男</option>
+										<option value='1'>女</option>
+									</select>
+								</div>
+							</td>
+							<td class="width-60 height-40 fontConfig label_color">出生年月</td>
+							<td class="width-80 height-40 ">
+								<div class="width-80 height-40 no-y-scroll" id="out_a0107" style="overflow:hidden;display:block;">
+									<div class="TAwrap width-80 height-40 no-y-scroll" id="wrapdiv_a0107">   
+										<div class="TAsubwrap">   
+											<div class="TAcontent" id="div_a0107"></div>   
+										</div>   
+									</div>
+								</div>
+								<textarea id="comboxArea_a0107" name="comboxArea_a0107" style="display:none;text-align:center;" class="width-80 height-40 no-y-scroll cellbgclor x-form-field" required="true" label="出生年月"></textarea>
+							</td>
+							<td class="width-120 height-140" rowspan="4">
+								<div id="imgPreview" style="width:100%;height:100%;position:relative;cursor:pointer;margin-top:-7px;padding:0px;" onclick="showPic()">
+									<img alt="照片" id="personImg" width="120px" height="155px" src=""> 
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="width-60 height-33 fontConfig label_color">民族</td>
+							<td class="width-80 height-33 "></td>
+							<td class="width-60 height-33 fontConfig label_color">籍贯</td>
+							<td class="width-80 height-33 ">
+								<div class="width-80 height-33 no-y-scroll" id="out_a0111" style="overflow: hidden; display: block;">
+									<div class="TAwrap width-80 height-33 no-y-scroll" id="wrapdiv_a0111">   
+										<div class="TAsubwrap">   
+											<div class="TAcontent" id="div_a0111"></div>   
+										</div>   
+									</div>
+								</div>
+								<input type="hidden" name="codevalueparameter" id="codevalueparameter">
+								<input type="hidden" name="a0111" id="a0111" class="x-form-hidden x-form-field" style="width:160px;">
+								<textarea id="comboxArea_a0111" name="comboxArea_a0111" class="height-33 width-80 no-y-scroll" style="display:none;text-align:center;" required="false" label="籍贯" ondblclick="openDiseaseInfoCommonQuerya0111()"></textarea>
+							</td>
+							<td class="width-60 height-33 fontConfig label_color">出生地</td>
+							<td class="width-80 height-33 ">
+								<div class="width-80 height-33 no-y-scroll" id="out_a0114" style="overflow:hidden;display:block;">
+									<div class="TAwrap width-80 height-33 no-y-scroll" id="wrapdiv_a0114">   
+										<div class="TAsubwrap">   
+											<div class="TAcontent" id="div_a0114"></div>   
+										</div>
+									</div>
+								</div>
+								<input type="hidden" name="a0114" value="330100" id="a0114" class=" x-form-hidden x-form-field" style="width: 160px;">
+								<textarea id="comboxArea_a0114" name="comboxArea_a0114" class="height-33 width-80 no-y-scroll" style="display:none;text-align:center;" required="false" label="出生地" ondblclick="openDiseaseInfoCommonQuerya0114()"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td class="label-clor width-60 height-40 fontConfig label_color">入党时间</td>
+							<td class="label-clor width-80 height-40 ">
+								<div class="height-40 no-y-scroll" style="overflow:hidden;display:block;">
+									<div class="TAwrap height-40 no-y-scroll" style="margin-top:0px;width:100%;" ondblclick="alert('入党时间')" >   
+										<div class="TAsubwrap ">   
+											<div class="TAcontent" id="div_party_time" style="text-align:center"></div>   
+										</div>   
+									</div>
+								</div>
+							</td>
+							<td class="label-clor width-60 height-40 fontConfig label_color">参加工作时间</td>
+							<td class="label-clor width-80 height-40 ">
+								<div class="width-80 height-40 no-y-scroll" id="out_a0134" style="overflow:hidden;display:block;">
+									<div class="TAwrap width-80 height-40 no-y-scroll" id="wrapdiv_a0134">   
+										<div class="TAsubwrap">   
+											<div class="TAcontent" id="div_a0134"></div>   
+										</div>   
+									</div>
+								</div>
+								<textarea id="comboxArea_a0134" name="comboxArea_a0134" style="display:none;text-align:center;" class="width-80 height-40 no-y-scroll cellbgclor x-form-field" required="true" label="参加工作时间"></textarea>
+							</td>
+							<td class="label-clor width-60 height-40 fontConfig label_color">健康情况</td>
+							<td class="label-clor width-80 height-40 "></td>
+						</tr>
+						<tr>
+							<td class="label-clor width-60 height-40 fontConfig label_color">专业技术职务</td>
+							<td class="label-clor height-40" colspan="2">
+								<div class="height-40 no-y-scroll" style="overflow:hidden;display:block;">
+									<div class="TAwrap height-40 no-y-scroll maxWidth-140" ondblclick="alert('专业技术职务')">   
+										<div class="TAsubwrap ">   
+											<div class="TAcontent" id="div_professional" style="text-align:center"></div>   
+										</div>   
+									</div>
+								</div>
+							</td>
+							<td class="label-clor width-60 height-40 fontConfig label_color">熟悉专业<br/>有何特长</td>
+							<td class="label-clor height-40" colspan="2">
+								<div class="maxWidth-140 height-40 no-y-scroll" id="out_a0187a" style="overflow:hidden;display:block;">
+									<div class="TAwrap maxWidth-140 height-40 no-y-scroll" id="wrapdiv_a0187a">   
+										<div class="TAsubwrap">   
+											<div class="TAcontent" id="div_a0187a"></div>   
+										</div>
+									</div>
+								</div>
+								<textarea id="comboxArea_a0187a" name="comboxArea_a0187a" class="maxWidth-140 height-40 no-y-scroll" style="display:none;text-align:center;" required="false" label="专长"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td class="width-60 fontConfig label_color" rowspan="4">学历<br/>学位</td>
+							<td class="width-60 fontConfig label_color" rowspan="2">全日制<br/>教育</td>
+							<td class="label-clor height-30" colspan="2">
+								<div class="height-30 no-y-scroll" style="overflow:hidden;display:block;">
+									<div class="TAwrap height-30 no-y-scroll maxWidth-140" ondblclick="alert('全日制教育')">   
+										<div class="TAsubwrap ">   
+											<div class="TAcontent" id="div_full_universe" style="text-align:center"></div>   
+										</div>   
+									</div>
+								</div>
+							</td>
+							<td class="width-60 fontConfig label_color" rowspan="2">毕业院校系及专业</td>
+							<td class="label-clor height-30" colspan="2">
+								<div class="height-30 no-y-scroll" style="overflow:hidden;display:block;">
+									<div class="TAwrap height-30 no-y-scroll maxWidth-195" ondblclick="alert('毕业院校系')">   
+										<div class="TAsubwrap ">   
+											<div class="TAcontent" id="div_full_faculty" style="display:block;"></div>   
+										</div>   
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="label-clor height-30" colspan="2">
+								<div class="height-30 no-y-scroll" style="overflow:hidden;display:block;">
+									<div class="TAwrap height-30 no-y-scroll maxWidth-140" ondblclick="alert('全日制教育学位')">   
+										<div class="TAsubwrap ">   
+											<div class="TAcontent" id="div_full_degree" style="text-align:center"></div>   
+										</div>   
+									</div>
+								</div>
+							</td>
+							<td class="label-clor height-30" colspan="2">
+								<div class="height-30 no-y-scroll" style="overflow:hidden;display:block;">
+									<div class="TAwrap height-30 no-y-scroll maxWidth-195" ondblclick="alert('毕业院校专业')">   
+										<div class="TAsubwrap ">   
+											<div class="TAcontent" id="div_full_major" style="display:block;"></div>   
+										</div>   
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="width-60 fontConfig label_color" rowspan="2">在职<br/>教育</td>
+							<td class="label-clor height-30" colspan="2">
+								<div class="height-30 no-y-scroll" style="overflow:hidden;display:block;">
+									<div class="TAwrap height-30 no-y-scroll maxWidth-140" ondblclick="alert('在职教育中专')">   
+										<div class="TAsubwrap ">   
+											<div class="TAcontent" id="div_part_universe" style="text-align:center"></div>   
+										</div>   
+									</div>
+								</div>
+							</td>
+							<td class="width-60 fontConfig label_color" rowspan="2">毕业院校系及专业</td>
+							<td class="label-clor height-30" colspan="2">
+								<div class="height-30 no-y-scroll" style="overflow:hidden;display:block;">
+									<div class="TAwrap height-30 no-y-scroll maxWidth-195" ondblclick="alert('在职教育毕业院校系')">   
+										<div class="TAsubwrap ">   
+											<div class="TAcontent" id="div_part_faculty" style="display:block;"></div>   
+										</div>   
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="label-clor height-30" colspan="2">
+								<div class="height-30 no-y-scroll" style="overflow:hidden;display:block;">
+									<div class="TAwrap height-30 no-y-scroll maxWidth-140" ondblclick="alert('在职教育全日制教育学位')">   
+										<div class="TAsubwrap ">   
+											<div class="TAcontent" id="div_part_degree" style="text-align:center"></div>   
+										</div>   
+									</div>
+								</div>
+							</td>
+							<td class="label-clor height-30" colspan="2">
+								<div class="height-30 no-y-scroll" style="overflow:hidden;display:block;">
+									<div class="TAwrap height-30 no-y-scroll maxWidth-195" ondblclick="alert('在职教育毕业院校专业')">   
+										<div class="TAsubwrap ">   
+											<div class="TAcontent" id="div_part_major" style="display:block;"></div>   
+										</div>   
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="height-30 fontConfig label_color" colspan="2">工作单位及职务</td>
+							<td class="height-30" colspan="5">
+								<div class="height-30 no-y-scroll" style="overflow:hidden;display:block;">
+									<div class="TAwrap height-30 no-y-scroll maxWidth-405" ondblclick="alert('工作单位及职务')">   
+										<div class="TAsubwrap ">   
+											<div class="TAcontent" id="div_work_job" style="display:block;"></div>   
+										</div>   
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="label_color width-60 height-330">
+								<div style="width: 100%;height: 100%;position: relative;">
+									<div onclick="showwin()" title="简历生成" style="width:100%;height:50%;background:url(images/jl.png) no-repeat center 10px;cursor:pointer;"></div>
+									<span style="" class="fontConfig">简历</span>
+								</div>
+							</td>
+							<td class="height-330" colspan="6">
+								<textarea rows="3" cols="6" class="height-330-1" style="width:100%;"></textarea>
+							</td>
+						</tr>
+					</tbody>
+					<tbody id="page2" style="display:none">
+						<tr>
+							<td class="width-60 height-76 fontConfig label_color">奖惩综述</td>
+							<td class="height-76" colspan="6">
+								<textarea id="a14z101" rows="3" cols="6" class="height-76 maxWidth-485 font-left" label="奖惩综述" readonly="readonly" ondblclick="showRewardWin()" onkeypress="showRewardWin()"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td class="width-60 height-76 fontConfig label_color">年度考核<br/>结果综述</td>
+							<td class="height-76" colspan="6">
+								<textarea id="a15z101" rows="3" cols="6" class="height-76 maxWidth-485 font-left" label="年度考核结果综述" readonly="readonly" ondblclick="showExamWin()" onkeypress="showExamWin()"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td class="width-60 fontConfig label_color" rowspan="11">
+								<div class="height-340" style="width:100%;position:relative;">
+									<div id="upb" style="margin-top:3px;margin-left:5px;position:relative;z-index:2;width:53px;height:20px;border-radius:5px;-moz-border-radius:5px;border:1px solid #7b9ebd;background:url(images/up.png) transparent no-repeat 3px center;cursor:pointer;" onclick="up()">
+										<span style="line-height:20px;padding-left:18px;font-size:13px;">上移</span>
+									</div>
+									<div style="height:5px;"></div>
+									<div id="downb" style="position:relative;margin-left:5px;z-index:2;width:53px;height:20px;border-radius:5px;-moz-border-radius:5px;border:1px solid #7b9ebd;background:url(images/down.png) transparent no-repeat 3px center;cursor:pointer;" onclick="down()">
+										<span style="line-height:20px;padding-left:18px;font-size:13px;">下移</span>
+									</div>
+									<div style="height:30px;"></div>
+									<div style="height:180px;">
+										<span style="position:relative;vertical-align:middle;" class="fontConfig">家庭<br/>主要<br/>成员<br/>及<br/>社会<br/>重要<br/>关系</span>
+									</div>
+									<div id="addrowBtn" style="position:relative;margin-left:5px;width:53px;border:1px solid #7b9ebd;background:url(images/add.png) transparent no-repeat 1px center;border-radius:5px;-moz-border-radius:5px;cursor:pointer;" onclick="addA36row()">
+										<span style="line-height:20px;padding-left:18px;font-size:13px;">新增</span>
+									</div>
+									<div style="height:5px;"></div>
+									<div id="addrowBtn" style="position:relative;margin-left:5px;width:53px;border:1px solid #7b9ebd;background:url(images/delete.png) transparent no-repeat 1px center;border-radius:5px;-moz-border-radius:5px;cursor:pointer;" onclick="addA36row()">
+										<span style="line-height:20px;padding-left:18px;font-size:13px;">删除</span>
+									</div>
+								</div>
+							</td>
+							<td class="width-80 height-30-1 label_color fontConfig">称谓</td>
+							<td class="width-80 height-30-1 label_color fontConfig">姓名</td>
+							<td class="width-80 height-30-1 label_color fontConfig">出生年月</td>
+							<td class="width-80 height-30-1 label_color fontConfig">政治面貌</td>
+							<td class="width-95 height-30-1 label_color fontConfig">工作单位及职务</td>
+						</tr>
+						<tr>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-95 height-30-1"></td>
+						</tr>
+						<tr>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-95 height-30-1"></td>
+						</tr>
+						<tr>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-95 height-30-1"></td>
+						</tr>
+						<tr>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-95 height-30-1"></td>
+						</tr>
+						<tr>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-95 height-30-1"></td>
+						</tr>
+						<tr>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-95 height-30-1"></td>
+						</tr>
+						<tr>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-95 height-30-1"></td>
+						</tr>
+						<tr>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-95 height-30-1"></td>
+						</tr>
+						<tr>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-95 height-30-1"></td>
+						</tr>
+						<tr>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-80 height-30-1"></td>
+							<td class="width-95 height-30-1"></td>
+						</tr>
+						<tr>
+							<td class="width-60 height-76 fontConfig label_color">备&nbsp;注</td>
+							<td class="height-76" colspan="6">
+								<textarea id="a0180" rows="3" cols="6" class="height-76 maxWidth-485" label="备注" ></textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="resume_div" id="page3" style="background-color:yellow;display:none;">
+			</div>
+		</div>
+		<div class="inner_div right_div">
+			<div class="top_div pic1" style="background-color:#92B3D4">
+				<span style="">现职人员</span>
+			</div>
+			<div class="right_table">
+				<table style="height:90%;width:100%;padding-top:10px;">
+					<tr>
+						<td class="right_td1">统计关系所在单位</td>
+						<td class="right_td2">
+							<input type="text" class="right_input_btn" style="width:114px;float:left;">
+							<div class="right_qry_div"></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="right_td1">公民身份证号码</td>
+						<td class="right_td2"><input type="text" class="right_input_btn"></td>
+					</tr>
+					<tr>
+						<td class="right_td1">管理类别</td>
+						<td class="right_td2">
+							<select class="right_option">
+								<option value =""></option>
+								<option value ="volvo">中央管理干部</option>
+								<option value ="saab">省级党委管理干部</option>
+								<option value="opel">市级党委管理干部</option>
+								<option value="audi">县级党委管理干部</option>
+								<option value="audi">其他</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="right_td1">人员类别</td>
+						<td class="right_td2">
+							<input type="text" class="right_input_btn" style="width:114px;float:left;">
+							<div class="right_qry_div"></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="right_td1">编制类型</td>
+						<td class="right_td2">
+							<select class="right_option">
+								<option value =""></option>
+								<option value ="volvo">行政编制</option>
+								<option value ="saab">事业编制(参公)</option>
+								<option value="opel">事业编制(其他)</option>
+								<option value="audi">工勤编制</option>
+								<option value="audi">其他编制</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="right_td1">现服务层次</td>
+						<td class="right_td2"><input type="text" class="right_input_btn"></td>
+					</tr>
+					<tr>
+						<td class="right_td1">任现职务层次时间</td>
+						<td class="right_td2"><input type="text" class="right_input_btn"></td>
+					</tr>
+					<tr>
+						<td class="right_td1">现职级</td>
+						<td class="right_td2"><input type="text" class="right_input_btn"></td>
+					</tr>
+					<tr>
+						<td class="right_td1">任现职级时间</td>
+						<td class="right_td2"><input type="text" class="right_input_btn"></td>
+					</tr>
+				</table>
+			</div>
+			<div style="width:100%;height:70px;">
+				<div class="btn_div">
+					<div class="btn_style" style="background-color:#3680C9;margin-left:38%;">继续增加</div>
+				</div>
+				<div class="btn_div">
+					<div class="btn_style" style="background-color:#F08000;margin-left:10px;">保&nbsp;&nbsp;存</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/common.js"></script>
+	<script>
+		InitPage();
+	</script>
+</body>
+</html>

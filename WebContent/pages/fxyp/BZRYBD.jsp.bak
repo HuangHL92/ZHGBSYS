@@ -1,0 +1,175 @@
+<%@ page language="java" contentType="text/html; charset=GBK" pageEncoding="GBK"%>
+<%@ taglib uri="/WEB-INF/odin.tld" prefix="odin"%>
+<%@ taglib uri="/WEB-INF/sicp3.tld" prefix="sicp3"%>
+<%@ taglib uri="/WEB-INF/odin-ss.tld" prefix="ss"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@include file="/comOpenWinInit.jsp" %>
+<script type="text/javascript" src="<%=request.getContextPath()%>/basejs/helperUtil.js"></script>
+<script src="<%=request.getContextPath()%>/picCut/js/jquery-1.4.2.js" type="text/javascript"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<style>
+.x-grid3-cell-inner, .x-grid3-hd-inner{
+	white-space:normal !important;
+}
+.x-grid-record-nm{
+	background: #ccccff;
+}
+.x-grid-record-zr{
+	background: #ff5555;
+}
+.x-grid-record-zr span,.x-grid-record-zr div{
+	color: white;
+}
+.x-grid3-col{
+	vertical-align: middle!important;
+}
+.x-grid3-cell-inner, .x-grid3-hd-inner{
+	white-space:normal !important;
+}
+</style>
+<odin:hidden property="b0111"/>
+<odin:hidden property="mntp00"/>
+<odin:hidden property="b01id"/>
+<odin:hidden property="mntp05"/>
+<div  style="align:left top;height:100%;overflow:auto;">
+<table>
+  <tr>
+    <td width="50%">
+    	<odin:editgrid2 height="50" property="pgrid" hasRightMenu="false" grouping="true" groupCol="zrrx"  title="调配前"
+				groupTextTpl="{text} ({[values.rs.length]} {[values.rs.length > 1 ? \"名\" : \"名\"]})"
+				pageSize="200" isFirstLoadData="false" url="/" 
+				autoFill="true" forceNoScroll="true">
+			<odin:gridJsonDataModel  id="id" root="data" totalProperty="totalCount">
+				<odin:gridDataCol name="personstatus" />
+				<odin:gridDataCol name="a01bzdesc" />
+				<odin:gridDataCol name="a0000" />
+				<odin:gridDataCol name="a0200" />
+				<odin:gridDataCol name="a0201b" />
+				<odin:gridDataCol name="b01id" />
+				<odin:gridDataCol name="a0101" />
+				<odin:gridDataCol name="zrrx" />
+				<odin:gridDataCol name="fxyp07" />
+				<odin:gridDataCol name="fxyp00" />
+				<odin:gridDataCol name="tp0100" />
+				<odin:gridDataCol name="a0215a" />
+				<odin:gridDataCol name="a0192a" isLast="true"/>
+			</odin:gridJsonDataModel>
+			<odin:gridColumnModel>
+				<odin:gridRowNumColumn></odin:gridRowNumColumn>
+				<odin:gridColumn dataIndex="a0101" width="60" header="姓名" align="center"/>
+				<odin:gridColumn dataIndex="zrrx" width="120" header="在任人员" hidden="true" renderer="decodeZRRY" align="center"/>
+				<odin:gridEditColumn2 dataIndex="a0215a" width="170" header="任现职务" editor="text" edited="false"  align="left"/>
+				<odin:gridEditColumn2 dataIndex="a0192a" width="220" header="任现工作单位及职务" editor="text" edited="false"  align="left"/>
+				<odin:gridEditColumn2 dataIndex="a01bzdesc" width="80" header="去向" editor="text" edited="false" isLast="true" align="left"/>
+				
+			</odin:gridColumnModel>
+				 
+		</odin:editgrid2>
+    </td>
+    <td width="50%">
+    	<odin:editgrid2 height="50" property="pgrid2" hasRightMenu="false" grouping="true" groupCol="zrrx" title="调配后"
+			groupTextTpl="{text} ({[values.rs.length]} {[values.rs.length > 1 ? \"名\" : \"名\"]})"
+			pageSize="200" isFirstLoadData="false" url="/" 
+			autoFill="true" forceNoScroll="false">
+			<odin:gridJsonDataModel  id="id" root="data" totalProperty="totalCount">
+				<odin:gridDataCol name="personstatus" />
+				<odin:gridDataCol name="a01bzdesc" />
+				<odin:gridDataCol name="a0000" />
+				<odin:gridDataCol name="a0200" />
+				<odin:gridDataCol name="a0201b" />
+				<odin:gridDataCol name="b01id" />
+				<odin:gridDataCol name="a0101" />
+				<odin:gridDataCol name="zrrx" />
+				<odin:gridDataCol name="fxyp07" />
+				<odin:gridDataCol name="fxyp00" />
+				<odin:gridDataCol name="tp0100" />
+				<odin:gridDataCol name="a0215a" />
+				<odin:gridDataCol name="a0192a" isLast="true"/>
+			</odin:gridJsonDataModel>
+			<odin:gridColumnModel>
+				<odin:gridRowNumColumn></odin:gridRowNumColumn>
+				<odin:gridColumn dataIndex="a0101" width="60" header="姓名" align="center"/>
+				<odin:gridColumn dataIndex="zrrx" width="120" header="在任人员" hidden="true" renderer="decodeZRRY" align="center"/>
+				<odin:gridEditColumn2 dataIndex="a0215a" width="170" header="任现职务" editor="text" edited="false"  align="left"/>
+				<odin:gridEditColumn2 dataIndex="a0192a" width="220" header="任现工作单位及职务" editor="text" edited="false"  align="left"/>
+				<odin:gridEditColumn2 dataIndex="a01bzdesc" width="80" header="来源" editor="text" edited="false" isLast="true" align="left"/>
+			</odin:gridColumnModel>
+				 
+		</odin:editgrid2>
+    </td>
+  </tr>
+</table>
+
+	
+</div>
+
+<script type="text/javascript">
+var B0131DECODE = {"1":"正职","3":"副职",'1001':'党委','1004':'政府','1003':'人大','1005':'政协','1006':'院长','1007':'检查长'};
+//decode(b0131,'1001','1党委','1004','2政府','1003','3人大','1005','4政协','1006','5院长','1007','6检查长')
+function decodeZRRY(value, params, record, rowIndex, colIndex, ds) {
+	
+	//return value;
+	return B0131DECODE[value];
+}
+Ext.onReady(function() {
+	
+	Ext.getCmp('pgrid').setWidth(document.body.clientWidth/2);
+	Ext.getCmp('pgrid').setHeight(document.body.clientHeight);
+	Ext.getCmp('pgrid2').setWidth(document.body.clientWidth/2);
+	Ext.getCmp('pgrid2').setHeight(document.body.clientHeight);
+	
+	$('#b0111').val(parent.Ext.getCmp(subWinId).initialConfig.b0111);
+	$('#b01id').val(parent.Ext.getCmp(subWinId).initialConfig.b01id);
+	$('#mntp00').val(parent.Ext.getCmp(subWinId).initialConfig.mntp00);
+	$('#mntp05').val(parent.Ext.getCmp(subWinId).initialConfig.mntp05);
+	
+	
+	 var pgrid = Ext.getCmp('pgrid');
+	var pgrid2 = Ext.getCmp('pgrid2');
+	var sTop,domi=0,domtop,domtop2;
+	pgrid.getView().on('refresh',function(){
+		$('#gridDiv_pgrid .x-grid3-scroller').bind('scroll',function(){console.log(domi);console.log($('#gridDiv_pgrid .x-grid-group')[domi].clientHeight )
+			sTop = pgrid.getView().scroller.dom.scrollTop;
+			domtop = $h.pos($('#gridDiv_pgrid .x-grid-group')[domi]).top;
+			if(sTop>domtop){
+				domi++
+			}else if(domtop>sTop+$('#gridDiv_pgrid .x-grid-group')[domi].clientHeight){
+				domi--;
+			}
+			domtop2 = $h.pos($('#gridDiv_pgrid2 .x-grid-group')[domi]).top;
+			pgrid2.getView().scroller.dom.scrollTop=sTop;//+(domtop2-domtop)
+			
+			
+		})
+	}); 
+	
+	
+	Ext.getCmp('pgrid').getView().getRowClass=function(record,rowIndex,rowParams,store){
+		var fxyp07 = record.data.fxyp07;
+		if(fxyp07=='-1'){//拟免
+			return 'x-grid-record-nm';
+        }else if(fxyp07=='1'){//在任
+			return 'x-grid-record-zr';
+        }else{
+        	return '';
+        }
+		
+	};
+	Ext.getCmp('pgrid2').getView().getRowClass=function(record,rowIndex,rowParams,store){
+		var fxyp07 = record.data.fxyp07;
+		if(fxyp07=='-1'){//拟免
+			return 'x-grid-record-nm';
+        }else if(fxyp07=='1'){//在任
+			return 'x-grid-record-zr';
+        }else{
+        	return '';
+        }
+		
+	};
+	
+});
+
+
+</script>

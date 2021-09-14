@@ -1,0 +1,2 @@
+
+if(!window.XartWebui_Menu_Keyboard_Loaded){window.XartWebui_Menu_SetKeyboardFocusedMenu=function(menuObj){qqPa=menuObj;};window.XartWebui_Menu_InitKeyboard=function(menu){XartWebui_Menu_SetKeyboardFocusedMenu(menu);menu.KeyboardEnabled=true;menu.qzad=menu.Items()[0];Event.observe(document,"keydown",XartWebui_HandleKeyPress,false);};window.XartWebui_Menu_Keyboard_Loaded=true;}

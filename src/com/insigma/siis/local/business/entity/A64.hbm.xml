@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A64"
+    lazy="false"
+    table="A64">
+    <id column="A6400" name="a6400" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="A0000" length="60" name="a0000" type="java.lang.String" />
+    <property column="A6401" length="50" name="a6401" type="java.lang.String" />
+    <property column="A6402" length="3" name="a6402" type="java.lang.String" />
+    <property column="A6403" length="3" name="a6403" type="java.lang.String" />
+    <property column="A6404" length="3" name="a6404" type="java.lang.String" />
+    <property column="A6405" length="3" name="a6405" type="java.lang.String" />
+    <property column="A6406" length="3" name="a6406" type="java.lang.String" />
+    <property column="A6407" length="3" name="a6407" type="java.lang.String" />
+    <property column="A6408" length="3" name="a6408" type="java.lang.String" />
+    <property column="A64TYPE" length="4" name="a64type" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

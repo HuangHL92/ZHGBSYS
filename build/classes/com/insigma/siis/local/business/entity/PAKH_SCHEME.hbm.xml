@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.PAKH_SCHEME"
+    lazy="false"
+    table="PAKH_SCHEMES">
+    <id column="PS00" name="ps00" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="PS01" length="120" name="ps01" type="java.lang.String" />
+    <property column="PS02" length="8" name="ps02" type="java.lang.String" />
+    <property column="PS03" length="2500" name="ps03" type="java.util.Date" />
+    <property column="PS04" length="36" name="ps04" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,7 @@
+<chart palette='2' baseFontSize='14' caption='四家医院用药频率统计' subcaption='阿莫西林'>           
+            <set label='市一医院' value='3313'  />			
+			<set label='红会医院' value='2341' />
+			<set label='中医医院' value='1231' />
+            <set label='十二医院' value='4533' />
+
+</chart>

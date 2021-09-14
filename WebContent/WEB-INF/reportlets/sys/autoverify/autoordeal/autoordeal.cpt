@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<TableDataMap>
+<NameTableData name="ds2">
+<TableData class="com.fr.data.impl.DBTableData">
+<Parameters>
+</Parameters>
+<Attributes isCache="true" isDiskCache="true" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[siis]]></DatabaseName>
+</Connection><Query><![CDATA[select aaa002 "系统", 'V1.1' "版本" from aa01 where aaa001='SYSTEM_TYPE']]></Query>
+</TableData>
+</NameTableData>
+<NameTableData name="ds1">
+<TableData class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="ids"
+ type="0"
+ shown="true" />
+<O t="S"><![CDATA[1265]]></O>
+<CellEditorDef class="com.fr.report.cellElement.TextCellEditorDef"><Attributes allowBlank="true" />
+<Attr multiLine="false" /></CellEditorDef>
+</Parameter>
+</Parameters>
+<Attributes isCache="true" isDiskCache="true" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[siis]]></DatabaseName>
+</Connection><Query><![CDATA[select a.tdseno,
+       a.csdate,
+       a.csflag,
+       b.seord+1 seord,
+       (select aaa103 from aa10 where aaa100='ACTION' and aaa102= b.action)||':'||b.itemname||'('||b.resinput||')' input,
+       (select aaa103 from aa10 where aaa100='EXPTYPE' and aaa102= b.exptype)||':'||b.expmsg exp,
+       (select aaa103 from aa10 where aaa100='RESTYPE' and aaa102= b.restype)||':'||b.resmsg res,
+       (select aaa103 from aa10 where aaa100='TESTTYPE' and aaa102= b.testtype) testtype,
+       c.functionid,
+       (select title from smt_function where functionid = c.functionid) "functionname",
+       c.scname,
+       c.scnotes,
+       c.opcode
+  from sbds_screport a, sbds_screportmx b, sbds_scenario c, sbds_scform d
+ where a.tdseno = b.tdseno
+   and a.scseno = c.scseno
+   and c.functionid = d.functionid
+   and c.opcode = d.opcode
+   and a.tdseno in ([?ids|?])
+]]></Query>
+</TableData>
+</NameTableData>
+</TableDataMap>
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.75" bottom="0.27" right="0.75" />
+</ReportSettings>
+<ReportParameterAttr>
+<Parameters>
+</Parameters>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="0" userDefineWindow="false" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<AutoRecalculate>false</AutoRecalculate>
+<DesignAttributes>
+</DesignAttributes>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+</ReportWebAttr>
+<ReportWriteAttr>
+</ReportWriteAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[19,32,19,19,19,19,19,34,19,19,57,19,19,17]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[21,23,51,53,80,54,100,52,98]]>
+</ColumnWidth>
+<CellElementList>
+<C c="1" r="1" cs="2" s="0"><O t="S"><![CDATA[项目/系统]]></O>
+</C>
+<C c="3" r="1" cs="3" s="1"><O t="DSColumn"><Attributes dsName="ds2" columnName="系统" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="1" r="4" cs="9"><Expand leftParentDefault="false" left="D7" />
+</C>
+<C c="1" r="5" cs="2" s="0"><O t="S"><![CDATA[用例名称]]></O>
+</C>
+<C c="3" r="5" cs="3" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="functionname" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" leftParentDefault="false" left="D7" />
+</C>
+<C c="6" r="5" s="0"><O t="S"><![CDATA[测试人]]></O>
+</C>
+<C c="7" r="5" cs="3" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="OPCODE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" leftParentDefault="false" left="D7" />
+</C>
+<C c="1" r="6" cs="2" s="0"><O t="S"><![CDATA[用例编号]]></O>
+<Expand leftParentDefault="false" left="D7" />
+</C>
+<C c="3" r="6" cs="3" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="TDSENO" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="6" r="6" s="0"><O t="S"><![CDATA[测试时间]]></O>
+</C>
+<C c="7" r="6" cs="3" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="CSDATE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" leftParentDefault="false" left="D7" />
+</C>
+<C c="1" r="7" cs="2" s="0"><O t="S"><![CDATA[测试目的]]></O>
+</C>
+<C c="3" r="7" cs="7" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="SCNOTES" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" leftParentDefault="false" left="D7" />
+</C>
+<C c="1" r="8" rs="2" s="0"><O t="S"><![CDATA[序号]]></O>
+</C>
+<C c="2" r="8" cs="3" s="0"><O t="S"><![CDATA[ 输入]]></O>
+</C>
+<C c="5" r="8" cs="2" s="0"><O t="S"><![CDATA[期望输出]]></O>
+</C>
+<C c="7" r="8" cs="2" s="0"><O t="S"><![CDATA[实际输出]]></O>
+</C>
+<C c="9" r="8" rs="2" s="0"><O t="S"><![CDATA[结果]]></O>
+</C>
+<C c="2" r="9" cs="3" s="1"><O t="S"><![CDATA[操作:操作项(操作值)]]></O>
+</C>
+<C c="5" r="9" cs="2" s="1"><O t="S"><![CDATA[期望类型:期望值]]></O>
+</C>
+<C c="7" r="9" cs="2" s="1"><O t="S"><![CDATA[实际类型:实际值]]></O>
+</C>
+<C c="1" r="10" s="1"><O t="DSColumn"><Attributes dsName="ds1" columnName="SEORD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" leftParentDefault="false" left="D7" />
+</C>
+<C c="2" r="10" cs="3" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="INPUT" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"><Attr divideMode="1" /></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D7" />
+</C>
+<C c="5" r="10" cs="2" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="EXP" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"><Attr divideMode="1" /></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D7" />
+</C>
+<C c="7" r="10" cs="2" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="RES" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"><Attr divideMode="1" /></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D7" />
+</C>
+<C c="9" r="10" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="TESTTYPE" />
+<Condition class="com.fr.data.condition.ListCondition"></Condition>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"><Attr divideMode="1" /></RG><Result><![CDATA[$$$]]></Result></O>
+<Expand dir="0" leftParentDefault="false" left="D7" />
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="14" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

@@ -1,0 +1,239 @@
+.pointer{
+	cursor: pointer;
+}
+.colorLight{
+	color: red;
+}
+#coordTable{
+	max-width: none!important;
+	border-top: 3px solid rgb(152 152 152)!important;
+	border-left: 3px solid rgb(152 152 152)!important;
+	border-bottom: 2px solid rgb(152 152 152)!important;
+	border-collapse: separate;
+}
+#coordTable th{
+	background: #CAE8EA ; 
+	text-align: center;
+	height:50px;
+}
+
+#coordTable th,#coordTable td{
+	font-family: 宋体,Times New Roman ;
+	font-weight: normal;
+}
+.titleColor,.unit{
+	font-family: 黑体!important ;
+}
+.tableTile{
+	font-size: 20px;
+}
+.unit{
+	font-size: 20px;
+}
+#coordTable td{
+	text-align: center;
+	height:50px;
+}
+.textleft{
+	text-align: center;
+}
+.classBT{
+	border-top: 2px solid rgb(152 152 152)!important;
+}
+.classBR{
+	border-right: 3px solid rgb(152 152 152)!important;
+}
+
+.top_btn_style{
+	float:left;
+	display:block;
+	border-radius:5px;
+	cursor:pointer;
+	margin-left:6px;
+	height:25px;
+	line-height:14px;
+	vertical-align:middle;
+	font-size:12px;
+	color:#fff;
+	background-color:#3680C9;
+	text-align: center;
+	padding: 3px 5px!important;
+}
+#selectable{
+	height:800px;
+}
+#coordTable{
+	min-width: 700px;
+}
+
+.input-editor{
+	position: relative;
+}
+#coordTable td,#coordTable th{
+	border-right:1px solid;
+	border-bottom:1px solid;
+	border-color: rgb(162 162 162);
+	padding: 6px 3px;
+}
+
+.dbwy{
+	cursor:pointer;
+}
+.bz{
+	cursor:pointer;
+}
+
+
+.name:HOVER,.unit:HOVER,.gwtj:HOVER{
+	background-color:#C0C0C0 !important;
+	cursor:pointer!important;
+}
+.dwxz:HOVER{
+	cursor:default!important;
+	background-color: rgb(230, 228, 228)!important;
+}
+.nameRepeat{
+	/* background-color:#c1cedc; */
+	/* color: white; */
+}
+
+/* td.mhover{border:dotted 2px #f00!important; } */
+td.mhover{background:url(dotted.png) no-repeat;
+	background-size: 100% 100%; 
+	
+	}
+td.mselected{background:#315fe2!important;color:#fff!important;}
+#tdMove{
+	position:absolute;display:none;border:solid 2px #f00;
+	background:#315fe2;color: #fff;padding: 5px;
+}
+#tdTipMove{position:absolute;display:none;max-width: 350px;}
+.moveFrom,.moveTo,.name{user-select:none;-moz-user-select:none}
+
+/* tr:nth-child(odd){
+	background: #fcfcfc!important;
+} */
+
+
+.button-tpyj {
+  background-color: rgb(240,128,0); /* Green */
+  border: none;
+  color: white;
+  padding: 3px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 14px!important;
+  margin: 3px 7px 3px 7px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  /* float: left; */
+  border-radius: 4px;
+  
+}
+
+
+.button-xt:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.button-div{
+	display: none;
+	
+	/* height: 66px; */
+	background-color: #f3ebeb;
+	border: 1px solid black;
+	position: absolute;
+	border-radius: 4px;
+	z-index: 99999999;
+}
+
+.btn_minus{
+	display: none;
+	position:absolute;
+	right:1px;
+	top:1px;
+    background: rgb(230,34,35) no-repeat center;
+    border: 1px solid #d0d0d0;
+    width: 20px;
+    height: 16px;
+    border-radius: 4px;
+    box-shadow: 0 1px rgba(100, 100, 100, .1);
+    color: rgb(236,226,235);
+    transition: color .2s, background-color .2s;
+    background-image: linear-gradient(to top, currentColor, currentColor);
+    background-size: 10px 2px;
+}
+
+.btn_editor{
+	display:none;
+	width: 18px;
+	height: 16px;
+	position:absolute;
+	right:31px;
+	top:2px;
+}
+
+.btn_minus:active {
+    box-shadow: inset 0 1px rgba(100, 100, 100, .1);
+}
+
+.btn_minus:hover {
+    background-color: rgb(199 15 16);
+    color: rgb(236,226,235);
+}
+
+
+/* 调配建议色块去掉  */
+/* .tiba {
+    background-color: #c4ffc4;
+}
+.jiaoliu {
+    background-color: #c6c6ff;
+}
+.mianzhi {
+    background-color: #ffc4c4;
+} */
+
+
+
+.ckbox{
+	display: none;
+	position:absolute;
+	left:2px;
+	top:-3px;
+	zoom:135%;
+}
+
+
+.opt-btn{
+	position: absolute;
+	top: 3px;
+	right: 26px;
+	display: none;
+}
+
+.GQGX{
+	display: none;
+}
+
+.JGFX{
+	display:none;
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%, -50%);
+	width: 1100px;
+}
+
+.JGFXInfo{
+	font-size: 18px;
+	line-height: 20px;
+	
+}
+
+
+.jlmd{
+	color: rgb(26, 26, 166)
+}
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A08temp"
+    lazy="false"
+    table="A08_TEMP">
+  	
+  	<id column="A0800" length="60" name="a0800" type="java.lang.String" >
+  		<generator class="assigned"/>
+  	</id>
+    <property column="A0000" length="60" name="a0000" type="java.lang.String" />
+    <property column="A0801A" length="120" name="a0801a" type="java.lang.String" />
+    <property column="A0801B" length="8" name="a0801b" type="java.lang.String" />
+    <property column="A0804" length="8" name="a0804" type="java.lang.String" />
+    <property column="A0807" length="8" name="a0807" type="java.lang.String" />
+    <property column="A0811" length="8" name="a0811" type="java.lang.String" />
+    <property column="A0814" length="120" name="a0814" type="java.lang.String" />
+    <property column="A0824" length="40" name="a0824" type="java.lang.String" />
+    <property column="A0827" length="8" name="a0827" type="java.lang.String" />
+    <property column="A0831" length="1" name="a0831" type="java.lang.String" />
+    <property column="A0832" length="1" name="a0832" type="java.lang.String" />
+    <property column="A0834" length="1" name="a0834" type="java.lang.String" />
+    <property column="A0835" length="1" name="a0835" type="java.lang.String" />
+    <property column="A0837" length="1" name="a0837" type="java.lang.String" />
+    <property column="A0838" length="1" name="a0838" type="java.lang.String" />
+    <property column="A0839" length="1" name="a0839" type="java.lang.String" />
+    <property column="A0898" length="1" name="a0898" type="java.lang.String" />
+    <property column="A0899" length="1" name="a0899" type="java.lang.String" />
+    <property column="A0901A" length="40" name="a0901a" type="java.lang.String" />
+    <property column="A0901B" length="8" name="a0901b" type="java.lang.String" />
+    <property column="A0904" length="8" name="a0904" type="java.lang.String" />
+    <property column="ERROR_INFO" length="200" name="errorinfo" type="java.lang.String" />
+    <property column="IS_QUALIFIED" length="1" name="isqualified" type="java.lang.String" />
+    <property column="SORTID" length="20" name="sortid" type="java.lang.Long" />
+    <property column="UPDATED" length="1" name="updated" type="java.lang.String" />
+    <property column="WAGE_USED" length="20" name="wageused" type="java.lang.Long" />
+     <property column="IMPRECORDID" length="32" name="imprecordid" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

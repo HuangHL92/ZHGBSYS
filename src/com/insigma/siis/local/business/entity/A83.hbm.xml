@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-21 11:02:42 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.A83" table="A83" schema="ZHGB">
+        <comment>公开选调人员信息集</comment>
+        <id name="a0000" type="string">
+            <column name="A0000" length="120" />
+            <generator class="assigned" />
+        </id>
+        <property name="a02192" type="string">
+            <column name="A02192" length="2">
+                <comment>公开选调 等</comment>
+            </column>
+        </property>
+        <property name="a29311" type="string">
+            <column name="A29311" length="2">
+                <comment>选调类别
+                ZB142《遴选或选调类别》 等</comment>
+            </column>
+        </property>
+        <property name="g02002" type="string">
+            <column name="G02002" length="2">
+                <comment>原单位类别 ZB144《原单位类别》
+                等</comment>
+            </column>
+        </property>
+        <property name="a29044" type="string">
+            <column name="A29044" length="2">
+                <comment>原单位层级
+                ZB141《工作单位层次代码》 等</comment>
+            </column>
+        </property>
+        <property name="a29041" type="string">
+            <column name="A29041" length="2">
+                <comment>
+                原单位职称或职务ZB145《职称代码》
+                等</comment>
+            </column>
+        </property>
+        <property name="a29354" type="string">
+            <column name="A29354" length="8">
+                <comment>公开选调时间 等</comment>
+            </column>
+        </property>
+        <property name="a44027" type="string">
+            <column name="A44027" length="2">
+                <comment>是否有海外留学经历 等</comment>
+            </column>
+        </property>
+        <property name="a39077" type="java.lang.Byte">
+            <column name="A39077" precision="2" scale="0">
+                <comment>留学年限 等</comment>
+            </column>
+        </property>
+        <property name="a44031" type="string">
+            <column name="A44031" length="1">
+                <comment>是否有海外工作经历 等</comment>
+            </column>
+        </property>
+        <property name="a39084" type="java.lang.Byte">
+            <column name="A39084" precision="2" scale="0">
+                <comment>海外工作年限 等</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.JwBatch"
+    lazy="false"
+    table="jw_batch">
+  	<id column="ID" name="id" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+   
+    <property column="BATCHNO" length="120" name="batchno" type="java.lang.String" />
+    <property column="CREATETIME" length="12" name="createtime" type="java.lang.String" />
+   
+    <property column="CREATOR" length="120" name="creator" type="java.lang.String" />
+   
+    <property column="CREATORDEPT" length="60" name="creatordept" type="java.lang.String" />
+    <property column="STATUS" length="1" name="status" type="java.lang.String" />
+
+    <property column="DELETEFLAG" length="1000" name="deleteflag" type="java.lang.String" />
+    
+  </class>
+</hibernate-mapping>

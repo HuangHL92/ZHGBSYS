@@ -1,0 +1,40 @@
+<xml xmlns:s='uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882'
+	xmlns:dt='uuid:C2F41010-65B3-11d1-A29F-00AA00C14882'
+	xmlns:rs='urn:schemas-microsoft-com:rowset'
+	xmlns:z='#RowsetSchema'>
+<s:Schema id='RowsetSchema'>
+	<s:ElementType name='row' content='eltOnly' rs:updatable='true'>
+		<s:AttributeType name='ID' rs:number='1' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2' rs:baseschema='DBO'
+			 rs:basetable='WAGE_W04' rs:basecolumn='ID' rs:keycolumn='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='68'/>
+		</s:AttributeType>
+		<s:AttributeType name='A0000' rs:number='2' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W04' rs:basecolumn='A0000'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='68'/>
+		</s:AttributeType>
+		<s:AttributeType name='STARTDATE' rs:number='3' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W04' rs:basecolumn='STARTDATE'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='8'/>
+		</s:AttributeType>
+		<s:AttributeType name='CHANGEVALUE' rs:number='4' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W04' rs:basecolumn='CHANGEVALUE'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='10' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='STYPE' rs:number='5' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W04' rs:basecolumn='STYPE'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='1'/>
+		</s:AttributeType>
+		<s:AttributeType name='REMARK' rs:number='6' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W04' rs:basecolumn='REMARK'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='200'/>
+		</s:AttributeType>
+		<s:AttributeType name='FLAG' rs:number='7' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2' rs:baseschema='DBO'
+			 rs:basetable='WAGE_W04' rs:basecolumn='FLAG'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='10' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:extends type='rs:rowbase'/>
+	</s:ElementType>
+</s:Schema>
+<rs:data>
+</rs:data>
+</xml>

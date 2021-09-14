@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>单据打印</title>
+</head>
+<body Leftmargin="0" topmargin="0"  rightmargin="0" bottommargin="0">
+<script type="text/javascript">
+function GetUrlParms()    
+{
+     var args=new Object();   
+     var query=location.search.substring(1);   
+     var pairs=query.split("&");  
+     for(var i=0;i<pairs.length;i++)   
+     {   
+         var pos=pairs[i].indexOf('='); 
+         if(pos==-1)   continue;//如果没有找到就跳过   
+         var argname=pairs[i].substring(0,pos);//提取name   
+         var value=pairs[i].substring(pos+1);//提取value   
+         args[argname]=decodeURIComponent(value);//存为属性   
+    }
+     return args;
+}
+var request = GetUrlParms();
+document.writeln("<OBJECT width =\"100%\"  height=\"100%\"  hspace=0 vspace=0");
+document.writeln("      classid=\"clsid:569FCF6D-D079-47AC-902C-DCE4398DA4FE\"");
+document.writeln("      codebase=\""+request.repOcxAddr+"/CXDY.cab#version=1,0,0,15\"              > <!-- ACTIVE FORM报表显示插件地址 -->");
+document.writeln("      <PARAM NAME=\"D_REP_MODE\"      VALUE=\""+request.repModel+"\"				> <!-- 报表调用模式 -->");
+document.writeln("      <PARAM NAME=\"D_HTTP_SERVER\"   VALUE=\""+request.repSrvAddr+"\"          	> <!-- 报表服务地址 -->");
+document.writeln("      <PARAM NAME=\"D_SERVER_DIR\"    VALUE=\""+request.repSrvName+"\"             > <!-- 报表服务名称 -->");
+document.writeln("      <PARAM NAME=\"D_REPID\"         VALUE=\""+request.repCode+"\"                > <!-- 报表编码 -->");
+document.writeln("      <PARAM NAME=\"D_QUERYNAME\"     VALUE=\""+request.queryCode+"\"              > <!-- 查询编码 -->");
+document.writeln("      <PARAM NAME=\"D_USERID\"        VALUE=\""+request.loginName+"\"              > <!-- 用户编码 -->");
+document.writeln("      <PARAM NAME=\"D_PASSWORD\"      VALUE=\"0000\"                                                > <!-- 用户密码 -->");
+document.writeln("      <PARAM NAME=\"D_USERNAME\"      VALUE=\""+request.realName+"\"               > <!-- 用户名称 -->");
+document.writeln("      <PARAM NAME=\"D_DEP_ID\"        VALUE=\"01\"                                                  > <!-- 部门编码 -->");
+document.writeln("      <PARAM NAME=\"D_DEP_NAME\"      VALUE=\"计算机中心\"                                            > <!-- 部门名称 -->");
+document.writeln("      <PARAM NAME=\"D_PARAMSTR\"      VALUE=\""+request.repParam+"\"                                          > <!-- 参数串 -->");
+document.writeln("      <PARAM NAME=\"D_R_DATA\"        VALUE=\"\"                                                    > <!-- 远程数据地址 -->");
+document.writeln("      <PARAM NAME=\"D_COLOR_BORDER\"  VALUE=\"9394438\"                                             > <!-- 插件边框颜色 -->");
+document.writeln("      <PARAM NAME=\"D_COLOR_BACK\"    VALUE=\"15326925\"                                            > <!-- 插件背景颜色 -->");
+document.writeln("      <PARAM NAME=\"D_APPLY_LEVEL\"   VALUE=\"standard\"                                            > <!-- 报表插件应用模式 -->");
+document.writeln("      <PARAM NAME=\"D_DEF_PRINTER\"   VALUE=\"\"                                                    > <!-- 缺省打印机名称 -->");
+document.writeln("</OBJECT>");
+</script>
+</BODY>
+</HTML>

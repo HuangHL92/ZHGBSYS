@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<chart caption="2011年立案走势统计图" formatNumberScale="0" formatNumber="0" subcaption="" numberSuffix="" yAxisName="" yAxisMinValue="0" numberPrefix="" showValues="50" alternateHGridColor="FCB541" alternateHGridAlpha="20" divLineColor="FCB541" divLineAlpha="50" canvasBorderColor="666666" baseFontColor="666666" lineColor="FCB541" baseFontSize="14"> 
+  <styles> 
+    <definition> 
+      <style name="Anim1" type="animation" param="_xscale" start="0" duration="1"/>  
+      <style name="Anim2" type="animation" param="_alpha" start="0" duration="0.6"/>  
+      <style name="DataShadow" type="Shadow" alpha="40"/> 
+    </definition>  
+    <application> 
+      <apply toObject="DIVLINES" styles="Anim1"/>  
+      <apply toObject="HGRID" styles="Anim2"/>  
+      <apply toObject="DATALABELS" styles="DataShadow,Anim2"/> 
+    </application> 
+  </styles>  
+  <set label="" value=""/>
+</chart>

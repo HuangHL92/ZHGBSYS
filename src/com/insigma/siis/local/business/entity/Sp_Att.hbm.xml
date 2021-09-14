@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Sp_Att"
+    lazy="false"
+    table="SP_ATT">
+	<id column="SPA00" name="spa00" type="java.lang.String">
+	  <generator class="assigned" />
+	</id>
+	<property column="SPB00" length="64" name="spb00" type="java.lang.String" />
+	<property column="SPA02" length="200" name="spa02" type="java.lang.String" />
+	<property column="SPA03" length="100" name="spa03" type="java.lang.String" />
+	<property column="SPA04" length="7" name="spa04" type="java.util.Date" />
+	<property column="SPA05" length="200" name="spa05" type="java.lang.String" />
+	<property column="SPA06" length="30" name="spa06" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

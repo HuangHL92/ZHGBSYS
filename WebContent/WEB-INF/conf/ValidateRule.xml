@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Validate>
+	<rule name="card" class="com.lbs.leaf.validate.validator.ValidateCard"/>
+	<rule name="date" class="com.lbs.leaf.validate.validator.ValidateDate"/>
+	<rule name="required" class="com.lbs.leaf.validate.validator.ValidateRequired"/>
+</Validate>

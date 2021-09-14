@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A31temp"
+    lazy="false"
+    table="A31_TEMP">
+  	<id column="A0000" name="a0000" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="A3101" length="8" name="a3101" type="java.lang.String" />
+    <property column="A3104" length="8" name="a3104" type="java.lang.String" />
+    <property column="A3107" length="8" name="a3107" type="java.lang.String" />
+    <property column="A3117A" length="60" name="a3117a" type="java.lang.String" />
+    <property column="A3118" length="40" name="a3118" type="java.lang.String" />
+    <property column="A3137" length="24" name="a3137" type="java.lang.String" />
+    <property column="A3138" length="60" name="a3138" type="java.lang.String" />
+    <property column="ERROR_INFO" length="200" name="errorinfo" type="java.lang.String" />
+    <property column="IS_QUALIFIED" length="1" name="isqualified" type="java.lang.String" />
+    <property column="UPDATED" length="1" name="updated" type="java.lang.String" />
+    <property column="IMPRECORDID" length="32" name="imprecordid" type="java.lang.String" />
+    <property column="A3140" length="80" name="a3140" type="java.lang.String" />
+    <property column="A3141" length="80" name="a3141" type="java.lang.String" />
+    <property column="A3142" length="80" name="a3142" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<chart caption='2007年药品使用情况图' subcaption='阿莫西林' palette='2' xAxisName='月份' yAxisMinValue='15000' yAxisName='用量' showValues='0' baseFontSize='14'>
+	<set label='1月' value='17400' />
+	<set label='2月' value='19800' />
+	<set label='3月' value='21800' />
+	<set label='4月' value='23800' />
+	<set label='5月' value='29600' />
+	<set label='6月' value='27600' />
+	<set label='7月' value='31800' />
+	<set label='8月' value='39700' />
+	<set label='9月' value='37800' />
+	<set label='10月' value='21900' />
+	<set label='11月' value='32900' />
+	<set label='12月' value='39800' />
+
+	<styles>
+		<definition>
+			<style name='Anim1' type='animation' param='_xscale' start='0' duration='1' />
+			<style name='Anim2' type='animation' param='_alpha' start='0' duration='1' />
+			<style name='DataShadow' type='Shadow' alpha='20'/>
+		</definition>
+		<application>
+			<apply toObject='DIVLINES' styles='Anim1' />
+			<apply toObject='HGRID' styles='Anim2' />
+			<apply toObject='DATALABELS' styles='DataShadow,Anim2' />
+		</application>	
+	</styles>
+</chart> 

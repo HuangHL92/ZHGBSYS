@@ -1,0 +1,82 @@
+.NavBar {
+	background-color: #E8F4F6;
+	padding: 0px;
+	padding-bottom: -1px;
+	cursor: default;
+}
+
+.TopItem {
+    color: #2554A6;
+	background-image: url(../images/navbar/bg-left2.gif);
+	font-family: tahoma, verdana;
+	font-size: 11px;
+	font-weight: bold;
+	border-right-color: #9D9DA1;
+	cursor: hand;
+	height: 25px;
+	padding-left: 6px;
+}
+
+.TopItemHover {
+    color: #3F91E7;
+	background-image: url(../images/navbar/bg-left3.gif);
+	font-family: tahoma, verdana;
+	font-size: 11px;
+	font-weight: bold;
+	border-right-color: #9D9DA1;
+	cursor: hand;
+	height: 25px;
+	padding-left: 6px;
+}
+
+.TopItemActive {
+	padding-left: 6px;
+    color: #3F91E7;
+	background-image: url(../images/navbar/bg-left3.gif);
+	font-family: tahoma, verdana;
+	font-size: 11px;
+	border-right-color: #9D9DA1;
+	font-weight: bold;
+	cursor: hand;
+	height: 25px;
+}
+.Level2Item {
+	font-family: tahoma, verdana;
+	font-size: 11px;
+	padding-left: 6px;
+	cursor: hand;
+    color: #094271;
+}
+
+.Level2ItemHover {
+	font-family: tahoma, verdana;
+	font-size: 11px;
+	text-decoration: underline;
+	padding-left: 6px;
+	cursor: hand;
+    color: #3F91E7;
+}
+.Level2ItemSelected {
+	background-color: #BED521;
+	color:red;
+	font-family: tahoma, verdana;
+	font-size: 11px;
+	padding-left: 6px;
+	border-right-color: white;
+	border-bottom-color: white;
+	text-decoration: underline;
+	cursor: hand;
+}
+.Level2Group {
+	background-color: #E8F4F6;
+	border-top-color: #F0F1F5;
+	padding-top: 6px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	height: 245px;
+
+}
+
+.Empty {
+
+}

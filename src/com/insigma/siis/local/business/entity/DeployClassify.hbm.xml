@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:03:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.DeployClassify" table="DEPLOY_CLASSIFY" schema="ZHGB">
+        <comment>干部调配分类主表</comment>
+        <id name="dc001" type="string">
+            <column name="DC001" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="rbId" type="string">
+            <column name="RB_ID" length="64" not-null="true">
+                <comment>任免批次ID</comment>
+            </column>
+        </property>
+        <property name="dc003" type="string">
+            <column name="DC003" length="200">
+                <comment>分类名称</comment>
+            </column>
+        </property>
+        <property name="dc004" type="big_decimal">
+            <column name="DC004" precision="22" scale="0">
+                <comment>排序</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

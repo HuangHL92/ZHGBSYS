@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.CBDInfo"
+    lazy="false"
+    table="CBD_INFO">
+  	<id column="CBD_ID" name="cbd_id" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="CBD_NAME" length="60" name="cbd_name" type="java.lang.String" />
+    <property column="CBD_PATH" length="100" name="cbd_path" type="java.lang.String" />
+    <property column="CBD_DATE" length="32" name="cbd_date" type="java.lang.String" />
+    <property column="CDB_WORD_YEAR_NO" length="100" name="cdb_word_year_no" type="java.lang.String" />
+    <property column="CBD_WORD" length="20" name="cbd_word" type="java.lang.String" />
+    <property column="CBD_YEAR" length="20" name="cbd_year" type="java.lang.String" />
+    <property column="CBD_NO" length="20" name="cbd_no" type="java.lang.String" />
+    <property column="CBD_LEADER" length="20" name="cbd_leader" type="java.lang.String" />
+    <property column="CBD_DATE1" length="20" name="cbd_date1" type="java.lang.String" />
+    <property column="CBD_ORGAN" length="60" name="cbd_organ" type="java.lang.String" />
+    <property column="CBD_TEXT" length="200" name="cbd_text" type="java.lang.String" />
+    <property column="CBD_PERSONID" length="120" name="cbd_personid" type="java.lang.String" />
+    <property column="CBD_PERSONNAME" length="120" name="cbd_personname" type="java.lang.String" />
+    <property column="CBD_USERID" length="60" name="cbd_userid" type="java.lang.String" />
+    <property column="CBD_USERNAME" length="60" name="cbd_username" type="java.lang.String" />
+    <property column="OBJECTNO" length="60" name="objectno" type="java.lang.String" />
+    <property column="STATUS" length="10" name="status" type="java.lang.String" />
+    <property column="CBD_CBR" length="60" name="cbd_cbr" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

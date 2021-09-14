@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Qryuse"
+    lazy="false"
+    table="QRYUSE">
+    <id column="QUID" name="quid" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="LABLE_TYPE" length="1" name="labletype" type="java.lang.String" />
+    <property column="FLDCODE" length="10" name="fldcode" type="java.lang.String" />
+    <property column="FLDNAME" length="50" name="fldname" type="java.lang.String" />
+    <property column="QVID" length="32" name="qvid" type="java.lang.String" />
+    <property column="SIGN" length="20" name="sign" type="java.lang.String" />
+    <property column="SORT" length="20" name="sort" type="java.lang.String" />
+    <property column="TBLNAME" length="10" name="tblname" type="java.lang.String" />
+    <property column="VALUECODE1" length="10" name="valuecode1" type="java.lang.String" />
+    <property column="VALUECODE2" length="10" name="valuecode2" type="java.lang.String" />
+    <property column="VALUENAME1" length="50" name="valuename1" type="java.lang.String" />
+    <property column="VALUENAME2" length="50" name="valuename2" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

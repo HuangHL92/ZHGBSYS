@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A57temp"
+    lazy="false"
+    table="A57_TEMP">
+    <id column="A0000" name="a0000" type="java.lang.String">
+      <generator class="assigned"/>
+    </id>
+    <property column="A5714" length="100" name="a5714" type="java.lang.String" />
+    <property column="ERROR_INFO" length="200" name="errorinfo" type="java.lang.String" />
+    <property column="IMPRECORDID" length="32" name="imprecordid" type="java.lang.String" />
+    <property column="IS_QUALIFIED" length="1" name="isqualified" type="java.lang.String" />
+    <property column="PHOTODATA" length="4000" name="photodata" type="java.sql.Blob" />
+    <property column="PHOTONAME" length="400" name="photoname" type="java.lang.String" />
+    <property column="PHOTSTYPE" length="200" name="photstype" type="java.lang.String" />
+    <property column="UPDATED" length="1" name="updated" type="java.lang.String" />
+    <property column="PHOTOPATH" length="1" name="photopath" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

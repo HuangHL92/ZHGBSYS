@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Grpfld"
+    lazy="false"
+    table="GRPFLD">
+    <id column="GFID" name="gfid" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="CODETOCOMM" length="1" name="codetocomm" type="java.lang.String" />
+    <property column="CONNSYMBOL" length="2" name="connsymbol" type="java.lang.String" />
+    <property column="CTCI" length="32" name="ctci" type="java.lang.String" />
+    <property column="DATEFMT" length="2" name="datefmt" type="java.lang.String" />
+    <property column="FLDFUNC" length="2" name="fldfunc" type="java.lang.String" />
+    <property column="FLDNAME" length="50" name="fldname" type="java.lang.String" />
+    <property column="FLDNAMENOTE" length="100" name="fldnamenote" type="java.lang.String" />
+    <property column="FLDNULL" length="2" name="fldnull" type="java.lang.String" />
+    <property column="HANDNULL" length="2" name="handnull" type="java.lang.String" />
+    <property column="MEREGFLD" length="1" name="meregfld" type="java.lang.String" />
+    <property column="ORDERNUM" length="6" name="ordernum" type="java.lang.String" />
+    <property column="ORDERNUM1" length="6" name="ordernum1" type="java.lang.String" />
+    <property column="REPLACEFLD" length="2" name="replacefld" type="java.lang.String" />
+    <property column="TBLNAME" length="50" name="tblname" type="java.lang.String" />
+    <property column="CODETYPE" length="50" name="codetype" type="java.lang.String" />
+  </class>
+</hibernate-mapping>
+
+

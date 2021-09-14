@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.UserInfoGroup"
+    lazy="false"
+    table="COMPETENCE_USERINFOGROUP">
+    <id column="USERINFOGROUPID" name="userinfogroupid" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="USERID" length="32" name="userid" type="java.lang.String" />
+    <property column="INFOGROUPID" length="32" name="infogroupid" type="java.lang.String" />
+    <property column="Type" length="1" name="type" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

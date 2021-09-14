@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.RWWCQK"
+    lazy="false"
+    table="RWWCQK">
+	<id column="RWWCQKID" name="rwwcqkid" length="120" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+	<property column="GZDBID" length="120" name="gzdbid" type="java.lang.String" />
+	<property column="CS001" length="200" name="cs001" type="java.lang.String" />
+	<property column="WCQK" length="2000" name="wcqk" type="java.lang.String" />
+	<property column="WCQKBJ" length="10" name="wcqkbj" type="java.lang.String" />
+	<property column="BZ" length="2000" name="bz" type="java.lang.String" />
+	<property column="CJR" length="10" name="cjr" type="java.lang.String" />
+	<property column="USERID" length="120" name="userid" type="java.lang.String" />
+	<property column="CREATEDON" length="7" name="createdon" type="java.util.Date" />
+  </class>
+</hibernate-mapping>
+

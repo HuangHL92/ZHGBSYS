@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="sysUserForm" type="com.insigma.odin.framework.sysmanager.module.user.UserForm"></form-bean>
+		<form-bean name="sysRoleForm" type="com.insigma.odin.framework.sysmanager.module.role.RoleForm"></form-bean>
+		<form-bean name="sysOpRightAclForm" type="com.insigma.odin.framework.sysmanager.module.sysoprightacl.SysOpRightAclForm"></form-bean>
+	 	<form-bean name="codeParameterForm" type="com.insigma.siis.local.module.common.codeparameter.CodeParameterForm"/> 
+		<form-bean name="overallAreaBean" type="com.insigma.siis.local.comm.planarea.OverallAreaBean"/>
+	</form-beans>
+	<global-forwards> 
+	 	
+	</global-forwards>
+	<action-mappings>
+		<!-- 用户管理 -->
+		<action path="/sys/sysUserAction" forward="/sys/user/user.jsp"></action>	
+		<action path="/sys/userAction" scope="request" 
+			parameter="method" name="sysUserForm"
+			type="com.insigma.odin.framework.sysmanager.module.user.UserAction">	
+		</action>
+		<!-- 修改用户密码 -->	
+		<action path="/sys/changePWAction" forward="/sys/user/changePassWord.jsp"></action>	
+		<!-- 角色管理 -->
+		<action path="/sys/sysRoleAction" forward="/sys/role/role.jsp"></action>
+		<action path="/sys/roleAction" scope="request" 
+			parameter="method" name="sysRoleForm"
+			type="com.insigma.odin.framework.sysmanager.module.role.RoleAction">	
+		</action>	
+		<!-- 授权的地址 -->
+		<action path="/sys/assignRoleFuncAction" forward="/sys/role/assignRoleFunc.jsp"></action>	
+		<!-- 业务操作权限维护 -->
+		<action path="/sys/sysopright/OpenSysOpRightAction" forward="/sysmanager/sysopright/SysOpRight.jsp"></action>
+		<action path="/sys/sysopright/SysOpRightAction" 
+					type="com.insigma.odin.framework.sysmanager.module.sysopright.SysOpRightAction" 
+					parameter="method" name="commonForm" scope="request" /> 
+		
+		<!-- 业务操作授权 -->
+		<action path="/sys/sysoprightacl/OpenSysOpRightAclAction" forward="/sysmanager/sysoprightacl/SysOpRightAcl.jsp"></action>
+		<action path="/sys/sysoprightacl/SysOpRightAclAction" 
+					type="com.insigma.odin.framework.sysmanager.module.sysoprightacl.SysOpRightAclAction" 
+					parameter="method" name="sysOpRightAclForm" scope="request" /> 
+		<!-- 代码维护 -->
+    	<action path="/pages/common/codeparameter/OpenCodeParameterAction" forward="/pages/comm/codeparameter/CodeParameter.jsp"/>	 
+		<action path="/com/insigma/siis/local/module/common/codeparameter/SaveParameterAction" type="com.insigma.siis.local.module.common.codeparameter.SaveParameterAction" parameter="method" scope="request"/> 
+		<action path="/com/insigma/siis/local/module/common/codeparameter/LoadBasicMessageAction" type="com.insigma.siis.local.module.common.codeparameter.LoadBasicMessageAction" parameter="method" scope="request"/>  
+    	<action path="/com/insigma/siis/local/module/common/codeparameter/LoadParameterMessageAction" type="com.insigma.siis.local.module.common.codeparameter.LoadParameterMessageAction" parameter="method" scope="request"/>  
+    	<action path="/com/insigma/siis/local/module/common/codeparameter/AddParameterAction" type="com.insigma.siis.local.module.common.codeparameter.AddParameterAction" parameter="method" scope="request"/>  
+   		<action path="/com/insigma/siis/local/module/common/codeparameter/DeleteParameterAction" type="com.insigma.siis.local.module.common.codeparameter.DeleteParameterAction" parameter="method" scope="request"/>  
+		<action path="/com/insigma/siis/local/module/common/codeparameter/SaveAction" type="com.insigma.siis.local.module.common.codeparameter.SaveAction" parameter="method" scope="request" name="codeParameterForm"/>
+			
+		<!-- 根据一定条件查询Select的值 -->
+		<action path="/com/insigma/odin/framework/sys/code/SysCodeAction" type="com.insigma.odin.framework.sys.code.SysCodeAction" parameter="method" scope="request"></action>
+		<!-- 系统命令发送页面 -->
+		<action path="/com/insigma/odin/framework/sys/command/CommandAction" forward="/pages/comm/SysCmd.jsp"/>
+	
+		<!-- 统筹区 -->
+		<action path="/com/insigma/siis/local/comm/planarea/OverallAreaAction"
+				type="com.insigma.siis.local.comm.planarea.OverallAreaAction"
+				parameter="method" name="overallAreaBean" scope="request"
+		
+		/>
+		
+		
+		<!-- 行政区划搜索 -->
+		<action path="/comm/areaQueryAction" type="com.insigma.siis.local.comm.search.AreaQueryAction" parameter="method"
+			 scope="request" />
+		<!-- area tree query -->
+		<action path="/comm/areaQueryAction" type="com.insigma.siis.local.comm.search.AreaQueryAction" 
+			parameter="method" scope="request" />
+		<!-- 智能搜索 -->
+		<action path="/IntelligentSearchAction" type="com.insigma.odin.framework.sys.comm.search.IntelligentSearchAction" parameter="method"
+			 scope="request" /> 
+		<!-- <action path="/com/insigma/siis/local/comm/planarea/OverallAreaAction" forward="/pages/comm/control/Control.jsp"/> -->
+		<!-- 外部登陆 -->
+		<action path="/UserAuth"
+			type="com.insigma.odin.framework.worktable.openapi.UserAuthAction" parameter="method"
+			name="UserAuthAction" scope="request" />
+		<!-- 图片 -->	
+		<action path="/imgAction" type="com.insigma.odin.framework.sys.img.ImgAction" parameter="method"
+			scope="request" />
+			
+		
+    
+	</action-mappings>
+
+</struts-config>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="hibernate.connection.password">ZHGBSYS</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@190.160.1.240:1521:orcl</property>
+        <property name="hibernate.connection.username">ZHGBSYS</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+        <mapping resource="com/insigma/siis/local/business/entity/a00hz/HzMntpOrgQt.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/entity/a00hz/HzMntpOrgQxs.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

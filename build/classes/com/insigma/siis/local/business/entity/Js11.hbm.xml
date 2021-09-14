@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:03:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Js11" table="JS11" >
+        <comment>其他情况表</comment>
+        <id name="js0100" type="string">
+            <column name="JS0100" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="dc001" type="string">
+            <column name="DC001" length="64" >
+                <comment>分类ID</comment>
+            </column>
+        </property>
+        <property name="rbId" type="string">
+            <column name="RB_ID" length="64" >
+                <comment>任免批次ID</comment>
+            </column>
+        </property>
+        <property name="js1102" type="string">
+            <column name="JS1102" length="2">
+                <comment>是否公选干部</comment>
+            </column>
+        </property>
+        <property name="js1103" type="string">
+            <column name="JS1103" length="2">
+                <comment>是何层次后备干部</comment>
+            </column>
+        </property>
+        <property name="js1104" type="string">
+            <column name="JS1104" length="2">
+                <comment>有否任前培训</comment>
+            </column>
+        </property>
+        <property name="js1105" type="string">
+            <column name="JS1105" length="2">
+                <comment>有否有基层工作经历</comment>
+            </column>
+        </property>
+        <property name="js1106" type="string">
+            <column name="JS1106" length="500">
+                <comment>其他需要补充说明情况</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

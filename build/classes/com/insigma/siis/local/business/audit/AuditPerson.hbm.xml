@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.insigma.siis.local.business.audit.AuditPerson" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="AUDIT_PERSON">
+        
+        <id name="oid" type="string">
+            <column length="64" name="OID"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="auditBatch" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="AUDIT_BATCH">
+               
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="sortid" optimistic-lock="true" type="integer" unique="false">
+            <column name="SORTID" precision="22" scale="0">
+               
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="a0000" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="A0000">
+               
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="a0101" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="A0101">
+                
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="a0184" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="A0184">
+              
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="a0192a" optimistic-lock="true" type="string" unique="false">
+            <column length="1024" name="A0192A">
+              
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

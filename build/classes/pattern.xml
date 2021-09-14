@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="GBK"?>
+<root>
+	<config-param>
+		<pattern-name>USER_PASS</pattern-name><!-- 验证模式字符串 此为用户名——密码验证模式 -->
+		<pattern-class>com.insigma.odin.framework.sys.auth.UserPassAuthExtend</pattern-class><!-- 采用该验证模式的java类 -->
+	</config-param>
+	<config-param>
+		<pattern-name>VERFYCODE</pattern-name><!-- 验证模式字符串 此为验证码验证模式 -->
+		<pattern-class>com.insigma.odin.framework.sys.auth.VerfyCodeAuthExtend</pattern-class><!-- 采用该验证模式的java类 -->
+	</config-param>
+	<config-param>
+		<pattern-name>USERNAME</pattern-name><!-- 验证模式字符串 此为用户名验证模式 -->
+		<pattern-class>com.insigma.odin.framework.sys.auth.UserNameAuthExtend</pattern-class><!-- 采用该验证模式的java类 -->
+	</config-param>
+	<config-param>
+		<pattern-name>DUPLOGIN</pattern-name><!-- 验证模式字符串 此为重复登录验证模式 -->
+		<pattern-class>com.insigma.odin.framework.sys.auth.DuplicateLoginAuthExtend</pattern-class><!-- 采用该验证模式的java类 -->
+	</config-param>
+	<config-param>
+		<pattern-name>QIFUBAO</pattern-name>
+		<pattern-class>com.insigma.odin.framework.sys.auth.QifubaoAuthExtend</pattern-class>
+		<init-param>
+			<name>xmlPath</name>
+			<value>D:/EPProductDev/QifubaoAuthCenter/QiFuBaoCrm/QFB_CRM_sign.xml</value>
+		</init-param>
+		<init-param>
+			<name>jks_location</name>
+	  	    <value>D:/EPProductDev/QifubaoAuthCenter/QiFuBaoCrm/QFB_CRM_sign.jks</value>  
+		</init-param>
+		<init-param>
+			<name>hostname</name>
+			<value>auth.qifubao.com</value>
+		</init-param>
+		<init-param>
+			<name>port</name>
+			<value>443</value>
+		</init-param>
+		<init-param>
+			<name>url</name>
+			<value>/AuthPlatSys/authentication/CoreValidateControl.va</value>  
+		</init-param>	
+	</config-param>
+</root>
+

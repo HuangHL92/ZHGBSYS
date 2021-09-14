@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Services>
+	<searchby>id</searchby>
+	<!--service 为业务组件，id为服务标识，type为：0 POJO;1 EJB，desc 为描述 仅仅用于测试
+	-->
+	<service id="BizLogBS" pojoname="com.lbs.cp.sysmanager.log.bp.BizLogBSImp" ejbname="" type="0" desc="业务日志"/>
+	<service id="LogonHistoryBS" pojoname="com.lbs.cp.sysmanager.log.bp.LogonHistoryBSImp" ejbname="" type="0" desc="登录日志"/>
+	<service id="SysLogBS" pojoname="com.lbs.cp.sysmanager.log.bp.SysLogBSImp" ejbname="" type="0" desc="系统日志"/>
+	<service id="UserBS" pojoname="com.lbs.cp.sysmanager.user.bp.UserBSImp" ejbname="" type="0" desc="系统用户"/>
+	<service id="RoleBS" pojoname="com.lbs.cp.sysmanager.role.bp.RoleBSImp" ejbname="" type="0" desc="系统角色"/>
+	<service id="GroupBS" pojoname="com.lbs.cp.sysmanager.group.bp.GroupBSImp" ejbname="" type="0" desc="部门"/>
+	<service id="FunctionBS" pojoname="com.lbs.cp.sysmanager.function.bp.FunctionBSImp" ejbname="" type="0" desc="功能列表"/>
+	<service id="CommonQueryBS" pojoname="com.lbs.apps.query.CommonQueryBSImp" ejbname="" type="0" desc="通用查询"/>
+	<service id="CommonSQLQueryBS" pojoname="com.lbs.apps.query.CommonSQLQueryBSImp" ejbname="" type="0" desc="通用查询"/>
+	<service id="DPRoleBS" pojoname="com.lbs.cp.sysmanager.dprole.bp.DPRoleBSImp" ejbname="" type="0" desc="数据权限角色"/>
+	<service id="TempleteBS" pojoname="com.lbs.cp3.templete.vs.impl.TempleteBSImpl" ejbname="" type="0" desc="页面规范模板"/>
+	<service id="DppdtestBS" pojoname="com.lbs.cp3.samples.dppdtest.vs.impl.DppdtestBSImpl" ejbname="" type="0" desc="数据权限实例"/>
+    <service id="RolLogBS" pojoname="com.lbs.cp.sysmanager.dbrol.bp.RolLogBSImp" ejbname="" type="0" desc="数据回退"/>
+	<service id="BizDigestBS" pojoname="com.lbs.cp.sysmanager.bizdigest.bp.BizDigestBSImpl" ejbname="" type="0" desc="业务摘要"/>
+<!-- 测试记录回退日志BS -->
+	<service id="RollogDemoBS" pojoname="com.lbs.cp3.samples.rolLog.bp.RollogDemoBSImp" ejbname="" type="0" desc="数据回退日志记录"/>
+	<service id="ExamVS" pojoname="com.lbs.cp3.samples.exam.vs.impl.ExamVSImpl" ejbname="" type="0" desc="培训练习示例"/>
+	<service id="GridBS" pojoname="com.lbs.cp3.samples.exam.vs.impl.GridBSImp" ejbname="" type="0" desc="grid样例demo"/>
+</Services>

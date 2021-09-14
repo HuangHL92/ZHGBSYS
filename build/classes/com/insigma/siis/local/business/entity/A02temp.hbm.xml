@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A02temp"
+    lazy="false"
+    table="A02_TEMP">
+  	<id column="A0200" length="60" name="a0200" type="java.lang.String" >
+  		<generator class="assigned"/>
+  	</id>
+    <property column="A0000" length="60" name="a0000" type="java.lang.String" />
+    
+    <property column="A0201" length="199" name="a0201" type="java.lang.String" />
+    <property column="A0201A" length="1000" name="a0201a" type="java.lang.String" />
+    <property column="A0201B" length="199" name="a0201b" type="java.lang.String" />
+    <property column="A0201C" length="200" name="a0201c" type="java.lang.String" />
+    <property column="A0201D" length="1" name="a0201d" type="java.lang.String" />
+    <property column="A0201E" length="8" name="a0201e" type="java.lang.String" />
+    <property column="A0204" length="68" name="a0204" type="java.lang.String" />
+    <property column="A0207" length="8" name="a0207" type="java.lang.String" />
+    <property column="A0209" length="8" name="a0209" type="java.lang.String" />
+    <property column="A0215A" length="100" name="a0215a" type="java.lang.String" />
+    <property column="A0215B" length="80" name="a0215b" type="java.lang.String" />
+    <property column="A0216A" length="200" name="a0216a" type="java.lang.String" />
+    <property column="A0219" length="8" name="a0219" type="java.lang.String" />
+    <property column="A0219W" length="8" name="a0219w" type="java.lang.String" />
+    <property column="A0221" length="8" name="a0221" type="java.lang.String" />
+    <property column="A0221W" length="8" name="a0221w" type="java.lang.String" />
+    <property column="A0222" length="20" name="a0222" type="java.lang.String" />
+    <property column="A0223" length="8" name="a0223" type="java.lang.String" />
+    <property column="A0225" length="20" name="a0225" type="java.lang.Long" />
+    <property column="A0229" length="120" name="a0229" type="java.lang.String" />
+    <property column="A0243" length="8" name="a0243" type="java.lang.String" />
+    <property column="A0245" length="260" name="a0245" type="java.lang.String" />
+    <property column="A0247" length="8" name="a0247" type="java.lang.String" />
+    <property column="A0251" length="8" name="a0251" type="java.lang.String" />
+    <property column="A0251B" length="1" name="a0251b" type="java.lang.String" />
+    <property column="A0255" length="1" name="a0255" type="java.lang.String" />
+    <property column="A0256" length="200" name="a0256" type="java.lang.String" />
+    <property column="A0256A" length="1000" name="a0256a" type="java.lang.String" />
+    <property column="A0256B" length="20" name="a0256b" type="java.lang.Long" />
+    <property column="A0256C" length="20" name="a0256c" type="java.lang.Long" />
+    <property column="A0259" length="8" name="a0259" type="java.lang.String" />
+    <property column="A0265" length="8" name="a0265" type="java.lang.String" />
+    <property column="A0267" length="24" name="a0267" type="java.lang.String" />
+    <property column="A0271" length="8" name="a0271" type="java.lang.String" />
+    <property column="A0277" length="1" name="a0277" type="java.lang.String" />
+    <property column="A0281" length="1" name="a0281" type="java.lang.String" />
+    <property column="A0284" length="8" name="a0284" type="java.lang.String" />
+    <property column="A0288" length="8" name="a0288" type="java.lang.String" />
+    <property column="A0289" length="8" name="a0289" type="java.lang.String" />
+    <property column="A0295" length="8" name="a0295" type="java.lang.String" />
+    <property column="A0299" length="8" name="a0299" type="java.lang.String" />
+    <property column="A4901" length="8" name="a4901" type="java.lang.String" />
+    <property column="A4904" length="8" name="a4904" type="java.lang.String" />
+    <property column="A4907" length="8" name="a4907" type="java.lang.String" />
+    <property column="ERROR_INFO" length="200" name="errorinfo" type="java.lang.String" />
+    <property column="IS_QUALIFIED" length="1" name="isqualified" type="java.lang.String" />
+    <property column="UPDATED" length="1" name="updated" type="java.lang.String" />
+    <property column="WAGE_USED" length="20" name="wageused" type="java.lang.Long" />
+    <property column="IMPRECORDID" length="32" name="imprecordid" type="java.lang.String" />
+    <property column="A0279" length="1" name="a0279" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

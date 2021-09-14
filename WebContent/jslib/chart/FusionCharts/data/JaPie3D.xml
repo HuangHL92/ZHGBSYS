@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GBK" ?>
+<chart  subcaption = "2011年各项业务情况统计图(人数)" 
+	palette = "7" startValue = "10" decimals = "0" 
+	formatNumber = "0" formatNumberScale = "0" 
+	exportEnabled = "1" exportHander = "chart.html?method=download" 
+	exportAtClient = "1" exportAction = "chart.html?method=download" 
+	enableSmartLabels = "1" bgColor = "99CCFF,FFFFFF" 
+	bgAlpha = "40,100" bgRatio = "0,100" bgAngle = "360" showBorder = "0" baseFontSize = "12">
+	<set  label="归档人数" value="4"/>
+	<set  label="查阅登记" value="73"/>
+	<set  label="借阅登记" value="46"/>
+	<set  label="零散材料登记" value="10"/>
+	<set  label="零散材料归档" value="10"/>
+	<set  label="档案转入" value="0"/>
+	<set  label="档案转出" value="0"/>
+</chart>

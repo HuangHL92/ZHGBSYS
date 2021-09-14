@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.PJManagement"
+    lazy="false"
+    table="PJTAGS">
+  	<id column="ID" name="id" type="java.lang.String">
+    </id>
+    <property column="A1401B" length="9000" name="a1401b" type="java.lang.String" />
+    <property column="A1401C" length="9000" name="a1401c" type="java.lang.String" />
+    <property column="A1401D" length="9000" name="a1401d" type="java.lang.String" />
+    <property column="A1401F" length="9000" name="a1401f" type="java.lang.String" />
+    <property column="A1401G" length="9000" name="a1401g" type="java.lang.String" />
+    <property column="A1401H" length="9000" name="a1401h" type="java.lang.String" />
+    <property column="A1401J" length="9000" name="a1401j" type="java.lang.String" />
+    <property column="A1401K" length="9000" name="a1401k" type="java.lang.String" />
+    <property column="A1401L" length="500" name="a1401l" type="java.lang.String" />
+    <property column="A1401M" length="9000" name="a1401m" type="java.lang.String" />
+    <property column="A1401N" length="9000" name="a1401n" type="java.lang.String" />
+    <property column="A1401P" length="9000" name="a1401p" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

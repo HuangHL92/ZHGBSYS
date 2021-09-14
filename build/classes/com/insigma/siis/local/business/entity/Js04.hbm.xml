@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:03:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Js04" table="JS04" >
+        <comment>考察人选确定表</comment>
+        <id name="js0100" type="string">
+            <column name="JS0100" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="dc001" type="string">
+            <column name="DC001" length="64" >
+                <comment>分类ID</comment>
+            </column>
+        </property>
+        <property name="rbId" type="string">
+            <column name="RB_ID" length="64" >
+                <comment>任免批次ID</comment>
+            </column>
+        </property>
+        <property name="js0402" type="string">
+            <column name="JS0402" length="500">
+                <comment>下级党委（党组）意见</comment>
+            </column>
+        </property>
+        <property name="js0403" type="string">
+            <column name="JS0403" length="500">
+                <comment>部务会议意见</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

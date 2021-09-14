@@ -1,0 +1,5 @@
+<chart palette='2' caption='关于医院收费问题调查情况' numberSuffix='' showValues='0' decimals='0' formatNumberScale='0' useRoundEdges='1' baseFontSize='14'>
+<set label='第一次调查' value='9.3' />
+<set label='第二次调查' value='9.7' />
+<set label='第三次调查' value='8.6' />
+</chart>

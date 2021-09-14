@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:58:43 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Js08" table="JS08" >
+        <comment>任前公示表</comment>
+        <id name="js0100" type="string">
+            <column name="JS0100" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="dc001" type="string">
+            <column name="DC001" length="64" >
+                <comment>分类ID</comment>
+            </column>
+        </property>
+        <property name="rbId" type="string">
+            <column name="RB_ID" length="64">
+                <comment>任免批次ID</comment>
+            </column>
+        </property>
+        <property name="js0802" type="string">
+            <column name="JS0802" length="8">
+                <comment>公示时间</comment>
+            </column>
+        </property>
+        <property name="js0803" type="string">
+            <column name="JS0803" length="500">
+                <comment>公示情况</comment>
+            </column>
+        </property>
+        <property name="js0804" type="string">
+            <column name="JS0804" length="500">
+                <comment>公示结果</comment>
+            </column>
+        </property>
+        <property name="js0805" type="string">
+            <column name="JS0805" length="5">
+                <comment>得分</comment>
+            </column>
+        </property>
+        <property name="js0806" type="string">
+            <column name="JS0806" length="500">
+                <comment>公示形式</comment>
+            </column>
+        </property>
+        <property name="js0807" type="string">
+            <column name="JS0807" length="100">
+                <comment>公示期间有无举报</comment>
+            </column>
+        </property>
+        <property name="js0808" type="string">
+            <column name="JS0808" length="500">
+                <comment>查核情况</comment>
+            </column>
+        </property>
+        <property name="js0809" type="string">
+            <column name="JS0809" length="8">
+                <comment>公示时间</comment>
+            </column>
+        </property>
+        <property name="js0810" type="string">
+            <column name="JS0810" length="8">
+                <comment>法律知识考试成绩</comment>
+            </column>
+        </property>
+        <property name="js0811" type="string">
+            <column name="JS0811" length="8">
+                <comment>党章党纪考试成绩</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

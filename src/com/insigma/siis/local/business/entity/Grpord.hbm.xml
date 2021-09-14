@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Grpord"
+    lazy="false"
+    table="GRPORD">
+    <id column="GO001" name="go001" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="CTCI" length="20" name="ctci" type="java.lang.String" />
+    <property column="FLDCODE" length="20" name="fldcode" type="java.lang.String" />
+    <property column="ORDERNUM" length="3" name="ordernum" type="java.lang.String" />
+    <property column="ORDERNUM1" length="3" name="ordernum1" type="java.lang.String" />
+    <property column="TBLCODE" length="20" name="tblcode" type="java.lang.String" />
+    <property column="ORDERBY" length="20" name="orderby" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.GBTH"
+    lazy="false"
+    table="GBTH">
+    <id column="ID" name="id" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="A0000" length="120" name="a0000" type="java.lang.String" />
+    <property column="THTIME" length="8" name="thtime" type="java.lang.String" />
+    <property column="THTEXT" length="2500" name="thtext" type="java.lang.String" />
+    <property column="THDX" length="36" name="thdx" type="java.lang.String" />
+    <property column="NAME" length="36" name="name" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

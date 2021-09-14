@@ -1,0 +1,101 @@
+/* @author zhub */
+@charset "GBK";
+
+@font-face {
+	font-family: FZFengYaSongS;
+	src: url('../font/FZFengYaSongS.eot?#iefix') format('embedded-opentype'),
+		url(../font/FZFengYaSongS.TTF), url(../font/FZFengYaSongS.otf),
+		url(../font/FZFengYaSongS.svg), url(../font/FZFengYaSongS.woff),
+		url(../font/FZFengYaSongS.woff2), url(../font/FZFengYaSongS.dfont);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	width: 100%;
+	height: 100%;
+}
+
+#container-table {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#search-div {
+	position: relative;
+	width: 240px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.scrollbar {
+	scrollbar-track-color: #ffffff;
+	scrollbar-arrow-color: #808080;
+	scrollbar-shadow-color: #c0c0c0;
+}
+
+table#search-tbl {
+	margin: 10px auto;
+}
+
+table#search-tbl tr td {
+	height: 26px;
+	vertical-align: middle;
+}
+
+table#search-tbl tr td .x-form-item {
+	margin-bottom: 0 !important;
+}
+
+#search-btn {
+	height: 30px;
+	/* padding: 5px 0; */
+	margin: 0 auto;
+}
+
+#search-btn table {
+	width: 70%;
+	max-width: 240px;
+	margin: 0 auto;
+}
+
+div#search-btn table tr td div table {
+	margin: 0 auto !important;
+	background: #2196f3 !important;
+}
+
+.x-btn-noicon .x-btn-small .x-btn-text {
+	height: 20px !important;
+	color: white;
+	letter-spacing: 2px;
+}
+
+.tpl_treePanel .x-btn-noicon .x-btn-small .x-btn-text {
+	height: 20px !important;
+	color: black !important;
+	letter-spacing: 2px;
+	margin-left:10px;
+}
+
+#divresize {
+	cursor: pointer;
+	height: 100%;
+	width: 7px;
+}
+
+#container-div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.overflow-y-hidden {
+	overflow-y: hidden !important;
+}

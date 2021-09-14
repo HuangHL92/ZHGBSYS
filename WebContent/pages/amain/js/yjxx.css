@@ -1,0 +1,40 @@
+
+#coordTable{
+	max-width: none!important;
+	border: 3px solid #1890FF!important;
+	width: 70%;
+	border-color:#1890FF;
+}
+#coordTable th{
+	background: #CAE8EA ; 
+	text-align: center;
+	height:50px;
+	border-color:#1890FF;
+}
+
+#coordTable th,#coordTable td{
+	font-family: ËÎÌו,Times New Roman ;
+	font-weight: bold;
+	border:1px solid;
+	border-color: rgb(162 162 162);
+	padding: 2px;
+}
+.tableTile{
+	font-size: 20px;
+	background-color: #DAEAFD;
+	font-family: ÷ÚÌו!important ;
+}
+#coordTable td{
+	text-align: center;
+	height:50px;
+	border-color:#1890FF;
+}
+.classBT{
+	border-top: 3px solid rgb(152 152 152)!important;
+}
+.classBR{
+	border-right: 3px solid rgb(152 152 152)!important;
+}
+.warning{
+	color:red
+}

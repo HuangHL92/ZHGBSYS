@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Grphicd"
+    lazy="false"
+    table="GRPHICD">
+    <id column="GHC001" name="ghc001" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="CONDITION" length="100" name="condition" type="java.lang.String" />
+    <property column="CTCI" length="32" name="ctci" type="java.lang.String" />
+    <property column="ORDERNUM" length="5" name="ordernum" type="java.lang.String" />
+    <property column="TRANSLATION" length="500" name="translation" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

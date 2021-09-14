@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Sublibrariesmodel" lazy="false"  table="SUB_LIBRARIES_MODEL">
+    <id column="SUB_LIBRARIES_MODEL_ID" name="sub_libraries_model_id" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property name="sub_libraries_model_name" type="java.lang.String">
+		<column name="SUB_LIBRARIES_MODEL_NAME" not-null="true" length="512"/>
+	</property>
+    <property name="sub_libraries_model_type" type="java.lang.String">
+		<column name="SUB_LIBRARIES_MODEL_TYPE" not-null="true" length="1"/>
+	</property>
+    <property name="sub_libraries_model_info" type="java.lang.String">
+		<column name="SUB_LIBRARIES_MODEL_INFO"  length="1024"/>
+	</property>
+	<property name="run_state" type="java.lang.String">
+		<column name="RUN_STATE" not-null="true" length="1"/>
+	</property>
+    <property name="is_effective" type="java.lang.String">
+		<column name="IS_EFFECTIVE" not-null="true" length="1"/>
+	</property>
+	<property name="self_create_mark" type="java.lang.String">
+		<column name="SELF_CREATE_MARK"  length="1"/>
+	</property>
+	<property name="create_user_id" type="java.lang.String">
+		<column name="CREATE_USER_ID"  length="32"/>
+	</property>
+    <property name="create_username" type="java.lang.String">
+		<column name="CREATE_USERNAME"  length="50"/>
+	</property> 
+	<property name="create_groupid" type="java.lang.String">
+		<column name="CREATE_GROUPID"  length="32"/>
+	</property> 
+	<property name="create_group_name" type="java.lang.String">
+		<column name="CREATE_GROUP_NAME"  length="50"/>
+	</property> 
+	<property name="create_time" type="java.sql.Date">
+		<column name="CREATE_TIME" />
+	</property>
+	<property name="change_user_id" type="java.lang.String">
+		<column name="CHANGE_USER_ID"  length="32"/>
+	</property>  
+	<property name="change_user_name" type="java.lang.String">
+		<column name="CHANGE_USER_NAME"  length="50"/>
+	</property>
+	<property name="change_time" type="java.sql.Date">
+		<column name="CHANGE_TIME" />
+	</property>   
+	<property name="sub_libraries_model_key" type="java.lang.String">
+		<column name="SUB_LIBRARIES_MODEL_KEY"  length="13"/>
+	</property>
+	<property name="sqltext" type="text">
+		<column name="SQLTEXT"/>
+	</property>
+  </class>
+</hibernate-mapping>

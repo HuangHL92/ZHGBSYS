@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.HY05" table="HY05">
+        <comment>上会人员信息表</comment>
+        <id name="hy0500" type="java.lang.String">
+            <column name="hy0500" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="hy0501" type="java.lang.String">
+            <column name="hy0501" length="100" not-null="true">
+                <comment>人员名字</comment>
+            </column>
+        </property>
+        <property name="hy0502" type="java.lang.String">
+            <column name="hy0502" length="100" not-null="true">
+                <comment>所属科室</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,92 @@
+body{
+margin:0px; padding:0px;background-color: #FFFFFF; 
+ font-size:12px; font-family:Verdana, Arial, Helvetica, sans-serif,宋体;
+}
+a:link {
+	color:#FFF;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color:#FFF;
+}
+a:hover {
+	text-decoration: none;
+	color: #FF0000;
+}
+a:active {
+	text-decoration: none;
+}
+/*这里是全局CSS删除了会影响整页面*/
+#header{
+ margin:0px auto;width:auto; height:auto;
+}
+#header_top{ 
+  float:left;width:100%; height:34px;
+}
+#header_nav{ 
+  float:left;width:100%; height:33px;clear:both;overflow:auto;
+}
+#header_logo{ 
+  float:left;width:307px; height:33px; background:url(../img/index/index_02.jpg) no-repeat;
+}
+#header_bady{ 
+  >position:absolute;>left:307px;margin-left:307px!important;margin-left:0;width:auto; height:33px; background:url(../img/index/home_03.jpg) repeat-x;
+  
+  
+}
+table{
+ font-size:12px; color:#FFF;  margin:0px; padding:0px;
+}
+.td{
+ padding:3px 0px 2px 0px; 
+}
+/*核心中间部分内容*/
+#center{
+ margin:0px auto;width:auto; height:auto;
+}
+#center_left{
+ float:left;width:216px; height:501px; 
+}
+#center_right{
+ float:right;width:auto; height:501px; 
+}
+#center_right_top{
+ float:right;width:auto; height:27px; 
+}
+#center_right_xia{
+ float:right;width:auto; background:url(../images/index_07.jpg) no-repeat; height:474px;
+}
+/*核心底部分内容*/
+#foot{
+ margin:0px auto;width:auto;  
+}
+#foot_pic{ 
+ width:auto; height:26px; background:url(../images/foot.gif) repeat-x;
+ }
+#foot_font { 
+  font-size:12px; color:#05124d; text-align:center; margin:5px;
+}
+
+.tabhome {
+    background-image:url("../img/icon/article.gif") !important;
+}
+
+.iconnav{
+	background-image:url("../img/icon/folder_go.png") !important;
+}
+
+.iconlog{
+		background-image:url("../img/icon/mylog.gif") !important;
+	
+}
+
+.iconsearch{
+		background-image:url("../img/icon/forum.gif") !important;
+	
+}
+
+.iconwelcome{
+		background-image:url("../img/icon/welcome.gif") !important;
+	
+}

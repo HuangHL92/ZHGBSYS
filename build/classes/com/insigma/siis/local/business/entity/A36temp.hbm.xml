@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A36temp"
+    lazy="false"
+    table="A36_TEMP">
+  	<id column="A3600" length="60" name="a3600" type="java.lang.String" >
+  		<generator class="assigned"/>
+  	</id>
+    <property column="A0000" length="60" name="a0000" type="java.lang.String" />
+    <property column="A3601" length="36" name="a3601" type="java.lang.String" />
+    <property column="A3604A" length="10" name="a3604a" type="java.lang.String" />
+    <property column="A3607" length="8" name="a3607" type="java.lang.String" />
+    <property column="A3611" length="200" name="a3611" type="java.lang.String" />
+    <property column="A3627" length="100" name="a3627" type="java.lang.String" />
+    <property column="ERROR_INFO" length="200" name="errorinfo" type="java.lang.String" />
+    <property column="IS_QUALIFIED" length="1" name="isqualified" type="java.lang.String" />
+    <property column="SORTID" length="20" name="sortid" type="java.lang.Long" />
+    <property column="UPDATED" length="1" name="updated" type="java.lang.String" />
+     <property column="IMPRECORDID" length="32" name="imprecordid" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

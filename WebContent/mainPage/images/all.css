@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+BODY {
+	PADDING: 0px;
+	margin: 0px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color:#FFF;
+	background:url(3_02.png) no-repeat center;
+	background-position:top;
+}
+a {
+	color: #999;
+	font-size: 12px;
+	text-decoration: underline;
+	border:0;
+}
+#all {
+	width:100%;
+	margin:0 auto;
+}
+.top {
+	width:100%;
+	height:30px;
+	margin:0 auto;
+	background:#FFF;
+}
+#maddle {
+	width: 100%;
+	height: 358px;
+	margin: 0 auto;
+	background:url(lg01_02.png) repeat-x;
+	margin-top:150px;
+}
+.box {
+	width: 820px;
+	height: 358px;
+	margin: 0 auto;
+}
+.box-01 {
+	width: 470px;
+	height: 358px;
+	float:left;
+}
+.box-02 {
+	width: 350px;
+	height: 358px;
+	background:#043d84;
+	float:left;
+}
+.input11 {
+	FONT-SIZE: 16px;
+	width: 218px;
+	height: 30px;
+	line-height: 26px;
+	background: #FFF;
+	border: 1px #cecece solid;
+}
+.input-yzm {
+	FONT-SIZE: 16px;
+	width: 75px;
+	height: 28px;
+	line-height: 26px;
+	background: #FFF;
+	border: 1px #cecece solid;
+}
+#foot {
+	clear:both;
+	margin: 0 auto;
+	width: 100%;
+	height: 60px;
+}
+.black {
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #000;
+	line-height: 60px;
+}
+.font {
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #FFF;
+}

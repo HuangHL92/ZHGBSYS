@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.ImpProcess"
+    lazy="false"
+    table="IMP_PROCESS">
+    <id column="IMP_PROCESS_ID" name="impprocessid" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="PROCESS_TYPE" length="3" name="processtype" type="java.lang.String" />
+    <property column="PROCESS_NAME" length="50" name="processname" type="java.lang.String" />
+    <property column="START_TIME" length="50" name="starttime" type="java.sql.Timestamp" />
+    <property column="END_TIME" length="50" name="endtime" type="java.sql.Timestamp" />
+    <property column="PROCESS_STATUS" length="3" name="processstatus" type="java.lang.String" />
+    <property column="PROCESS_INFO" length="150" name="processinfo" type="java.lang.String" />
+    <property column="IMPRECORDID" length="32" name="imprecordid" type="java.lang.String" />
+    <property column="ADD_FIELD1" length="1000" name="addfidld1" type="java.lang.String" />
+    <property column="ADD_FIELD2" length="50" name="addfield2" type="java.lang.String" />
+    <property column="ADD_FIELD3" length="50" name="addfield3" type="java.lang.String" />
+  </class>
+</hibernate-mapping>
+

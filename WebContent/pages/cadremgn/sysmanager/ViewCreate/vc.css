@@ -1,0 +1,14 @@
+	.div_area{
+		border:1px solid #b5b8c8;
+		overflow-y :scroll;
+	}
+	.area4 {
+		border: 0px rgb(206, 221, 239) solid;
+		height:100%;
+		width: 320;
+		float: left;
+	}
+/* 	#btnm1,#btnm2,#btnm3,#btnm4 { */
+/* 		width:60; */
+/* 		height:30; */
+/* 	} */

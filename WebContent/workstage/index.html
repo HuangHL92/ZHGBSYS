@@ -1,0 +1,469 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="UTF-8"/>
+    <title>事业单位人事管理系统</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <!-- GLOBAL STYLES -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/theme.css"/>
+    <link rel="stylesheet" href="assets/css/MoneAdmin.css"/>
+    <link rel="stylesheet" href="assets/plugins/Font-Awesome/css/font-awesome.css"/>
+    <!--END GLOBAL STYLES -->
+    <!-- PAGE LEVEL STYLES -->
+    <!--<link href="assets/css/layout2.css" rel="stylesheet"/>
+    <link href="assets/plugins/flot/examples/examples.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/plugins/timeline/timeline.css"/>-->
+ 
+    <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
+    <!-- END PAGE LEVEL  STYLES -->
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="padTop53 ">
+<!-- MAIN WRAPPER -->
+<div id="wrap">
+<!-- HEADER SECTION -->
+<div id="top">
+    <nav class="navbar navbar-inverse navbar-fixed-top " style="padding-top: 10px;">
+        <a data-original-title="Show/Hide Menu" data-placement="bottom" data-tooltip="tooltip"
+           class="accordion-toggle btn btn-primary btn-sm visible-xs" data-toggle="collapse" href="#menu"
+           id="menu-toggle">
+            <i class="icon-align-justify"></i>
+        </a>
+        <!-- LOGO SECTION -->
+        <header class="navbar-header">
+            LOGO
+        </header>
+        <!-- END LOGO SECTION -->
+        <ul class="nav navbar-top-links navbar-right">
+            <!--ADMIN SETTINGS SECTIONS -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="icon-user "></i>&nbsp; <i class="icon-chevron-down "></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#"><i class="icon-user"></i> 个人信息 </a>
+                    </li>
+                    <li><a href="#"><i class="icon-gear"></i> 设置 </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="login.html"><i class="icon-signout"></i> 退出 </a>
+                    </li>
+                </ul>
+            </li>
+            <!--END ADMIN SETTINGS -->
+        </ul>
+    </nav>
+</div>
+<!-- END HEADER SECTION -->
+<!-- MENU SECTION -->
+<div id="left">
+<ul id="menu" class="collapse">
+<li class="panel active">
+    <a href="index.html">
+        <i class="icon-table">&nbsp;主菜单</i>
+    </a>
+</li>
+<li class="panel">
+    <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#JGGL">
+        <i class=" icon-sitemap">&nbsp;机构管理</i>
+        <span class="pull-right">
+            <i class="icon-angle-left"></i>
+        </span>
+    </a>
+    <ul class="collapse" id="JGGL">
+        <li><a href="#"><i class="icon-angle-right">&nbsp;机构管理</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;编制管理</i></a></li>
+    </ul>
+</li>
+<li class="panel">
+    <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#GWGL">
+        <i class=" icon-suitcase">&nbsp;岗位管理</i>
+        <span class="pull-right">
+            <i class="icon-angle-left"></i>
+        </span>
+    </a>
+    <ul class="collapse" id="GWGL">
+        <li><a href="#"><i class="icon-angle-right">&nbsp;岗位设置</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;岗位变动</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;公益性岗位管理</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;职位库管理</i></a></li>
+    </ul>
+</li>
+<li class="panel">
+    <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#RYGL">
+        <i class=" icon-group">&nbsp;人员管理</i>
+        <span class="pull-right">
+            <i class="icon-angle-left"></i>
+        </span>
+    </a>
+    <ul class="collapse" id="RYGL">
+        <li><a href="#" onClick="javascript:window.open('./staffManage.html')"><i class="icon-angle-right">&nbsp;人员信息库</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;公开招聘</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;转正定级</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;晋升管理</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;调配管理</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;解聘管理</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;辞职管理</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;退休管理</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;职称管理</i></a></li>
+    </ul>
+</li>
+<li class="panel">
+    <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#PXGL">
+        <i class=" icon-facetime-video">&nbsp;培训管理</i>
+    </a>
+</li>
+<li class="panel">
+    <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#KHGL">
+        <i class=" icon-check">&nbsp;考核管理</i>
+        <span class="pull-right">
+            <i class="icon-angle-left"></i>
+        </span>
+    </a>
+    <ul class="collapse" id="KHGL">
+        <li><a href="#"><i class="icon-angle-right">&nbsp;年度考核</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;绩效考核</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;聘期考核</i></a></li>
+    </ul>
+</li>
+<li class="panel">
+    <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#TJFX">
+        <i class=" icon-random">&nbsp;统计分析</i>
+        <span class="pull-right">
+            <i class="icon-angle-left"></i>
+        </span>
+    </a>
+    <ul class="collapse" id="TJFX">
+        <li><a href="#"><i class="icon-angle-right">&nbsp;</i></a></li>
+    </ul>
+</li>
+<li class="panel">
+    <a href="#" onclick="javascript:window.open('./approvManage.html')" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#SPGL">
+        <i class=" icon-user-md">&nbsp;审批管理</i>
+        <span class="pull-right">
+            <i class="icon-angle-left"></i>
+        </span>
+    </a>
+    <ul class="collapse" id="SPGL">
+        <li><a href="#"><i class="icon-angle-right">&nbsp;单位变更</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;岗位设置</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;岗位变动</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;公益性岗位</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;招聘</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;培训</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;晋升</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;调任</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;年度考核</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;奖励</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;处罚</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;退休</i></a></li>
+        <li><a href="#"><i class="icon-angle-right">&nbsp;解聘</i></a></li>
+    </ul>
+</li>
+</ul>
+</div>
+<!--END MENU SECTION -->
+<!--PAGE CONTENT -->
+<div id="content">
+<div class="inner">
+<div class="row">
+    <div class="col-lg-12">
+        <h2> 智慧服务 </h2>
+    </div>
+</div>
+<hr/>
+<!--BLOCK SECTION -->
+<div class="row">
+    <div class="col-lg-12">
+        <div style="text-align: center;">
+            <a class="quick-btn" href="#">
+                <i class="icon-chevron-up icon-2x"></i>
+                <span>编制指标分析</span>
+                <span class="label label-danger">2</span>
+            </a>
+            <a class="quick-btn" href="#">
+                <i class="icon-laptop icon-2x"></i>
+                <span>职称分析</span>
+                <span class="label label-success">4</span>
+            </a>
+            <a class="quick-btn" href="#">
+                <i class="icon-warning-sign icon-2x"></i>
+                <span>退休预警</span>
+                <span class="label label-warning">1</span>
+            </a>
+            <a class="quick-btn" href="#">
+                <i class="icon-th-large icon-2x"></i>
+                <span>机构分析</span>
+                <span class="label btn-metis-2">1</span>
+            </a>
+            <a class="quick-btn" href="#">
+                <i class="icon-th icon-2x"></i>
+                <span>人员分析</span>
+                <span class="label btn-metis-4">1</span>
+            </a>
+            <a class="quick-btn" href="#">
+                <i class="icon-th-list icon-2x"></i>
+                <span>岗位分析</span>
+                <span class="label label-default">1</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!--END BLOCK SECTION -->
+<hr/>
+
+<div class="row">
+    <div class="col-lg-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            我的申报
+        </div>
+
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>申报内容</th>
+                            <th>申报时间</th>
+                            <th>当前状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="success">
+                            <td>1</td>
+                            <td>岗位变动</td>
+                            <td>20160708</td>
+                            <td>事业管理处待审批</td>
+                        </tr>
+                        <tr class="info">
+                            <td>2</td>
+                            <td>公开招聘</td>
+                            <td>20160706</td>
+                            <td>审批通过</td>
+                        </tr>
+                        <tr class="warning">
+                            <td>3</td>
+                            <td>奖励</td>
+                            <td>20160705</td>
+                            <td>主管部门待审批</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>晋升</td>
+                            <td>20160703</td>
+                            <td>审批通过</td>
+                        </tr>
+                        <tr class="danger">
+                            <td>5</td>
+                            <td>调任</td>
+                            <td>20160702</td>
+                            <td>事业管理处待审批</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-6">
+    <div class="panel panel-primary" width="50%">
+        <div class="panel-heading ">通知公告
+        </div>
+
+        <div class="panel-body">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#tzgg1">浙江省人力资源和社会保障厅下属事业单位公开招聘笔试结果和面试有关安排</a>
+                        </h4>
+                    </div>
+
+                    <div id="tzgg1" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            应聘者需提供下述材料（原件）：身份证；学历、学位证书（在校应届毕业生可提供就业推荐表，留学归国人员提供国、境外学历学位认证书）等材料原件及复印件1份，以及招聘计划表中“其他条件”栏目涉及的证明材料。
+                            未按招聘单位要求参加资格复审，或提供的材料经认定不符合招聘条件要求的，取消应聘资格。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#tzgg2">关于公开征求《关于印发浙江省深化中小学教师职称制度改革工作实施方案的通知》意见的公告</a>
+                        </h4>
+                    </div>
+
+                    <div id="tzgg2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            根据我省行政规范性文件制定管理的相关规定，现将《关于印发浙江省深化中小学教师职称制度改革工作实施方案的通知》予以公布，征求公众意见。如有修改意见或建议，请于2016年5月30日前通过电子邮件、传真、信函等形式反馈至浙江省人力资源和社会保障厅专业技术人员管理处。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#tzgg3">浙江省政府采购中心关于省人力社保厅及厅属事业单位、有实际控制权的企业公款竞争性存放项目的中标公告</a>
+                        </h4>
+                    </div>
+
+                    <div id="tzgg3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            各参加政府采购活动的供应商认为该中标结果和采购过程等使自己的权益受到损害的，可以自本公告期限届满之日（自本公告发布之日起至第2日24时止）起7个工作日内，以书面形式向采购人提出质疑。质疑供应商对采购人、采购代理机构的答复不满意或者采购人、采购代理机构未在规定的时间内作出答复的，可以再答复期满后十五个工作日内向同级政府采购监督管理部门投诉。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#tzgg4">浙江省政府采购中心关于省人力社保厅及厅属事业单位、有实际控制权的企业公款竞争性存放项目的中标公告</a>
+                        </h4>
+                    </div>
+
+                    <div id="tzgg4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            各参加政府采购活动的供应商认为该中标结果和采购过程等使自己的权益受到损害的，可以自本公告期限届满之日（自本公告发布之日起至第2日24时止）起7个工作日内，以书面形式向采购人提出质疑。质疑供应商对采购人、采购代理机构的答复不满意或者采购人、采购代理机构未在规定的时间内作出答复的，可以再答复期满后十五个工作日内向同级政府采购监督管理部门投诉。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                待办事宜
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>审批内容</th>
+                                <th>审批事项</th>
+                                <th>申报时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>事业单位岗位晋升审核表（XX事业单位）</td>
+                                <td>岗位变动</td>
+                                <td>20160701</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>事业单位新增人员审核表（XX事业单位)</td>
+                                <td>公开招聘</td>
+                                <td>20160702</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>事业单位年度考核信息表（XX机关单位）</td>
+                                <td>年度考核</td>
+                                <td>20160703</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>事业单位岗位晋升审核表（XX事业单位）</td>
+                                <td>晋升</td>
+                                <td>20160704</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>事业单位岗位晋升审核表（XX事业单位）</td>
+                                <td>晋升</td>
+                                <td>20160705</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                资源下载中心
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td colspan=2>2002-2005年全国人才队伍建设规划纲要</td>
+                                <td>下载</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td colspan=2>关于贯彻落实“十一五”规划纲要，加强人才队伍建设的实施意见</td>
+                                <td>下载</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td colspan=2>人才队伍建设业务单位职能</td>
+                                <td>下载</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td colspan=2>事业单位人事管理条例</td>
+                                <td>下载</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td colspan=2>浙江省2006年机关事业单位工作人员工资制度改革文件汇编..</td>
+                                <td>下载</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td colspan=2>浙江省人才发展十二五规划</td>
+                                <td>下载</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!--END PAGE CONTENT -->
+</div>
+<!--END MAIN WRAPPER -->
+<!-- FOOTER -->
+<div id="footer">
+    <p>&nbsp;</p>
+</div>
+<!--END FOOTER -->
+
+<!-- END PAGE LEVEL SCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

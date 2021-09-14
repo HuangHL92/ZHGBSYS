@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:03:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Js03" table="JS03" >
+        <comment>民主推荐表</comment>
+        <id name="js0100" type="string">
+            <column name="JS0100" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="dc001" type="string">
+            <column name="DC001" length="64" >
+                <comment>分类ID</comment>
+            </column>
+        </property>
+        <property name="rbId" type="string">
+            <column name="RB_ID" length="64" >
+                <comment>任免批次ID</comment>
+            </column>
+        </property>
+        <property name="js0302" type="string">
+            <column name="JS0302" length="8">
+                <comment>推荐时间（会议推荐）</comment>
+            </column>
+        </property>
+        <property name="js0303" type="string">
+            <column name="JS0303" length="5">
+                <comment>参加人数（会议推荐）</comment>
+            </column>
+        </property>
+        <property name="js0304" type="string">
+            <column name="JS0304" length="5">
+                <comment>得票数（会议推荐）</comment>
+            </column>
+        </property>
+        <property name="js0305" type="string">
+            <column name="JS0305" length="5">
+                <comment>名次（会议推荐）</comment>
+            </column>
+        </property>
+        <property name="js0306" type="string">
+            <column name="JS0306" length="500">
+                <comment>备注（会议推荐）</comment>
+            </column>
+        </property>
+        <property name="js0307" type="string">
+            <column name="JS0307" length="8">
+                <comment>推荐时间（谈话推荐）</comment>
+            </column>
+        </property>
+        <property name="js0308" type="string">
+            <column name="JS0308" length="5">
+                <comment>参加人数（谈话推荐）</comment>
+            </column>
+        </property>
+        <property name="js0309" type="string">
+            <column name="JS0309" length="5">
+                <comment>得票数（谈话推荐）</comment>
+            </column>
+        </property>
+        <property name="js0310" type="string">
+            <column name="JS0310" length="5">
+                <comment>名次（谈话推荐）</comment>
+            </column>
+        </property>
+        <property name="js0311" type="string">
+            <column name="JS0311" length="500">
+                <comment>备注（谈话推荐）</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

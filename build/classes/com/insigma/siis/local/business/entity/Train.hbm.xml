@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    " -//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Train"
+    lazy="false"
+    table="TRAIN">
+	<id column="TRAINID" name="trainid" type="java.lang.String">
+	  <generator class="assigned" />
+	</id>
+	<property column="G11020" length="22" name="g11020" type="java.math.BigDecimal" />
+	<property column="A1131" length="120" name="a1131" type="java.lang.String" />
+	<property column="A1101" length="8" name="a1101" type="java.lang.String" />
+	<property column="A1114" length="120" name="a1114" type="java.lang.String" />
+	<property column="A1107" length="8" name="a1107" type="java.lang.String" />
+	<property column="A1111" length="8" name="a1111" type="java.lang.String" />
+	<property column="G11021" length="20" name="g11021" type="java.lang.String" />
+	<property column="G11022" length="200" name="g11022" type="java.lang.String" />
+	<property column="G11023" length="20" name="g11023" type="java.lang.String" />
+	<property column="G11024" length="20" name="g11024" type="java.lang.String" />
+	<property column="A1121A" length="120" name="a1121a" type="java.lang.String" />
+	<property column="A1127" length="8" name="a1127" type="java.lang.String" />
+	<property column="A1151" length="1" name="a1151" type="java.lang.String" />
+	<property column="G11025" length="2000" name="g11025" type="java.lang.String" />
+	<property column="G11026" length="2000" name="g11026" type="java.lang.String" />
+	<property column="USERID" length="120" name="userid" type="java.lang.String" />
+	<property column="USERNAME" length="120" name="username" type="java.lang.String" />
+	<property column="UPDATETIME" length="120" name="updatetime" type="java.lang.String" />
+	<property column="G11030" length="2000" name="g11030" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

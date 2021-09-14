@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.HY02"
+           table="HY02">
+        <id name="hy0200" type="java.lang.String">
+            <column name="hy0200" length="64"/>
+            <generator class="assigned"/>
+        </id>
+        <property column="HY0100" length="64" name="hy0100" type="java.lang.String"/>
+        <property column="HY0201" length="200" name="hy0201" type="java.lang.String"/>
+        <property column="HY0202" length="1000" name="hy0202" type="java.lang.String"/>
+        <property column="HY0203" length="22" name="hy0203" type="java.lang.Integer"/>
+    </class>
+</hibernate-mapping>

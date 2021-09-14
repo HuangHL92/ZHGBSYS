@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-10-20 15:57:21 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.a00hz.HzMntpOrgQxs" table="HZ_MNTP_ORG_QXS" dynamic-insert="true" dynamic-update="true">
+        <comment>&#199;&#248;&#207;&#216;&#202;&#208;&#208;&#194;&#189;&#168;&#176;&#224;&#215;&#211;&#177;&#237;</comment>
+        <id name="b01id" type="string">
+            <column name="B01ID" length="70" />
+            <generator class="assigned" />
+        </id>
+        <property name="b0101" type="string">
+            <column name="B0101" length="100">
+                <comment>&#181;&#165;&#206;&#187;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="b0111" type="string">
+            <column name="B0111" length="199"  >
+                <comment>&#187;&#250;&#185;&#185;&#177;&#224;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="bzdw" type="string">
+            <column name="BZDW" precision="22" scale="0">
+                <comment>&#181;&#179;&#206;&#175;&#211;&#166;&#197;&#228;</comment>
+            </column>
+        </property>
+        <property name="bzzf" type="string">
+            <column name="BZZF" precision="22" scale="0">
+                <comment>&#213;&#254;&#184;&#174;&#211;&#166;&#197;&#228;</comment>
+            </column>
+        </property>
+        <property name="bzrd" type="string">
+            <column name="BZRD" precision="22" scale="0">
+                <comment>&#200;&#203;&#180;&#243;&#211;&#166;&#197;&#228;</comment>
+            </column>
+        </property>
+        <property name="bzzx" type="string">
+            <column name="BZZX" precision="22" scale="0">
+                <comment>&#213;&#254;&#208;&#173;&#211;&#166;&#197;&#228;</comment>
+            </column>
+        </property>
+        <property name="bzspdw" type="string">
+            <column name="BZSPDW" precision="22" scale="0">
+                <comment>&#181;&#179;&#206;&#175;&#202;&#181;&#197;&#228;</comment>
+            </column>
+        </property>
+        <property name="bzspzf" type="string">
+            <column name="BZSPZF" precision="22" scale="0">
+                <comment>&#213;&#254;&#184;&#174;&#202;&#181;&#197;&#228;</comment>
+            </column>
+        </property>
+        <property name="bzsprd" type="string">
+            <column name="BZSPRD" precision="22" scale="0">
+                <comment>&#200;&#203;&#180;&#243;&#202;&#181;&#197;&#228;</comment>
+            </column>
+        </property>
+        <property name="bzspzx" type="string">
+            <column name="BZSPZX" precision="22" scale="0">
+                <comment>&#213;&#254;&#208;&#173;&#202;&#181;&#197;&#228;</comment>
+            </column>
+        </property>
+        <property name="fy" type="string">
+            <column name="FY" precision="22" scale="0">
+                <comment>&#183;&#168;&#212;&#186;&#211;&#166;&#197;&#228;</comment>
+            </column>
+        </property>
+        <property name="jcy" type="string">
+            <column name="JCY" precision="22" scale="0">
+                <comment>&#188;&#236;&#178;&#236;&#212;&#186;&#211;&#166;&#197;&#228;</comment>
+            </column>
+        </property>
+        <property name="fysp" type="string">
+            <column name="FYSP" precision="22" scale="0">
+                <comment>&#183;&#168;&#212;&#186;&#202;&#181;&#197;&#228;</comment>
+            </column>
+        </property>
+        <property name="jcysp" type="string">
+            <column name="JCYSP" precision="22" scale="0">
+                <comment>&#188;&#236;&#178;&#236;&#212;&#186;&#202;&#181;&#197;&#228;</comment>
+            </column>
+        </property>
+        <property name="bz" type="string">
+            <column name="BZ" length="4000">
+                <comment>&#177;&#184;&#215;&#162;</comment>
+            </column>
+        </property>
+        <property name="b0236" type="string">
+            <column name="B0236" length="4000">
+                <comment>&#200;&#177;&#197;&#228;&#208;&#197;&#207;&#162;</comment>
+            </column>
+        </property>
+        <property name="b0104" type="string">
+            <column name="B0104" length="200">
+                <comment>&#181;&#165;&#206;&#187;&#188;&#242;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="bztype" type="string">
+            <column name="BZTYPE" length="2">
+                <comment>&#176;&#224;&#215;&#211;&#192;&#224;&#208;&#205; &#199;&#248;&#207;&#216;&#202;&#208;
+                &#202;&#208;&#214;&#177;&#185;&#250;&#198;&#243;&#184;&#223;&#208;&#163;&#198;&#189;&#204;&#168;</comment>
+            </column>
+        </property>
+        <property name="b01idfrom" type="string">
+            <column name="B01IDFROM" length="1000">
+                <comment>&#187;&#250;&#185;&#185;&#192;&#180;&#212;&#180;&#163;&#172;&#178;&#240;&#183;&#214;&#187;&#242;&#186;&#207;&#178;&#162;</comment>
+            </column>
+        </property>
+        <property name="mntp00" type="string">
+            <column name="mntp00" length="60">
+        	</column>
+        </property>
+    </class>
+</hibernate-mapping>

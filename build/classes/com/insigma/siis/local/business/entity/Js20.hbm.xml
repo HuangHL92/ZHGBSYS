@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Js20" table="JS20" >
+	<id name="js0100" type="string">
+            <column name="JS0100" length="64" />
+            <generator class="assigned" />
+    </id>
+    <property name="dc001" type="string">
+            <column name="DC001" length="64" >
+                <comment>分类ID</comment>
+            </column>
+    </property>
+    <property name="rbId" type="string">
+            <column name="RB_ID" length="64" >
+                <comment>任免批次ID</comment>
+            </column>
+    </property>
+    <property name="js2002" type="string">
+            <column name="JS2002" length="500" >
+                <comment>推荐职位</comment>
+            </column>
+    </property>
+    <property name="js2003" type="string">
+            <column name="JS2003" length="500" >
+                <comment>推荐人选范围</comment>
+            </column>
+    </property>
+    <property name="js2004" type="string">
+            <column name="JS2004" length="500" >
+                <comment>推荐人选具体要求</comment>
+            </column>
+    </property>
+    <property name="js2005" type="string">
+            <column name="JS2005" length="500" >
+                <comment>参加推荐对象</comment>
+            </column>
+    </property>
+    <property name="js2006" type="string">
+            <column name="JS2006" length="500" >
+                <comment>推荐程序</comment>
+            </column>
+    </property>
+    <property name="js2007" type="string">
+            <column name="JS2007" length="500" >
+                <comment>备注</comment>
+            </column>
+    </property>
+  </class>
+</hibernate-mapping>

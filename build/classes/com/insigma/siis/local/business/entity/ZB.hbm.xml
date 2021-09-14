@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.ZB"
+    lazy="false"
+    table="ZB">
+	<id column="ZBID" name="zbid" length="120" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+	<property column="ZBMC" length="2000" name="zbmc" type="java.lang.String" />
+	<property column="JHSJ" length="30" name="jhsj" type="java.lang.String" />
+	<property column="JDID" length="120" name="jdid" type="java.lang.String" />
+	<property column="Z0808" length="20" name="z0808" type="java.lang.String" />
+	<property column="Z0809" length="20" name="z0809" type="java.lang.String" />
+	<property column="JDBT" length="500" name="jdbt" type="java.lang.String" />
+	<property column="ZBWCBZ" length="2" name="zbwcbz" type="java.lang.String" />
+	<property column="ZBJD" length="20" name="zbjd" type="java.lang.String" />
+  </class>
+</hibernate-mapping>
+

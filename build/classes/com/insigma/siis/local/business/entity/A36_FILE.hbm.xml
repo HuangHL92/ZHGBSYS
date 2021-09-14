@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A36_FILE"
+    lazy="false"
+    table="A36_FILE">
+    <id column="ID" name="id" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="A0000" length="60" name="a0000" type="java.lang.String" />
+   	<property column="T_IME" length="10" name="t_ime" type="java.lang.String" />
+   	<property column="FILEPATH" length="200" name="filepath" type="java.lang.String" />
+   	<property column="FILENAME" length="100" name="filename" type="java.lang.String" />
+   	<property column="FILETEXT" length="800" name="filetext" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

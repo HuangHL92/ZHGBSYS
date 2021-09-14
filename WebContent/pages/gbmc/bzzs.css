@@ -1,0 +1,112 @@
+
+
+.coordTable
+{
+	padding: 0;
+	margin: 0;
+	width:100%;
+	border-left: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-collapse:collapse;
+	table-layout:fixed;
+	/*border:1px solid black;*/
+
+}
+.coordTable th
+{
+	font-family:宋体;
+	/*font-size:11pt!important;*/
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 0px;
+	text-transform: uppercase;
+	text-align:center;
+	border:1px solid black;
+	color:black;
+	/*background: #CAE8EA ;  */
+	overflow:hidden;
+}
+.coordTable td
+{
+	font-family: 宋体 ;
+	font-size:11pt;
+	height: 50px;
+	padding : 5px 0px;
+	margin: 0;
+	empty-cells:show;
+	overflow:hidden;
+	border:1px solid black;
+	text-align:center;
+	vertical-align:center;
+	/* position:relative; */
+
+}
+.TNR{
+	font-family: Times New Roman !important;
+	text-align:center;
+}
+
+
+.YiJiBiaoTiTD{
+	font-family: 宋体;
+	color: black !important;
+	font-size: 20pt !important;
+	text-align: left !important;
+	min-height:28px !important;
+
+}
+.YiJiBiaoTiTR td{
+	min-height:28px !important;
+}
+
+.ErJiBiaoTiTD {
+	font-family: 宋体 !important;
+	color: black !important;
+	font-size: 20px !important;
+	text-align: left !important;
+	min-height:28px !important;
+}
+.ErJiBiaoTiTR td{
+	min-height:28px !important;
+}
+
+.align-left{
+	text-align: left !important;
+}
+
+.lign {
+	font-family: 宋体;
+	height: 50px !important;
+	font-size: 11pt;
+}
+.lign_two {
+	font-family: 宋体;
+	font-size: 11pt;
+
+}
+.aligh_sensc{
+	font-family: 宋体; font-size: 11pt; margin: 0px !important; padding: 1px !important;
+}
+.aligh_senqw{
+	margin: 0px !important;
+	padding: 1px !important;
+}
+
+.xingm {
+	margin: 0px !important;
+	padding: 1px !important;
+	text-align: center;
+	text-justify: distribute-all-lines;
+	overflow-y: auto;
+	width: 76px;
+	line-height: 1;
+	text-align-last: justify;
+}
+#marjd {
+	height: auto;
+	/*max-height: 100px;*/
+	overflow-y: auto;
+	width: 150px;
+}
+

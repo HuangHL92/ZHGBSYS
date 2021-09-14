@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="gb2312"?>
+
+<lbs-licenses>
+    <license-group format="2.0" product="leaf" release="1.0">
+        <license
+        	licenseVersion="2.0"
+        	desc="社保核心平台三版本地化授权"
+            component="leaf"
+            version="4.2"
+            type="retail"
+            cpus="unlimited"
+            expiration="never"
+            ip="any"
+            mac="any"
+            sessions="unlimited"
+            units="unlimited"
+            serviceCount="unlimited"
+            loginCount="unlimited"
+            licensee="浙江网新恩普软件有限公司-义乌市劳动保障一体化（社保核心平台三版）"
+            serial="00-D0-59-CC-C0-011091070852740"
+            signature="STebQv82SGqUg4s0UQZoNtNNlKvgbtE6JPoJtgmBfRYiezbV4ULNcQ69MOaZsVHaMOly90yuF51rJTh7/PC4Gw=="
+        />
+        <license
+        	licenseVersion="2.0"
+        	desc="社保核心平台三版本地化授权"
+            component="XartWebui"
+            version="1.2"
+            type="retail"
+            cpus="unlimited"
+            expiration="never"
+            ip="any"
+            mac="any"
+            sessions="unlimited"
+            units="unlimited"
+            serviceCount="unlimited"
+            loginCount="unlimited"
+            licensee="浙江网新恩普软件有限公司-义乌市劳动保障一体化（社保核心平台三版）"
+            serial="00-D0-59-CC-C0-011091070852740"
+            signature="J/7G/9c+PdjDYhs9yQ8Nvp62uLhlgRPzhGDIHykaboDbo0sBVXgyXgDm0cQkTWdcQOjHUX6nByL3Ps2IXLVLPg=="
+        />
+    </license-group>
+</lbs-licenses>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="myForm" type="com.lbs.platform.interfacexml.MyForm" />
+    <form-bean name="commonForm" type="com.insigma.odin.framework.ActionFormSupport" />
+  </form-beans>
+  <global-forwards>
+    <forward contextRelative="true" name="globals" path="/js/Globals.jsp" />
+    <forward contextRelative="true" name="newcss" path="/css/new_default.jsp" />
+    <forward contextRelative="true" name="css" path="/css/style.jsp" />
+    <forward contextRelative="true" name="menu" path="/css/styleMenu.jsp" />
+    <forward contextRelative="true" name="treecss" path="/css/tree.jsp" />
+    <forward contextRelative="true" name="md5" path="/js/md5.jsp" />
+    <forward contextRelative="true" name="xtree" path="/js/xtree.jsp" />
+    <forward contextRelative="true" name="xmlextras" path="/js/xmlextras.jsp" />
+    <forward contextRelative="true" name="xloadtree" path="/js/xloadtree.jsp" />
+    <forward contextRelative="true" name="leaftree" path="/js/leafTree.jsp" />
+     <forward contextRelative="true" name="maillist" path="/js/mailList.jsp" />
+    <forward contextRelative="true" name="top" path="/js/top.jsp" />
+    <forward contextRelative="true" name="xtreecss" path="/css/xtree.jsp" />
+    <forward contextRelative="true" name="softkeyboard" path="/js/softkeyboard.jsp" />
+    <forward name="reportServlet" path="/ReportServlet"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/switchAction" type="org.apache.struts.actions.SwitchAction" />
+    <action name="myForm" path="/xmlAction" scope="request" type="com.lbs.platform.interfacexml.TestAction"></action>
+    <action path="/areaQueryAction" scope="request" type="com.lbs.leaf.AreaQueryAction"/>
+    <!-- 操作日志 -->
+    <action path="/sys/MDOpLogListAction" forward="/sys/MDOpLogList.jsp"/>
+    <action path="/sys/WzMDOpLogListAction" forward="/pages/oplog/WzCMMDOpLogList.jsp"/>
+    <action path="/sys/WzPMMDOpLogListAction" forward="/pages/oplog/WzPMMDOpLogList.jsp"/>
+    <action path="/sys/OpLogComplexQueryWinAction" forward="/sys/OpLogComplexQueryWin.jsp"/>
+    <action name="commonForm" parameter="method"
+			path="/sys/OpLogAction" scope="request"
+			type="com.insigma.odin.framework.sys.oplog.OpLogAction">
+			<forward name="oriOpLog" path="/sys/OriOpLog.jsp" />
+			<forward name="oriSource" path="/sys/OriSource.jsp" />
+	</action>
+	<action parameter="method"
+			path="/dologonHzbAction" scope="request"
+			type="com.insigma.odin.framework.sys.auth.DologonHzbAction">
+			<forward name="mainHzb" path="/Index1.jsp" />
+			<forward name="mainMan" path="/Index2.jsp" />
+	</action>
+	                     
+    <!-- 分页查询 -->
+    <action path="/common/pageQueryAction" parameter="method" scope="request" type="com.insigma.odin.framework.comm.query.PageQueryAction"/>
+    <!-- 通用查询（不分页） -->
+    <action path="/common/commQueryAction" parameter="method" scope="request" type="com.insigma.odin.framework.comm.query.CommQueryAction" />
+    <!-- 用户欢迎桌面 -->
+    <action path="/common/desktopAction" parameter="method" scope="request" type="com.insigma.odin.framework.sys.userdesktop.DesktopAction" />
+    <!-- 单据打印 -->
+    <action path="/common/billPrintAction" forward="/pages/comm/billPrint.jsp"/>
+    <action path="/sys/PrintAction" parameter="method" scope="request" type="com.insigma.odin.framework.sys.print.PrintAction"/>
+    <!-- 通用报表 -->
+    <action path="/common/commonReportAction" forward="/pages/comm/commonReport.jsp"/>
+    <action path="/common/billPrint2Action" forward="/pages/comm/billPrint2.jsp"/>
+	<action path="/common/commonReport2Action" forward="/pages/comm/commonReport2.jsp"/>
+	<!-- 通用审核 -->
+    <action path="/common/commonAuditAction" forward="/pages/auditing/AuditingList.jsp"/>
+    <action parameter="method"
+			path="/common/auditAction" scope="request"
+			type="com.insigma.odin.framework.sys.audit.AuditAction">
+    	<forward name="auditSource" path="/pages/auditing/auditSource.jsp"></forward>
+    </action>
+	<!-- 通用多级审核 -->
+	<action path="/common/commonMulAuditAction" forward="/pages/auditing/MultilevelAuditingList.jsp"/>
+    <action parameter="method"
+			path="/common/mulAuditAction" scope="request"
+			type="com.insigma.odin.framework.sys.audit.MultilevelAuditAction">
+    	<forward name="auditSource" path="/pages/auditing/auditSource.jsp"></forward>
+    </action>
+    <action parameter="method"
+    		path="/common/sysCodeAction" scope="request"
+    		type="com.insigma.odin.framework.sys.code.SysCodeAction">
+    </action>
+    
+    <action parameter="method"
+    		path="/HZBImportAction" scope="request"
+    		type="com.insigma.siis.local.pagemodel.customquery.HZBImportAction">
+    </action>
+    <action parameter="method"
+    		path="/MsgResponse" scope="request"
+    		type="com.insigma.siis.local.pagemodel.publicServantManage.MsgResponse">
+    </action>
+    <!-- 家庭成员数据批量导入 -->
+    <action parameter="method" 
+    		path="/FormImportAction" scope="request"
+    		type="com.insigma.siis.local.pagemodel.dataimpexcel.FormImportAction">
+    </action>
+    
+    
+  </action-mappings>
+  <message-resources null="false" parameter="ApplicationResources" />
+  <plug-in className="com.lbs.cp.plugin.CachePlugIn" />
+  <!--plug-in className="com.lbs.cp.plugin.CodeListPlugIn" /-->
+  <!--plug-in className="com.lbs.cp.plugin.ValidateConfigPlugIn" /-->
+  <!-- gezh注释，放在PubPlusIn里启动  -->
+  <!-- <plug-in className="com.insigma.odin.framework.webcontroller.OdinPlugIn" /> -->
+  <plug-in className="com.insigma.siis.local.epsoft.config.PubPlusIn" />
+</struts-config>

@@ -1,0 +1,190 @@
+@CHARSET "UTF-8";
+/* 自增样式 */
+.styleing a {
+	background-color: FFFFCC;
+	width: 42px;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	float: left;
+	margin-left: 9px;
+	margin-top: 9px;
+	border-radius: 3px;
+	border: solid 0px #e9e8e9;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	word-break: keep-all;
+	white-space: nowrap;
+	color: #666;
+	text-decoration: none;
+}
+
+.styleing2 a {
+	background-color: 33FFCC;
+	width: 42px;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	float: left;
+	margin-left: 9px;
+	margin-top: 9px;
+	border-radius: 3px;
+	border: solid 0px #e9e8e9;
+	font-weight: bold;
+	word-break: keep-all;
+	white-space: nowrap;
+	text-align: center;
+	font-size: 14px;
+	color: #666;
+	text-decoration: none;
+}
+/* 增加放置特效 */
+.styleing a:hover {
+	background-color: #fff;
+}
+
+.styleing2 a:hover {
+	background-color: #fff;
+}
+/* 自增样式 */
+body {
+	color: #333;
+	background-color: #FFF;
+	line-height: 1.5;
+	font-family: 宋体;
+}
+
+.content-wrapper {
+	margin: 20px 0 0;
+}
+.main2{
+	float: left;
+	margin-left: 9px;
+}
+.content {
+	margin: 0 auto;
+	background: #fff;
+	width: 947px;
+	border: 1px solid #e5e5e5;
+}
+
+.main-content {
+	width: 800px;
+	padding: 29px 29px 0;
+	position: relative;
+}
+
+.side-content {
+	position: relative;
+	padding-top: 29px;
+	width: 270px;
+}
+
+.summary {
+	clear: both;
+	font-size: 14px;
+	word-wrap: break-word;
+	color: #333;
+	margin-bottom: 15px;
+	text-indent: 2em;
+	line-height: 24px;
+	zoom: 1;
+}
+
+.para {
+	font-size: 16px;
+	word-wrap: break-word;
+	color: #333;
+	margin-bottom: 15px;
+	text-indent: 2em;
+	line-height: 24px;
+	zoom: 1;
+}
+
+.removalText {
+	font-size: 16px;
+	font-family: 宋体;
+	line-height: 24px;
+}
+
+.removalText a {
+	font-size: 16px;
+	font-family: 宋体;
+	line-height: 24px;
+}
+
+.removalText p {
+	text-indent: -144px;
+	padding-left: 144px;
+}
+
+.summary-pic {
+	width: 268px;
+	border: solid 1px #DDD;
+	margin-bottom: 20px;
+	box-shadow: 1px 1px 1px #ccc;
+	position: relative;
+	font-size: 0;
+	line-height: 0;
+}
+
+.anchor-list {
+	position: relative;
+}
+
+.anchor {
+	position: absolute;
+	top: -50px;
+}
+
+.para-title.level-2 {
+	display: block;
+	clear: both;
+	zoom: 1;
+	overflow: hidden;
+	font-size: 20px;
+	border-left: 12px solid #4F9CEE;
+	line-height: 24px;
+	font-size: 22px;
+	font-weight: 400;
+	font-family: Microsoft YaHei, SimHei, Verdana;
+	margin: 35px 0 15px -30px;
+	background: url(/govhr/style/default/images/bigdata/line.png);
+	position: relative;
+}
+
+.para-title.level-2 .title-text {
+	float: left;
+	display: block;
+	padding: 0 8px 0 18px;
+	line-height: 24px;
+	font-size: 22px;
+	font-weight: 400;
+	color: #000;
+	background: #fff;
+}
+
+.promotion-vbaike {
+	margin-bottom: 10px;
+	border: 1px solid #e6e6e6;
+	padding: 10px 14px 0;
+	font-family: arial, tahoma, 'Microsoft Yahei', '\5b8b\4f53', sans-serif;
+	background: #fcfcfc;
+	position: relative;
+}
+
+.promotion_title {
+	margin: 0 0 8px;
+	font-size: 14px;
+	color: #555;
+	font-family: arial;
+	font-weight: 700;
+}
+
+.promotion_viewport {
+	position: relative;
+	margin: 0 0 0 -14px;
+	overflow: hidden;
+	width: 268px;
+}

@@ -1,0 +1,104 @@
+<xml xmlns:s='uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882'
+	xmlns:dt='uuid:C2F41010-65B3-11d1-A29F-00AA00C14882'
+	xmlns:rs='urn:schemas-microsoft-com:rowset'
+	xmlns:z='#RowsetSchema'>
+<s:Schema id='RowsetSchema'>
+	<s:ElementType name='row' content='eltOnly' rs:updatable='true'>
+		<s:AttributeType name='ID' rs:number='1' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2' rs:baseschema='DBO'
+			 rs:basetable='WAGE_W50' rs:basecolumn='ID' rs:keycolumn='true'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='68'/>
+		</s:AttributeType>
+		<s:AttributeType name='A0000' rs:number='2' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='A0000'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='68'/>
+		</s:AttributeType>
+		<s:AttributeType name='FLAG' rs:number='3' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2' rs:baseschema='DBO'
+			 rs:basetable='WAGE_W50' rs:basecolumn='FLAG'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='10' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='STARTDATE' rs:number='4' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='STARTDATE'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='8'/>
+		</s:AttributeType>
+		<s:AttributeType name='CHECKDATE' rs:number='5' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='CHECKDATE'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='8'/>
+		</s:AttributeType>
+		<s:AttributeType name='CHECKSTATUS' rs:number='6' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='CHECKSTATUS'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='1'/>
+		</s:AttributeType>
+		<s:AttributeType name='CHECKNUM' rs:number='7' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='CHECKNUM'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='40'/>
+		</s:AttributeType>
+		<s:AttributeType name='CHANGETYPE' rs:number='8' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='CHANGETYPE'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='20'/>
+		</s:AttributeType>
+		<s:AttributeType name='CHANGEINFO' rs:number='9' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='CHANGEINFO'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='200'/>
+		</s:AttributeType>
+		<s:AttributeType name='WAGESTYLE' rs:number='10' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='WAGESTYLE'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='20'/>
+		</s:AttributeType>
+		<s:AttributeType name='SPOSITION' rs:number='11' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='SPOSITION'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='20'/>
+		</s:AttributeType>
+		<s:AttributeType name='ILADDER' rs:number='12' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='ILADDER'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='10' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='ILEVEL' rs:number='13' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='ILEVEL'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='10' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='CALCINFO' rs:number='14' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='CALCINFO'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='1000'/>
+		</s:AttributeType>
+		<s:AttributeType name='TRY_EDU_WAGE' rs:number='15' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='TRY_EDU_WAGE'>
+			<s:datatype dt:type='number' rs:dbtype='numeric' dt:maxLength='19' rs:scale='2' rs:precision='8' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='FLOORTIME' rs:number='16' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='FLOORTIME'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='8'/>
+		</s:AttributeType>
+		<s:AttributeType name='BORNTIME' rs:number='17' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='BORNTIME'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='20'/>
+		</s:AttributeType>
+		<s:AttributeType name='UPDATELEVEL' rs:number='18' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='UPDATELEVEL'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='8'/>
+		</s:AttributeType>
+		<s:AttributeType name='UPDATESTEP' rs:number='19' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='UPDATESTEP'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='8'/>
+		</s:AttributeType>
+		<s:AttributeType name='TRY_STATUS' rs:number='20' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='TRY_STATUS'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='10' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='TEACH_STATUS' rs:number='21' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='TEACH_STATUS'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='10' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='IGNOREROLL' rs:number='22' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='IGNOREROLL'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='10' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='REAL_POS' rs:number='23' rs:nullable='true' rs:write='true' rs:basecatalog='OFFICIALV2'
+			 rs:baseschema='DBO' rs:basetable='WAGE_W50' rs:basecolumn='REAL_POS'>
+			<s:datatype dt:type='string' rs:dbtype='str' dt:maxLength='20'/>
+		</s:AttributeType>
+		<s:extends type='rs:rowbase'/>
+	</s:ElementType>
+</s:Schema>
+<rs:data>
+</rs:data>
+</xml>

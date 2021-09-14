@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A60"
+    lazy="false"
+    table="A60">
+    <id column="A0000" name="a0000" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="A6001" length="2" name="a6001" type="java.lang.String" />
+    <property column="A6002" length="80" name="a6002" type="java.lang.String" />
+    <property column="A6003" length="20" name="a6003" type="java.lang.String" />
+    <property column="A6004" length="60" name="a6004" type="java.lang.String" />
+    <property column="A6005" length="8" name="a6005" type="java.lang.String" />
+    <property column="A6006" length="20" name="a6006" type="java.lang.String" />
+    <property column="A6007" length="8" name="a6007" type="java.lang.String" />
+    <property column="A6008" length="60" name="a6008" type="java.lang.String" />
+    <property column="A6009" length="60" name="a6009" type="java.lang.String" />
+    <property column="A6010" length="2" name="a6010" type="java.lang.String" />
+    <property column="A6011" length="2" name="a6011" type="java.lang.String" />
+    <property column="A6012" length="2" name="a6012" type="java.lang.String" />
+    <property column="A6013" length="2" name="a6013" type="java.lang.String" />
+    <property column="A6014" length="2" name="a6014" type="java.lang.String" />
+    <property column="A6015" length="2" name="a6015" type="java.lang.String" />
+    <property column="A6016" length="2" name="a6016" type="java.lang.String" />
+    <property column="A6017" length="20" name="a6017" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

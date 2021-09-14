@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-3-5 17:12:16 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Js2Yntp" table="JS2_YNTP">
+        <id name="ynId" type="string">
+            <column name="YN_ID" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="ynName" type="string">
+            <column name="YN_NAME" length="500">
+            </column>
+        </property>
+        <property name="ynType" type="string">
+            <column name="YN_TYPE" length="100">
+            </column>
+        </property>
+        <property name="ynUserid" type="string">
+            <column name="YN_USERID" length="64">
+            </column>
+        </property>
+        <property name="ynOrg" type="string">
+            <column name="YN_ORG" length="120">
+            </column>
+        </property>
+        <property name="ynSysno" type="big_decimal">
+            <column name="YN_SYSNO" precision="22" scale="0">
+            </column>
+        </property>
+        <property name="ynDate"  type="java.sql.Timestamp">
+            <column name="YN_DATE" length="7">
+            </column>
+        </property>
+        
+        <property name="tbUnit"  type="string">
+            <column name="TB_UNIT" length="7">
+            </column>
+        </property>  
+        <property name="calAgeYear"  type="string">
+            <column name="cal_Age_Year" length="7">
+            </column>
+        </property>          
+              
+    </class>
+</hibernate-mapping>

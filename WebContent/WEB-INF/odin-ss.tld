@@ -1,0 +1,5222 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+                        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<!-- 
+ * **************************
+ * 浙大网新恩普软件有限公司
+ * 核三框架标签库SS的tld文件
+ * version:6.0.1 gridCol标签增加新属性rownumWidth，用来控制行号列宽度~~jinwei 2013.9.18
+ * version:6.0.2 增加了ss下的fill标签~~jinwei 2013.9.26
+ * version:6.0.3 给编辑表格增加enterAutoAddRow（是否回车增加一行空行）属性 jinwei 2013.10.10
+ * **************************
+ -->                        
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>odin-ss</short-name>
+	<description>浙大网新Odin平台社保专用标签库</description>
+	<tag>
+		<name>module</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.ModuleControlTag
+		</tag-class>
+		<attribute>
+			<name>param</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>模块控制参数，如为P0，当为P0时其子标签解析显示</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>wzOpLogBtn</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.toolbar.WzOpLogButtonForToolBarTag
+		</tag-class>
+		<attribute>
+			<name>sqlInfo</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>操作日志界面里的表格查询SQL信息，标签将自动根据表格SQL的列注疏生成表格头信息，然后SQL进行表格数据查询</description>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>toolbar button 的主键</description>
+		</attribute>
+		<attribute>
+			<name>split</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要向下的箭头这个附加按钮</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文本内容</description>
+		</attribute>
+		<attribute>
+			<name>tooltip</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>handler</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>doSaveBtn</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.toolbar.SaveButtonForToolBarTag
+		</tag-class>
+		<attribute>
+			<name>id</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>toolbar button 的主键</description>
+		</attribute>
+		<attribute>
+			<name>split</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要向下的箭头这个附加按钮</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文本内容</description>
+		</attribute>
+		<attribute>
+			<name>tooltip</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>handler</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>doExpBtn</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.toolbar.ExpButtonForToolBarTag
+		</tag-class>
+		<attribute>
+			<name>id</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>toolbar button 的主键</description>
+		</attribute>
+		<attribute>
+			<name>split</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要向下的箭头这个附加按钮</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文本内容</description>
+		</attribute>
+		<attribute>
+			<name>tooltip</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>handler</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>doPrintBtn</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.toolbar.PrintButtonForToolBarTag
+		</tag-class>
+		<description>打印统一标签</description>
+		<attribute>
+			<name>id</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>toolbar button 的主键</description>
+		</attribute>
+		<attribute>
+			<name>split</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要向下的箭头这个附加按钮</description>
+		</attribute>
+		<attribute>
+			<name>handlerName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>按钮触发的事件名</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文本内容</description>
+		</attribute>
+		<attribute>
+			<name>tooltip</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>handler</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>doImpBtn</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.toolbar.ImpButtonForToolBarTag
+		</tag-class>
+		<description>导入的工具条按钮</description>
+		<attribute>
+			<name>id</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>toolbar button 的主键</description>
+		</attribute>
+		<attribute>
+			<name>split</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要向下的箭头这个附加按钮</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文本内容</description>
+		</attribute>
+		<attribute>
+			<name>tooltip</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>handler</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>doCommImpBtn</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.toolbar.CommImpButtonForToolBarTag
+		</tag-class>
+		<description>导入的工具条按钮</description>
+		<attribute>
+			<name>id</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>toolbar button 的主键</description>
+		</attribute>
+		<attribute>
+			<name>split</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要向下的箭头这个附加按钮</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文本内容</description>
+		</attribute>
+		<attribute>
+			<name>tooltip</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>handler</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>fileType</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>param</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>doClickBtn</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.toolbar.ClickButtonForToolBarTag
+		</tag-class>
+		<attribute>
+			<name>id</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>toolbar button 的主键</description>
+		</attribute>
+		<attribute>
+			<name>split</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要向下的箭头这个附加按钮</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文本内容</description>
+		</attribute>
+		<attribute>
+			<name>tooltip</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>handlerName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>按钮触发的事件名</description>
+		</attribute>
+		<attribute>
+			<name>handler</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>noRequiredValidate</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要需要进行必填校验，默认false(不校验)</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>doQueryBtn</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.toolbar.QueryButtonForToolBarTag
+		</tag-class>
+		<attribute>
+			<name>id</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>toolbar button 的主键</description>
+		</attribute>
+		<attribute>
+			<name>split</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要向下的箭头这个附加按钮</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文本内容</description>
+		</attribute>
+		<attribute>
+			<name>tooltip</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>handler</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>noRequiredValidate</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要需要进行必填校验，默认false(不校验)</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>resetBtn</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.toolbar.ResetButtonForToolBarTag
+		</tag-class>
+		<attribute>
+			<name>id</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>toolbar button 的主键</description>
+		</attribute>
+		<attribute>
+			<name>split</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要向下的箭头这个附加按钮</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文本内容</description>
+		</attribute>
+		<attribute>
+			<name>tooltip</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>handler</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>toolBar</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.toolbar.ToolBarTag
+		</tag-class>
+		<description>工具条标签</description>
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>工具条的id</description>
+		</attribute>
+		<attribute>
+			<name>isFloat</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否浮动</description>
+		</attribute>
+		<attribute>
+			<name>applyTo</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>工具条要显示的位置所在div的id</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>hlistDiv</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.HListDivTag
+		</tag-class>
+		<description>
+			供hlist用的布局标签，其id一般为1、2、3等，而真实id则为div_1等
+		</description>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>值为1、2、3等</description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>有标题时用groupbox包裹</description>
+		</attribute>
+		<attribute>
+			<name>cols</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>默认值为6，而每个textEdit占两列</description>
+		</attribute>
+		<attribute>
+			<name>p</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Set to &lt;code&gt;true&lt;/code&gt; if this
+				input field should be disabled.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>overflow</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否支持滚动条</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>textEdit</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.TextEditTag
+		</tag-class>
+		<description>带Label的输入框标签</description>
+		<attribute>
+			<name>labelSpanId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				input表单说明区域的span的id,默认为property+"SpanId"
+			</description>
+		</attribute>
+		<attribute>
+			<name>selectOnFocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否在获得焦点时就选中，默认为false</description>
+		</attribute>
+		<attribute>
+			<name>inputType</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				输入框的类型，可以为text, password（默认为text），和html的type有着相同功能
+			</description>
+		</attribute>
+		<attribute>
+			<name>validator</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证或者说校验函数</description>
+		</attribute>
+		<attribute>
+			<name>invalidText</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证不通过时的提示信息</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否为必录项</description>
+		</attribute>
+		<attribute>
+			<name>mask</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>校验类型，"email"为邮件</description>
+		</attribute>
+		<attribute>
+			<name>colspan</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标签所占一行中的列数,默认为1</description>
+		</attribute>
+		<attribute>
+			<name>label</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>accesskey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				The keyboard character used to move focus immediately to
+				this element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>alt</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The alternate text for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>altKey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The message resources key of the alternate text
+				for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>p</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Set to &lt;code&gt;true&lt;/code&gt; if this
+				input field should be disabled.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>maxlength</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onEnterKeyPress</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>处理Enter事件用</description>
+		</attribute>
+		<attribute>
+			<name>onblur</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				loses input focus.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onchange</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				loses input focus and its value has changed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onclick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives a mouse click.
+			</description>
+		</attribute>
+		<attribute>
+			<name>ondblclick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives a mouse double click.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onfocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives input focus.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeydown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is depressed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeypress</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is depressed and released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeyup</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousedown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and a mouse button is depressed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousemove</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and the pointer is moved.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseout</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element was
+				under the mouse pointer but the pointer was moved
+				outside the element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseover</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element was
+				not under the mouse pointer but the pointer is moved
+				inside the element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseup</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and a mouse button is released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Name of this input field, and the name of the
+				corresponding bean property if value is not specified.
+				The corresponding bean property (if any) must be of type
+				String.
+			</description>
+		</attribute>
+		<attribute>
+			<name>readonly</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Set to &lt;code&gt;true&lt;/code&gt; if this input field
+				should be read only.(是否为只读)
+			</description>
+		</attribute>
+		<attribute>
+			<name>size</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				CSS styles to be applied to this HTML element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;CSS stylesheet class to be applied to this HTML
+				element (renders a "class" attribute).&lt;/p&gt;
+
+				&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; If present,
+				the &lt;code&gt;errorStyleClass&lt;/code&gt; overrides
+				this attribute in the event of an error for the
+				element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Identifier to be assigned to this HTML element
+				(renders an "id" attribute).&lt;/p&gt;
+
+				&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; If present,
+				the &lt;code&gt;errorStyleId&lt;/code&gt; overrides this
+				attribute in the event of an error for the
+				element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>tabindex</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				The tab order (ascending positive integers) for this
+				element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The advisory title for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>titleKey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The message resources key for the advisory
+				title for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Value to which this field should be initialized. [Use
+				the corresponding bean property value]
+			</description>
+		</attribute>
+		<attribute>
+			<name>nextElement</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				下一个元素的property
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>select</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.ComboBoxTag
+		</tag-class>
+		<description>combox选择框</description>
+		<attribute>
+			<name>nextElement</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				下一个元素的property
+			</description>
+		</attribute>
+		<attribute>
+			<name>canOutSelectList</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否允许为下拉选项外</description>
+		</attribute>
+		<attribute>
+			<name>isPageSelect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否通过分页方式显示代码信息</description>
+		</attribute>
+		<attribute>
+			<name>multiSelect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否为多选，值为true或false</description>
+		</attribute>
+		<attribute>
+			<name>multiSelectWithAll</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否为多选且带全部的下拉框</description>
+		</attribute>
+		<attribute>
+			<name>multiSelectWithAllAndSetDefault</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否为多选且带全部的下拉框且设置默认值为all</description>
+		</attribute>
+		<attribute>
+			<name>listWidth</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉选项宽度，没值时下拉选项的宽度和下拉框宽度一致</description>
+		</attribute>
+		<attribute>
+			<name>valueNotFoundText</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当输入的值找不到对应的key代码时显示这个</description>
+		</attribute>
+		<attribute>
+			<name>labelSpanId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				input表单说明区域的span的id,默认为property+"SpanId"
+			</description>
+		</attribute>
+		<attribute>
+			<name>queryDelay</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>延迟多久后进行查询，主要用在下拉要远程查询的情况下，默认500毫秒</description>
+		</attribute>
+		<attribute>
+			<name>allAsItem</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否把“全部”代码为“all”作为一个下拉选项</description>
+		</attribute>
+		<attribute>
+			<name>maxHeight</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当大于这个高度时其它项可通过滚动条查看</description>
+		</attribute>
+		<attribute>
+			<name>selectOnFocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否在获得焦点时就选中，默认为false</description>
+		</attribute>
+		<attribute>
+			<name>pageSize</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当数据是远程查出来的时，这个用来表示一页显示几条</description>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>hideTrigger</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要隐藏后面的图标</description>
+		</attribute>
+		<attribute>
+			<name>minChars</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>开始远程查询的最小字符数</description>
+		</attribute>
+		<attribute>
+			<name>displayField</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				要智能过滤同时选种相近的字段名称，默认为‘value’，也可为‘key’，只有这两个
+			</description>
+		</attribute>
+		<attribute>
+			<name>valueField</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>代码的数据字段，默认为‘value’，也可为‘key’等</description>
+		</attribute>
+		<attribute>
+			<name>tpl</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉数据如何显示所要使用的模版</description>
+		</attribute>
+		<attribute>
+			<name>validator</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证或者说校验函数</description>
+		</attribute>
+		<attribute>
+			<name>invalidText</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证不通过时的提示信息</description>
+		</attribute>
+		<attribute>
+			<name>codeType</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>代码类别</description>
+		</attribute>
+		<attribute>
+			<name>filter</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>代码过滤条件</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉框的一个默认的提示性的值</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉框宽度</description>
+		</attribute>
+		<attribute>
+			<name>editor</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉框是否可编辑，默认为false</description>
+		</attribute>
+		<attribute>
+			<name>data</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉框的数据</description>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否为必录项</description>
+		</attribute>
+		<attribute>
+			<name>colspan</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标签所占一行中的列数,默认为2</description>
+		</attribute>
+		<attribute>
+			<name>label</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>accesskey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				The keyboard character used to move focus immediately to
+				this element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>alt</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The alternate text for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>altKey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The message resources key of the alternate text
+				for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>p</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Set to &lt;code&gt;true&lt;/code&gt; if this
+				input field should be disabled.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>maxlength</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onEnterKeyPress</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>处理Enter事件用</description>
+		</attribute>
+		<attribute>
+			<name>onblur</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				loses input focus.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onchange</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				loses input focus and its value has changed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onclick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives a mouse click.
+			</description>
+		</attribute>
+		<attribute>
+			<name>ondblclick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives a mouse double click.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onfocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives input focus.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeydown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is depressed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeypress</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is depressed and released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeyup</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousedown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and a mouse button is depressed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousemove</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and the pointer is moved.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseout</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element was
+				under the mouse pointer but the pointer was moved
+				outside the element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseover</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element was
+				not under the mouse pointer but the pointer is moved
+				inside the element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseup</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and a mouse button is released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Name of this input field, and the name of the
+				corresponding bean property if value is not specified.
+				The corresponding bean property (if any) must be of type
+				String.
+			</description>
+		</attribute>
+		<attribute>
+			<name>readonly</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Set to &lt;code&gt;true&lt;/code&gt; if this input field
+				should be read only.(是否为只读)
+			</description>
+		</attribute>
+		<attribute>
+			<name>size</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				CSS styles to be applied to this HTML element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;CSS stylesheet class to be applied to this HTML
+				element (renders a "class" attribute).&lt;/p&gt;
+
+				&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; If present,
+				the &lt;code&gt;errorStyleClass&lt;/code&gt; overrides
+				this attribute in the event of an error for the
+				element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Identifier to be assigned to this HTML element
+				(renders an "id" attribute).&lt;/p&gt;
+
+				&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; If present,
+				the &lt;code&gt;errorStyleId&lt;/code&gt; overrides this
+				attribute in the event of an error for the
+				element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>tabindex</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				The tab order (ascending positive integers) for this
+				element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The advisory title for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>titleKey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The message resources key for the advisory
+				title for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Value to which this field should be initialized. [Use
+				the corresponding bean property value]
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>dateEdit</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.DateEditTag
+		</tag-class>
+		<description>带Label的输入框标签</description>
+		<attribute>
+			<name>nextElement</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				下一个元素的property
+			</description>
+		</attribute>
+		<attribute>
+			<name>isdatetime</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				是否使用时分秒的格式
+			</description>
+		</attribute>
+		<attribute>
+			<name>labelSpanId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				input表单说明区域的span的id,默认为property+"SpanId"
+			</description>
+		</attribute>
+		<attribute>
+			<name>selectOnFocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否在获得焦点时就选中，默认为false</description>
+		</attribute>
+		<attribute>
+			<name>validator</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证或者说校验函数</description>
+		</attribute>
+		<attribute>
+			<name>invalidText</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证不通过时的提示信息</description>
+		</attribute>
+		<attribute>
+			<name>format</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>默认为"Y-m-d"</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否为必录项</description>
+		</attribute>
+		<attribute>
+			<name>mask</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>校验</description>
+		</attribute>
+		<attribute>
+			<name>colspan</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标签所占一行中的列数,默认为1</description>
+		</attribute>
+		<attribute>
+			<name>label</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>accesskey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				The keyboard character used to move focus immediately to
+				this element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>alt</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The alternate text for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>altKey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The message resources key of the alternate text
+				for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>p</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Set to &lt;code&gt;true&lt;/code&gt; if this
+				input field should be disabled.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>maxlength</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onEnterKeyPress</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>处理Enter事件用</description>
+		</attribute>
+		<attribute>
+			<name>onblur</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				loses input focus.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onchange</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				loses input focus and its value has changed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onclick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives a mouse click.
+			</description>
+		</attribute>
+		<attribute>
+			<name>ondblclick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives a mouse double click.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onfocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives input focus.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeydown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is depressed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeypress</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is depressed and released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeyup</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousedown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and a mouse button is depressed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousemove</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and the pointer is moved.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseout</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element was
+				under the mouse pointer but the pointer was moved
+				outside the element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseover</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element was
+				not under the mouse pointer but the pointer is moved
+				inside the element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseup</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and a mouse button is released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Name of this input field, and the name of the
+				corresponding bean property if value is not specified.
+				The corresponding bean property (if any) must be of type
+				String.
+			</description>
+		</attribute>
+		<attribute>
+			<name>readonly</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Set to &lt;code&gt;true&lt;/code&gt; if this input field
+				should be read only.(是否为只读)
+			</description>
+		</attribute>
+		<attribute>
+			<name>size</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				CSS styles to be applied to this HTML element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;CSS stylesheet class to be applied to this HTML
+				element (renders a "class" attribute).&lt;/p&gt;
+
+				&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; If present,
+				the &lt;code&gt;errorStyleClass&lt;/code&gt; overrides
+				this attribute in the event of an error for the
+				element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Identifier to be assigned to this HTML element
+				(renders an "id" attribute).&lt;/p&gt;
+
+				&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; If present,
+				the &lt;code&gt;errorStyleId&lt;/code&gt; overrides this
+				attribute in the event of an error for the
+				element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>tabindex</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				The tab order (ascending positive integers) for this
+				element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The advisory title for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>titleKey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The message resources key for the advisory
+				title for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Value to which this field should be initialized. [Use
+				the corresponding bean property value]
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>numberEdit</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.NumberEditTag
+		</tag-class>
+		<description>带Label的输入框标签</description>
+		<attribute>
+			<name>nextElement</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				下一个元素的property
+			</description>
+		</attribute>
+		<attribute>
+			<name>isMoney</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否是金额</description>
+		</attribute>
+		<attribute>
+			<name>isPercent</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否是百分比</description>
+		</attribute>
+		<attribute>
+			<name>isPercentOrNot</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否是百分比或数字</description>
+		</attribute>
+		<attribute>
+			<name>tooltip</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>提示信息</description>
+		</attribute>
+		<attribute>
+			<name>hidden</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>提示信息</description>
+		</attribute>
+		<attribute>
+			<name>maxText</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当该表单值大于最大值时的提示信息</description>
+		</attribute>
+		<attribute>
+			<name>maxValue</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>最大值，数字型</description>
+		</attribute>
+		<attribute>
+			<name>minText</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当该表单值小于最小值时的提示信息</description>
+		</attribute>
+		<attribute>
+			<name>minValue</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>最小值</description>
+		</attribute>
+		<attribute>
+			<name>labelSpanId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				input表单说明区域的span的id,默认为property+"SpanId"
+			</description>
+		</attribute>
+		<attribute>
+			<name>selectOnFocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否在获得焦点时就选中，默认为false</description>
+		</attribute>
+		<attribute>
+			<name>validator</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证或者说校验函数</description>
+		</attribute>
+		<attribute>
+			<name>invalidText</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证不通过时的提示信息</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>decimalPrecision</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>数字类型输入框的精度，即小数点后面的位数</description>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否为必录项</description>
+		</attribute>
+		<attribute>
+			<name>mask</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>校验</description>
+		</attribute>
+		<attribute>
+			<name>colspan</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标签所占一行中的列数,默认为1</description>
+		</attribute>
+		<attribute>
+			<name>label</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>accesskey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				The keyboard character used to move focus immediately to
+				this element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>alt</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The alternate text for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>altKey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The message resources key of the alternate text
+				for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>p</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Set to &lt;code&gt;true&lt;/code&gt; if this
+				input field should be disabled.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>maxlength</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onEnterKeyPress</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>处理Enter事件用</description>
+		</attribute>
+		<attribute>
+			<name>onblur</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				loses input focus.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onchange</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				loses input focus and its value has changed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onclick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives a mouse click.
+			</description>
+		</attribute>
+		<attribute>
+			<name>ondblclick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives a mouse double click.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onfocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives input focus.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeydown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is depressed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeypress</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is depressed and released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeyup</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousedown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and a mouse button is depressed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousemove</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and the pointer is moved.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseout</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element was
+				under the mouse pointer but the pointer was moved
+				outside the element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseover</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element was
+				not under the mouse pointer but the pointer is moved
+				inside the element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseup</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and a mouse button is released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Name of this input field, and the name of the
+				corresponding bean property if value is not specified.
+				The corresponding bean property (if any) must be of type
+				String.
+			</description>
+		</attribute>
+		<attribute>
+			<name>readonly</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Set to &lt;code&gt;true&lt;/code&gt; if this input field
+				should be read only.(是否为只读)
+			</description>
+		</attribute>
+		<attribute>
+			<name>size</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				CSS styles to be applied to this HTML element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;CSS stylesheet class to be applied to this HTML
+				element (renders a "class" attribute).&lt;/p&gt;
+
+				&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; If present,
+				the &lt;code&gt;errorStyleClass&lt;/code&gt; overrides
+				this attribute in the event of an error for the
+				element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Identifier to be assigned to this HTML element
+				(renders an "id" attribute).&lt;/p&gt;
+
+				&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; If present,
+				the &lt;code&gt;errorStyleId&lt;/code&gt; overrides this
+				attribute in the event of an error for the
+				element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>tabindex</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				The tab order (ascending positive integers) for this
+				element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The advisory title for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>titleKey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The message resources key for the advisory
+				title for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Value to which this field should be initialized. [Use
+				the corresponding bean property value]
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>buttonForToolBar</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.toolbar.ButtonForToolBarTag
+		</tag-class>
+		<attribute>
+			<name>id</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>toolbar button 的主键</description>
+		</attribute>
+		<attribute>
+			<name>split</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要向下的箭头这个附加按钮</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文本内容</description>
+		</attribute>
+		<attribute>
+			<name>tooltip</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>iconCls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cls</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>handler</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>icon</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>menu</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>gridEditColumn</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.grid.GridEditColumnTag
+		</tag-class>
+		<description>可编辑表格如何显示列，通过这个来控制和调整</description>
+		<attribute>
+			<name>colorExp</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>字段颜色表达式，如(aaa001==1)?'red':(aaa001==2)?'rgb(0,0,0)':''</description>
+		</attribute>
+		<attribute>
+			<name>checkBoxClick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>checkbox列的单击事件名</description>
+		</attribute>
+		<attribute>
+			<name>checkBoxSelectAllClick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>checkbox列的全选事件名</description>
+		</attribute>
+		<attribute>
+			<name>queryDelay</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>延迟多久后进行查询，主要用在下拉要远程查询的情况下，默认500毫秒</description>
+		</attribute>
+		<attribute>
+			<name>onKeyDown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当为编辑状态时的keydown事件,参数采用回填形式</description>
+		</attribute>
+		<attribute>
+			<name>maxHeight</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当大于这个高度时其它项可通过滚动条查看（编辑模型为下拉框时使用）</description>
+		</attribute>
+		<attribute>
+			<name>gridName</name>
+			<rtexprvalue>false</rtexprvalue>
+			<description>
+				当editor为checkbox时，同时header为selectall，这时gridName属性用来告诉全选处理函数所需要的表格名
+			</description>
+		</attribute>
+		<attribute>
+			<name>upperOrLower</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>大小写的一个限制，0为小写，1为大写</description>
+		</attribute>
+		<attribute>
+			<name>selectOnFocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否在获得焦点时就选中，默认为false，非输入时不支持</description>
+		</attribute>
+		<attribute>
+			<name>onSelect</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当下拉编辑时的选择事件</description>
+		</attribute>
+		<attribute>
+			<name>pageSize</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当数据是远程查出来的时，这个用来表示一页显示几条</description>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>hideTrigger</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要隐藏后面的图标</description>
+		</attribute>
+		<attribute>
+			<name>minChars</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>开始远程查询的最小字符数</description>
+		</attribute>
+		<attribute>
+			<name>displayField</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				要智能过滤同时选种相近的字段名称，默认为‘value’，也可为‘key’，只有这两个
+			</description>
+		</attribute>
+		<attribute>
+			<name>tpl</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉数据如何显示所要使用的模版</description>
+		</attribute>
+		<attribute>
+			<name>editorId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当为编辑列时，此属性用来表示编辑模型对象的id</description>
+		</attribute>
+		<attribute>
+			<name>format</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当为日期编辑列时，此属性用来表示对此日期的格式化字符串</description>
+		</attribute>
+		<attribute>
+			<name>decimalPrecision</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>为num类型编辑时，其精度为小数点后几位</description>
+		</attribute>
+		<attribute>
+			<name>maxLength</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>最大输入长度</description>
+		</attribute>
+		<attribute>
+			<name>minLength</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>最小输入长度</description>
+		</attribute>
+		<attribute>
+			<name>maxValue</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>只对number，此为允许的最大值</description>
+		</attribute>
+		<attribute>
+			<name>minValue</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>只对number，此为允许的最小值</description>
+		</attribute>
+		<attribute>
+			<name>align</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列数据显示时的对齐方式 left、right、center</description>
+		</attribute>
+		<attribute>
+			<name>summaryRenderer</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>统计列的显示处理的js函数</description>
+		</attribute>
+		<attribute>
+			<name>p</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否允许编辑</description>
+		</attribute>
+		<attribute>
+			<name>codeType</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>代码类别</description>
+		</attribute>
+		<attribute>
+			<name>filter</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>代码过滤条件</description>
+		</attribute>
+		<attribute>
+			<name>renderer</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>对列的显示进行特殊处理的js函数名字</description>
+		</attribute>
+		<attribute>
+			<name>countType</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				如果要统计，则一定要此属性，用来表示统计类型（sum、count、max、min、average）
+			</description>
+		</attribute>
+		<attribute>
+			<name>selectData</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当editor为select时，此属性用来传下拉框的数据</description>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>这列的id</description>
+		</attribute>
+		<attribute>
+			<name>header</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				这列对应的列头的名字，默认是和数据列名一样(selectall时这列的头部显示一个checkbox，同时需要使用gridName属性（其负责处理全选）)
+			</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列的显示宽度</description>
+		</attribute>
+		<attribute>
+			<name>sortable</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列是否可排序，默认为是</description>
+		</attribute>
+		<attribute>
+			<name>dataIndex</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				列的数据索引，要和gridDataCol标签的name属性中的一个一样
+			</description>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				是不是对后的grid列，默认不是，但当是表格最后一列时这个属性就一定要
+			</description>
+		</attribute>
+		<attribute>
+			<name>editor</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				此列的编辑类型，如是文本编辑则为“text”（text,date,number,select,checkbox）
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>query</name>
+		<tag-class>com.insigma.odin.taglib.commform.html.QueryTag</tag-class>
+		<description>查询标签::人员查询psquery、单位查询cpquery</description>
+		<attribute>
+			<name>nextElement</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				下一个元素的property
+			</description>
+		</attribute>
+		<attribute>
+			<name>selectOnFocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否在获得焦点时就选中，默认为false</description>
+		</attribute>
+		<attribute>
+			<name>validator</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				验证或者说校验函数，isYM校验是否为6位数字的年月，isBeforeSysdate校验是否大于当前日期
+			</description>
+		</attribute>
+		<attribute>
+			<name>invalidText</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证不通过时的提示信息</description>
+		</attribute>
+		<attribute>
+			<name>iconId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当点击该图片打开一个窗口时要用到此id</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>iconClick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图片按钮的单击事件函数</description>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否为必录项</description>
+		</attribute>
+		<attribute>
+			<name>mask</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				校验类型，"email"为邮件，"lt_cn_nm"为字母、汉字或数字,"lt_cn"为字母或汉字,"lt_nm"为字母或数字，"lt"为字母，"cn"为汉字,"nm"为数字
+			</description>
+		</attribute>
+		<attribute>
+			<name>colspan</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标签所占一行中的列数,默认为1</description>
+		</attribute>
+		<attribute>
+			<name>label</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>isQuery</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				是否进行查询，默认为true，人员新增等不需要查询的功能设为false
+			</description>
+		</attribute>
+		<attribute>
+			<name>isCpflag</name>
+			<rtexprvalue>false</rtexprvalue>
+			<description>
+				查询是否包含单位，默认为false
+			</description>
+		</attribute>
+		<attribute>
+			<name>checkRate</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				校验权限，默认-1按用户等级校验，0部级即不校验，1省级，2市级，3区级，4主管部门，5街道，6社区，7单位，8个人
+			</description>
+		</attribute>
+		<attribute>
+			<name>accesskey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				The keyboard character used to move focus immediately to
+				this element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>alt</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The alternate text for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>altKey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The message resources key of the alternate text
+				for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>p</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Set to &lt;code&gt;true&lt;/code&gt; if this
+				input field should be disabled.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>maxlength</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onEnterKeyPress</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>处理Enter事件用</description>
+		</attribute>
+		<attribute>
+			<name>onblur</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				loses input focus.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onchange</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				loses input focus and its value has changed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onclick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives a mouse click.
+			</description>
+		</attribute>
+		<attribute>
+			<name>ondblclick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives a mouse double click.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onfocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives input focus.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeydown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is depressed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeypress</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is depressed and released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeyup</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousedown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and a mouse button is depressed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousemove</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and the pointer is moved.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseout</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element was
+				under the mouse pointer but the pointer was moved
+				outside the element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseover</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element was
+				not under the mouse pointer but the pointer is moved
+				inside the element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseup</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and a mouse button is released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Name of this input field, and the name of the
+				corresponding bean property if value is not specified.
+				The corresponding bean property (if any) must be of type
+				String.
+			</description>
+		</attribute>
+		<attribute>
+			<name>readonly</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Set to &lt;code&gt;true&lt;/code&gt; if this input field
+				should be read only.(是否为只读)
+			</description>
+		</attribute>
+		<attribute>
+			<name>size</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				CSS styles to be applied to this HTML element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				toUpperCase为转换成大写,toLowerCase为转换成小写 &lt;p&gt;CSS
+				stylesheet class to be applied to this HTML element
+				(renders a "class" attribute).&lt;/p&gt;
+
+				&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; If present,
+				the &lt;code&gt;errorStyleClass&lt;/code&gt; overrides
+				this attribute in the event of an error for the
+				element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Identifier to be assigned to this HTML element
+				(renders an "id" attribute).&lt;/p&gt;
+
+				&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; If present,
+				the &lt;code&gt;errorStyleId&lt;/code&gt; overrides this
+				attribute in the event of an error for the
+				element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>tabindex</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				The tab order (ascending positive integers) for this
+				element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The advisory title for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>titleKey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The message resources key for the advisory
+				title for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Value to which this field should be initialized. [Use
+				the corresponding bean property value]
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>editgrid</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.grid.EditorGridTag
+		</tag-class>
+		<description>可编辑表格标签</description>
+		<attribute>
+			<name>hasStati</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列表是否有统计数据的行</description>
+		</attribute>
+		<attribute>
+			<name>moveWay</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列表中TAB建的移动方式(row/cell),默认是行内优先移动(row)</description>
+		</attribute>
+		<attribute>
+			<name>isAlertSaveAfterPageChanging</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				翻页时是否弹出保存确认框，进行保存确认，确定后默认触发页面的doGridSave(gridId)函数
+			</description>
+		</attribute>
+		<attribute>
+			<name>saveAfterPageChangingMsg</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>翻页保存确认提示信息内容</description>
+		</attribute>
+		<attribute>
+			<name>hasAllRightMenu</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>其值为true或false，表示是否有有全部功能的通用表格右键功能</description>
+		</attribute>
+		<attribute>
+			<name>hasRightMenu</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>其值为true或false，表示是否有通用表格右键功能</description>
+		</attribute>
+		<attribute>
+			<name>bufferView</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				其值为true或false，用来表示表格采用catch方式来显示表格数据，即如从后台一页取500条数据，但显示时只显示50，从而随着表格滚动条而去动态加载缓存里的数据
+			</description>
+		</attribute>
+		<attribute>
+			<name>cacheSize</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				其值为整数，用来表示当采用bufferview方式显示表格数据时，每次从缓存中获取用来显示的数据条数，默认为50条
+			</description>
+		</attribute>
+		<attribute>
+			<name>remoteSort</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>该表格是否支持远程排序，值为true或false</description>
+		</attribute>
+		<attribute>
+			<name>rightMenuId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>表格右键菜单的ID，该ID关联到Menu标签</description>
+		</attribute>
+		<attribute>
+			<name>groupSort</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				在分组时的排序方式，默认为“ASC”即按分组字段升序，也可为“DESC”
+			</description>
+		</attribute>
+		<attribute>
+			<name>aftereditCols</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>单元格编辑后事件触发的列，多列时中间用逗号隔开</description>
+		</attribute>
+		<attribute>
+			<name>load</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>分页加载数据之后事件</description>
+		</attribute>
+		<attribute>
+			<name>keydown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>按键事件</description>
+		</attribute>
+		<attribute>
+			<name>rowDbClick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>表格行双击事件</description>
+		</attribute>
+		<attribute>
+			<name>rowClick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>表格行单击事件</description>
+		</attribute>
+		<attribute>
+			<name>cellDbClick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>表格单元格双击事件</description>
+		</attribute>
+		<attribute>
+			<name>beforeedit</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>编辑之前事件</description>
+		</attribute>
+		<attribute>
+			<name>beforeload</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>分页加载数据之前事件</description>
+		</attribute>
+		<attribute>
+			<name>pageSize</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>每页显示的记录个数</description>
+		</attribute>
+		<attribute>
+			<name>collapsed</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否开始加载就折叠，默认是否</description>
+		</attribute>
+		<attribute>
+			<name>isFirstLoadData</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否第一次就加载数据</description>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>表格数据也可通过此url来获取</description>
+		</attribute>
+		<attribute>
+			<name>filterFunc</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				对每行数据的一个过滤函数，此函数需有两个参数"record, id"
+			</description>
+		</attribute>
+		<attribute>
+			<name>sm</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				表格的选择模型，默认为行选择，可以是row(行选择)、cell（单元格选择）、checkbox（复选框选择）
+			</description>
+		</attribute>
+		<attribute>
+			<name>bbarId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>底部工具栏</description>
+		</attribute>
+		<attribute>
+			<name>inputName</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当作为input元素提交时的名字</description>
+		</attribute>
+		<attribute>
+			<name>topBarId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>工具栏</description>
+		</attribute>
+		<attribute>
+			<name>afteredit</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>单元格编辑后事件</description>
+		</attribute>
+		<attribute>
+			<name>clicksToEdit</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否单击就进行编辑</description>
+		</attribute>
+		<attribute>
+			<name>counting</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否进行统计</description>
+		</attribute>
+		<attribute>
+			<name>cellmousedown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>表格单元格mousedown事件</description>
+		</attribute>
+		<attribute>
+			<name>groupCol</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>如果表格要进行分组，则此属性就必须有，它用来表示默认按那列分组</description>
+		</attribute>
+		<attribute>
+			<name>grouping</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>该表格是否进行分组显示</description>
+		</attribute>
+		<attribute>
+			<name>collapsible</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否可折叠</description>
+		</attribute>
+		<attribute>
+			<name>autoFill</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否自动将所有内容填充在表格内</description>
+		</attribute>
+		<attribute>
+			<name>forceNoScroll</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否强制不横向滚动，默认是不强制，即横向可以滚动</description>
+		</attribute>
+		<attribute>
+			<name>applyTo</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				默认表格所依赖的div是标签生成的，但这种时候不利布局，如两个grid一行，所以可以通过这个属性自己设定表格所依赖的div，这里是div的id
+			</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>gridBatchCol</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.grid.GridBatchColumnTag
+		</tag-class>
+		<description>grid的批量列</description>
+				<attribute>
+			<name>isLast</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description></description>
+		</attribute>
+		<attribute>
+			<name>queryDelay</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>延迟多久后进行查询，主要用在下拉要远程查询的情况下，默认500毫秒</description>
+		</attribute>
+		<attribute>
+			<name>onKeyDown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当为编辑状态时的keydown事件,参数采用回填形式</description>
+		</attribute>
+		<attribute>
+			<name>maxHeight</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当大于这个高度时其它项可通过滚动条查看（编辑模型为下拉框时使用）</description>
+		</attribute>
+		<attribute>
+			<name>gridName</name>
+			<rtexprvalue>false</rtexprvalue>
+			<description>
+				当editor为checkbox时，同时header为selectall，这时gridName属性用来告诉全选处理函数所需要的表格名
+			</description>
+		</attribute>
+		<attribute>
+			<name>upperOrLower</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>大小写的一个限制，0为小写，1为大写</description>
+		</attribute>
+		<attribute>
+			<name>selectOnFocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否在获得焦点时就选中，默认为false，非输入时不支持</description>
+		</attribute>
+		<attribute>
+			<name>onSelect</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当下拉编辑时的选择事件</description>
+		</attribute>
+		<attribute>
+			<name>pageSize</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当数据是远程查出来的时，这个用来表示一页显示几条</description>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>hideTrigger</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要隐藏后面的图标</description>
+		</attribute>
+		<attribute>
+			<name>minChars</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>开始远程查询的最小字符数</description>
+		</attribute>
+		<attribute>
+			<name>displayField</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				要智能过滤同时选种相近的字段名称，默认为‘value’，也可为‘key’，只有这两个
+			</description>
+		</attribute>
+		<attribute>
+			<name>tpl</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉数据如何显示所要使用的模版</description>
+		</attribute>
+		<attribute>
+			<name>editorId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当为编辑列时，此属性用来表示编辑模型对象的id</description>
+		</attribute>
+		<attribute>
+			<name>format</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当为日期编辑列时，此属性用来表示对此日期的格式化字符串</description>
+		</attribute>
+		<attribute>
+			<name>decimalPrecision</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>为num类型编辑时，其精度为小数点后几位</description>
+		</attribute>
+		<attribute>
+			<name>maxLength</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>最大输入长度</description>
+		</attribute>
+		<attribute>
+			<name>minLength</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>最小输入长度</description>
+		</attribute>
+		<attribute>
+			<name>maxValue</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>只对number，此为允许的最大值</description>
+		</attribute>
+		<attribute>
+			<name>minValue</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>只对number，此为允许的最小值</description>
+		</attribute>
+		<attribute>
+			<name>align</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列数据显示时的对齐方式 left、right、center</description>
+		</attribute>
+		<attribute>
+			<name>summaryRenderer</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>统计列的显示处理的js函数</description>
+		</attribute>
+		<attribute>
+			<name>p</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否允许编辑</description>
+		</attribute>
+		<attribute>
+			<name>codeType</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>代码类别</description>
+		</attribute>
+		<attribute>
+			<name>filter</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>代码过滤条件</description>
+		</attribute>
+		<attribute>
+			<name>renderer</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>对列的显示进行特殊处理的js函数名字</description>
+		</attribute>
+		<attribute>
+			<name>countType</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				如果要统计，则一定要此属性，用来表示统计类型（sum、count、max、min、average）
+			</description>
+		</attribute>
+		<attribute>
+			<name>selectData</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当editor为select时，此属性用来传下拉框的数据</description>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>这列的id</description>
+		</attribute>
+		<attribute>
+			<name>header</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				这列对应的列头的名字，默认是和数据列名一样(selectall时这列的头部显示一个checkbox，同时需要使用gridName属性（其负责处理全选）)
+			</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列的显示宽度</description>
+		</attribute>
+		<attribute>
+			<name>sortable</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列是否可排序，默认为是</description>
+		</attribute>
+		<attribute>
+			<name>editor</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				此列的编辑类型，如是文本编辑则为“text”（text,date,number,select,checkbox）
+			</description>
+		</attribute>
+		<attribute>
+			<name>valueCol</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>值的列，如aaz289</description>
+		</attribute>
+		<attribute>
+			<name>keyCol</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				sbdv_aa10里的代码,如aae140,则根据valueCol一起转换成的列名为z_aaz289_aae140_01、z_aaz289_aae140_02
+			</description>
+		</attribute>
+		<attribute>
+			<name>batchFilter</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>过滤sql的where</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>gridDataBatchCol</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.grid.GridDataBatchColumnTag
+		</tag-class>
+		<description>grid的批量数据存储列</description>
+		<attribute>
+			<name>type</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				数据列的类型，默认为字符型,auto、string 、int、float、boolean、date
+			</description>
+		</attribute>
+		<attribute>
+			<name>dateFormat</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>如果列数据是日期型，则这里是日期的格式化字符串</description>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是不是对后的数据列，默认不是，但当是表格最后一列时这个属性就一定要</description>
+		</attribute>
+		<attribute>
+			<name>mapping</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当数据源是 json时，其对应的数据模型的列有此属性，非必须的</description>
+		</attribute>
+		<attribute>
+			<name>valueCol</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>值的列，如aaz289</description>
+		</attribute>
+		<attribute>
+			<name>keyCol</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				sbdv_aa10里的代码,如aae140,则根据valueCol一起转换成的列名为z_aaz289_aae140_01、z_aaz289_aae140_02
+			</description>
+		</attribute>
+		<attribute>
+			<name>batchFilter</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>过滤sql的where</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>batchEdit</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.BatchEditTag
+		</tag-class>
+		<description>批量标签</description>
+		<attribute>
+			<name>p</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Set to &lt;code&gt;true&lt;/code&gt; if this
+				input field should be disabled.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>multiSelect</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否为多选，值为true或false</description>
+		</attribute>
+		<attribute>
+			<name>multiSelectWithAll</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否为多选且带全部的下拉框</description>
+		</attribute>
+		<attribute>
+			<name>multiSelectWithAllAndSetDefault</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否为多选且带全部的下拉框且设置默认值为all</description>
+		</attribute>
+		<attribute>
+			<name>listWidth</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉选项宽度，没值时下拉选项的宽度和下拉框宽度一致</description>
+		</attribute>
+		<attribute>
+			<name>valueNotFoundText</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当输入的值找不到对应的key代码时显示这个</description>
+		</attribute>
+		<attribute>
+			<name>labelSpanId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				input表单说明区域的span的id,默认为property+"SpanId"
+			</description>
+		</attribute>
+		<attribute>
+			<name>queryDelay</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>延迟多久后进行查询，主要用在下拉要远程查询的情况下，默认500毫秒</description>
+		</attribute>
+		<attribute>
+			<name>allAsItem</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否把“全部”代码为“all”作为一个下拉选项</description>
+		</attribute>
+		<attribute>
+			<name>maxHeight</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当大于这个高度时其它项可通过滚动条查看</description>
+		</attribute>
+		<attribute>
+			<name>selectOnFocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否在获得焦点时就选中，默认为false</description>
+		</attribute>
+		<attribute>
+			<name>pageSize</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当数据是远程查出来的时，这个用来表示一页显示几条</description>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>hideTrigger</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要隐藏后面的图标</description>
+		</attribute>
+		<attribute>
+			<name>minChars</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>开始远程查询的最小字符数</description>
+		</attribute>
+		<attribute>
+			<name>displayField</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				要智能过滤同时选种相近的字段名称，默认为‘value’，也可为‘key’，只有这两个
+			</description>
+		</attribute>
+		<attribute>
+			<name>valueField</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>代码的数据字段，默认为‘value’，也可为‘key’等</description>
+		</attribute>
+		<attribute>
+			<name>tpl</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉数据如何显示所要使用的模版</description>
+		</attribute>
+		<attribute>
+			<name>validator</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证或者说校验函数</description>
+		</attribute>
+		<attribute>
+			<name>invalidText</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证不通过时的提示信息</description>
+		</attribute>
+		<attribute>
+			<name>codeType</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>代码类别</description>
+		</attribute>
+		<attribute>
+			<name>filter</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>代码过滤条件</description>
+		</attribute>
+		<attribute>
+			<name>defaultValue</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉框的一个默认的提示性的值</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉框宽度</description>
+		</attribute>
+		<attribute>
+			<name>editor</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉框是否可编辑，默认为false</description>
+		</attribute>
+		<attribute>
+			<name>data</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉框的数据</description>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否为必录项</description>
+		</attribute>
+		<attribute>
+			<name>colspan</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标签所占一行中的列数,默认为2</description>
+		</attribute>
+		<attribute>
+			<name>label</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>accesskey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				The keyboard character used to move focus immediately to
+				this element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>alt</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The alternate text for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>altKey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The message resources key of the alternate text
+				for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Set to &lt;code&gt;true&lt;/code&gt; if this
+				input field should be disabled.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>maxlength</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onEnterKeyPress</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>处理Enter事件用</description>
+		</attribute>
+		<attribute>
+			<name>onblur</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				loses input focus.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onchange</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				loses input focus and its value has changed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onclick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives a mouse click.
+			</description>
+		</attribute>
+		<attribute>
+			<name>ondblclick</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives a mouse double click.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onfocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element
+				receives input focus.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeydown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is depressed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeypress</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is depressed and released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeyup</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element has
+				focus and a key is released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousedown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and a mouse button is depressed.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousemove</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and the pointer is moved.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseout</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element was
+				under the mouse pointer but the pointer was moved
+				outside the element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseover</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element was
+				not under the mouse pointer but the pointer is moved
+				inside the element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseup</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				JavaScript event handler executed when this element is
+				under the mouse pointer and a mouse button is released.
+			</description>
+		</attribute>
+		<attribute>
+			<name>property</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Name of this input field, and the name of the
+				corresponding bean property if value is not specified.
+				The corresponding bean property (if any) must be of type
+				String.
+			</description>
+		</attribute>
+		<attribute>
+			<name>readonly</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Set to &lt;code&gt;true&lt;/code&gt; if this input field
+				should be read only.(是否为只读)
+			</description>
+		</attribute>
+		<attribute>
+			<name>size</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				CSS styles to be applied to this HTML element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;CSS stylesheet class to be applied to this HTML
+				element (renders a "class" attribute).&lt;/p&gt;
+
+				&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; If present,
+				the &lt;code&gt;errorStyleClass&lt;/code&gt; overrides
+				this attribute in the event of an error for the
+				element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Identifier to be assigned to this HTML element
+				(renders an "id" attribute).&lt;/p&gt;
+
+				&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; If present,
+				the &lt;code&gt;errorStyleId&lt;/code&gt; overrides this
+				attribute in the event of an error for the
+				element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>tabindex</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				The tab order (ascending positive integers) for this
+				element.
+			</description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The advisory title for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>titleKey</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;The message resources key for the advisory
+				title for this element.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Value to which this field should be initialized. [Use
+				the corresponding bean property value]
+			</description>
+		</attribute>
+		<attribute>
+			<name>valueCol</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>值的列，如aaz289</description>
+		</attribute>
+		<attribute>
+			<name>keyCol</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				sbdv_aa10里的代码,如aae140,则根据valueCol一起转换成的列名为z_aaz289_aae140_01、z_aaz289_aae140_02
+			</description>
+		</attribute>
+		<attribute>
+			<name>batchFilter</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>过滤sql的where</description>
+		</attribute>
+		<attribute>
+			<name>inputType</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				输入框的类型，可以为text, password（默认为text），和html的type有着相同功能
+			</description>
+		</attribute>
+		<attribute>
+			<name>tooltip</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>minValue</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>最小值</description>
+		</attribute>
+		<attribute>
+			<name>maxValue</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>只对number，此为允许的最大值</description>
+		</attribute>
+		<attribute>
+			<name>align</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列数据显示时的对齐方式 left、right、center</description>
+		</attribute>
+		<attribute>
+			<name>decimalPrecision</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>为num类型编辑时，其精度为小数点后几位</description>
+		</attribute>
+		<attribute>
+			<name>p</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Set to &lt;code&gt;true&lt;/code&gt; if this
+				input field should be disabled.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>format</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当是date时 其format字符串</description>
+		</attribute>
+		<attribute>
+			<name>mask</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>校验类型，"email"为邮件</description>
+		</attribute>
+		<attribute>
+			<name>batchEditor</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>批量生成的类型默认为text</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>gridCol</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.grid.GridColTag
+		</tag-class>
+		<description>可编辑表格如何显示列，通过这个来控制和调整</description>
+		<attribute>
+			<name>fontSize</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>设置当前列的内容的自体大小</description>
+		</attribute>
+		<attribute>
+			<name>editerHeight</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>设置当前列编辑时，编辑框的高度</description>
+		</attribute>
+		<attribute>
+			<name>css</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>设置当前列的内容的CSS样式</description>
+		</attribute>
+			<attribute>
+			<name>isPageSelect</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当是下拉列表时是否要分页显示</description>
+		</attribute>
+			<attribute>
+			<name>multiSelect</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当是下拉列表时是否可多选</description>
+		</attribute>
+		
+		<attribute>
+			<name>name</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列名代替原来index</description>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>类型</description>
+		</attribute>
+		<attribute>
+			<name>enterAutoAddRow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否在该列按了回车后自动在相邻位置增加一行空行，true为是，默认为false</description>
+		</attribute>
+		<attribute>
+			<name>colorExp</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>字段颜色表达式，如(aaa001==1)?'red':(aaa001==2)?'rgb(0,0,0)':''</description>
+		</attribute>
+		<attribute>
+			<name>checkBoxClick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>checkbox列的单击事件名</description>
+		</attribute>
+		<attribute>
+			<name>checkBoxSelectAllClick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>checkbox列的全选事件名</description>
+		</attribute>
+		<attribute>
+			<name>queryDelay</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>延迟多久后进行查询，主要用在下拉要远程查询的情况下，默认500毫秒</description>
+		</attribute>
+		<attribute>
+			<name>onKeyDown</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当为编辑状态时的keydown事件,参数采用回填形式</description>
+		</attribute>
+		<attribute>
+			<name>maxHeight</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当大于这个高度时其它项可通过滚动条查看（编辑模型为下拉框时使用）</description>
+		</attribute>
+		<attribute>
+			<name>gridName</name>
+			<rtexprvalue>false</rtexprvalue>
+			<description>
+				当editor为checkbox时，同时header为selectall，这时gridName属性用来告诉全选处理函数所需要的表格名
+			</description>
+		</attribute>
+		<attribute>
+			<name>upperOrLower</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>大小写的一个限制，0为小写，1为大写</description>
+		</attribute>
+		<attribute>
+			<name>selectOnFocus</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否在获得焦点时就选中，默认为false，非输入时不支持</description>
+		</attribute>
+		<attribute>
+			<name>onSelect</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当下拉编辑时的选择事件</description>
+		</attribute>
+		<attribute>
+			<name>pageSize</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当数据是远程查出来的时，这个用来表示一页显示几条</description>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>hideTrigger</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要隐藏后面的图标</description>
+		</attribute>
+		<attribute>
+			<name>minChars</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>开始远程查询的最小字符数</description>
+		</attribute>
+		<attribute>
+			<name>displayField</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				要智能过滤同时选种相近的字段名称，默认为‘value’，也可为‘key’，只有这两个
+			</description>
+		</attribute>
+		<attribute>
+			<name>tpl</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>下拉数据如何显示所要使用的模版</description>
+		</attribute>
+		<attribute>
+			<name>editorId</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当为编辑列时，此属性用来表示编辑模型对象的id</description>
+		</attribute>
+		<attribute>
+			<name>format</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当为日期编辑列时，此属性用来表示对此日期的格式化字符串</description>
+		</attribute>
+		<attribute>
+			<name>decimalPrecision</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>为num类型编辑时，其精度为小数点后几位</description>
+		</attribute>
+		<attribute>
+			<name>maxLength</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>最大输入长度</description>
+		</attribute>
+		<attribute>
+			<name>minLength</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>最小输入长度</description>
+		</attribute>
+		<attribute>
+			<name>maxValue</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>只对number，此为允许的最大值</description>
+		</attribute>
+		<attribute>
+			<name>minValue</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>只对number，此为允许的最小值</description>
+		</attribute>
+		<attribute>
+			<name>align</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列数据显示时的对齐方式 left、right、center</description>
+		</attribute>
+		<attribute>
+			<name>summaryRenderer</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>统计列的显示处理的js函数</description>
+		</attribute>
+		<attribute>
+			<name>p</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否允许编辑</description>
+		</attribute>
+		<attribute>
+			<name>codeType</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>代码类别</description>
+		</attribute>
+		<attribute>
+			<name>filter</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>代码过滤条件</description>
+		</attribute>
+		<attribute>
+			<name>renderer</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>对列的显示进行特殊处理的js函数名字</description>
+		</attribute>
+		<attribute>
+			<name>countType</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				如果要统计，则一定要此属性，用来表示统计类型（sum、count、max、min、average）
+			</description>
+		</attribute>
+		<attribute>
+			<name>selectData</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当editor为select时，此属性用来传下拉框的数据</description>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>这列的id</description>
+		</attribute>
+		<attribute>
+			<name>header</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				这列对应的列头的名字，默认是和数据列名一样(selectall时这列的头部显示一个checkbox，同时需要使用gridName属性（其负责处理全选）)
+			</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列的显示宽度</description>
+		</attribute>
+		<attribute>
+			<name>sortable</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列是否可排序，默认为是</description>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				是不是对后的grid列，默认不是，但当是表格最后一列时这个属性就一定要
+			</description>
+		</attribute>
+		<attribute>
+			<name>editor</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				此列的编辑类型，如是文本编辑则为“text”（text,date,number,select,checkbox）
+			</description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>gridColModel</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.grid.GridColModelTag
+		</tag-class>
+		<description>可编辑表格Model</description>
+		<attribute>
+			<name>rownumWidth</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>行号列的宽度信息</description>
+		</attribute>
+		<attribute>
+			<name>withNotRownum</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否带行号</description>
+		</attribute>
+	</tag>	
+	<tag>
+		<name>gridRowNumCol</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.grid.GridRowNumColTag
+		</tag-class>
+		<description>可编辑表格行号</description>
+		<attribute>
+			<name>header</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>头信息，默认为空字符</description>
+		</attribute>
+		<attribute>
+			<name>sortable</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否支持排序</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列宽，默认为23</description>
+		</attribute>
+	</tag>
+	
+	
+	<tag>
+		<name>textIconEdit</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.TextWithIconEditTag
+		</tag-class>
+		<description>带Label且带图片按钮的输入框标签</description>
+		<attribute>
+			<name>nextElement</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				下一个元素的property
+			</description>
+		</attribute>
+		<attribute>
+			<name>labelSpanId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>input表单说明区域的span的id,默认为property+"SpanId"</description>
+		</attribute>
+		<attribute>
+			<name>selectOnFocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否在获得焦点时就选中，默认为false</description>
+		</attribute>
+		<attribute>
+			<name>validator</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证或者说校验函数</description>
+		</attribute>
+		<attribute>
+			<name>invalidText</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证不通过时的提示信息</description>
+		</attribute>
+		<attribute>
+			<name>iconId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当点击该图片打开一个窗口时要用到此id</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>iconClick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图片按钮的单击事件函数</description>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否为必录项</description>
+		</attribute>
+		<attribute>
+			<name>mask</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>校验类型，"email"为邮件</description>
+		</attribute>
+		<attribute>
+			<name>colspan</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标签所占一行中的列数,默认为1</description>
+		</attribute>
+		<attribute>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                The keyboard character used to move focus immediately to this
+                element.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>alt</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                <p>The alternate text for this element.</p>
+                ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>altKey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                <p>The message resources key of the alternate text for this
+                element.</p>
+                ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+          <p>Set to <code>true</code> if this input field should be
+          disabled.</p>
+          ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>maxlength</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onEnterKeyPress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>处理Enter事件用</description>
+		</attribute>
+		<attribute>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element loses input
+                focus.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element loses input
+                focus and its value has changed.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element receives a
+                mouse click.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element receives a
+                mouse double click.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element receives input
+                focus.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element has focus and a
+                key is depressed.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element has focus and a
+                key is depressed and released.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element has focus and a
+                key is released.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element is under the mouse
+                pointer and a mouse button is depressed.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element is under the
+                mouse pointer and the pointer is moved.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element was under the
+                mouse pointer but the pointer was moved outside the element.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element was not under
+                the mouse pointer but the pointer is moved inside the element.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element is under the
+                mouse pointer and a mouse button is released.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                Name of this input field, and the name of the corresponding bean
+                property if value is not specified. The corresponding bean property
+                (if any) must be of type String.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>readonly</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+          Set to <code>true</code> if this input field should be
+          read only.(是否为只读)
+          ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>size</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                 CSS styles to be applied to this HTML element.
+               ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                <p>CSS stylesheet class to be applied to this HTML element
+                (renders a "class" attribute).</p>
+
+                <p><strong>N.B.</strong> If present, the <code>errorStyleClass</code>
+                overrides this attribute in the event of an error for the element.</p>
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                <p>Identifier to be assigned to this HTML element (renders
+                an "id" attribute).</p>
+
+                <p><strong>N.B.</strong> If present, the <code>errorStyleId</code>
+                overrides this attribute in the event of an error for the element.</p>
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                The tab order (ascending positive integers) for this element.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                  <p>The advisory title for this element.</p>
+                  ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>p</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Set to &lt;code&gt;true&lt;/code&gt; if this
+				input field should be disabled.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>titleKey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                  <p>The message resources key for the advisory title
+                  for this element.</p>
+                  ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                Value to which this field should be initialized. [Use the
+                corresponding bean property value]
+            ]]>
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>empeyTD</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.EmpeyTDTag
+		</tag-class>
+		<description>
+			增加有td数
+		</description>
+		<attribute>
+			<name>empeyTDCount</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>值为1、2、3等</description>
+		</attribute>	
+	</tag>
+	<tag>
+		<name>button</name>
+		<tag-class>com.insigma.odin.taglib.ss.html.ButtonTag</tag-class>
+		<attribute>
+			<name>property</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>按钮的id，默认会自动生成</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>按钮上显示的文字</description>
+		</attribute>
+		<attribute>
+			<name>handler</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>按钮的单击事件所要触发的函数</description>
+		</attribute>
+		<attribute>
+			<name>handlerName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>按钮触发的事件参数名</description>
+		</attribute>
+		<attribute>
+			<name>noRequiredValidate</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否需要需要进行必填校验，默认false(不校验)</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>checkbox</name>
+		<tag-class>com.insigma.odin.taglib.ss.html.CheckBoxSSTag</tag-class>
+		<attribute>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>alt</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>altKey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>indexed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>styleId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>titleKey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag> 
+	
+	<tag>
+		<name>textarea</name>
+		<tag-class>com.insigma.odin.taglib.ss.html.TextAreaTag</tag-class>
+		<description>文本区域标签</description>
+		<attribute>
+			<name>labelSpanId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>input表单说明区域的span的id,默认为property+"SpanId"</description>
+		</attribute>
+		<attribute>
+			<name>selectOnFocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否在获得焦点时就选中，默认为false</description>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否为必录项</description>
+		</attribute>
+		<attribute>
+			<name>validator</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证或者说校验函数</description>
+		</attribute>
+		<attribute>
+			<name>invalidText</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>验证不通过时的提示信息</description>
+		</attribute>
+		<attribute>
+			<name>colspan</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标签所占一行中的列数,默认为1</description>
+		</attribute>
+		<attribute>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>html元素的id属性，用于唯一标识一个元素</description>
+		</attribute>
+		<attribute>
+			<name>maxlength</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>最多能录入的字节数</description>
+		</attribute>
+		<attribute>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                The keyboard character used to move focus immediately to this
+                element.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>alt</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                <p>The alternate text for this element.</p>
+                ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>altKey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                <p>The message resources key of the alternate text for this
+                element.</p>
+                ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>cols</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                The number of columns to display.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+          Set to <code>true</code> if this input field should be
+          disabled.
+          ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>indexed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                Valid only inside of logic:iterate tag.
+                If <code>true</code> then name of the html tag will be rendered as
+                "id[34].propertyName". Number in brackets will be generated
+                for every iteration and taken from ancestor logic:iterate tag.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                The attribute name of the bean whose properties are consulted
+                when rendering the current value of this input field. If not
+                specified, the bean associated with the form tag we are nested
+                within is utilized.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element loses input
+                focus.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element loses input
+                focus and its value has changed.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element receives a
+                mouse click.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element receives a
+                mouse double click.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element receives input
+                focus.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element has focus and a
+                key is depressed.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element has focus and a
+                key is depressed and released.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element has focus and a
+                key is released.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element is under the mouse
+                pointer and a mouse button is depressed.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element is under the
+                mouse pointer and the pointer is moved.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element was under the
+                mouse pointer but the pointer was moved outside the element.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element was not under
+                the mouse pointer but the pointer is moved inside the element.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                JavaScript event handler executed when this element is under the
+                mouse pointer and a mouse button is released.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                Name of this input field, and the name of the corresponding bean
+                property if value is not specified. The corresponding bean property
+                (if any) must be of type String.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>readonly</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+          Set to <code>true</code> if this input field should be
+          read only.
+          ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>rows</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                The number of rows to display.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                <p>CSS styles to be applied to this HTML element.</p>
+
+                <p><strong>N.B.</strong> If present, the <code>errorStyle</code>
+                overrides this attribute in the event of an error for the element.</p>
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                <p>CSS stylesheet class to be applied to this HTML element
+                (renders a "class" attribute).</p>
+
+                <p><strong>N.B.</strong> If present, the <code>errorStyleClass</code>
+                overrides this attribute in the event of an error for the element.</p>
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>styleId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                <p>Identifier to be assigned to this HTML element (renders
+                an "id" attribute).</p>
+
+                <p><strong>N.B.</strong> If present, the <code>errorStyleId</code>
+                overrides this attribute in the event of an error for the element.</p>
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                The tab order (ascending positive integers) for this element.
+            ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                  <p>The advisory title for this element.</p>
+                  ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>titleKey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                  <p>The message resources key for the advisory title
+                  for this element.</p>
+                  ]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				<![CDATA[
+                Value to which this field should be initialized. [Use the
+                corresponding bean property value]
+            ]]>
+			</description>
+		</attribute>
+		
+		<attribute>
+			<name>p</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Set to &lt;code&gt;true&lt;/code&gt; if this
+				input field should be disabled.&lt;/p&gt;
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>img</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.ImgTag
+		</tag-class>
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>img标签的ID</description>
+		</attribute>
+		<attribute>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>点击事件</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>宽度</description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>高度</description>
+		</attribute>
+		<attribute>
+			<name>colspan</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>colspan跨列</description>
+		</attribute>
+		<attribute>
+			<name>rowspan</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>rowspan跨行</description>
+		</attribute>
+		<attribute>
+			<name>src</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>默认空白图片地址或正式图片地址</description>
+		</attribute>
+		<attribute>
+			<name>p</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>E为可导入，D为只能查看</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>fill</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.toolbar.FillTag
+		</tag-class>
+		<description>分隔标签，其后的工具性的按钮全在右显示</description>
+	</tag>
+	<tag>
+		<name>opLogButtonForToolBar</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.toolbar.OpLogButtonForToolBarTag
+		</tag-class>
+		<description>用于toolbar的操作日志按钮</description>
+	</tag>
+	<tag>
+		<name>tab</name>
+		<tag-class>com.insigma.odin.taglib.ss.html.TabPanelSSTag</tag-class>
+		<attribute>
+			<name>applyTo</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>让此tab标签显示在某个div下，这里为显示位置div的id信息</description>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>tab对象的id</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>tab的总宽度</description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>tab的高度</description>
+		</attribute>
+		<attribute>
+			<name>tabchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当打开另外一个tab页时触发的事件</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>tabModel</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.TabItemModelSSTag
+		</tag-class>
+	</tag>
+	<tag>
+		<name>tabItem</name>
+		<tag-class>com.insigma.odin.taglib.ss.html.TabItemSSTag</tag-class>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当前tab页的id</description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当前tab页的标题</description>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是不是对后的tab页，默认不是，但当是tab最后一个页时就一定要</description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>tabCont</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.TabContentSSTag
+		</tag-class>
+		<attribute>
+			<name>itemIndex</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>具体那个tab的内容</description>
+		</attribute>
+		<attribute>
+			<name>className</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>textForToolBar</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.toolbar.TextForToolBarSSTag
+		</tag-class>
+		<description>工具条上的文本串</description>
+		<attribute>
+			<name>text</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文本内容</description>
+		</attribute>
+		<attribute>
+			<name>isLast</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description></description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>gridSelectColJs</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.grid.GridSelectColSSTag
+		</tag-class>
+		<description>此标签用来生成当表格列为select编辑模型时所需要的js</description>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>其所对应的select编辑列的dataIndex名字</description>
+		</attribute>
+		<attribute>
+			<name>codeType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>代码类别</description>
+		</attribute>
+		<attribute>
+			<name>filter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>代码过滤条件</description>
+		</attribute>
+		<attribute>
+			<name>selectData</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当editor为select时，此属性用来传下拉框的数据</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>gridEditedColJs</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.grid.GridEditedColSSTag
+		</tag-class>
+		<description>此标签用来生成控制可编辑列的具体行是否可编辑的js(对checkbox无效)</description>
+		<attribute>
+			<name>grid</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>要操作的grid属性名</description>
+		</attribute>
+		<attribute>
+			<name>cols</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>其所对应的可编辑列的dataIndex名字，多列时中间用逗号隔开</description>
+		</attribute>
+		<attribute>
+			<name>editedExp</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否可编辑的表达式，此表达式成立则允许编辑，不成立则不允许编辑</description>
+		</attribute>
+		<attribute>
+			<name>altMsg</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>不可编辑的提示信息</description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>radio</name>
+		<tag-class>
+			com.insigma.odin.taglib.ss.html.RadioWithLabelTag
+		</tag-class>
+		<attribute>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>p</name>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				&lt;p&gt;Set to &lt;code&gt;true&lt;/code&gt; if this
+				input field should be disabled.&lt;/p&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>accesskey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>alt</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>altKey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>bundle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>errorKey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>errorStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>errorStyleClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>errorStyleId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>indexed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onblur</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onchange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>ondblclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onfocus</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onkeydown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onkeypress</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onkeyup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>property</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onmousedown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onmousemove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onmouseout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onmouseover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>onmouseup</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>styleId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>tabindex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>titleKey</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>idName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+	</tag>
+</taglib>

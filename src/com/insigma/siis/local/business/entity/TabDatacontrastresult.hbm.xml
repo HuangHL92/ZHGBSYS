@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.TabDatacontrastresult"
+    lazy="false"
+    dynamic-insert="true"
+    dynamic-update="true" 
+    table="TAB_DATACONTRASTRESULT">
+  	<id column="STOREID" length="40" name="storeid" type="java.lang.String" >
+      <generator class="uuid.hex" />
+    </id>
+	<property column="B0111_N" length="199" name="b0111n" type="java.lang.String" />
+	<property column="B0111_W" length="199" name="b0111w" type="java.lang.String" />
+	<property column="B0111_PARENT_N" length="199" name="b0111parentn" type="java.lang.String" />
+	<property column="B0111_PARENT_W" length="199" name="b0111parentw" type="java.lang.String" />
+	<property column="B0101_N" length="200" name="b0101n" type="java.lang.String" />
+	<property column="B0101_W" length="200" name="b0101w" type="java.lang.String" />
+	<property column="B0114_N" length="68" name="b0114n" type="java.lang.String" />
+	<property column="B0114_W" length="68" name="b0114w" type="java.lang.String" />
+	<property column="IMP_RECORD_ID" length="32" name="imprecordid" type="java.lang.String" />
+	<property column="COMMENTS" length="500" name="comments" type="java.lang.String" />
+	<property column="OPPTIMETYPE" length="2" name="opptimetype" type="java.lang.String" />
+	<property column="OPPTIME" length="7" name="opptime" type="java.util.Date" />
+  </class>
+</hibernate-mapping>

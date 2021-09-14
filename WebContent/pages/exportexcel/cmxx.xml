@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Created>1996-12-17T01:32:42Z</Created>
+  <LastSaved>2000-11-18T06:53:49Z</LastSaved>
+  <Version>15.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+  <RemovePersonalInformation/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>4536</WindowHeight>
+  <WindowWidth>8508</WindowWidth>
+  <WindowTopX>480</WindowTopX>
+  <WindowTopY>120</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="宋体" x:CharSet="134" ss:Size="12"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="1000" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="52.8"
+   ss:DefaultRowHeight="15.600000000000001">
+   <Column ss:Index="6" ss:AutoFitWidth="0" ss:Width="67.8"/>
+   <Column ss:AutoFitWidth="0" ss:Width="107.4"/>
+   <Row>
+    <Cell><Data ss:Type="String">姓名</Data></Cell>
+    <Cell><Data ss:Type="String">性别</Data></Cell>
+    <Cell><Data ss:Type="String">出生日期</Data></Cell>
+    <Cell><Data ss:Type="String">籍贯</Data></Cell>
+    <Cell><Data ss:Type="String">民族</Data></Cell>
+    <Cell><Data ss:Type="String">政治面貌</Data></Cell>
+    <Cell><Data ss:Type="String">工作单位及职务</Data></Cell>
+    <Cell><Data ss:Type="String">人员类别</Data></Cell>
+   </Row>
+   <#list sbList as sb>
+   <Row>
+    <Cell><Data ss:Type="String">${sb.a0101}</Data></Cell>
+    <Cell><Data ss:Type="String">${sb.a0104}</Data></Cell>
+    <Cell><Data ss:Type="String">${sb.a0107}</Data></Cell>
+    <Cell><Data ss:Type="String">${sb.a0111a}</Data></Cell>
+    <Cell><Data ss:Type="String">${sb.a0117}</Data></Cell>
+    <Cell><Data ss:Type="String">${sb.a0141}</Data></Cell>
+    <Cell><Data ss:Type="String">${sb.a0192a}</Data></Cell>
+    <Cell><Data ss:Type="String">${sb.a0160}</Data></Cell>
+   </Row>
+</#list>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>7</ActiveRow>
+     <ActiveCol>2</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet2">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="52.8"
+   ss:DefaultRowHeight="15.600000000000001">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet3">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="52.8"
+   ss:DefaultRowHeight="15.600000000000001">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

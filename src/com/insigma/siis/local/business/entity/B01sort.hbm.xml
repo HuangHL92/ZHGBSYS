@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.B01sort"
+    lazy="false"
+    table="B01_SORT">
+    <id column="B0111" name="b0111" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="B0121" length="199" name="b0121" type="java.lang.String" />
+    <property column="B0101" length="200" name="b0101" type="java.lang.String" />
+    <property column="B0194" length="1" name="b0194" type="java.lang.String" />
+    <property column="SORTID" length="10" name="sortid" type="java.lang.Long" />
+    <property column="UPDATED" length="1" name="updated" type="java.lang.String" />
+    <property column="UPDATE_DATE" length="7" name="updatedate" type="java.sql.Date" />
+    <property column="UPDATE_USER" length="200" name="updateuser" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

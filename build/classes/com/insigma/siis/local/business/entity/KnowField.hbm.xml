@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.KnowField"
+    lazy="false"
+    table="know_field">
+  	<id column="ID" name="id" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+     <property name="jggwconfid" type="java.lang.String">
+            <column name="JGGWCONFID" length="64">
+                <comment>JGGWCONF表对应ID</comment>
+            </column>
+     </property>
+     <property name="ageup" type="java.lang.String">
+            <column name="AGEUP" length="3">
+                <comment>年龄大于等于</comment>
+            </column>
+     </property>
+     <property name="agedown" type="java.lang.String">
+            <column name="AGEDOWN" length="3">
+                <comment>年龄小于等于</comment>
+            </column>
+     </property>
+     <property name="a0104" type="java.lang.String">
+            <column name="A0104" length="2">
+                <comment>性别</comment>
+            </column>
+     </property>
+     <property name="a0801b" type="java.lang.String">
+            <column name="A0801B" length="8">
+                <comment>学历</comment>
+            </column>
+     </property>
+     <property name="a0827" type="java.lang.String">
+            <column name="A0827" length="8">
+                <comment>专业</comment>
+            </column>
+     </property>
+     <property name="a0141" type="java.lang.String">
+            <column name="A0141" length="8">
+                <comment>党派</comment>
+            </column>
+     </property>
+     <property name="know" type="java.lang.String">
+            <column name="KNOW" length="3">
+                <comment>熟悉领域</comment>
+            </column>
+     </property>
+     <property name="a0221" type="java.lang.String">
+            <column name="A0221" length="6">
+                <comment>职位层次</comment>
+            </column>
+     </property>
+     <property name="a0221n" type="java.lang.String">
+            <column name="A0221N" length="2">
+                <comment>职务层次对应年限</comment>
+            </column>
+     </property>
+     <property name="a0148" type="java.lang.String">
+            <column name="A0148" length="6">
+                <comment>职级</comment>
+            </column>
+     </property>
+     <property name="a0148n" type="java.lang.String">
+            <column name="A0148N" length="2">
+                <comment>职级对应年限</comment>
+            </column>
+     </property>
+     
+  </class>
+</hibernate-mapping>

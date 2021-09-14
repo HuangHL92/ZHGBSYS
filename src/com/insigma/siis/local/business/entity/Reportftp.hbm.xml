@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Reportftp"
+    lazy="false"
+    table="REPORT_FTP">
+    <id column="REPORT_FTP_ID" name="reportftpid" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="FILE_NAME" length="500" name="filename" type="java.lang.String" />
+    <property column="PACKAGE_INDEX" length="36" name="packageindex" type="java.lang.String" />
+    <property column="PACKAGE_NAME" length="500" name="packagename" type="java.lang.String" />
+    <property column="PACKAGE_RET" length="500" name="packageret" type="java.lang.String" />
+    <property column="RECIEVE_FTP_USERID" length="64" name="recieveftpuserid" type="java.lang.String" />
+    <property column="RECIEVE_FTP_USERNAME" length="200" name="recieveftpusername" type="java.lang.String" />
+    <property column="RECIEVE_ORG" length="199" name="recieveorg" type="java.lang.String" />
+    <property column="RECIEVE_ORG_NAME" length="200" name="recieveorgname" type="java.lang.String" />
+    <property column="REPORT_TIME" length="7" name="reporttime" type="java.sql.Timestamp" />
+    <property column="REPORT_TYPE" length="3" name="reporttype" type="java.lang.String" />
+    <property column="REPORT_USER" length="32" name="reportuser" type="java.lang.String" />
+    <property column="REPORT_USERNAME" length="32" name="reportusername" type="java.lang.String" />
+    <property column="B0111" length="199" name="b0111" type="java.lang.String" />
+     <property column="REPORT_STATUE" length="3" name="reportstatue" type="java.lang.String" />
+
+  </class>
+</hibernate-mapping>

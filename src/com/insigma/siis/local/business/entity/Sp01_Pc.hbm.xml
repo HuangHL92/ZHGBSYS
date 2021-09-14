@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Sp01_Pc"
+    lazy="false"
+    table="SP01_PC">
+	<id column="SPP00" name="spp00" type="java.lang.String">
+	  <generator class="assigned" />
+	</id>
+	<property column="SPP02" length="200" name="spp02" type="java.lang.String" />
+	<property column="SPP03" length="7" name="spp03" type="java.util.Date" />
+	<property column="SPP04" length="500" name="spp04" type="java.lang.String" />
+	<property column="SPP05" length="500" name="spp05" type="java.lang.String" />
+	<property column="SPP06" length="20" name="spp06" type="java.lang.String" />
+	<property column="SPP07" length="20" name="spp07" type="java.lang.String" />
+	<property column="SPP08" length="5" name="spp08" type="java.lang.String" />
+	<property column="SPP09" length="64" name="spp09" type="java.lang.String" />
+	<property column="SPP10" length="64" name="spp10" type="java.lang.String" />
+	<property column="SPP11" length="64" name="spp11" type="java.lang.String" />
+	<property column="SPP12" length="5" name="spp12" type="java.lang.String" />
+	<property column="SPP13" length="500" name="spp13" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

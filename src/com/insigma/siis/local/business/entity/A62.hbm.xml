@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A62"
+    lazy="false"
+    table="A62">
+    <id column="A0000" name="a0000" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="A2950" length="2" name="a2950" type="java.lang.String" />
+    <property column="A6202" length="2" name="a6202" type="java.lang.String" />
+    <property column="A6203" length="2" name="a6203" type="java.lang.String" />
+    <property column="A6204" length="2" name="a6204" type="java.lang.String" />
+    <property column="A6205" length="8" name="a6205" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

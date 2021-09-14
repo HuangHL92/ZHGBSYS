@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user-config>
+    <config mainname="admin" oaname="wanggw" oapwd="6763319" bgname="wanggw" bgpwd="wanggw"/>
+    <config mainname="wanggw" oaname="wanggw" oapwd="6763319" bgname="wanggw" bgpwd="wanggw"/>
+    <config mainname="leaf" oaname="wanggw" oapwd="6763319" bgname="wanggw" bgpwd="wanggw"/>
+</user-config>

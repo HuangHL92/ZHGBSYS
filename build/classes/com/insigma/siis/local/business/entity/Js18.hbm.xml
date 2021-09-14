@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Js18" table="JS18" >
+	<id name="js0100" type="string">
+            <column name="JS0100" length="64" />
+            <generator class="assigned" />
+    </id>
+    <property name="dc001" type="string">
+            <column name="DC001" length="64" >
+                <comment>分类ID</comment>
+            </column>
+    </property>
+    <property name="rbId" type="string">
+            <column name="RB_ID" length="64" >
+                <comment>任免批次ID</comment>
+            </column>
+    </property>
+    <property name="js1801" type="string">
+            <column name="JS1801" length="32" >
+                <comment>ID</comment>
+            </column>
+    </property>
+    <property name="js1802" type="string">
+            <column name="JS1802" length="8" >
+                <comment>推荐时间</comment>
+            </column>
+    </property>
+    <property name="js1803" type="string">
+            <column name="JS1803" length="5" >
+                <comment>参加人数</comment>
+            </column>
+    </property>
+    <property name="js1804" type="string">
+            <column name="JS1804" length="500" >
+                <comment>其他</comment>
+            </column>
+    </property>
+    <property name="js1805" type="string">
+            <column name="JS1805" length="5" >
+                <comment>限推人数</comment>
+            </column>
+    </property>
+  </class>
+</hibernate-mapping>

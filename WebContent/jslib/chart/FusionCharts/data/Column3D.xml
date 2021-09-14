@@ -1,0 +1,14 @@
+<chart caption='2010年排案情况统计' startValue="10" numberPrefix="" xAxisName='月份' yAxisName='宗' showValues='0' decimals='0' formatNumberScale='0' baseFontSize='12'>
+<set label='1月' value='62' link="www.baidu.com"/>
+<set label='2月' value='57' />
+<set label='3月' value='71' />
+<set label='4月' value='94' />
+<set label='5月' value='61' />
+<set label='6月' value='60' />
+<set label='7月' value='29' />
+<set label='8月' value='22' />
+<set label='9月' value='76' />
+<set label='10月' value='94' />
+<set label='11月' value='61' />
+<set label='12月' value='' />
+</chart>	

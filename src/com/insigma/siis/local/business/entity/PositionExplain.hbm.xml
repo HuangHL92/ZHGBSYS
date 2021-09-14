@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.PositionExplain"
+    lazy="false"
+    table="position_explain">
+  	<id column="ID" name="id" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+     <property name="orderNumber" type="java.lang.Integer">
+            <column name="ORDER_NUMBER" length="20">
+                <comment>序号</comment>
+            </column>
+     </property>
+     <property name="unit" type="java.lang.String">
+            <column name="UNIT" length="20">
+                <comment>所属单位</comment>
+            </column>
+     </property>
+     <property name="positionName" type="java.lang.String">
+            <column name="POSITION_NAME" length="20">
+                <comment>职位名称</comment>
+            </column>
+     </property>
+     <property name="positionDivisionOfLabor" type="java.lang.String">
+            <column name="POSITION_DIVISION_OF_LABOR" length="20">
+                <comment>职位分工</comment>
+            </column>
+     </property>
+     <property name="qualificationCondition" type="java.lang.String">
+            <column name="QUALIFICATION_CONDITION" length="20">
+                <comment>资格条件</comment>
+            </column>
+     </property>
+     <property name="equipState" type="java.lang.String">
+            <column name="EQUIP_STATE" length="20">
+                <comment>配备情况</comment>
+            </column>
+     </property>
+     <property name="age" type="java.lang.String">
+            <column name="age" length="20">
+                <comment>该职位条件,年龄</comment>
+            </column>
+     </property>
+     <property name="gender" type="java.lang.String">
+            <column name="gender" length="20">
+                <comment>该职位条件,性别</comment>
+            </column>
+     </property>
+     <property name="education" type="java.lang.String">
+            <column name="education" length="20">
+                <comment>该职位条件,学历</comment>
+            </column>
+     </property>
+     <property name="major" type="java.lang.String">
+            <column name="major" length="20">
+                <comment>该职位条件,专业</comment>
+            </column>
+     </property>
+     <property name="jobNamed" type="java.lang.String">
+            <column name="job_named" length="20">
+                <comment>该职位条件,职称</comment>
+            </column>
+     </property>
+     <property name="politicalParty" type="java.lang.String">
+            <column name="political_party" length="20">
+                <comment>该职位条件,党派</comment>
+            </column>
+     </property>
+     <property name="territory" type="java.lang.String">
+            <column name="territory" length="20">
+                <comment>该职位条件,地域</comment>
+            </column>
+     </property>
+     <property name="workOn" type="java.lang.String">
+            <column name="work_on" length="20">
+                <comment>该职位条件,从事或分管</comment>
+            </column>
+     </property>
+     <property name="jobLevel" type="java.lang.String">
+            <column name="job_level" length="20">
+                <comment>该职位条件,级别层次,职务层次</comment>
+            </column>
+     </property>
+     <property name="classes" type="java.lang.String">
+            <column name="classes" length="20">
+                <comment>该职位条件,类别</comment>
+            </column>
+     </property>
+     <property name="abilityRequired" type="java.lang.String">
+            <column name="ability_required" length="20">
+                <comment>该职位条件,能力要求</comment>
+            </column>
+     </property>
+     <property name="conditionScreen" type="java.lang.String">
+            <column name="condition_screen" length="20">
+                <comment>重要条件顺序筛选</comment>
+            </column>
+     </property>
+    
+     
+
+  </class>
+</hibernate-mapping>

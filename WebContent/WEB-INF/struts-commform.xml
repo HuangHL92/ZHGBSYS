@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+   	  <!-- 公共 -->
+	  <form-bean name="commForm" type="com.insigma.siis.comm.CommForm" />
+	</form-beans>
+	
+	
+	<global-forwards></global-forwards>
+	<action-mappings>
+  		<!-- start公共 -->
+			<action path="/pages/comm/commAction" scope="request"
+				parameter="method" name="commForm"
+				type="com.insigma.siis.comm.CommAction">
+			</action>
+			<action path="/pages/commAction" forward="/commform/commpages/comm/comm.jsp"></action>
+			<action path="/pages/commRepAction" forward="/commform/commpages/comm/commRep.jsp"></action>
+			<action path="/pages/commRep2Action" forward="/commform/commpages/comm/commRep2.jsp"></action>
+			<action
+				path="/pages/commComboAction"
+				type="com.insigma.siis.local.comm.CommComboAction"
+				parameter="method" scope="request" />
+			
+			<!-- 菜单控制-->
+			<action path="/pages/mdParamsAction" parameter="method" 
+				scope="request" 
+				type="com.insigma.siis.comm.MDParamsAction">
+			</action>
+			<!-- 智能搜索 -->
+			<action
+				path="/com/insigma/siis/search/SearchAction"
+				type="com.insigma.siis.search.SearchAction"
+				parameter="method" scope="request" />
+			<!-- 单据打印 -->
+			<action path="/commonform/billPrintAction" forward="/commform/common/billPrint.jsp" />
+			<!-- 通用报表 -->
+			<action path="/commonform/commonReportAction" forward="/commform/common/commonReport.jsp" />
+			<action path="/common/billPrint2Action" forward="/commform/common/billPrint2.jsp" />		
+			<!-- -->
+			<!-- 分页查询 -->
+    		<action path="/common/commformPageQueryAction" parameter="method" scope="request" type="com.insigma.odin.framework.comm.commform.query.PageQueryAction"/>
+    		<!-- 通用查询（不分页） -->
+    		<action path="/common/commformCommQueryAction" parameter="method" scope="request" type="com.insigma.odin.framework.comm.commform.query.CommQueryAction" />
+					<!-- 草稿箱 -->
+		<action path="/pages/draft/draftAction" parameter="method" 
+			scope="request" 
+			type="com.insigma.odin.framework.commform.local.comm.draft.DraftAction">
+		</action>
+		<action path="/draft/openDraftAction" forward="/commform/draft.jsp"></action>
+			<action path="/switchAction"
+				type="org.apache.struts.actions.SwitchAction" />
+			<action name="myForm" path="/xmlAction" scope="request"
+				type="com.lbs.platform.interfacexml.TestAction">
+			</action>
+			<action path="/areaQueryAction" scope="request"
+				type="com.lbs.leaf.AreaQueryAction" />
+			<action path="/common/commformTagQueryAction" parameter="method" scope="request" type="com.insigma.siis.local.business.TagQueryAction" />
+    <!-- end -->
+	</action-mappings>
+</struts-config>

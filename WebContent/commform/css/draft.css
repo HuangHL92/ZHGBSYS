@@ -1,0 +1,37 @@
+#content_tab{
+    float:left;width:auto;height:auto;
+}
+#content_tableft{
+    float:left;width:100px;height:auto; margin:5px 0px 0px 3px;
+	background:url(../img/bbs_menubg.gif) repeat-y 109px 0px; overflow:hidden; 
+}
+#content_tableft ul{
+    float: right; list-style:none; margin:0px; padding:0px;
+}
+#content_tableft li{ 
+ float:right;background:url(../img/nav_hot.jpg) no-repeat; 
+ text-align:left;width:100px; height:38px;margin:5px 0px 2px 0px;font-size:13px;color:#01377f;
+}
+#content_tableft a{ 
+ text-decoration:none;color:#01377f;padding:8px 0px 0px 7px; line-height:35px;
+}
+#content_tableft .hot2{
+ background:url(../img/nav.jpg) no-repeat;width:100px;height:38px; background-color:#FFF;
+ font-size:13px; font-weight:bold; color:#013580; line-height:35px;
+}
+#content_tableft .hot2 a{
+ font-size:12px; font-weight:bold; color:#013580;
+}
+#content_tabright{
+    width:auto;margin:5px 0px 0px 0px; 
+	border-bottom:1px #62c1d6 solid; border-right:1px #62c1d6 solid; border-top:1px #62c1d6 solid;
+}
+.fillet_boxcontent {
+  display:block; background:#fff;
+}
+.fillet_boxcontent_top { 
+  float:left; width:auto; height:25px;margin:3px 0px 0px 5px;font-size:13px;color:#4a4a4a; text-align:left;
+}
+.fillet_boxcontent_top img{ 
+  margin:0px; padding:0px; border:0px;
+}

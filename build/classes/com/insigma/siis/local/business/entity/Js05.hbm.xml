@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:03:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Js05" table="JS05" >
+        <comment>组织考察表</comment>
+        <id name="js0100" type="string">
+            <column name="JS0100" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="dc001" type="string">
+            <column name="DC001" length="64" >
+                <comment>分类ID</comment>
+            </column>
+        </property>
+        <property name="rbId" type="string">
+            <column name="RB_ID" length="64" >
+                <comment>任免批次ID</comment>
+            </column>
+        </property>
+        <property name="js0502" type="string">
+            <column name="JS0502" length="8">
+                <comment>考察时间</comment>
+            </column>
+        </property>
+        <property name="js0503" type="string">
+            <column name="JS0503" length="5">
+                <comment>个别谈话人数</comment>
+            </column>
+        </property>
+        <property name="js0504" type="string">
+            <column name="JS0504" length="2">
+                <comment>是否考察预告</comment>
+            </column>
+        </property>
+        <property name="js0505" type="string">
+            <column name="JS0505" length="5">
+                <comment>民意调查人数</comment>
+            </column>
+        </property>
+        <property name="js0506" type="string">
+            <column name="JS0506" length="5">
+                <comment>满意</comment>
+            </column>
+        </property>
+        <property name="js0507" type="string">
+            <column name="JS0507" length="5">
+                <comment>比较满意</comment>
+            </column>
+        </property>
+        <property name="js0508" type="string">
+            <column name="JS0508" length="5">
+                <comment>不满意</comment>
+            </column>
+        </property>
+        <property name="js0509" type="string">
+            <column name="JS0509" length="5">
+                <comment>不了解</comment>
+            </column>
+        </property>
+        <property name="js0510" type="string">
+            <column name="JS0510" length="5">
+                <comment>参加测评人数</comment>
+            </column>
+        </property>
+        <property name="js0511" type="string">
+            <column name="JS0511" length="5">
+                <comment>优秀</comment>
+            </column>
+        </property>
+        <property name="js0512" type="string">
+            <column name="JS0512" length="5">
+                <comment>称职</comment>
+            </column>
+        </property>
+        <property name="js0513" type="string">
+            <column name="JS0513" length="5">
+                <comment>基本称职</comment>
+            </column>
+        </property>
+        <property name="js0514" type="string">
+            <column name="JS0514" length="5">
+                <comment>不称职</comment>
+            </column>
+        </property>
+        <property name="js0515" type="string">
+            <column name="JS0515" length="5">
+                <comment>参加人数</comment>
+            </column>
+        </property>
+        <property name="js0516" type="string">
+            <column name="JS0516" length="5">
+                <comment>同意</comment>
+            </column>
+        </property>
+        <property name="js0517" type="string">
+            <column name="JS0517" length="5">
+                <comment>不同意</comment>
+            </column>
+        </property>
+        <property name="js0518" type="string">
+            <column name="JS0518" length="5">
+                <comment>弃权</comment>
+            </column>
+        </property>
+        <property name="js0519" type="string">
+            <column name="JS0519" length="500">
+                <comment>考察中反映的问题</comment>
+            </column>
+        </property>
+        <property name="js0520" type="string">
+            <column name="JS0520" length="500">
+                <comment>查核情况</comment>
+            </column>
+        </property>
+        <property name="js0521" type="string">
+            <column name="JS0521" length="500">
+                <comment>考察组意见</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

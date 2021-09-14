@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>列表控件属性</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="generator" content="www.bits.net.cn" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bits.style.css">
+    <script type="text/javascript" src="../dialogs/internal.js"></script>
+    <script type="text/javascript" src="./jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+function createElement(type, name)
+{     
+    var element = null;     
+    try {        
+        element = document.createElement('<'+type+' name="'+name+'">');     
+    } catch (e) {}   
+    if(element==null) {     
+        element = document.createElement(type);     
+        element.name = name;     
+    } 
+    return element;
+}
+
+function getUrlParms(name){
+   var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+   var r = window.location.search.substr(1).match(reg);
+   if(r!=null)
+   return unescape(r[2]);
+   return null;
+}
+</script>
+ <script type="text/javascript">
+	var g_root;
+	var g_tables;
+	var g_table;
+	var g_fields;
+	var g_field;
+	
+	function changeGroupKey(defaultTable, isUpdate){
+		$("#orgtable").attr('disabled', isUpdate);
+		
+		var groupkey = 'A';
+		$.post(g_root + "/query/level-query!getTablesByGroupKey.action",{'groupkey':groupkey},function(tables){
+			// 删掉单记录信息集
+			var newTables = [];
+			
+			$.each(tables,function(i,item){
+				if (item.relation_flag==0) newTables.push(item);
+			});
+			tables = newTables;
+			
+			g_tables = tables;
+			var options = "";
+			if (tables.length <=0) {
+				$("#orgtable").empty();
+			}else{
+				$.each(tables,function(i,item){
+					options += "<option value='"+item.table_name+"'";
+					if (defaultTable != null && item.table_name == defaultTable) {
+						options += " selected ";
+					}
+					options += ">"+item.table_name_cn+"</option>";
+				});
+				
+				$("#orgtable").empty().append(options);
+			}
+			//changeTableKey(defaultFields);
+		});
+	}
+	
+	function changeTableKey(defaultFields){
+		var tablekey = $("#orgtable option:selected").val();
+		/*
+		$.post(g_root + "/query/level-query!getDesignFiledsByTableKey.action",{'tablekey':tablekey},function(fields){
+			g_fields = fields;
+			var options = "";
+			if(fields.length <=0){
+				$("#orgfield").empty();
+			}else{
+				$.each(fields,function(i,item){
+					options += "<option value='"+item.field_dbname+"'";
+					if (defaultField != null && item.field_dbname == defaultField) {
+						options += " selected ";
+					}
+					options += ">"+item.field_name_cn+"</option>";
+				});
+				
+				$("#orgfield").empty().append(options);
+			}
+			
+			changeFieldKey();
+		});
+		*/
+	}
+
+	function changeFieldKey(){
+		var chk = $("#orgfield option:selected").val();
+		var fields = g_fields;
+		var field = fields[0];
+		for (var i = 0; i < fields.length; i++) {
+			if (fields[i].field_dbname == chk) {
+				field = fields[i];
+				break;
+			}
+		}
+		g_field = field;
+		$("#orgtype").val(field.dbtype_ref);
+		$("#orgfieldname").val(field.field_name_cn);
+		
+		chk = $("#orgtable option:selected").val();
+		var tables = g_tables;
+		var table = tables[0];
+		g_table = table;
+		for (var i = 0; i < tables.length; i++) {
+			if (tables[i].table_dbname == chk) {
+				table = tables[i];
+				break;
+			}
+		}
+		
+		$("#orgtablename").val(table.table_name_cn);
+	}
+
+	</script>
+</head>
+<body>
+<div class="content">
+    <table class="table table-bordered table-striped table-hover">
+		<tr>
+			<td><span>信息集</span><span class="label label-important">*</span></td>
+			<td>
+				<select id="orgtable" name="orgtable" onchange="changeTableKey()"></select>
+			</td>
+			<td>
+                宽 <input id="orgwidth" type="text" value="100%" class="input-small span1" placeholder="auto"/> % 或 px
+            </td>
+			<td>
+                字体<input id="orgfontsize" type="text"  value="" class="input-small span1" placeholder="auto"/> px
+            </td>
+		</tr>
+	</table>
+	
+	<table class="table table-striped table-bordered table-condensed"  id="tbl">
+		<thead>
+			<tr>
+				<th> <span>字段</span> </th>
+				<th> <span>宽度（%或px）</span> </th>
+				<th> <span>标题对齐</span> </th>
+				<th> <span>内容对齐</span> </th>
+			</tr>
+		</thead>
+		<tbody id="tbl1">
+			<tr>
+				<td title="Tab键切换输入框"> <input id="item_1" type="text" class="input-medium"> </td>
+				<td title="Tab键切换输入框"><input id="colvalue_1"  type="text" class="input-small"/></td>
+				<td title="Tab键切换输入框"> <input id="item_1" type="text" class="input-small"> </td>
+				<td title="Tab键切换输入框"> <input id="item_1" type="text" class="input-small"> </td>
+			</tr>
+	</table>
+</div>
+<script type="text/javascript">
+var oNode = null,thePlugins = 'bitslist';
+
+window.onload = function() {
+	g_root = getUrlParms('root');
+	
+    //弹出窗口初始化函数，这里主要是判断是编辑下拉列表还是新增
+    if( UE.plugins[thePlugins].editdom ){
+		oNode = UE.plugins[thePlugins].editdom;
+		var gTable = oNode.getAttribute('orgtable');
+        changeGroupKey(gTable, true);
+    }
+	else {
+		changeGroupKey(null, false);
+	}
+    
+}
+dialog.oncancel = function () {
+if( UE.plugins[thePlugins].editdom ) {
+    delete UE.plugins[thePlugins].editdom;
+}
+};
+dialog.onok = function (){
+
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:03:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Js21" table="JS21">
+        <comment>考核与听取意见表</comment>
+        <id name="js2100" type="string">
+            <column name="JS2100" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="js0100" type="string">
+            <column name="JS0100" length="64" not-null="true">
+                <comment>考察人选ID</comment>
+            </column>
+        </property>
+        <property name="dc001" type="string">
+            <column name="DC001" length="64" >
+                <comment>分类ID</comment>
+            </column>
+        </property>
+        <property name="rbid" type="string">
+            <column name="RB_ID" length="64">
+                <comment>任免批次ID</comment>
+            </column>
+        </property>
+        <property name="js2102" type="string">
+            <column name="JS2102" length="2">
+                <comment>听取意见(公安机关)1:听取，2未听取</comment>
+            </column>
+        </property>
+        <property name="js2103" type="string">
+            <column name="JS2103" length="2">
+                <comment>听取意见(法院)1:听取，2未听取</comment>
+            </column>
+        </property>
+        <property name="js2104" type="string">
+            <column name="JS2104" length="2">
+                <comment>听取意见(检察院)1:听取，2未听取</comment>
+            </column>
+        </property>
+        <property name="js2105" type="string">
+            <column name="JS2105" length="2">
+                <comment>听取意见(卫生计生部门)1:听取，2未听取</comment>
+            </column>
+        </property>
+        <property name="js2106" type="string">
+            <column name="JS2106" length="2">
+                <comment>听取意见(其他)1:听取，2未听取</comment>
+            </column>
+        </property>
+        <property name="js2107" type="string">
+            <column name="JS2107" length="2">
+                <comment>个人事项查核（1是，2否）</comment>
+            </column>
+        </property>
+        <property name="js2108" type="string">
+            <column name="JS2108" length="800">
+                <comment>工作是由</comment>
+            </column>
+        </property>
+        <property name="js2109" type="string">
+            <column name="JS2109" length="800">
+                <comment>任现职时间</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

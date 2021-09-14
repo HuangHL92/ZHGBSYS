@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.JwOpinion"
+    lazy="false"
+    table="jw_checkopinion">
+  	<id column="OID" name="oid" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="PSNNAME" length="60" name="psnname" type="java.lang.String" />
+    <property column="BATCHID" length="120" name="batchid" type="java.lang.String" />
+  
+    <property column="PSNKEY" length="120" name="psnkey" type="java.lang.String" />
+   
+    <property column="DUTY" length="1000" name="duty" type="java.lang.String" />
+   
+ 
+    <property column="ISSHENGGUAN" length="1" name="isshengguan" type="java.lang.String" />
+     <property column="JWOPINION" length="50" name="jwopinion" type="java.lang.String" />
+      <property column="IDCARD" length="50" name="idcard" type="java.lang.String" />
+	<property column="TYPE" length="50" name="type" type="java.lang.String" />
+	<property column="SENDNUM" length="50" name="sendnum" type="java.lang.String" />
+	<property column="FEEDBACKNUM" length="50" name="feedbacknum" type="java.lang.String" />
+	<property column="ISYINGXIANG" length="50" name="isyingxiang" type="java.lang.String" />
+	<property column="CONTEXT" length="50" name="context" type="java.lang.String" />
+	<property column="FEEDBACKTIME" length="50" name="feedbacktime" type="java.lang.String" />
+	<property column="XSBOPINION" length="50" name="xsbopinion" type="java.lang.String" />
+	<property column="XSBSENDNUM" length="50" name="xsbsendnum" type="java.lang.String" />
+	<property column="XSBFEEDBACKNUM" length="50" name="xsbfeedbacknum" type="java.lang.String" />
+	<property column="XSBFEEDBACKTIME" length="50" name="xsbfeedbacktime" type="java.lang.String" />
+	<property column="XSBCONTEXT" length="50" name="xsbcontext" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.B01"
+    lazy="false"
+    table="B01">
+    <id column="B0111" name="b0111" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="B0101" length="200" name="b0101" type="java.lang.String" />
+    <property column="B0104" length="200" name="b0104" type="java.lang.String" />
+    <property column="B0107" length="200" name="b0107" type="java.lang.String" />
+    <property column="B0114" length="68" name="b0114" type="java.lang.String" />
+    <property column="B0117" length="8" name="b0117" type="java.lang.String" />
+    <property column="B0121" length="199" name="b0121" type="java.lang.String" />
+    <property column="B0124" length="8" name="b0124" type="java.lang.String" />
+    <property column="B0127" length="8" name="b0127" type="java.lang.String" />
+    <property column="B0131" length="8" name="b0131" type="java.lang.String" />
+    <property column="B0140" length="1000" name="b0140" type="java.lang.String" />
+    <property column="B0141" length="68" name="b0141" type="java.lang.String" />
+    <property column="B0142" length="4" name="b0142" type="java.lang.Long" />
+    <property column="B0143" length="8" name="b0143" type="java.lang.String" />
+    <property column="B0150" length="8" name="b0150" type="java.lang.Long" />
+    <property column="B0180" length="500" name="b0180" type="java.lang.String" />
+    <property column="B0183" length="8" name="b0183" type="java.lang.Long" />
+    <property column="B0185" length="8" name="b0185" type="java.lang.Long" />
+    <property column="B0188" length="8" name="b0188" type="java.lang.Long" />
+    <property column="B0189" length="8" name="b0189" type="java.lang.Long" />
+    <property column="B0190" length="8" name="b0190" type="java.lang.Long" />
+    <property column="B0191" length="10" name="b0191" type="java.lang.String" />
+    <property column="B0191A" length="8" name="b0191a" type="java.lang.Long" />
+    <property column="B0192" length="8" name="b0192" type="java.lang.Long" />
+    <property column="B0193" length="8" name="b0193" type="java.lang.Long" />
+    <property column="B0194" length="1" name="b0194" type="java.lang.String" />
+    <property column="B01IP" length="32" name="b01ip" type="java.lang.String" />
+    <property column="B01TRANS" length="8" name="b01trans" type="java.lang.Long" />
+    <property column="B0227" length="8" name="b0227" type="java.lang.Long" />
+    <property column="B0232" length="8" name="b0232" type="java.lang.Long" />
+    <property column="B0233" length="8" name="b0233" type="java.lang.Long" />
+    <property column="CREATE_DATE" length="20" name="createdate" type="com.insigma.siis.local.pagemodel.publicServantManage.Data2Long" />
+    <property column="CREATE_USER" length="200" name="createuser" type="java.lang.String" />
+    <property column="SORTID" length="20" name="sortid" type="java.lang.Long" />
+    <property column="STATUS" length="1" name="status" type="java.lang.String" />
+    <property column="UPDATED" length="1" name="updated" type="java.lang.String" />
+    <property column="UPDATE_DATE" length="20" name="updatedate" type="com.insigma.siis.local.pagemodel.publicServantManage.Data2Long" />
+    <property column="UPDATE_USER" length="200" name="updateuser" type="java.lang.String" />
+    <property column="USED" length="1" name="used" type="java.lang.String" />
+    <property column="B0238" length="4" name="b0238" type="java.lang.String" />
+    <property column="B0239" length="24" name="b0239" type="java.lang.String" />
+    <property column="B0234" length="20" name="b0234" type="java.lang.String" />
+    <property column="B0235" length="20" name="b0235" type="java.lang.String" />
+    <property column="B0236" length="500" name="b0236" type="java.lang.String" />   
+    <property column="B0240" length="500" name="b0240" type="java.lang.String" />
+    <property column="B0241" length="500" name="b0241" type="java.lang.String" />
+    <property column="B0242" length="64" name="b0242" type="java.lang.String" />
+    <property column="B0243" length="64" name="b0243" type="java.lang.String" />
+    <property column="B0244" length="64" name="b0244" type="java.lang.String" />
+    <property column="unify_code" length="18" name="unifyCode" type="java.lang.String" />
+    <property column="sign_code" length="1" name="signCode" type="java.lang.String" />
+    <property column="UNITID" length="100" name="unitid" type="java.lang.String" />
+    
+    <property column="B0246" length="8" name="b0246" type="java.lang.Long" />
+    <property column="B0247" length="8" name="b0247" type="java.lang.Long" />
+    <property column="B0248" length="8" name="b0248" type="java.lang.Long" />
+    <property column="B0249" length="8" name="b0249" type="java.lang.Long" />
+    <property column="B0250" length="8" name="b0250" type="java.lang.Long" />
+    <property column="B0256" length="8" name="b0256" type="java.lang.Long" />
+    <property column="B0257" length="8" name="b0257" type="java.lang.Long" />
+    <property column="B0258" length="8" name="b0258" type="java.lang.Long" />
+    <property column="B0259" length="8" name="b0259" type="java.lang.Long" />
+    <property column="B0260" length="8" name="b0260" type="java.lang.Long" />
+    <property column="B0269" length="200" name="b0269" type="java.lang.String" />
+    <property column="B0270" length="1000" name="b0270" type="java.lang.String" />
+    <property column="B0271" length="1000" name="b0271" type="java.lang.String" />
+    <property column="B0272" length="1000" name="b0272" type="java.lang.String" />
+    <property column="B0273" length="1000" name="b0273" type="java.lang.String" />
+    <property column="B0274" length="1000" name="b0274" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+		<!-- 公共 -->
+    	<!--form-bean name="commForm" type="com.insigma.siis.comm.CommForm" /-->
+	</form-beans>
+	
+	
+	<global-forwards></global-forwards>
+	<action-mappings>
+		<!-- 公共 -->
+		<action path="/radowAction" scope="request" 
+			parameter="method"
+			type="com.insigma.odin.framework.radow.RadowAction">	
+			
+			<forward name="commPage" path="/radow/comm.jsp"></forward>
+			
+		</action>
+		<action path="/dataverify/DataVerifyAction" 
+				type="com.insigma.siis.local.pagemodel.dataverify.DataVerifyAction"  
+				parameter="method" scope="request"/>
+	</action-mappings>
+	
+
+</struts-config>

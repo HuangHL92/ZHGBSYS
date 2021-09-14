@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GBK"?>
+<root>
+	<!--  
+	<menu>
+		<text>表格下载</text>
+		<icon>img/rizi.gif</icon>
+		<url>/sysmanager/roleQueryAction.do?method=query</url>
+	</menu>	
+	<menu>
+		<text>帮助中心</text>
+		<icon>img/house.gif</icon>
+		<url>/sysmanager/roleQueryAction.do?method=query</url>
+	</menu>	
+	<menu>
+		<text>退出系统</text>
+		<icon>img/back.gif</icon>
+		<url>/sysmanager/roleQueryAction.do?method=query</url>
+	</menu>	
+	-->
+</root>

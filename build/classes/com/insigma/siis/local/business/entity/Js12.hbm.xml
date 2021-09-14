@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:03:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Js12" table="JS12" >
+        <comment>职数预审</comment>
+        <id name="js1200" type="string">
+            <column name="JS1200" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="dc001" type="string">
+            <column name="DC001" length="64" >
+                <comment>分类ID</comment>
+            </column>
+        </property>
+        <property name="rbId" type="string">
+            <column name="RB_ID" length="64" >
+                <comment>任免批次ID</comment>
+            </column>
+        </property>
+        <property name="js1201" type="string">
+            <column name="JS1201" length="200">
+                <comment>单位名称</comment>
+            </column>
+        </property>
+        <property name="js1202" type="string">
+            <column name="JS1202" length="5">
+                <comment>职数层级</comment>
+            </column>
+        </property>
+        <property name="js1203" type="string">
+            <column name="JS1203" length="5">
+                <comment>核定职数领导职数</comment>
+            </column>
+        </property>
+        <property name="js1204" type="string">
+            <column name="JS1204" length="5">
+                <comment>核定职数非领导职数</comment>
+            </column>
+        </property>
+        <property name="js1205" type="string">
+            <column name="JS1205" length="5">
+                <comment>现配职数领导职数</comment>
+            </column>
+        </property>
+        <property name="js1206" type="string">
+            <column name="JS1206" length="5">
+                <comment>现配职数非领导职数</comment>
+            </column>
+        </property>
+        <property name="js1207" type="string">
+            <column name="JS1207" length="5">
+                <comment>拟免职数领导职数</comment>
+            </column>
+        </property>
+        <property name="js1208" type="string">
+            <column name="JS1208" length="5">
+                <comment>拟免职数非领导职数</comment>
+            </column>
+        </property>
+        <property name="js1209" type="string">
+            <column name="JS1209" length="5">
+                <comment>拟配职数领导职数</comment>
+            </column>
+        </property>
+        <property name="js1210" type="string">
+            <column name="JS1210" length="5">
+                <comment>拟配职数非领导职数</comment>
+            </column>
+        </property>
+        <property name="js1211" type="string">
+            <column name="JS1211" length="5">
+                <comment>超值数领导职数</comment>
+            </column>
+        </property>
+        <property name="js1212" type="string">
+            <column name="JS1212" length="5">
+                <comment>超值数非领导职数</comment>
+            </column>
+        </property>
+        <property name="js1213" type="string">
+            <column name="JS1213" length="500">
+                <comment>备注</comment>
+            </column>
+        </property>
+        <property name="js1214" type="string">
+            <column name="JS1214" length="500">
+                <comment>干部监督处意见</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

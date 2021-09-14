@@ -1,0 +1,126 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>报表测试</title>
+<style>
+ td{
+ 	height: 30px;
+ }
+</style>
+</head>
+<body Leftmargin="0" topmargin="0"  rightmargin="0" bottommargin="0">
+<form name="repForm">
+<table align="center" width="90%">
+<tr>
+	<td colspan="6" align="center">
+		<h2>报表测试</h2>
+	</td>
+</tr>
+<tr>
+	<td>报表OCX地址：</td><td><input type="text" name="repOcxAddr" id="repOcxAddr" title="http://192.168.70.138:9188" value="http://192.168.70.138:9188"/></td>
+	<td>报表服务地址：</td><td><input type="text" name="repSrvAddr" id="repSrvAddr" title="http://192.168.70.138:9188" value="http://192.168.70.138:9188"/></td>
+	<td>报表服务名称：</td><td><input type="text" name="repSrvName" id="repSrvName" value="inhis_rep"/></td>
+</tr>
+<tr>
+	<td>报表调用模式：</td>
+	<td colspan="5">
+		<select id="repModel" name="repModel">
+			<option value="1">1报表（显示参数界面，手动输入参数，手动查询）</option>
+			<option value="5" selected="selected">5报表（不显示参数界面，接收输入参数，自动查询）【当为报表时默认为5，也可为1，根据需要】</option>
+			<option value="2">2单据（不显示参数界面，接收输入参数，自动查询，不预览，直接打印，自动关闭）【当为单据打印时常用】</option>
+			<option value="3">3单据（不显示参数界面，接收输入参数，自动查询，预览）【当为单据打印时常用】</option>
+			<option value="4">4单据（显示参数界面，手动输入参数，手动查询）</option>
+			<option value="6">6单据（不显示参数界面，接收输入参数，自动查询）</option>
+			<option value="11">11快速查询（显示参数界面，手动输入参数，手动查询）</option>
+			<option value="15">15快速查询（不显示参数界面，接收输入参数，自动查询）</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<td>报表编码：</td><td><input type="text" name="repCode" id="repCode" value="DEQ0001"/></td>
+	<td>查询编码：</td><td><input type="text" name="queryCode" id="queryCode" value="Q001"/></td>
+	<td>当前用户登录名：</td><td><input type="text" name="loginName" id="loginName" /></td>
+</tr>
+<tr>
+	<td>当前用户实际名：</td><td><input type="text" name="realName" id="realName" /></td>
+	<td>参数串：</td><td colspan="3"><input type="text" name="repParam" id="repParam" size="55" title='参数串：比如要传两个参数aab001和aab002，则为"aab001 123456 aab002 654321"，即中间用空格隔开'/></td>
+</tr>
+<tr>
+	<td colspan="2"></td>
+	<td align="center"><button onclick="reptest()">进行测试（JSP）</button></td>
+	<td align="center"><button onclick="reptest(1)">进行测试（HTML）</button></td>
+	<td ><button onclick="reset()">&nbsp;&nbsp;重置&nbsp;&nbsp;</button></td>
+	<td colspan="1"></td>
+</tr>
+</table>
+<script type="text/javascript">
+function reptest(w){
+	var url = 'report.jsp?t=1';
+	if(w && w==1){
+		url = 'report.htm?t=1';
+	}
+	var repOcxAddr = $("repOcxAddr");
+	if(repOcxAddr.value==""){
+		alert("报表OCX地址不能为空");
+		repOcxAddr.focus();
+		return;
+	}
+	url += "&repOcxAddr="+encodeURIComponent(repOcxAddr.value);
+	
+	var repSrvAddr = $("repSrvAddr");
+	if(repSrvAddr.value==""){
+		alert("报表服务地址不能为空");
+		repSrvAddr.focus();
+		return;
+	}
+	url += "&repSrvAddr="+encodeURIComponent(repSrvAddr.value);
+	
+	var repSrvName = $("repSrvName");
+	if(repSrvName.value==""){
+		alert("报表服务名称不能为空");
+		repSrvName.focus();
+		return;
+	}
+	url += "&repSrvName="+repSrvName.value;
+	
+	var repModel = $("repModel");
+	for(var i=0;i<repModel.options.length;i++){
+		var option = repModel.options[i];
+		if(option.selected){
+			url += "&repModel="+option.value;
+			break;
+		}
+	}
+	
+	var repCode = $("repCode");
+	if(repCode.value==""){
+		alert("报表编码不能为空");
+		repCode.focus();
+		return;
+	}
+	url += "&repCode="+repCode.value;
+	
+	var queryCode = $("queryCode");
+	if(queryCode.value==""){
+		alert("查询不能为空");
+		queryCode.focus();
+		return;
+	}
+	url += "&queryCode="+queryCode.value;
+	
+	url += "&loginName="+$("loginName").value;
+	url += "&realName="+$("realName").value;
+	url += "&repParam="+encodeURIComponent($("repParam").value);
+	var repWin = window.open(url,'repWindow');
+	repWin.focus();
+}
+function reset(){
+	$("repform").reset();
+}
+function $(name){
+	return document.getElementById(name);
+}
+</script>
+</form>	
+</BODY>
+</HTML>

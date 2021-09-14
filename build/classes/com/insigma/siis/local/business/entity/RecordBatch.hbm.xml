@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-17 10:54:54 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.RecordBatch" table="RECORD_BATCH" >
+        <comment>干部选任纪实批次</comment>
+        <id name="rbId" type="string">
+            <column name="RB_ID" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="rbName" type="string">
+            <column name="RB_NAME" length="500">
+                <comment>批次名称</comment>
+            </column>
+        </property>
+        <property name="rbDate" type="string">
+            <column name="RB_DATE" length="8">
+                <comment>申报日期</comment>
+            </column>
+        </property>
+        <property name="rbType" type="string">
+            <column name="RB_TYPE" length="1">
+                <comment>类型 班子换届 个人提拔</comment>
+            </column>
+        </property>
+        <property name="rbUserid" type="string">
+            <column name="RB_USERID" length="64">
+                <comment>用户id</comment>
+            </column>
+        </property>
+        <property name="rbNo" type="string">
+            <column name="RB_NO" length="20">
+                <comment>批次编号</comment>
+            </column>
+        </property>
+        <property name="rbApplicant" type="string">
+            <column name="RB_APPLICANT" length="64">
+                <comment>申报人</comment>
+            </column>
+        </property>
+        <property name="rbOrg" type="string">
+            <column name="RB_ORG" length="120">
+                <comment>申报单位</comment>
+            </column>
+        </property>
+        <property name="rbSysno" type="big_decimal">
+            <column name="RB_SYSNO" length="20">
+                <comment>系统编号</comment>
+            </column>
+        </property>
+        <property name="rbUpdated" type="string">
+            <column name="RB_UPDATED" length="1">
+                <comment>申报单位</comment>
+            </column>
+        </property>
+        <property name="rbmeettype" type="string">
+            <column name="RB_MEETTYPE" length="10">
+                <comment>会议类型</comment>
+            </column>
+        </property>
+        <property name="rbdeplytype" type="string">
+            <column name="RB_DEPLOYTYPE" length="10">
+                <comment>调配类型</comment>
+            </column>
+        </property>
+        <property name="rbapprove" type="string">
+            <column name="RB_APPROVE" length="10">
+                <comment>是否需要事前报告(1是，2否)</comment>
+            </column>
+        </property>
+        <property name="rbreportreson" type="string">
+            <column name="RB_REPORTRESON" length="10">
+                <comment>报告是由(codevalue的type</comment>
+            </column>
+        </property>
+         <property name="rbreportvalue" type="string">
+            <column name="RB_REPORTVALUE" length="900">
+                <comment>其他是由</comment>
+            </column>
+        </property>
+        <property name="rbleadview" type="string">
+            <column name="RB_LEADVIEW" length="10">
+                <comment>领导审批结果（1通过，2未通过）</comment>
+            </column>
+        </property>
+        <property name="rbstatus" type="string">
+            <column name="RB_STATUS" length="10">
+                <comment>状态（1完成导出了发文表，其他进行中）</comment>
+            </column>
+        </property>
+        <property name="rbmId" type="string">
+            <column name="RBM_ID" length="64">
+                <comment>合并批次ID</comment>
+            </column>
+        </property>
+        <property name="rbmStatus" type="string">
+            <column name="RBM_STATUS" length="1">
+                <comment>合并状态(2已合并，1已发起未合并，0未发起)</comment>
+            </column>
+        </property>
+        <property name="rbmDept" type="string">
+            <column name="RBM_DEPT" length="200">
+                <comment>合并批次单位</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

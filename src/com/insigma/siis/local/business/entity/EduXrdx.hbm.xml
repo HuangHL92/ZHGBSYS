@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.EduXrdx"
+    lazy="false"
+    table="EDU_XRDX">
+  	<id column="XRDX00" name="xrdx00" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="YEAR" length="4" name="year" type="java.lang.String" />
+    <property column="TYPE" length="5" name="type" type="java.lang.String" />
+    <property column="XRDX01" length="500" name="xrdx01" type="java.lang.String" />
+    <property column="XRDX02" length="8" name="xrdx02" type="java.lang.String" />
+    <property column="XRDX03" length="50" name="xrdx03" type="java.lang.String" />
+    <property column="XRDX04" length="8" name="xrdx04" type="java.lang.String" />
+    <property column="XRDX05" length="50" name="xrdx05" type="java.lang.String" />
+    <property column="XRDX06" length="50" name="xrdx06" type="java.lang.String" />
+    <property column="XRDX07" length="60" name="xrdx07" type="java.lang.String" />
+    <property column="XRDX08" length="50" name="xrdx08" type="java.lang.String" />
+    <property column="XRDX09" length="50" name="xrdx09" type="java.lang.String" />
+    <property column="XRDX10" length="500" name="xrdx10" type="java.lang.String" />
+    <property column="XRDX11" length="500" name="xrdx11" type="java.lang.String" />
+    <property column="XRDX12" length="8" name="xrdx12" type="java.lang.String" />
+    <property column="STATUS" length="8" name="status" type="java.lang.String" />
+    <property column="REMARK" length="500" name="remark" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

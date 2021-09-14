@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ep-licenses>
+<license-group format="2" product="insiis" release="1.0">
+<license version="1">
+<title>通用开发许可</title>
+<type>普通</type>
+<desc>通用开发许可</desc>
+<component>odin</component>
+<resources/>
+<appcontext>any</appcontext>
+<logincount>unlimited</logincount>
+<ip>any</ip>
+<database/>
+<mac>any</mac>
+<expiration>2014-12-31</expiration>
+<sessions>unlimited</sessions>
+<cpus>unlimited</cpus>
+<appserver>any</appserver>
+<units/>
+<opsystem>Windows</opsystem>
+<serial>En-Qc-F1-Bd-rT-132444458820157</serial>
+<signature>MC0CFElOZAEJkvldQh1Sugbq6sSY7ww4AhUAjakdDsPp80Dn2HdoBfY2n4tUbOs=</signature>
+</license>
+</license-group>
+</ep-licenses>

@@ -1,0 +1,59 @@
+html,body {height:100%;width:100%}
+body{background:#F4FBFD}
+.top_style {
+  height:48.5%;
+  padding-top:0.5%;
+  padding-right:17px;
+  padding-left:15px;
+}
+.chart_style{
+	height:100%;
+	width:100%;
+}
+.bottom_style{
+	height:98.5%;
+	/* width:32.6666666%; *//* 原3等份 通知公告 */
+	width:49.5%;
+	float:left;
+}
+.chart-heading{
+	height:15%;
+	width:100%;
+    border:1px solid #DEDEDE;
+}
+.left_style{
+   width:65%;
+   height:100%;
+   float:left;
+}
+.pic1{background:url(../../images/chart_title.png) no-repeat 1% center;}
+.right_style{
+   display:table;
+   width:35%;
+   height:100%;
+   float:right;
+   background:url(../../images/shrink2.png) no-repeat 95% center;
+}
+.right_style2{
+   display:table;
+   width:8%;
+   height:100%;
+   float:right;
+   cursor:pointer;
+   background:url(../../images/shrink2.png) no-repeat 0px center;
+}
+
+.cell {
+   position:relative;
+   top:18%;
+   /* -webkit-transform:translateY(-50%);//ie11下 样式有问题，注释掉
+   -ms-transform:translateY(-50%);
+   transform:translateY(-50%); */
+   font-size : 18px;
+   color:#263D81
+}
+
+#formulaResult_view th{height:20px;padding:0px;vertical-align: middle!important;  border-bottom: 1px solid #dddddd;}
+#formulaResult_view td{padding:0px;vertical-align: middle!important; }
+.panel-body2{padding-left:5%;padding-right:5%;}
+#policy_table td{padding:0px;vertical-align: middle!important; }

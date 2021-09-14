@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Fptconfig"
+    lazy="false"
+    table="FPTCONFIG">
+    <id column="FPTCONFIGID" name="fptconfigid" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="ADDTIONFIELD" length="100" name="addtionfield" type="java.lang.String" />
+    <property column="BACKUPFILE" length="200" name="backupfile" type="java.lang.String" />
+    <property column="LOCALFILE" length="200" name="localfile" type="java.lang.String" />
+    <property column="SERVERBASEURL" length="200" name="serverbaseurl" type="java.lang.String" />
+    <property column="SERVERPORT" length="50" name="serverport" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

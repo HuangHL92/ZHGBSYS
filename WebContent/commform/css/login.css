@@ -1,0 +1,93 @@
+body{
+ text-align: center;margin:0px; padding:0px;background-color: #FFFFFF; 
+ font-size:12px; font-family:Verdana, Arial, Helvetica, sans-serif,宋体;
+}
+/*这里是全局CSS删除了会影响整页面*/
+#head{
+ margin:0px auto;width:1002px; 
+}
+#head #top_pic{ 
+  background:url(../img/login_01.gif) no-repeat; width:1002px; height:87px;
+}
+#second{
+  margin:0px auto;width:1002px; height:auto;
+}
+#second_left{ 
+ float:left; background:url(../img/login_02.gif) no-repeat; width:240px; height:333px;
+}
+
+#login{
+  float:right;width:280px; height: auto; margin:120px -35px 0px 0px;
+}
+.form_list_intro {
+	float:left; padding:5px 0px 90px 0px!important;padding:5px 0px 5px 0px; text-align:left; width:240px;height:30px;
+}
+.form_list_intro DD { 
+  float:left; height:30px;
+}
+.form_list_intro DD INPUT {
+	VERTICAL-ALIGN: middle
+}
+.form_list_intro span {
+	VERTICAL-ALIGN: middle
+}
+.li_color {
+	BACKGROUND: #e6f4f9
+}
+.inp_L1 { 
+  background:url(../img/login_submit2.gif) no-repeat; width:110px; height:30px; border-top-width:0px; border-right-width:0px;
+  border-bottom-width:0px; border-left-width:0px;
+} 
+.inp_L2 { 
+  background:url(../img/login_submit.gif) no-repeat; width:110px; height:30px; border-top-width:0px; border-right-width:0px;
+  border-bottom-width:0px; border-left-width:0px; 
+}
+.inp_L3 { 
+  background:url(../img/login_help2.gif) no-repeat; width:110px; height:30px; border-top-width:0px; border-right-width:0px;
+  border-bottom-width:0px; border-left-width:0px;
+} 
+.inp_L4 { 
+  background:url(../img/login_help.gif) no-repeat; width:110px; height:30px; border-top-width:0px; border-right-width:0px;
+  border-bottom-width:0px; border-left-width:0px; 
+}
+.inp_L5 { 
+  background:url(../img/login_apply2.gif) no-repeat; width:110px; height:30px; border-top-width:0px; border-right-width:0px;
+  border-bottom-width:0px; border-left-width:0px; 
+}
+.inp_L6 { 
+  background:url(../img/login_apply.gif) no-repeat; width:110px; height:30px; border-top-width:0px; border-right-width:0px;
+  border-bottom-width:0px; border-left-width:0px; 
+}
+.inp_L7 { 
+  background:url(../img/login_sm2.gif) no-repeat; width:110px; height:30px; border-top-width:0px; border-right-width:0px;
+  border-bottom-width:0px; border-left-width:0px; 
+}
+.inp_L8 { 
+  background:url(../img/login_sm.gif) no-repeat; width:110px; height:30px; border-top-width:0px; border-right-width:0px;
+  border-bottom-width:0px; border-left-width:0px; 
+}
+.form_button {
+  float:left; height:30px;
+}
+#second_right{ 
+ float:left; background:url(../img/login_04.gif) no-repeat; width:237px; height:333px;
+}
+.err{ 
+ float:left; border:1px #FF6600; width:200px; background:url(../img/warning_icon.gif) no-repeat; width:18px; height:17px;
+}
+#foot{
+ margin:0px auto;width:1002px; height:auto;
+}
+#foot_pic{ 
+ float:left; background:url(../img/login_05.gif) no-repeat; width:765px; height:171px;
+}
+.foot_text{ 
+ float:right;width:500px; height:100px; margin:15px 5px 0px 0px; color:#083550;
+}
+
+#foot_center{ 
+ float:left; background:url(../img/login_06.gif) no-repeat; width:237px; height:171px;
+}
+.input{
+  width:140px; height:22px; border:1px #9abad7 double;
+}

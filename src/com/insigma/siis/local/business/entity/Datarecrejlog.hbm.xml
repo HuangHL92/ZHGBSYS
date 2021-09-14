@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Datarecrejlog"
+    lazy="false"
+    table="DATA_RECREJ_LOG">
+    <id column="DATA_RECREJ_LOG_ID" name="datarecrejlogid" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="DATA_TABLE" length="30" name="datatable" type="java.lang.String" />
+    <property column="DETAIL" length="150" name="detail" type="java.lang.String" />
+    <property column="END_TIME" length="7" name="endtime" type="java.sql.Timestamp" />
+    <property column="IMPRECORDID" length="32" name="imprecordid" type="java.lang.String" />
+    <property column="OP_STATUS" length="3" name="opstatus" type="java.lang.String" />
+    <property column="OP_TYPE" length="3" name="optype" type="java.lang.String" />
+    <property column="SORTID" length="5" name="sortid" type="java.lang.Long" />
+    <property column="START_TIME" length="7" name="starttime" type="java.sql.Timestamp" />
+  </class>
+</hibernate-mapping>

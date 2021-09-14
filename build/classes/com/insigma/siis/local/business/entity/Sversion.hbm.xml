@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Sversion"
+    lazy="false"
+    table="S_VERSION">
+  	<id column="V_SEQ" name="v_seq" type="java.lang.Integer">
+      <generator class="assigned" />
+    </id>
+    <property column="V_NAME" length="6" name="v_name" type="java.lang.String" />
+    <property column="V_TIME" length="8" name="v_time" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

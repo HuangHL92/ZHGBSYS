@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkBook>
+<Version>6.2</Version>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<TableDataMap>
+<NameTableData name="ds1">
+<TableData class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="1"
+ type="0"
+ shown="true" />
+<O t="S"><![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes isCache="true" isDiskCache="false" />
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName><![CDATA[siis]]></DatabaseName>
+</Connection><Query><![CDATA[select distinct to_char(sysdate,'yyyy')||' 年 '||to_char(sysdate,'mm')||' 月 '||to_char(sysdate,'dd')||' 日' riqi,
+                a.aac003,
+                decode(a.aac004,'1','男','2','女') aac004,
+                a.eac001,
+                a.aae135,
+                to_char(a.aac006,'yyyy-mm-dd') aac006,
+                a.aab030,
+                b.eae323 ylym,
+                b.aae180 ylrewage,
+                b.aae058 ylfd,
+                c.eae323 ybym,
+                c.aae180 ybrewage,
+                c.aae058 ybfd,
+                d.eae323 syym,
+                d.aae180 syrewage,
+                d.aae058 syfd
+  from sbdv_ac20 a,
+       (select aaz157, eae323, aae180, aae058
+          from ac43 b
+         where aae140 = '01'
+           and eab202 in ('0', '1')
+           and eae323 in (select max(eae323)
+                            from ac43
+                           where aaz157 = b.aaz157
+                             and aae140 = '01'
+                             and eab204 = '1')) b,
+       (select aaz157, eae323, aae180, aae058
+          from ac43 b
+         where aae140 = '02'
+           and eab202 in ('0', '1')
+           and eae323 in (select max(eae323)
+                            from ac43
+                           where aaz157 = b.aaz157
+                             and aae140 = '02'
+                             and eab204 = '1')) c,
+       (select aaz157, eae323, aae180, aae058
+          from ac43 b
+         where aae140 = '03'
+           and eab202 in ('0', '1')
+           and eae323 in (select max(eae323)
+                            from ac43
+                           where aaz157 = b.aaz157
+                             and aae140 = '03'
+                             and eab204 = '1')) d
+ where a.aaz157 = b.aaz157(+) 
+   and a.aaz157 = c.aaz157(+) 
+   and a.aaz157 = d.aaz157(+) 
+   [?1?]]]></Query>
+</TableData>
+</NameTableData>
+</TableDataMap>
+<ReportSettings shrinkToFit="false" headerHeight="0.0" footerHeight="0.0">
+<Margin top="0.27" left="0.7499999999999999" bottom="0.27" right="0.7499999999999999" />
+</ReportSettings>
+<ReportPageAttr>
+</ReportPageAttr>
+<ReportParameterAttr>
+<Parameters>
+</Parameters>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="0" userDefineWindow="false" />
+<PWTitle><![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<AutoRecalculate>false</AutoRecalculate>
+<DesignAttributes>
+</DesignAttributes>
+<ReportWebAttr>
+<EmailManager mailHost="" password="___" user="" fromEmailAddress="" />
+<ServerPrinter>
+</ServerPrinter>
+</ReportWebAttr>
+<ReportWriteAttr>
+</ReportWriteAttr>
+<Header reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground" />
+<LeftList>
+</LeftList>
+<CenterList>
+</CenterList>
+<RightList>
+</RightList>
+</Footer>
+<RowHeight defaultValue="19">
+<![CDATA[60,35,35,35,60,60,60,60,26,26,26,26,26,26,26,19,19,19,19,19,27,27,27,27,27,27,27,27,27]]>
+</RowHeight>
+<ColumnWidth defaultValue="72">
+<![CDATA[100,90,80,80,90,90,80]]>
+</ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="7" s="0"><O t="S"><![CDATA[宁波市社会保险中（终）止缴费通知表]]></O>
+</C>
+<C c="0" r="1"><O t="S"><![CDATA[]]></O>
+</C>
+<C c="3" r="1" cs="2" s="1"><O t="S"><![CDATA[地税征缴号码：]]></O>
+</C>
+<C c="5" r="1" cs="2" s="2"><O t="DSColumn"><Attributes dsName="ds1" columnName="AAB030" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="0" r="2" s="3"><O t="S"><![CDATA[身份证号码]]></O>
+<CellWriteAttr>
+</CellWriteAttr>
+</C>
+<C c="1" r="2" cs="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="AAE135" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="4" r="2" s="3"><O t="S"><![CDATA[个人编码]]></O>
+</C>
+<C c="5" r="2" cs="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="EAC001" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="8" r="2" s="4"></C>
+<C c="0" r="3" s="3"><O t="S"><![CDATA[姓名]]></O>
+</C>
+<C c="1" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="AAC003" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="2" r="3" s="3"><O t="S"><![CDATA[性别]]></O>
+</C>
+<C c="3" r="3" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="AAC004" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="4" r="3" s="3"><O t="S"><![CDATA[出生年月]]></O>
+</C>
+<C c="5" r="3" cs="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="AAC006" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="8" r="3" s="4"></C>
+<C c="0" r="4" s="3"><O type="BiasTextPainter">
+<IsBackSlash value="false"/>
+<![CDATA[缴费情况|参保险种]]>
+</O>
+
+</C>
+<C c="1" r="4" cs="2" s="3"><O t="S"><![CDATA[个人月缴费基数]]></O>
+</C>
+<C c="3" r="4" cs="2" s="3"><O t="S"><![CDATA[个人月缴费金额]]></O>
+</C>
+<C c="5" r="4" cs="2" s="3"><O t="S"><![CDATA[截止缴费年月]]></O>
+</C>
+<C c="8" r="4" s="4"></C>
+<C c="0" r="5" s="3"><O t="S"><![CDATA[养老保险缴费情况]]></O>
+</C>
+<C c="1" r="5" cs="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="YLREWAGE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="3" r="5" cs="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="YLFD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="5" r="5" cs="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="YLYM" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="8" r="5" s="4"></C>
+<C c="0" r="6" s="3"><O t="S"><![CDATA[医疗保险缴费情况]]></O>
+</C>
+<C c="1" r="6" cs="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="YBREWAGE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="3" r="6" cs="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="YBFD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="5" r="6" cs="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="YBYM" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="8" r="6" s="4"></C>
+<C c="0" r="7" s="3"><O t="S"><![CDATA[失业保险缴费情况]]></O>
+</C>
+<C c="1" r="7" cs="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="SYREWAGE" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="3" r="7" cs="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="SYFD" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="5" r="7" cs="2" s="3"><O t="DSColumn"><Attributes dsName="ds1" columnName="SYYM" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+</C>
+<C c="0" r="8" cs="3" rs="2" s="5"><O t="S"><![CDATA[本人已知中断当月18日前银行需扣款。]]></O>
+</C>
+<C c="3" r="8" rs="7" s="6"><O t="S"><![CDATA[社保经办机构意见（盖章）]]></O>
+</C>
+<C c="4" r="8" s="7"></C>
+<C c="5" r="8" s="8"></C>
+<C c="6" r="8" s="9"></C>
+<C c="4" r="9" s="10"></C>
+<C c="5" r="9" s="2"></C>
+<C c="6" r="9" s="11"></C>
+<C c="0" r="10" cs="3" s="10"><O t="S"><![CDATA[  本人（代办人）签名：]]></O>
+</C>
+<C c="4" r="10" s="10"></C>
+<C c="5" r="10" s="2"></C>
+<C c="6" r="10" s="11"></C>
+<C c="0" r="11" s="10"></C>
+<C c="1" r="11" s="2"></C>
+<C c="2" r="11" s="2"></C>
+<C c="4" r="11" s="10"></C>
+<C c="5" r="11" s="2"></C>
+<C c="6" r="11" s="11"></C>
+<C c="0" r="12" cs="3" s="10"><O t="S"><![CDATA[  联系电话：]]></O>
+</C>
+<C c="4" r="12" s="10"></C>
+<C c="5" r="12" cs="2" rs="2" s="11"><O t="S"><![CDATA[经办人：]]></O>
+</C>
+<C c="0" r="13" s="10"></C>
+<C c="1" r="13" s="2"></C>
+<C c="2" r="13" s="2"></C>
+<C c="4" r="13" s="10"></C>
+<C c="0" r="14" s="12"></C>
+<C c="1" r="14" cs="2" s="13"><O t="S"><![CDATA[       年    月    日]]></O>
+</C>
+<C c="4" r="14" s="12"></C>
+<C c="5" r="14" cs="2" s="14"><O t="DSColumn"><Attributes dsName="ds1" columnName="RIQI" />
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"></RG></O>
+<Expand dir="0" />
+<CellWriteAttr>
+</CellWriteAttr>
+</C>
+<C c="0" r="15" rs="3" s="3"><O t="S"><![CDATA[备注]]></O>
+</C>
+<C c="1" r="15" rs="2" s="15"><O t="S"><![CDATA[欠费情况：]]></O>
+</C>
+<C c="2" r="15" s="8"></C>
+<C c="3" r="15" s="8"></C>
+<C c="4" r="15" s="8"></C>
+<C c="5" r="15" s="8"></C>
+<C c="6" r="15" s="9"></C>
+<C c="2" r="16" s="2"></C>
+<C c="3" r="16" s="2"></C>
+<C c="4" r="16" s="2"></C>
+<C c="5" r="16" s="2"></C>
+<C c="6" r="16" s="11"></C>
+<C c="1" r="17" s="13"></C>
+<C c="2" r="17" s="13"></C>
+<C c="3" r="17" s="13"></C>
+<C c="4" r="17" s="13"></C>
+<C c="5" r="17" s="13"></C>
+<C c="6" r="17" s="16"></C>
+<C c="0" r="18" s="2"></C>
+<C c="1" r="18" s="2"></C>
+<C c="2" r="18" s="2"></C>
+<C c="3" r="18" s="2"></C>
+<C c="4" r="18" s="2"></C>
+<C c="5" r="18" s="2"></C>
+<C c="6" r="18" s="2"></C>
+<C c="0" r="19" s="2"><O t="S"><![CDATA[说明：]]></O>
+</C>
+<C c="1" r="19" s="2"></C>
+<C c="2" r="19" s="2"></C>
+<C c="3" r="19" s="2"></C>
+<C c="4" r="19" s="2"></C>
+<C c="5" r="19" s="2"></C>
+<C c="6" r="19" s="2"></C>
+<C c="0" r="20" cs="7" s="2"><O t="S"><![CDATA[1、本表系个人停止缴纳社会保险（养老、医保）费的书面凭证，由参保个人据实填写，并    ]]></O>
+</C>
+<C c="0" r="21" cs="7" s="2"><O t="S"><![CDATA[   交社保经办机构盖章后生效。]]></O>
+</C>
+<C c="0" r="22" cs="7" s="2"><O t="S"><![CDATA[2、个人要求再次参保的，请将本表连同身份证、失业证等其它证件在每月的23日前到户籍]]></O>
+</C>
+<C c="0" r="23" cs="7" s="2"><O t="S"><![CDATA[   所在地的社保经办机构办理续保手续；被用人单位招用的，请将本表交用人单位作续保]]></O>
+</C>
+<C c="0" r="24" cs="7" s="2"><O t="S"><![CDATA[   依据。]]></O>
+</C>
+<C c="0" r="25" cs="7" s="2"><O t="S"><![CDATA[3、表中截止缴费年月以最后一次银行扣款为准。]]></O>
+</C>
+<C c="0" r="26" cs="7" s="2"><O t="S"><![CDATA[4、劳动和社会保障部门提醒参保人员，社会保险关系的中断，必将影响相关待遇的享受，]]></O>
+</C>
+<C c="0" r="27" cs="7" s="2"><O t="S"><![CDATA[   应尽量避免中断或中止。]]></O>
+</C>
+<C c="0" r="28" cs="7" s="2"><O t="S"><![CDATA[注：本表一式二份（第一联社保经办机构、第二联参保人员保留）]]></O>
+</C>
+</CellElementList>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="20" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="12" />
+<Background name="NullBackground" />
+<Border></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Left style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Bottom style="1" /><Left style="1" /><Right style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Left style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border><Top style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border><Top style="1" /><Right style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border><Left style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border><Right style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" /><Left style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" /><Right style="1" /></Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border><Top style="1" /></Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="15" />
+<Background name="NullBackground" />
+<Border><Bottom style="1" /><Right style="1" /></Border>
+</Style>
+</StyleList>
+</WorkBook>

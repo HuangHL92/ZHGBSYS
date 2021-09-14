@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GBK" ?>
+<chart caption="2011年归档情况对比图" formatNumber="0" startValue="10" 
+	numberPrefix="" xAxisName="月份" yAxisName="人数" showValues="0" 
+	decimals="0" formatNumberScale="0" baseFontSize="12" 
+	enableSmartLabels="1"  bgColor="99CCFF,FFFFFF" bgAlpha="40,100" 
+	bgRatio="0,100" bgAngle="360" 
+	showBorder="0"> 
+  <set label="1月" value="120"/>
+  <set label="2月" value="9"/>
+  <set label="3月" value="5"/>
+  <set label="4月" value="0"/>
+  <set label="5月" value="0"/>
+  <set label="6月" value="0"/>
+  <set label="7月" value="0"/>
+  <set label="8月" value="0"/>
+  <set label="9月" value="0"/>
+  <set label="10月" value="0"/>
+  <set label="11月" value="0"/>
+  <set label="12月" value="0"/>
+</chart>

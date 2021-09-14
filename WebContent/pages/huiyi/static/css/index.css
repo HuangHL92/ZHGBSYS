@@ -1,0 +1,96 @@
+.leftSmallDiv {
+    height: 80px;
+    line-height: 80px;
+    color: white;
+}
+
+.leftSmallImg {
+    margin-right: 40px;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+}
+
+.leftSmallSpan {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.leftSmallLink {
+    height: 80px;
+    line-height: 80px;
+    color: white;
+    display: block;
+    padding-left: 50px;
+}
+
+.leftSmallLink:hover {
+    background-color: rgb(93, 101, 121);
+    color: white;
+    text-decoration: none;
+}
+
+.topicLink {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin-left: 11%;
+    width: 180px;
+    text-align: center;
+    padding: 20px;
+    display: block;
+}
+
+.topicLink:hover {
+    color: #4576ff;
+    text-decoration: none;
+}
+
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+
+.sectionDiv {
+    height: 530px;
+    background-color: white;
+    margin-top: 5px;
+}
+
+.issueDiv {
+    border: 1px solid lightgrey;
+    height: 340px;
+    width: 98%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.myBtn {
+    width: 150px;
+    margin-left: 20px;
+    height: 33px;
+}

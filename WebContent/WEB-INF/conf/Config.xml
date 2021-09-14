@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="GBK"?>
+<leaf-config>
+	<config name="PHOTO_PATH" value="D:\hzbPhotos\"/>
+	<!--守信统计登录配置-->
+	<config name="ZZBHRLOGIN" value="http://127.0.0.1:8080/hzbtj/logonAction.do"/>
+	<config name="ZZBHRLOGOUT" value="/zzbhr/UserLoginAction.do?method=LoginOut"/>
+	<!--是否开发环境 1是 0否-->
+	<config name="DEV_MODE" value="1"/>
+	<!--选兵点将地址  -->
+<!-- 	<config name="XBDJ_IP" value="71.8.177.189"/> -->
+	<config name="XBDJ_IP" value="71.8.177.168"/> 
+<!-- 	<config name="XBDJ_MAINPORT" value="98"/> -->
+	<config name="XBDJ_MAINPORT" value="1902"/> 
+	
+	<config name="XBDJ_PORT" value="9098"/>
+	<!-- <config name="XBDJ_USER" value="xbdj"/>
+	<config name="XBDJ_PWD" value="e10adc3949ba59abbe56e057f20f883e"/> -->
+	
+	
+	<config name="JMS_CONNECTION_FACTROY" value="weblogic.jms.ConnectionFactory"/>
+	<config name="JNDI_QUEUE_NAME" value="LogMessageQueue"/>
+	<config name="INITIAL_FACTORY" value="weblogic.jndi.WLInitialContextFactory"/>
+	<config name="JMS_URL" value="http://127.0.0.1:7001"/>
+	<config name="URL_PROVIDER" value="http://127.0.0.1:7001"/>
+	<config name="SERVICE_CONFIG_FILE" value="/WEB-INF/conf/ServiceConfig.xml"/>
+    <config name="TEMP_FILE_PATH" value="/ReportTemp/"/>
+    <config name="UPLOAD_FILE_PATH" value="/UploadFile/"/>
+	<config name="INDEX_PAGE" value="/Index.jsp"/>
+	<config name="MENU_PAGE" value="/left.jsp"/>
+	<config name="LOGON_PAGE" value="/LogonDialog.jsp"/>
+	<config name="RELOGON_PAGE" value="/ReLogon.jsp"/>
+	<config name="MAIN_PAGE" value="/Index.jsp"/>
+	<config name="PAGE_SIZE" value="50"/>
+	<config name="LOG_IS_ASYNCH" value="false"/>
+	<config name="RESET_PASSWD" value="888888"/>
+	<config name="SUPER_ID" value="SU0001"/>
+	<config name="SUPER_PASSWORD" value="acef76419a89220398200fab070e63a1"/>
+	<config name="SUPER_USERS" value="a8cf2a8fddf2d702abb4c9e7da635489"/>
+	<config name="PRODUCTION_MODE" value="development|admin|sa"/>
+	<config name="FREE_REQUESTS" value="/commonQueryAction.do?method=commonQuery,/commonQueryAction.do?method=goBack,/common/sysCodeAction.do?method=querySelectCodeValuesBatch,/sys/OpLogAction.do?method=rollback,/pages/commAction.do,/common/sysCodeAction.do?method=querySelectCodeValues,/common/sysCodeAction.do?method=querySelectCodeValuesByPage,/IntelligentSearchAction.do?method=search,/sys/WzMDOpLogListAction.do,/sys/WzPMMDOpLogListAction.do,/common/billPrint2Action.do,/pages/commRep2Action.do?method=test,/pages/comm/commAction.do?method=doAction,,/UserAuth.do?method=getPageUrl,/UserAuth.do?method=getTreeNode,/UserAuth.do?method=loginApp,/UserAuth.do?method=getVerifyCode,/UserAuth.do?method=addUser,/UserAuth.do?method=updateDeltaCn,/UserAuth.do?method=updateDeltaOu,/UserAuth.do?method=updateBaseCn,/UserAuth.do?method=updateBaseOu,/sys/PrintAction.do?method=getPrintAllData,/common/billPrintAction.do,/sys/MDOpLogListAction.do,/common/commformTagQueryAction.do?method=query,/dologonHzbAction.do?method=doTransHzb,/dologonHzbAction.do?method=doTransXTGL,/dologonHzbAction.do?method=doTransCheck,/dologonHzbAction.do?method=setJs08Score"/>
+	<!-- 值为Oracle9i时，会对Lob字段自动进行特殊处理 -->
+	<config name="DATABASE" value="Oracle9i"/>
+	<config name="DEFAULT_PAGE_TITLE" value="利博赛企业级应用平台"/>
+	<!--<config name="RES_CHARSET" value="UTF-8"/>-->
+	<config name="SYS_iCmAudit_CLASS" value=""/>
+	<config name="SYS_OPLOG_CLASS" value="com.insigma.siis.local.business.cmtest.oplog.CmOplogHelpImp"/>
+	<config name="SYS_AUDIT_PROXY" value="com.insigma.odin.framework.sys.audit.MultilevelAuditProxy"/><!--DefaultAuditProxy:单击审核 -->
+	<!--<config name="SYS_PLANAREA_CLASS" value="com.insigma.odin.framework.sys.planarea.DefaultOverallPlanAreaImp" />统筹区具体各地的实现类，默认的实现类里什么都没做-->
+	<config name="SYS_CODE_CLASS" value="com.insigma.odin.framework.sys.code.DefaultSysCodeCm"/><!--系统代码处理的具体实现类-->
+	<config name="HASH_DATE_FORMAT" value="0"/><!--在计算一个对象的hashcode值时如果是时间对象，是否对其进行格式化，默认（没有配）是否，1是进行格式化 -->
+	<config name="DESKTOP_COLS_COUNT" value="3"/>
+	<!-- config name="WINDOWS_EXT_CONFIG_PATH" value="E:/EPWork/EPProductDev/odin-framework/leviticus/insiis3/src_sys/ExtConfig.xml" /-->
+	<!--config name="OTHER_EXT_CONFIG_PATH" value="/app/data/ep/ExtConfig.xml" /-->
+	<config name="AUTO_WIDTH" value="1"/><!-- 宽度由系统控制，并且为100%，否则为自己设置的宽度 -->
+	<config name="SELECT_LAZYLOAD" value="0"/><!--是否延迟加载下拉框的数据，1是延迟-->
+	<config name="IS_USE_COMMFORM" value="false"/><!--是否使用CommForm开发方法-->
+	<config name="SYS_ROLLBACK_CLASS" value=""/>
+	<config name="SYS_DATASAFE_CLASS" value="com.insigma.odin.framework.ss.datasafe.DefaultDataSafe"/>
+	<config name="IS_SHOW_FUNCCODE" value="0"/><!--空和1为显示，0为不显示-->
+	<config name="LOADING_JSP_PATH" value=""/><!-- 配置所使用的load加载页面，默认或空字符串则为loading.jsp，进度条则为loading_progress.jsp -->
+	
+	<config name="UCENTER_PATH" value="http://10.10.14.120:8080/ucenter/" /><!--用户中心的地址-->
+	<config name="OUSAVEPATH" value="D:\updatepackage\oubak\" /><!--全量组织信息存储路径-->
+	<config name="OUSAVENAME" value="ou_01_info.txt" /><!--全量组织信息存储名称-->
+	<config name="CNSAVEPATH" value="D:\updatepackage\cnbak\" /><!--全量用户信息存储路径-->
+	<config name="CNSAVENAME" value="cn_01_info.txt" /><!--全量用户信息存储名称-->
+	<config name="KEY_AES" value="5,15,33,3,79,49,104,29,48,49,-68,-80,36,48,-19,-106" /><!--同步用户组织的对称加密的算法-->
+	
+	<config name="ATTACH_PATH" value="E:/primarymathFile/" /><!-- 附件上传服务器路径 ,zxb,20150727-->
+	
+	<config name="UPLOAD_HELPFILE" value="D:/temp/" />
+	<config name="LOCAL_EXCELVS" value=""/><!--本地excel导出vs类-->
+	<config name="LOCAL_DBFVS" value=""/><!--本地dbf导出vs类-->
+	<config name="DO_SYSPRINT" value=""/><!--系统日志开关close/open，默认打开-->
+	<config name="DOWNLOAD_PATH" value="/u01/downLoad/"/>
+	<config name="DOWNLOAD_PATH_WIN" value="D:\epsoft\downLoad\"/>
+	<config name="UPLODA_PATH" value="/u01/upLoad/"/>
+	<config name="UPLODA_PATH_WIN" value="D:\epsoft\upLoad\"/>
+	
+	<!--金仓数据库连接 -->
+	<config name="KING_BD" value="SAMPLES"/>
+	<config name="KING_BD_USER" value="SYSTEM"/>
+	<config name="KING_BD_PWD" value="1234"/>
+	<config name="KING_BD_PORT" value="54321"/>
+	<config name="KING_BD_SERVER" value="127.0.0.1"/>  
+	<!-- <config name="SYS_DBTYPE" value="mysql"/> --><!-- 用于配置数据库类别，现支持mysql、oracle，不配默认为oracle -->
+</leaf-config>

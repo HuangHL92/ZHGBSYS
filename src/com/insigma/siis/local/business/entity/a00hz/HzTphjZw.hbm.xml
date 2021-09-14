@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-8-11 10:35:36 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.a00hz.HzTphjZw" table="HZ_TPHJ_ZW" >
+        <comment>&#181;&#247;&#197;&#228;&#183;&#189;&#176;&#184;&#200;&#203;&#212;&#177;&#182;&#212;&#211;&#166;&#181;&#196;&#214;&#176;&#206;&#241;</comment>
+        <id name="tpzw00" type="string">
+            <column name="TPZW00" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="tp0100" type="string">
+            <column name="TP0100" length="70">
+                <comment>&#181;&#247;&#197;&#228;&#183;&#189;&#176;&#184;&#200;&#203;&#212;&#177;id</comment>
+            </column>
+        </property>
+        <property name="tpzw01" type="string">
+            <column name="TPZW01" length="1000">
+                <comment>&#196;&#226;&#200;&#206;&#195;&#226;&#214;&#176;&#206;&#241;</comment>
+            </column>
+        </property>
+        <property name="fxyp07" type="big_decimal">
+            <column name="FXYP07" precision="22" scale="0">
+                <comment>1&#196;&#226;&#200;&#206;-1&#196;&#226;&#195;&#226;</comment>
+            </column>
+        </property>
+        <property name="b01id" type="string">
+            <column name="B01ID" length="200">
+                <comment>&#187;&#250;&#185;&#185;id</comment>
+            </column>
+        </property>
+        <property name="tpzw02" type="big_decimal">
+            <column name="TPZW02" precision="22" scale="0">
+                <comment>&#197;&#197;&#208;&#242;</comment>
+            </column>
+        </property>
+        <property name="tpzw03" type="date">
+            <column name="TPZW03" length="7">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="tpzw04" type="string">
+            <column name="TPZW04" length="20">
+                <comment>&#182;&#175;&#210;&#233;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="tpzw05" type="string">
+            <column name="TPZW05" length="20">
+                <comment>&#201;&#207;&#187;&#225;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="ynId" type="string">
+            <column name="YN_ID" length="40">
+                <comment>&#181;&#247;&#197;&#228;&#197;&#250;&#180;&#206;id</comment>
+            </column>
+        </property>
+        <property name="tp0116" type="string">
+            <column name="TP0116" length="40">
+                <comment>&#181;&#247;&#197;&#228;&#187;&#183;&#189;&#218;&#192;&#224;&#177;&#240;id &#185;&#178;5&#184;&#246;</comment>
+            </column>
+        </property>
+        <property name="gwcode" type="string">
+            <column name="GWCODE" length="20">
+                <comment>&#184;&#218;&#206;&#187;&#180;&#250;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="zjcode" type="string">
+            <column name="ZJCODE" length="6">
+                <comment>&#214;&#176;&#188;&#182;&#180;&#250;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="zwcode" type="string">
+            <column name="ZWCODE" length="6">
+                <comment>&#214;&#176;&#206;&#187;&#180;&#250;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="a0219" type="string">
+            <column name="A0219" length="1">
+                <comment>&#202;&#199;&#183;&#241;&#193;&#236;&#181;&#188;&#214;&#176;&#206;&#241; &#181;&#200;</comment>
+            </column>
+        </property>
+        <property name="a0201d" type="string">
+            <column name="A0201D" length="1">
+                <comment>&#202;&#199;&#183;&#241;&#176;&#224;&#215;&#211;&#179;&#201;&#212;&#177; &#181;&#200; &#193;&#236;&#181;&#188;&#179;&#201;&#212;&#177;</comment>
+            </column>
+        </property>
+        <property name="a0201e" type="string">
+            <column name="A0201E" length="1">
+                <comment>&#176;&#224;&#215;&#211;&#179;&#201;&#212;&#177;&#192;&#224;&#177;&#240; &#181;&#200;</comment>
+            </column>
+        </property>
+        <property name="iscount" type="string">
+            <column name="ISCOUNT" length="1">
+                <comment>&#202;&#199;&#183;&#241;&#188;&#198;&#203;&#227;&#214;&#176;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="1">
+                <comment>&#202;&#199;&#183;&#241;&#211;&#208;&#208;&#167;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:03:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Js02" table="JS02" >
+        <comment>动议表</comment>
+        <id name="js0100" type="string">
+            <column name="JS0100" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="dc001" type="string">
+            <column name="DC001" length="64" >
+                <comment>分类ID</comment>
+            </column>
+        </property>
+        <property name="rbId" type="string">
+            <column name="RB_ID" length="64" >
+                <comment>任免批次ID</comment>
+            </column>
+        </property>
+        <property name="js0202" type="string">
+            <column name="JS0202" length="200">
+                <comment>空缺职位</comment>
+            </column>
+        </property>
+        <property name="js0203" type="string">
+            <column name="JS0203" length="500">
+                <comment>岗位要求</comment>
+            </column>
+        </property>
+        <property name="js0204" type="string">
+            <column name="JS0204" length="500">
+                <comment>配备方向</comment>
+            </column>
+        </property>
+        <property name="js0205" type="string">
+            <column name="JS0205" length="500">
+                <comment>配备建议</comment>
+            </column>
+        </property>
+        <property name="js0206" type="string">
+            <column name="JS0206" length="500">
+                <comment>备注</comment>
+            </column>
+        </property>
+        <property name="js0207" type="string">
+            <column name="JS0207" length="5">
+                <comment>
+                名次（全委会正职人选初始推荐提名）</comment>
+            </column>
+        </property>
+        <property name="js0208" type="string">
+            <column name="JS0208" length="10">
+                <comment>
+               是否需要事前报告(1是，2否)</comment>
+            </column>
+        </property>
+        <property name="js0209" type="string">
+            <column name="JS0209" length="10">
+                <comment>
+                报告是由</comment>
+            </column>
+        </property>
+        <property name="js0210" type="string">
+            <column name="JS0210" length="1000">
+                <comment>
+                其他是由</comment>
+            </column>
+        </property>
+        <property name="js0211" type="string">
+            <column name="JS0211" length="10">
+                <comment>
+              领导审批(1通过，2未通过)</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

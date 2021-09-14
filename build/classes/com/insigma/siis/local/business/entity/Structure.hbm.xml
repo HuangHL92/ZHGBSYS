@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Structure"
+    lazy="false"
+    table="STRUCTURE">
+  	<id column="ID" name="id" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+     <property name="unit" type="java.lang.String">
+            <column name="UNIT" length="20">
+                <comment>所属单位</comment>
+            </column>
+     </property>
+     <property name="remarks" type="java.lang.String">
+            <column name="REMARKS" length="20">
+                <comment>备注</comment>
+            </column>
+     </property>
+     <property name="zttype" type="java.lang.String">
+            <column name="ZTTYPE" length="20">
+                <comment>整体状况类型</comment>
+            </column>
+     </property>
+     <property name="znzstype" type="java.lang.String">
+            <column name="ZNZSTYPE" length="20">
+                <comment>职能职数状况类型</comment>
+            </column>
+     </property>
+     <property name="nljgtype" type="java.lang.String">
+            <column name="NLJGTYPE" length="20">
+                <comment>年龄结构状况类型</comment>
+            </column>
+     </property>
+     <property name="xljgtype" type="java.lang.String">
+            <column name="XLJGTYPE" length="20">
+                <comment>学历结构状况类型</comment>
+            </column>
+     </property>
+     <property name="zyjgtype" type="java.lang.String">
+            <column name="ZYJGTYPE" length="20">
+                <comment>专业结构状况类型</comment>
+            </column>
+     </property>
+     <property name="jljgtype" type="java.lang.String">
+            <column name="JLJGTYPE" length="20">
+                <comment>经历结构状况类型</comment>
+            </column>
+     </property>
+     <property name="zcjgtype" type="java.lang.String">
+            <column name="ZCJGTYPE" length="20">
+                <comment>专长结构状况类型</comment>
+            </column>
+     </property>
+     <property name="dyjgtype" type="java.lang.String">
+            <column name="DYJGTYPE" length="20">
+                <comment>地域结构状况类型</comment>
+            </column>
+     </property>
+     <property name="xbjgtype" type="java.lang.String">
+            <column name="XBJGTYPE" length="20">
+                <comment>性别结构状况类型</comment>
+            </column>
+     </property>
+     <property name="dpjgtype" type="java.lang.String">
+            <column name="DPJGTYPE" length="20">
+                <comment>党派结构状况类型</comment>
+            </column>
+     </property>
+     <property name="mzjgtype" type="java.lang.String">
+            <column name="MZJGTYPE" length="20">
+                <comment>民族结构状况类型</comment>
+            </column>
+     </property>
+     <property name="neljgtype" type="java.lang.String">
+            <column name="NELJGTYPE" length="20">
+                <comment>能力结构状况类型</comment>
+            </column>
+     </property>
+     <property name="jyjgtype" type="java.lang.String">
+            <column name="JYJGTYPE" length="20">
+                <comment>经验结构状况类型</comment>
+            </column>
+     </property>
+     <property name="lyjgtype" type="java.lang.String">
+            <column name="LYJGTYPE" length="20">
+                <comment>来源结构状况类型</comment>
+            </column>
+     </property>
+     <property name="rqztype" type="java.lang.String">
+            <column name="RQZTYPE" length="20">
+                <comment>任期制状况类型</comment>
+            </column>
+     </property>
+    
+
+  </class>
+</hibernate-mapping>

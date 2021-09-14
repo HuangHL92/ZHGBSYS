@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Js15" table="JS15" >
+	<id name="js0100" type="string">
+            <column name="JS0100" length="64" />
+            <generator class="assigned" />
+    </id>
+    <property name="dc001" type="string">
+            <column name="DC001" length="64" >
+                <comment>分类ID</comment>
+            </column>
+    </property>
+    <property name="rbId" type="string">
+            <column name="RB_ID" length="64" >
+                <comment>任免批次ID</comment>
+            </column>
+    </property>
+    <property name="js1501" type="string">
+            <column name="JS1501" length="5" >
+                <comment>参加人数（部会）</comment>
+            </column>
+    </property>
+    <property name="js1502" type="string">
+            <column name="JS1502" length="5" >
+                <comment>同意（部会）</comment>
+            </column>
+    </property>
+    <property name="js1503" type="string">
+            <column name="JS1503" length="5" >
+                <comment>不同意（部会）</comment>
+            </column>
+    </property>
+    <property name="js1504" type="string">
+            <column name="JS1504" length="5" >
+                <comment>缓议（部会）</comment>
+            </column>
+    </property>
+    <property name="js1505" type="string">
+            <column name="JS1505" length="5" >
+                <comment>参加人数（常委会）</comment>
+            </column>
+    </property>
+    <property name="js1506" type="string">
+            <column name="JS1506" length="5" >
+                <comment>同意（常委会）</comment>
+            </column>
+    </property>
+    <property name="js1507" type="string">
+            <column name="JS1507" length="5" >
+                <comment>不同意（常委会）</comment>
+            </column>
+    </property>
+    <property name="js1508" type="string">
+            <column name="JS1508" length="5" >
+                <comment>缓议（常委会）</comment>
+            </column>
+    </property>
+    <property name="js1509" type="string">
+            <column name="JS1509" length="1000" >
+                <comment>备注（部会）</comment>
+            </column>
+    </property>
+    <property name="js1510" type="string">
+            <column name="JS1510" length="1000" >
+                <comment>备注（常委会）</comment>
+            </column>
+    </property>
+    <property name="js1511" type="string">
+            <column name="JS1511" length="10" >
+                <comment>时间（部会）</comment>
+            </column>
+    </property>
+    <property name="js1512" type="string">
+            <column name="JS1512" length="10" >
+                <comment>时间（常委会）</comment>
+            </column>
+    </property>
+    <property name="js1513" type="string">
+            <column name="JS1513" length="500" >
+                <comment>表决情况（部会）</comment>
+            </column>
+    </property>
+    <property name="js1514" type="string">
+            <column name="JS1514" length="500" >
+                <comment>表决情况（常委会）</comment>
+            </column>
+    </property>
+  </class>
+</hibernate-mapping>

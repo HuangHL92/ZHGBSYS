@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.WholeStatus"
+    lazy="false"
+    table="WHOLESTATUS">
+  	 <!-- <id name="id" type="java.lang.String">
+            <column name="ID" length="60" />
+            <generator class="assigned" />
+      </id> -->
+     <id name="unit" type="java.lang.String">
+            <column name="UNIT" length="50">
+                <comment>所属单位</comment>
+            </column>
+     </id>
+    
+     <property name="statustype" type="java.lang.String">
+            <column name="STATUSTYPE" length="10">
+                <comment>整体状况类型</comment>
+            </column>
+     </property>
+   
+   	 <property name="bzf" type="java.lang.String">
+            <column name="BZF" length="3">
+                <comment>实际班子分值</comment>
+            </column>
+     </property>
+     <property name="xbf" type="java.lang.String">
+            <column name="XBF" length="3">
+                <comment>实际性别分值</comment>
+            </column>
+     </property>
+     <property name="dpf" type="java.lang.String">
+            <column name="DPF" length="3">
+                <comment>实际党派分值</comment>
+            </column>
+     </property>
+     <property name="mzf" type="java.lang.String">
+            <column name="MZF" length="3">
+                <comment>实际民族分值</comment>
+            </column>
+     </property>
+     <property name="nlf" type="java.lang.String">
+            <column name="NLF" length="3">
+                <comment>实际年龄分值</comment>
+            </column>
+     </property>
+     <property name="xlf" type="java.lang.String">
+            <column name="XLF" length="3">
+                <comment>实际学历分值</comment>
+            </column>
+     </property>
+     <property name="zyf" type="java.lang.String">
+            <column name="ZYF" length="3">
+                <comment>实际专业分值</comment>
+            </column>
+     </property>
+     <property name="dyf" type="java.lang.String">
+            <column name="DYF" length="3">
+                <comment>实际地域分值</comment>
+            </column>
+     </property>
+     <property name="knowf" type="java.lang.String">
+            <column name="KNOWF" length="3">
+                <comment>实际熟悉领域分值</comment>
+            </column>
+     </property>
+     <property name="jlf" type="java.lang.String">
+            <column name="JLF" length="3">
+                <comment>实际经历分值</comment>
+            </column>
+     </property>
+     <property name="score" type="java.lang.String">
+            <column name="SCORE" length="3">
+                <comment>实际总分值</comment>
+            </column>
+     </property>
+  </class>
+</hibernate-mapping>

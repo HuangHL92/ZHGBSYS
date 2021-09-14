@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Imprecord"
+    lazy="false"
+    table="IMP_RECORD">
+    <id column="IMP_RECORD_ID" name="imprecordid" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="B0114" length="68" name="b0114" type="java.lang.String" />
+    <property column="B0194" length="68" name="b0194" type="java.lang.String" />
+    <property column="DATAVERION" length="8" name="dataverion" type="java.lang.String" />
+    <property column="EMP_DEPTID" length="199" name="empdeptid" type="java.lang.String" />
+    <property column="EMP_DEPT_NAME" length="200" name="empdeptname" type="java.lang.String" />
+    <property column="FILE_NAME" length="500" name="filename" type="java.lang.String" />
+    <property column="FILE_TYPE" length="200" name="filetype" type="java.lang.String" />
+    <property column="IMP_DEPTID" length="199" name="impdeptid" type="java.lang.String" />
+    <property column="IMP_GROUPID" length="32" name="impgroupid" type="java.lang.String" />
+    <property column="IMP_GROUP_NAME" length="50" name="impgroupname" type="java.lang.String" />
+    <property column="IMP_STUTAS" length="3" name="impstutas" type="java.lang.String" />
+    <property column="IMP_TIME" length="7" name="imptime" type="java.sql.Timestamp" />
+    <property column="IMP_TYPE" length="3" name="imptype" type="java.lang.String" />
+    <property column="IMP_USER_ID" length="32" name="impuserid" type="java.lang.String" />
+    <property column="IS_VIRETY" length="1" name="isvirety" type="java.lang.String" />
+    <property column="LINKPSN" length="20" name="linkpsn" type="java.lang.String" />
+    <property column="LINKTEL" length="20" name="linktel" type="java.lang.String" />
+    <property column="REMARK" length="200" name="remark" type="java.lang.String" />
+    <property column="STORAGE_NUMBER" length="8" name="storagenumber" type="java.lang.String" />
+    <property column="TOTAL_NUMBER" length="8" name="totalnumber" type="java.lang.String" />
+    <property column="VSC001" length="8" name="vsc001" type="java.lang.String" />
+    <property column="WRONG_NUMBER" length="8" name="wrongnumber" type="java.lang.String" />
+    <property column="PSNCOUNT" length="9" name="psncount" type="java.lang.Long" />
+    <property column="ORGCOUNT" length="9" name="orgcount" type="java.lang.Long" />
+    <property column="PROCESS_STATUS" length="8" name="processstatus" type="java.lang.String" />
+  	<property column="IMP_TEMP_TABLE" length="8" name="imptemptable" type="java.lang.String" />
+  	<property column="TABLE_NUMBER" length="8" name="tablenumber" type="java.lang.Long" />
+  	<property column="A0165" length="3" name="a0165" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,253 @@
+<%@page import="com.insigma.siis.local.pagemodel.sysorg.org.SysOrgPageModel"%>
+<%@ page language="java" contentType="text/html; charset=GBK"
+	pageEncoding="GBK"%>
+<%@ taglib uri="/WEB-INF/odin.tld" prefix="odin"%>
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
+<%@include file="/comOpenWinInit.jsp" %>
+<script type="text/javascript" src="basejs/helperUtil.js"></script>
+
+<html style="background-color: rgb(223,232,246);">
+<meta http-equiv="X-UA-Compatible"content="IE=8">
+
+<%
+    SysOrgPageModel sys = new SysOrgPageModel();
+	String picType = (String) (sys.areaInfo
+			.get("picType"));
+	String ereaname = (String) (sys.areaInfo
+			.get("areaname"));
+	String ereaid = (String) (sys.areaInfo
+			.get("areaid"));
+	String manager = (String) (sys.areaInfo
+			.get("manager"));
+	
+	String ctxPath = request.getContextPath();
+%>
+	<style>
+
+.x-panel-bwrap {
+	height: 100%
+}
+.x-panel-body {
+	height: 100%
+}
+
+</style>
+
+
+<div style="float: left;position: relative;">
+	<table width="240" cellspacing="0" cellpadding="0">
+		<tr style="background-color: #cedff5">
+			<td style="padding-left: 30"> <input type="checkbox" id="continueCheckbox" onclick="continueChoose()"><font style="font-size: 13">连续选择</font></td>
+			<td style="padding-left: 30"><input type="checkbox" id="existsCheckbox" onclick="existsChoose()" ><font style="font-size: 13">包含下级</font></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div id="tree-div" style="overflow: auto;  border: 2px solid #c3daf9; height: 200px;"></div>
+				<odin:hidden property="codevalueparameter" />
+				<odin:hidden property="SysOrgTreeIds" value="{}"/>
+			</td>
+		</tr>
+	</table>
+	</div>
+
+	<div  style="float: left;">
+<div id="conditionArea" style="height: 300; overflow-y: scroll;">
+	<odin:groupBoxNew title="基本" property="ggBox" contentEl="jbDiv" collapsible="false">
+		<div id="jbDiv">
+			<table style="width: 100%">
+				<tr>
+					<odin:textEdit property="a0101A" label="人员姓名" maxlength="36" />
+					<odin:textEdit property="a0184A" label="身份证号" maxlength="18" />
+					<%-- <tags:PublicOrgCheck label="选择机构" property="SysOrgTree"/> --%>
+				</tr>
+				<tr>
+					<odin:select2 property="a0160" label="人员类别" codeType="ZB125"></odin:select2>
+					<odin:select2 property="a0163" label="人员状态" codeType="ZB126"></odin:select2>
+					
+					<td noWrap align=right><span id=ageASpanId style="FONT-SIZE: 12px">年&nbsp;&nbsp;&nbsp;龄 </span>&nbsp;</td>
+					<td ><table><tr>
+						<odin:numberEdit property="ageA"  maxlength="3" width="50" />
+						<td><span style="font: 12px">至</span></td>
+						<odin:numberEdit property="age1" maxlength="3" width="50" />
+					</tr></table></td>
+				</tr>
+				<tr>
+					<td width="100%" style="padding-left: 50px;" colspan="6">
+						<table>
+							<tr>
+								<td><odin:checkbox property="female" label="&nbsp;女&nbsp;&nbsp;&nbsp;&nbsp;"></odin:checkbox></td>
+								<td><odin:checkbox property="minority" label="&nbsp;少数民族&nbsp;&nbsp;&nbsp;&nbsp;"></odin:checkbox></td>
+								<td><odin:checkbox property="nonparty" label="&nbsp;非中共党员&nbsp;&nbsp;&nbsp;&nbsp;"></odin:checkbox></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</odin:groupBoxNew>
+	<odin:groupBoxNew title="职务" property="ggBox2" contentEl="zwDiv" collapsible="false">
+		<div id="zwDiv">
+			<table style="width: 100%">
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td><span style="font: 12px">职务层次</span></td>
+								<td><tags:PublicTextIconEdit codetype="ZB09" property="duty" label2="职务层次" readonly="true" width="100" /></td>
+								<td width="14px"></td>
+								<td><tags:PublicTextIconEdit codetype="ZB09" property="duty1" readonly="true" width="100" label="至" label2="职务层次" /></td>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<td><span style="font: 12px">任现职务层次时间</span></td>
+								<td><odin:NewDateEditTag property="dutynow" maxlength="8" width="100"></odin:NewDateEditTag></td>
+								<td width="14px"></td>
+								<td><odin:NewDateEditTag property="dutynow1" maxlength="8" label="至" width="100"></odin:NewDateEditTag></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td><span style="font: 12px">职务等级</span></td>
+								<td><tags:PublicTextIconEdit property="a0221aS" readonly="true" width="100" codetype="ZB136" label2="职务等级"></tags:PublicTextIconEdit></td>
+								<td width="14px"></td>
+								<td><tags:PublicTextIconEdit property="a0221aE" readonly="true" width="100" codetype="ZB136" label="至" label2="职务等级"></tags:PublicTextIconEdit></td>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<td><span style="font: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;职&nbsp;&nbsp;&nbsp;&nbsp;级&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+								<td><odin:select2 property="a0192dS" width="100" codeType="ZB133"></odin:select2></td>
+								<td width="14px"></td>
+								<td><odin:select2 property="a0192dE" width="100" codeType="ZB133" label="至"></odin:select2></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td><odin:select2 property="a0219" label="职务类别"codeType="ZB42" width="165"></odin:select2></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</odin:groupBoxNew>
+	<odin:groupBoxNew title="学历" property="ggBox3" contentEl="xlDiv"
+		collapsible="false">
+		<div id="xlDiv">
+			<table style="width: 100%">
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<td width="50px"></td>
+								<td><tags:PublicTextIconEdit property="edu" readonly="true"
+										codetype="ZB64" width="100" label2="学历" /></td>
+								<td width="14px"></td>
+								<td><span style="font: 12px">&nbsp;至&nbsp;</span></td>
+								<td><tags:PublicTextIconEdit codetype="ZB64" readonly="true" property="edu1" width="100" label2="学历" /></td>
+								<td width="80px"></td>
+								<td><odin:checkbox property="allday" value="1" label="全日制 " /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</odin:groupBoxNew>
+	<table id="ltb">
+		<tr>
+			<td style="width: 20px"></td>
+			<td><odin:NewDateEditTag property="jiezsj" maxlength="8" width="80" label="年龄年限计算截止"></odin:NewDateEditTag><td>
+						
+		</tr>
+	</table>
+	
+</div>	
+	<div id="bottomDiv" style="width: 100%;">
+					<table style="width: 100%; background-color: #cedff5">
+			<tr align="center">
+				<td>
+					<table>
+						<tr>
+							<td><odin:button text="清除条件" property="clearCon"></odin:button>
+							</td>
+							<td><odin:button text="保存条件" property="saveCon"></odin:button>
+							</td>
+							<td align="center"><odin:button text="开始查询" property="mQuery" handler="dosearch"/></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</div>
+
+
+
+<odin:hidden property="radioC"/>
+<odin:hidden property="sql"/>
+</html>
+<script type="text/javascript">
+function dosearch(){
+	document.getElementById("SysOrgTreeIds").value=Ext.util.JSON.encode(doQuery());
+	radow.doEvent('mQueryonclick');
+}
+
+
+Ext.onReady(function(){
+	var radioC = realParent.document.getElementsByName("radioC");  
+    for (i=0; i<radioC.length; i++) {  
+        if (radioC[i].checked) {  
+        	radioC = radioC[i].value;
+        	break;
+        }  
+    } 
+   // alert(radioC);
+    document.getElementById("radioC").value=radioC;
+    document.getElementById("sql").value=realParent.document.getElementById("sql").value;
+    
+    window.onresize=resizeframe;
+	resizeframe();
+	
+	document.getElementById('existsCheckbox').click();
+});
+
+function collapseGroupWin(){
+	var newWin_ = $h.getTopParent().Ext.getCmp('group');
+	if(!newWin_){
+	}else{
+		//newWin_.collapse(false); 
+		newWin_.close();
+	}
+}
+function resizeframe(){
+	var conditionArea = document.getElementById("conditionArea");
+	var treediv = document.getElementById("tree-div");
+	var viewSize = Ext.getBody().getViewSize();
+	conditionArea.style.width = viewSize.width-260;
+	conditionArea.style.height = viewSize.height-31;
+	var pos = $h.pos(document.getElementById("ltb"));
+	//alert(viewSize.height-pos.top);
+	//document.getElementById("bottomDiv").style.marginTop = viewSize.height - pos.top-62;
+	treediv.style.height = viewSize.height-20;
+}
+
+</script>
+
+
+<%@include file="/pages/customquery/otjs.jsp" %>
+

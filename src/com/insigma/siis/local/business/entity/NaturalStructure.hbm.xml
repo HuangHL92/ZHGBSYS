@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.NaturalStructure"
+    lazy="false"
+    table="natural_structure">
+  	<id column="ID" name="id" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+     <property name="orderNumber" type="java.lang.Integer">
+            <column name="ORDER_NUMBER" length="20">
+                <comment>序号</comment>
+            </column>
+     </property>
+     <property name="unit" type="java.lang.String">
+            <column name="UNIT" length="20">
+                <comment>所属单位</comment>
+            </column>
+     </property>
+     <property name="category" type="java.lang.String">
+            <column name="category" length="20">
+                <comment>自然结构类型</comment>
+            </column>
+     </property>
+     <property name="project" type="java.lang.String">
+            <column name="project" length="20">
+                <comment>项目</comment>
+            </column>
+     </property>
+     <property name="quantity" type="java.lang.String">
+            <column name="quantity" length="20">
+                <comment>数量</comment>
+            </column>
+     </property>
+     <property name="oneTicketVeto" type="java.lang.String">
+            <column name="one_ticket_veto" length="20">
+                <comment>一票否决</comment>
+            </column>
+     </property>
+     <property name="querysql" type="java.lang.String">
+            <column name="QUERYSQL" length="1000">
+                <comment>条件sql</comment>
+            </column>
+     </property>
+     <property name="count" type="java.lang.String">
+            <column name="COUNT" length="10">
+                <comment>满足条件的人数</comment>
+            </column>
+     </property>
+     
+
+  </class>
+</hibernate-mapping>

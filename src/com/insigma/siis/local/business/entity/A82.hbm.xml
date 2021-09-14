@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-21 11:02:42 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.A82" table="A82" schema="ZHGB">
+        <id name="a0000" type="string">
+            <column name="A0000" length="120" />
+            <generator class="assigned" />
+        </id>
+        <property name="a02191" type="string">
+            <column name="A02191" length="1">
+                <comment>公开遴选</comment>
+            </column>
+        </property>
+        <property name="a29301" type="string">
+            <column name="A29301" length="1">
+                <comment>遴选类别</comment>
+            </column>
+        </property>
+        <property name="a29304" type="string">
+            <column name="A29304" length="1">
+                <comment>遴选方式</comment>
+            </column>
+        </property>
+        <property name="a29044" type="string">
+            <column name="A29044" length="1">
+                <comment>原单位层次</comment>
+            </column>
+        </property>
+        <property name="a29307" type="string">
+            <column name="A29307" length="8">
+                <comment>遴选时间</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

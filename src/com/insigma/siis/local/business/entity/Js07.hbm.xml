@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:03:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Js07" table="JS07" >
+        <comment>讨论决定表</comment>
+        <id name="js0100" type="string">
+            <column name="JS0100" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="dc001" type="string">
+            <column name="DC001" length="64" >
+                <comment>分类ID</comment>
+            </column>
+        </property>
+        <property name="rbId" type="string">
+            <column name="RB_ID" length="64" >
+                <comment>任免批次ID</comment>
+            </column>
+        </property>
+        <property name="js0702" type="string">
+            <column name="JS0702" length="8">
+                <comment>部务会议研究时间</comment>
+            </column>
+        </property>
+        <property name="js0703" type="string">
+            <column name="JS0703" length="500">
+                <comment>市委书记专题会研究情况</comment>
+            </column>
+        </property>
+        <property name="js0704" type="string">
+            <column name="JS0704" length="500">
+                <comment>市委常委会研究情况</comment>
+            </column>
+        </property>
+        <property name="js0705" type="string">
+            <column name="JS0705" length="5">
+                <comment>
+                参加人数（全委会征求意见）</comment>
+            </column>
+        </property>
+        <property name="js0706" type="string">
+            <column name="JS0706" length="5">
+                <comment>同意（全委会征求意见）</comment>
+            </column>
+        </property>
+        <property name="js0707" type="string">
+            <column name="JS0707" length="5">
+                <comment>不同意（全委会征求意见）</comment>
+            </column>
+        </property>
+        <property name="js0708" type="string">
+            <column name="JS0708" length="5">
+                <comment>弃权（全委会征求意见）</comment>
+            </column>
+        </property>
+        <property name="js0709" type="string">
+            <column name="JS0709" length="5">
+                <comment>
+                参加人数（市委全委会表决情况）</comment>
+            </column>
+        </property>
+        <property name="js0710" type="string">
+            <column name="JS0710" length="5">
+                <comment>
+                同意（市委全委会表决情况）</comment>
+            </column>
+        </property>
+        <property name="js0711" type="string">
+            <column name="JS0711" length="5">
+                <comment>
+                不同意（市委全委会表决情况）</comment>
+            </column>
+        </property>
+        <property name="js0712" type="string">
+            <column name="JS0712" length="5">
+                <comment>
+                弃权（市委全委会表决情况）</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

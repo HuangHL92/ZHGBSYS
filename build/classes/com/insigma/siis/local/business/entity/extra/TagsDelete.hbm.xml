@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.extra.TagsDelete"
+    lazy="false"
+    table="Tags_Delete">
+  	<id column="TAGID" name="tagid" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="A0000" length="120" name="a0000" type="java.lang.String" />
+    <property column="TYPE" length="10" name="type" type="java.lang.String" />
+    <property column="DELETEDATE" length="20" name="deletedate" type="com.insigma.siis.local.pagemodel.publicServantManage.Data2Long" />
+  </class>
+</hibernate-mapping>

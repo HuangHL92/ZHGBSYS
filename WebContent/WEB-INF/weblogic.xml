@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE weblogic-web-app PUBLIC "-//BEA Systems, Inc.//DTD Web Application 8.1//EN" "http://www.bea.com/servers/wls810/dtd/weblogic810-web-jar.dtd">
+<!--<weblogic-web-app>-->
+	<!-- 集群时可将该配置session-descriptor全部删掉 --> 
+	<!--
+	<session-descriptor>
+        <session-param>
+        	<param-name>CookieName</param-name>
+        	<param-value>INSIIS5</param-value>
+        </session-param>
+    </session-descriptor>
+    <jsp-descriptor>
+    	<jsp-param>
+    		<param-name>precompile</param-name>
+        	<param-value>true</param-value>
+		</jsp-param>
+	</jsp-descriptor>
+	-->	
+ <!--   <container-descriptor>
+        <prefer-web-inf-classes>true</prefer-web-inf-classes>
+    </container-descriptor>
+</weblogic-web-app>-->
+
+<!-- zxb,20150714,防止负载均衡，出现超时的问题 -->
+<weblogic-web-app>
+	
+	<session-descriptor>
+		<session-param>
+			<param-name>sharing-enabled</param-name>
+			<param-value>true</param-value>
+		</session-param>
+		<session-param>
+			<param-name>persistent-store-type</param-name>
+			<param-value>replicated</param-value>
+		</session-param>
+	</session-descriptor>  
+    <container-descriptor>
+    	<show-archived-real-path-enabled>true</show-archived-real-path-enabled>
+        <prefer-web-inf-classes>true</prefer-web-inf-classes>
+    </container-descriptor>
+</weblogic-web-app>

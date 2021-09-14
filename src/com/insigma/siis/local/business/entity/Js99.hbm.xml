@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:03:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Js99" table="JS99" >
+        <comment>青干预审table2</comment>
+        <id name="js9900" type="string">
+            <column name="JS9900" length="64"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="rbId" type="string">
+            <column name="RB_ID" length="64">
+                <comment>任免批次ID</comment>
+            </column>
+        </property>
+        <property name="js9911" type="string">
+            <column name="JS9911" length="5">
+                <comment>现配备情况正处职</comment>
+            </column>
+        </property>
+        <property name="js9912" type="string">
+            <column name="JS9912" length="5">
+                <comment>现配备情况副处职</comment>
+            </column>
+        </property>
+        <property name="js9913" type="string">
+            <column name="JS9913" length="5">
+                <comment>现配备情况调研员</comment>
+            </column>
+        </property>
+        <property name="js9914" type="string">
+            <column name="JS9914" length="5">
+                <comment>现配备情况副调研员</comment>
+            </column>
+        </property>
+        <property name="js9915" type="string">
+            <column name="JS9915" length="5">
+                <comment>现配备情况合计</comment>
+            </column>
+        </property>
+        <property name="js9916" type="string">
+            <column name="JS9916" length="5">
+                <comment>现配备情况青年干部占比</comment>
+            </column>
+        </property>
+        <property name="js9921" type="string">
+            <column name="JS9921" length="5">
+                <comment>40岁以下现配备情况正处职</comment>
+            </column>
+        </property>
+        <property name="js9922" type="string">
+            <column name="JS9922" length="5">
+                <comment>40岁以下现配备情况副处职</comment>
+            </column>
+        </property>
+        <property name="js9923" type="string">
+            <column name="JS9923" length="5">
+                <comment>40岁以下现配备情况调研员</comment>
+            </column>
+        </property>
+        <property name="js9924" type="string">
+            <column name="JS9924" length="5">
+                <comment>40岁以下现配备情况副调研员</comment>
+            </column>
+        </property>
+        <property name="js9925" type="string">
+            <column name="JS9925" length="5">
+                <comment>40岁以下现配备情况合计</comment>
+            </column>
+        </property>
+        <property name="js9926" type="string">
+            <column name="JS9926" length="5">
+                <comment>40岁以下现配备情况青年干部占比</comment>
+            </column>
+        </property>
+        <property name="js9931" type="string">
+            <column name="JS9931" length="5">
+                <comment>80后现配备情况正处职</comment>
+            </column>
+        </property>
+        <property name="js9932" type="string">
+            <column name="JS9932" length="5">
+                <comment>80后现配备情况副处职</comment>
+            </column>
+        </property>
+        <property name="js9933" type="string">
+            <column name="JS9933" length="5">
+                <comment>80后现配备情况调研员</comment>
+            </column>
+        </property>
+        <property name="js9934" type="string">
+            <column name="JS9934" length="5">
+                <comment>80后现配备情况副调研员</comment>
+            </column>
+        </property>
+        <property name="js9935" type="string">
+            <column name="JS9935" length="5">
+                <comment>80后现配备情况合计</comment>
+            </column>
+        </property>
+        <property name="js9936" type="string">
+            <column name="JS9936" length="5">
+                <comment>80后青年干部占比</comment>
+            </column>
+        </property>
+        <property name="js9941" type="string">
+            <column name="JS9941" length="5">
+                <comment>拟提拔情况正处职</comment>
+            </column>
+        </property>
+        <property name="js9942" type="string">
+            <column name="JS9942" length="5">
+                <comment>拟提拔情况副处职</comment>
+            </column>
+        </property>
+        <property name="js9943" type="string">
+            <column name="JS9943" length="5">
+                <comment>拟提拔情况调研员</comment>
+            </column>
+        </property>
+        <property name="js9944" type="string">
+            <column name="JS9944" length="5">
+                <comment>拟提拔情况副调研员</comment>
+            </column>
+        </property>
+        <property name="js9945" type="string">
+            <column name="JS9945" length="5">
+                <comment>拟提拔情况合计</comment>
+            </column>
+        </property>
+        <property name="js9946" type="string">
+            <column name="JS9946" length="5">
+                <comment>拟提拔情况青年干部占比</comment>
+            </column>
+        </property>
+        <property name="js9951" type="string">
+            <column name="JS9951" length="5">
+                <comment>40岁以下拟提拔情况正处职</comment>
+            </column>
+        </property>
+        <property name="js9952" type="string">
+            <column name="JS9952" length="5">
+                <comment>40岁以下拟提拔情况副处职</comment>
+            </column>
+        </property>
+        <property name="js9953" type="string">
+            <column name="JS9953" length="5">
+                <comment>40岁以下拟提拔情况调研员</comment>
+            </column>
+        </property>
+        <property name="js9954" type="string">
+            <column name="JS9954" length="5">
+                <comment>40岁以下拟提拔情况副调研员</comment>
+            </column>
+        </property>
+        <property name="js9955" type="string">
+            <column name="JS9955" length="5">
+                <comment>40岁以下拟提拔情况合计</comment>
+            </column>
+        </property>
+        <property name="js9956" type="string">
+            <column name="JS9956" length="5">
+                <comment>40岁以下拟提拔情况青年干部占比</comment>
+            </column>
+        </property>
+        <property name="js9961" type="string">
+            <column name="JS9961" length="5">
+                <comment>80后拟提拔情况正处职</comment>
+            </column>
+        </property>
+        <property name="js9962" type="string">
+            <column name="JS9962" length="5">
+                <comment>80后拟提拔情况副处职</comment>
+            </column>
+        </property>
+        <property name="js9963" type="string">
+            <column name="JS9963" length="5">
+                <comment>80后拟提拔情况调研员</comment>
+            </column>
+        </property>
+        <property name="js9964" type="string">
+            <column name="JS9964" length="5">
+                <comment>80后拟提拔情况副调研员</comment>
+            </column>
+        </property>
+        <property name="js9965" type="string">
+            <column name="JS9965" length="5">
+                <comment>80后拟提拔情况合计</comment>
+            </column>
+        </property>
+        <property name="js9966" type="string">
+            <column name="JS9966" length="5">
+                <comment>80后拟提拔情况青年干部占比</comment>
+            </column>
+        </property>
+        <property name="js9995" type="string">
+            <column name="JS9995" length="255">
+                <comment>备注</comment>
+            </column>
+        </property>
+        <property name="js9996" type="string">
+            <column name="JS9996" length="255">
+                <comment>省委组织部青年干部处审核意见</comment>
+            </column>
+        </property>
+        <property name="js9997" type="string">
+            <column name="JS9997" length="5">
+                <comment>省委组织部部领导审批意见</comment>
+            </column>
+        </property>
+        <property name="js9998" type="string">
+            <column name="JS9998" length="5">
+                <comment>审核意见落实情况</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

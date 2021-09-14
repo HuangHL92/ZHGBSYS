@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-3-5 17:12:16 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.HzJs2Yntp" table="HZ_JS2_YNTP">
+        <comment>&#212;&#205;&#196;&#240;&#181;&#247;&#197;&#228;&#197;&#250;&#180;&#206;&#185;&#220;&#192;&#237;</comment>
+        <id name="ynId" type="string">
+            <column name="YN_ID" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="ynName" type="string">
+            <column name="YN_NAME" length="500">
+                <comment>&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="ynType" type="string">
+            <column name="YN_TYPE" length="100">
+                <comment>&#181;&#247;&#197;&#228;&#177;&#237;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="ynUserid" type="string">
+            <column name="YN_USERID" length="64">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="ynOrg" type="string">
+            <column name="YN_ORG" length="120">
+                <comment>&#211;&#195;&#187;&#167;&#203;&#249;&#202;&#244;&#187;&#250;&#185;&#185;</comment>
+            </column>
+        </property>
+        <property name="ynSysno" type="big_decimal">
+            <column name="YN_SYSNO" precision="22" scale="0">
+                <comment>&#196;&#172;&#200;&#207;&#197;&#197;&#208;&#242;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="ynDate"  type="java.sql.Timestamp">
+            <column name="YN_DATE" length="7">
+                <comment>&#181;&#199;&#188;&#199;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

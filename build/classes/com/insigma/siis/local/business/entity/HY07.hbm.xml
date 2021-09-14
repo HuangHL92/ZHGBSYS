@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.HY07" table="HY07">
+        <comment>上会人员信息表</comment>
+        <id name="hy0700" type="java.lang.String">
+            <column name="hy0700" length="64" not-null="true"/>
+            <generator class="assigned" />
+        </id>
+        <property name="hy0100" type="java.lang.String">
+            <column name="hy0100" length="64">
+                <comment>会议主键</comment>
+            </column>
+        </property>
+        <property name="hy0200" type="java.lang.String">
+            <column name="hy0200" length="64">
+                <comment>阶段主键</comment>
+            </column>
+        </property>
+        <property name="hy0300" type="java.lang.String">
+            <column name="hy0300" length="64">
+                <comment>阶段主键</comment>
+            </column>
+        </property>
+        <property name="hy0701" type="java.lang.String">
+            <column name="hy0701" length="200">
+                <comment>原文件名</comment>
+            </column>
+        </property>
+        <property name="hy0702" type="java.lang.String">
+            <column name="hy0702" length="200">
+                <comment>文件路径</comment>
+            </column>
+        </property>
+        <property name="hy0703" type="java.lang.Integer">
+            <column name="hy0703" length="8">
+                <comment>文件排序</comment>
+            </column>
+        </property>
+        <property name="hy0704" type="java.lang.String">
+            <column name="hy0704" length="100">
+                <comment>文件后缀名</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

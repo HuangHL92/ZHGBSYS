@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-17 10:54:54 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.RecordBatchMerge" table="RECORD_BATCH_MERGE" >
+        <comment>干部选任纪实批次合并</comment>
+        <id name="rbmId" type="string">
+            <column name="RBM_ID" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="rbmName" type="string">
+            <column name="RBM_NAME" length="500">
+                <comment>批次名称</comment>
+            </column>
+        </property>
+        <property name="rbmDate" type="string">
+            <column name="RBM_DATE" length="8">
+                <comment>申报日期</comment>
+            </column>
+        </property>
+        <property name="rbmType" type="string">
+            <column name="RBM_TYPE" length="1">
+                <comment>类型 班子换届 个人提拔</comment>
+            </column>
+        </property>
+        <property name="rbmUserid" type="string">
+            <column name="RBM_USERID" length="64">
+                <comment>用户id</comment>
+            </column>
+        </property>
+        <property name="rbmNo" type="string">
+            <column name="RBM_NO" length="20">
+                <comment>批次编号</comment>
+            </column>
+        </property>
+        <property name="rbmApplicant" type="string">
+            <column name="RBM_APPLICANT" length="64">
+                <comment>申报人</comment>
+            </column>
+        </property>
+        <property name="rbmOrg" type="string">
+            <column name="RBM_ORG" length="120">
+                <comment>申报单位</comment>
+            </column>
+        </property>
+        <property name="rbmSysno" type="big_decimal">
+            <column name="RBM_SYSNO" length="20">
+                <comment>系统编号</comment>
+            </column>
+        </property>
+        <property name="rbmMeettype" type="string">
+            <column name="RBM_MEETTYPE" length="10">
+                <comment>会议类型</comment>
+            </column>
+        </property>
+        <property name="rbmDeploytype" type="string">
+            <column name="RBM_DEPLOYTYPE" length="10">
+                <comment>调配类型</comment>
+            </column>
+        </property>
+        <property name="rbmDept" type="string">
+            <column name="RBM_DEPT" length="200">
+                <comment>合并批次单位</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.TrainUnit"
+    lazy="false"
+    table="TRAIN_UNIT">
+    <id column="ID" name="id" type="java.lang.String">
+	  <generator class="uuid" />
+	</id>
+	<property column="UNITID" length="120" name="unitid" type="java.lang.String" />
+	<property column="UNITNAME" length="200" name="unitname" type="java.lang.String" />
+	<property column="PNUM1" length="22" name="pnum1" type="java.math.BigDecimal" />
+	<property column="PNUM2" length="22" name="pnum2" type="java.math.BigDecimal" />
+	<property column="PNUM3" length="22" name="pnum3" type="java.math.BigDecimal" />
+	<property column="PNUM4" length="22" name="pnum4" type="java.math.BigDecimal" />
+	<property column="PNUM5" length="22" name="pnum5" type="java.math.BigDecimal" />
+	<property column="G11020" length="22" name="g11020" type="java.math.BigDecimal" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<chart palette="4" formatNumberScale="0" formatNumber="0" decimals="0" enableSmartLabels="1" enableRotation="0" bgColor="99CCFF,FFFFFF" bgAlpha="40,100" bgRatio="0,100" bgAngle="360" showBorder="1" startingAngle="70" baseFontSize="14" caption="" subcaption="2011年电子档案统计图"> 
+  <set label="审监庭" value="4"/>
+  <set label="民三庭" value="66"/>
+  <set label="民四庭" value="73"/>
+  <set label="刑庭" value="19"/>
+  <set label="民二庭" value="316"/>
+  <set label="行政庭" value="144"/>
+  <set label="民一庭" value="328"/>
+</chart>

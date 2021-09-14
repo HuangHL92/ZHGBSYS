@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:03:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Wpgz" table="WPGZ">
+        <comment>外派挂职</comment>
+        <id name="id" type="string">
+            <column name="ID" length="120"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="a0000" type="string">
+            <column name="A0000" length="120"/>
+        </property>
+        <property name="xpdw" type="string">
+            <column name="XPDW" length="120"/>
+        </property>
+        <property name="gzlx" type="string">
+            <column name="GZLX" length="120"/>
+        </property>
+        <property name="gzrw" type="string">
+            <column name="GZRW" length="120"/>
+        </property>
+        <property name="qzsj" type="string">
+            <column name="QZSJ" length="120"/>
+        </property>
+        <property name="khqk" type="string">
+            <column name="KHQK" length="120"/>
+        </property>
+        <property name="dybz" type="string">
+            <column name="DYBZ" length="120"/>
+        </property>
+        <property name="grzw" type="string">
+            <column name="GRZW" length="120"/>
+        </property>
+        <property name="kssj" type="string">
+            <column name="KSSJ" length="120"/>
+        </property>
+        <property name="jssj" type="string">
+            <column name="JSSJ" length="120"/>
+        </property>
+        <property name="yxnr" type="string">
+        <column name="YXNR" length="120"/>
+        </property>
+        <property name="jsgz" type="string">
+        <column name="jsgz" length="120"/>
+        </property>
+    </class>
+</hibernate-mapping>

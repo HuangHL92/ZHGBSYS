@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Dataexchangeconf"
+    lazy="false"
+    table="DATA_EXCHANGE_CONF">
+    <id column="DATA_EXCHANGE_CONF_ID" name="dataexechangeconfid" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="ZZBTHREEPATH" length="300" name="zzbthreepath" type="java.lang.String" />
+    <property column="KINGRESTOREPATH" length="300" name="kingrestorepath" type="java.lang.String" />
+    <property column="KINGBSSERVERIP" length="50" name="kingbsserverip" type="java.lang.String" />
+    <property column="KINGBSPORT" length="20" name="kingbsport" type="java.lang.String" />
+    <property column="KINGBSDB" length="100" name="kingbsdb" type="java.lang.String" />
+    <property column="KINGBSUSER" length="100" name="kingbsuser" type="java.lang.String" />
+    <property column="KINGBSPWD" length="200" name="kingbspwd" type="java.lang.String" />
+    <!-- -->
+    <property column="BZBPATH" length="300" name="bzbpath" type="java.lang.String" />
+  	
+  </class>
+</hibernate-mapping>

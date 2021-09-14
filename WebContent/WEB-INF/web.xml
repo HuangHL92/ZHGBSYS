@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+  <display-name>公务员管理信息系统</display-name>
+  <description>公务员管理信息系统（基于浙大网新开发平台）</description>
+  <context-param>
+    <param-name>tagPropertyInitConfigFile</param-name>
+    <param-value>/WEB-INF/conf/tagPropertyInitConfig.xml</param-value>
+    <description>此参数用于定义初始化标签默认属性的配置文件的位置， 如果定义了InitTagDefaultPropertyListerer，则会使用此文件初始化XartWebui标签的默认值</description>
+  </context-param>
+  <filter>
+  	<filter-name>TimeCount1</filter-name>
+  	<filter-class>com.insigma.odin.framework.webcontroller.TimeCountFilter</filter-class>
+  	<init-param>
+  		<param-name>tag</param-name>
+  		<param-value>1</param-value>
+  	</init-param>
+  </filter>
+  <!-- *********Http压缩协议支持Filter配置开始********** -->
+  <filter>
+    <filter-name>CompressingFilter</filter-name>
+    <description>Http压缩功能过滤器，通过Http压缩协议加快广域网的页面浏览速度，提升用户体验 此Filter应置于所有Filter的最前面</description>
+    <filter-class>com.planetj.servlet.filter.compression.CompressingFilter</filter-class>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>false</param-value>
+      <description>调试模式开关(optional): if set to "true", additional debug information will be written to the servlet log. Defaults to false.</description>
+    </init-param>
+    <init-param>
+      <param-name>compressionThreshold</param-name>
+      <param-value>1024</param-value>
+      <description>使用压缩协议的最小文件大小(optional): sets the size of the smallest response that will be compressed, in bytes. That is, if less than compressionThreshold bytes are written to the response, it will not be compressed and the response will go to the client unmodified. Defaults to 1024.</description>
+    </init-param>
+    <init-param>
+      <param-name>statsEnabled</param-name>
+      <param-value>false</param-value>
+      <description>收集统计信息开关(optional): enables collection of statistics. See CompressingFilterStats. Defaults to false.</description>
+    </init-param>
+    <init-param>
+      <param-name>jakartaCommonsLogger</param-name>
+      <param-value>com.lbs.leaf.http.zip</param-value>
+      <description>(optional): if specified the named Jakarta Commons Log will also receive log messages from this filter.</description>
+    </init-param>
+  </filter>  
+  <!-- *********Http压缩协议支持Filter配置结束********** -->
+  <filter>
+    <filter-name>Encoding</filter-name>
+    <description>指定请求编码格式过滤器</description>
+    <filter-class>com.insigma.odin.framework.webcontroller.SetCharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>GBK</param-value>
+      <description>指定编码</description>
+    </init-param>
+  </filter>
+  <filter>
+    <filter-name>RequestWrapper</filter-name>
+    <description>请求信息包装过滤器</description>
+    <filter-class>com.insigma.odin.framework.commform.local.sys.request.RequestWrapperFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>GBK</param-value>
+      <description>指定编码</description>
+    </init-param>
+  </filter>
+  
+  <filter>
+    <filter-name>sqlRequestWrapper</filter-name>
+    <description>请求信息包装过滤器</description>
+    <filter-class>com.insigma.odin.framework.filter.SafeFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>GBK</param-value>
+      <description>指定编码</description>
+    </init-param>
+    <init-param>
+      <param-name>pageModel</param-name>
+      <param-value>{pages.customquery.CustomQuery:'mQuery.onclick',
+      pages.sysorg.org.SysOrg:'selectAllBtn.onclick;memberGrid.dogridquery',
+      pages.repandrec.plat.QueryReport:'MGrid.dogridquery',
+      pages.repandrec.local.KingbsGain:'MGrid.dogridquery',
+      pages.dataverify.QueryOrgImp:'MGrid.dogridquery',
+      pages.sysmanager.role.OutSideRole:'grid6.dogridquery',
+      pages.sysmanager.role.role:'grid6.dogridquery',
+      pages.sysmanager.ZWHZYQ_001_001.GroupManage:'memberGrid.dogridquery',
+      pages.sysmanager.sysuser.UserManage:'memberGrid.dogridquery',
+      pages.sysmanager.ZWHZYQ_001_004.LogManage:'memberGrid.dogridquery',
+      pages.customquery.QueryHistoryPeople:'btn1.onclick',
+      pages.customquery.RepeatQuery:'btn1.onclick',
+      pages.publicServantManage.QueryPersonList:'persongrid.dogridquery',
+      pages.sysmanager.publishmanage.PublishManageLocal:'query.onclick',
+      pages.sysorg.org.orgdataverify.OrgPersonImgVerify:'persongrid2.dogridquery',
+      pages.dataverify.DataExpInfo:'btn1.onclick',
+      pages.search.ComSearch:'query',
+      pages.customquery.Group:'mQueryonclick',
+      pages.xbrm.JSGL:'memberGrid.dogridquery',
+      pages.fxyp.Kqzsdw:'noticeSetgrid.dogridquery',
+      pages.jzsp.jgld.JGLD:'memberGrid.dogridquery'}</param-value>
+      <description>sql过滤特殊字符的pageModel 和 eventNames ， 多个eventNames以【;】隔开</description>
+    </init-param>
+  </filter>
+  
+  <filter>
+    <filter-name>disableHttpCache</filter-name>
+    <description>禁用代理服务器与浏览器页面缓存过滤器</description>
+    <filter-class>com.insigma.odin.framework.webcontroller.DisableHttpCacheFilter</filter-class>
+    <init-param>
+      <param-name>CachedFileExtension</param-name>
+      <param-value>gif,jpg,jpeg,png,swf,htm,html,js</param-value>
+      <description>需要缓存的文件类型</description>
+    </init-param>
+  </filter>
+  <filter>
+    <filter-name>HibernateFilter</filter-name>
+    <description>事务控制过滤器，确保每次请求中的事务都会提交或回滚</description>
+    <filter-class>com.insigma.odin.framework.webcontroller.HibernateFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>CommAppSafeFilter</filter-name>
+    <description>统一应用门户业务系统端过滤器</description>
+    <filter-class>com.insigma.odin.framework.sys.cap.CommAppSafeFilter</filter-class>
+  </filter>
+  <!-- 邹志林 2019-09-03 增加单点登录功能 -->
+  <filter> 
+	 <filter-name>ThirdPartyAppVisitFilter</filter-name>
+	    <description>第三方应用访问过滤器</description>
+	    <filter-class>
+			com.insigma.odin.framework.webcontroller.ThirdPartyAppVisitFilter
+		</filter-class>
+		<!-- <init-param>
+	    	<param-name>LOGIN_CLASS</param-name>
+			<param-value>com.insigma.odin.framework.worktable.openapi.workpf.WorkpfInsiisCommBusinessSys</param-value>
+		</init-param>  -->
+    
+  </filter>
+    
+  <filter>
+    <filter-name>SafetyFilter</filter-name>
+    <description>安全过滤器，控制登录、退出等功能，对请求进行权限校验</description>
+    <filter-class>com.insigma.odin.framework.sys.auth.SlSafetyFilter</filter-class>
+    <init-param>
+      <param-name>logonVerifyCodeValidate</param-name>
+      <param-value>true</param-value>
+      <description>此参数设定登录时是否检查图形校验码，当值为false时将不检查登录校验码，否则为校验，默认为true</description>
+    </init-param>
+    <init-param>
+      <param-name>ignoreUrlPattens</param-name>
+      <param-value>/soap/*,/test/*</param-value>
+      <description>此参数设定权限校验时需要忽略的url模式， 可设置多个url模式，模式之间用逗号分隔。</description>
+    </init-param>
+  </filter>
+  <filter>
+    <filter-name>SoapRequestFilter</filter-name>
+    <description>Soap请求过滤器，将Soap请求转换为请求参数，为兼容核心平台二版的服务端组件</description>
+    <filter-class>com.lbs.leaf.interfaces.soap.server.adapt.SoapAdaptFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>CacheResourceFilter</filter-name>
+    <description>缓存当前用户信息</description>
+    <filter-class>com.insigma.odin.framework.webcontroller.CacheResourceFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>LocalCacheResourceFilter</filter-name>
+    <description>缓存当前用户信息,CommForm登陆信息，日历等初始化</description>
+    <filter-class>com.insigma.odin.framework.commform.local.sys.CacheResourceFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>OpLogFilter</filter-name>
+    <description>缓存操作日志信息</description>
+    <filter-class>com.insigma.odin.framework.webcontroller.OpLogFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>SiOpLogFilter</filter-name>
+    <description>缓存操作日志信息commform</description>
+    <filter-class>com.insigma.odin.framework.webcontroller.commform.SiOpLogFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>SqlSafeFilter</filter-name>
+    <description>Sql解密(CommForm)</description>
+    <filter-class>com.insigma.odin.framework.webcontroller.commform.SqlSafeFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>DispatchFilter</filter-name>
+    <description>代理转发filter</description>
+    <filter-class>com.insigma.odin.framework.proxy.DispatchProxyFilter</filter-class>
+  </filter>
+  <filter>
+  	<filter-name>TimeCount2</filter-name>
+  	<filter-class>com.insigma.odin.framework.webcontroller.TimeCountFilter</filter-class>
+  	<init-param>
+  		<param-name>tag</param-name>
+  		<param-value>2</param-value>
+  	</init-param>
+  </filter>
+  <!-- *********Http压缩协议支持FilterMapping配置开始***********
+		定义使用HTTP压缩协议的页面，这里指定几种需压缩的url，
+		以避免过滤所有url造成性能损失，如果对性能不敏感，也可以使用如下配置：
+		<filter-mapping>
+		<filter-name>CompressingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		</filter-mapping>
+	-->
+  <filter-mapping>
+  	<filter-name>TimeCount1</filter-name>
+  	<servlet-name>action</servlet-name>
+  </filter-mapping>	
+  <filter-mapping>
+    <filter-name>CompressingFilter</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>CompressingFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>CompressingFilter</filter-name>
+    <url-pattern>*.html</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>CompressingFilter</filter-name>
+    <url-pattern>*.js</url-pattern>
+  </filter-mapping>
+  <!-- <filter-mapping>
+    <filter-name>RequestWrapper</filter-name>
+    <url-pattern>/ReportServer</url-pattern>
+  </filter-mapping> -->
+  <filter-mapping>
+		<filter-name>sqlRequestWrapper</filter-name>
+		<url-pattern>/radowAction.do</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>CompressingFilter</filter-name>
+    <url-pattern>*.css</url-pattern>
+  </filter-mapping>
+  
+
+  
+  <!-- *********Http压缩协议支持FilterMapping配置结束********** -->
+  <filter-mapping>
+    <filter-name>Encoding</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>disableHttpCache</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>HibernateFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>SoapRequestFilter</filter-name>
+    <url-pattern>/soap/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>CommAppSafeFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!-- 邹志林 2019-09-03 增加单点登录功能 -->
+  <filter-mapping>
+  	<filter-name>ThirdPartyAppVisitFilter</filter-name>
+  	<servlet-name>action</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>ThirdPartyAppVisitFilter</filter-name>
+  	<url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+    
+  <filter-mapping>
+    <filter-name>SafetyFilter</filter-name>
+    <servlet-name>action</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>CacheResourceFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!-- CommForm的 CacheResourceFilter-->
+  <filter-mapping>
+    <filter-name>LocalCacheResourceFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>OpLogFilter</filter-name>
+    <servlet-name>action</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>SiOpLogFilter</filter-name>
+    <servlet-name>action</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>SqlSafeFilter</filter-name>
+    <servlet-name>action</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>SqlSafeFilter</filter-name>
+    <servlet-name>ExcelServlet</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>SqlSafeFilter</filter-name>
+    <servlet-name>commformExcelServlet</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>SqlSafeFilter</filter-name>
+    <servlet-name>TextServlet</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>SqlSafeFilter</filter-name>
+    <servlet-name>DbfServlet</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>DispatchFilter</filter-name>
+    <servlet-name>action</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>TimeCount2</filter-name>
+  	<servlet-name>action</servlet-name>
+  </filter-mapping>
+  <listener>
+    <listener-class>com.insigma.odin.framework.webcontroller.SlOdinSessListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.insigma.odin.framework.webcontroller.SlOdinAppListener</listener-class>
+  </listener>
+  
+  <listener>
+    <listener-class>com.insigma.siis.local.pagemodel.publicServantManage.DeletePersonTimer</listener-class>
+  </listener>
+  
+   <!-- weboffice上传文档 -->
+  <servlet>
+    <servlet-name>SendtoServer</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.weboffice.SendtoServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewOffice</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.weboffice.ViewOffice</servlet-class>
+  </servlet>
+  <!--附件上传-->
+  
+  <!--头像上传-->
+  <servlet>
+    <servlet-name>UpLoadUserHeadImage</servlet-name>
+    <servlet-class>com.picCut.servlet.UpLoadUserHeadImage</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DownloadUserHeadImage</servlet-name>
+    <servlet-class>com.picCut.servlet.DownloadUserHeadImage</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ZoomImage</servlet-name>
+    <servlet-class>com.picCut.servlet.ZoomImage</servlet-class>
+  </servlet>
+  <!--登录用户密码传递-->
+  <servlet>
+    <servlet-name>LogonInfoServlet</servlet-name>
+    <servlet-class>com.insigma.odin.framework.logonInfo.LogonInfoServlet</servlet-class>
+  </servlet>
+
+  <!--上传lrm-->
+  <servlet>
+    <servlet-name>UpLoadLrmServlet</servlet-name>
+    <servlet-class>com.picCut.servlet.UpLoadLrmServlet</servlet-class>
+  </servlet>
+  <!-- 干部人事上传 -->
+  <servlet>
+    <servlet-name>UpLoadGBRSServlet</servlet-name>
+    <servlet-class>com.picCut.servlet.UpLoadGBRSServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <description>Web应用MVC模型主控制器</description>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml,/WEB-INF/struts-commform.xml,/WEB-INF/struts-radow.xml,/WEB-INF/struts-sys.xml,/WEB-INF/struts-oda-action.xml,/WEB-INF/struts-oda-module.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>2</param-value>
+      <description>调试级别</description>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>JUploadServletr</servlet-name>
+    <servlet-class>com.JUpload.JUploadServlet</servlet-class>
+  </servlet>
+  
+
+
+  
+  
+  <servlet>
+    <servlet-name>TagFileServlet</servlet-name>
+    <description>省组标签</description>
+    <servlet-class>com.insigma.siis.local.pagemodel.zj.slabel.TagFileServlet</servlet-class>
+    
+  </servlet>
+  <servlet>
+    <servlet-name>verifyCodeServlet</servlet-name>
+    <description>图形校验码生成器，是使用图形校验码功能的必需组件</description>
+    <servlet-class>com.lbs.commons.verifycode.VerifyCodeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>treeServlet</servlet-name>
+    <description>树组件的Servlet，用于获取树形组件的数据</description>
+    <servlet-class>com.lbs.commons.xtree.TreeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>downloadServlet</servlet-name>
+    <description>文件下载Servlet，用于下载文件、导出Excel等功能</description>
+    <servlet-class>com.lbs.commons.download.DownloadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>functionTreeServlet</servlet-name>
+    <description>权限管理树组件</description>
+    <servlet-class>com.lbs.commons.xtree.FunctionTreeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>mygridservlet</servlet-name>
+    <display-name>mygridservlet</display-name>
+    <description/>
+    <servlet-class>com.lbs.leaf.ui.taglib.grid.MyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TreeLoadServlet</servlet-name>
+    <display-name>TreeLoadServlet</display-name>
+    <description/>
+    <servlet-class>com.lbs.leaf.ui.taglib.treeview.TreeLoadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ExcelServlet</servlet-name>
+    <display-name>ExcelServlet</display-name>
+    <description>处理excel文件的servlet</description>
+    <servlet-class>com.insigma.odin.framework.sys.batch.excel.ExcelServlet</servlet-class>
+    <init-param>
+      <param-name>defaultBusinessName</param-name>
+      <param-value>com.insigma.odin.framework.sys.batch.excel.DefaultExcelVS</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>commformExcelServlet</servlet-name>
+    <display-name>commformExcelServlet</display-name>
+    <description>宁波处理excel文件的servlet</description>
+    <servlet-class>com.insigma.odin.framework.sys.batch.commform.ExcelServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DbfServlet</servlet-name>
+    <display-name>DbfServlet</display-name>
+    <description>处理Dbf文件的servlet</description>
+    <servlet-class>com.insigma.odin.framework.sys.batch.dbf.DbfServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CaManageServlet</servlet-name>
+    <display-name>CaManageServlet</display-name>
+    <description>ca管理</description>
+    <servlet-class>com.insigma.odin.framework.sys.auth.CaManageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <display-name>RegisterServlet</display-name>
+    <description>用户注册管理</description>
+    <servlet-class>com.insigma.odin.framework.sys.auth.register.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>proxoolServlet</servlet-name>
+    <servlet-class>com.insigma.odin.framework.commform.local.sys.ProxoolServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>ProxoolAdmin</servlet-name>
+    <servlet-class>org.logicalcobwebs.proxool.admin.servlet.AdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TextServlet</servlet-name>
+    <display-name>TextServlet</display-name>
+    <description>处理Text文件的servlet</description>
+    <servlet-class>com.insigma.odin.framework.sys.batch.text.TextServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FileUploadServlet</servlet-name>
+    <display-name>FileUploadServlet</display-name>
+    <servlet-class>com.insigma.odin.framework.sys.batch.file.FileUploadServlet</servlet-class>
+  </servlet>
+    <servlet>
+     <servlet-name>UploadHandleServlet</servlet-name>
+     <display-name>UploadHandleServlet</display-name>
+     <description>处理文件上传的servlet</description>
+     <servlet-class>com.insigma.siis.local.util.up_down.UploadHandleServlet</servlet-class>
+  </servlet>
+  <servlet>
+     <servlet-name>DownloadHandleServlet</servlet-name>
+     <display-name>DownloadHandleServlet</display-name>
+     <description>处理文件下载的servlet</description>
+     <servlet-class>com.insigma.siis.local.util.up_down.DownloadHandleServlet</servlet-class>
+ </servlet>
+  
+  
+  
+  <servlet>
+    <servlet-name>OnlineViewServlet</servlet-name>
+    <display-name>OnlineViewServlet</display-name>   
+    <description>文档在线预览、上传</description>
+    <servlet-class>com.insigma.odin.framework.onlineview.OnlineViewServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AxisServlet</servlet-name>
+  	<display-name>Apache-Axis Servlet</display-name>
+  	<servlet-class>org.apache.axis.transport.http.AxisServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AdminServlet</servlet-name>
+  	<display-name>Axis Admin Servlet</display-name>
+  	<servlet-class>org.apache.axis.transport.http.AdminServlet</servlet-class>
+  	<load-on-startup>100</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>FileDownServlet</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.sysmanager.ZWHZYQ_001_004.FileDownServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ImpServlet</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.sysmanager.ZWHZYQ_001_004.ImpServlet</servlet-class>
+  </servlet>
+  <!-- 自定义Excel导出 CustomExcelServlet-->
+  <servlet>
+    <servlet-name>CustomExcelServlet</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.sysmanager.verificationschemeconf.CustomExcelServlet</servlet-class>
+  </servlet>
+  
+  <!-- 自定义上传导入刷新 -->
+   <servlet>
+    <servlet-name>ImpRefeshServlet</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.dataverify.ImpRefeshServlet</servlet-class>
+  </servlet>
+  <!-- 自定义上传 -->
+  <servlet>
+    <servlet-name>UploadHelpFileServlet</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.dataverify.UploadHelpFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UploadFileServlet</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.dataverify.UploadFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UploadQueryServlet</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.customquery.UploadQueryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TrainUploadServlet</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.train.TrainUploadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PublishFileServlet</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.dataverify.PublishFileServlet</servlet-class>
+  </servlet>
+  
+  <!-- 自定义下载 -->
+  <servlet>
+    <servlet-name>ProblemDownServlet</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.dataverify.ProblemDownServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AddTypeDownServlet</servlet-name>
+  	<display-name>AddTypeDownServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.insigma.siis.local.pagemodel.sysmanager.ZWHZYQ_001_006.AddTypeDownServlet</servlet-class>
+  </servlet>
+  <!-- 家庭成员导出 -->
+<servlet>
+<servlet-name>addFamServlet</servlet-name>
+<servlet-class>com.insigma.siis.local.pagemodel.FamilyMember.addFamServlet</servlet-class>
+</servlet>
+
+ <!-- 智能搜索框 -->
+	<servlet>
+		<servlet-name>RelateSearchServelt</servlet-name>
+		<servlet-class>com.insigma.siis.local.util.RelateSearchServelt</servlet-class>
+	</servlet>
+  <!-- weboffice自定义模板 -->
+  <servlet-mapping>
+    <servlet-name>SendtoServer</servlet-name>
+    <url-pattern>/servlet/SendtoServer</url-pattern>
+  </servlet-mapping>  
+  <servlet-mapping>
+    <servlet-name>ViewOffice</servlet-name>
+    <url-pattern>/servlet/ViewOffice</url-pattern>
+  </servlet-mapping>  
+  
+  <!-- 干部基本情况文字导出 -->
+  <servlet>
+    <servlet-name>GbjbqkDownServlet</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.dataverify.gbjbqk.GbjbqkDownServlet</servlet-class>
+  </servlet>
+  
+  <!---->
+  <servlet>
+		<servlet-name>FiledownServlet</servlet-name>
+		<display-name>FiledownServlet</display-name>
+		<description>文件下载Servlet</description>
+		<servlet-class>com.insigma.siis.local.pagemodel.exportexcel.FiledownServlet</servlet-class>
+	</servlet>
+  
+   <!-- excel导入导出数据 -->
+  <servlet>
+    <servlet-name>DataImpExcelServlet</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.dataimpexcel.DataImpExcelServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UploadServlet</servlet-name>
+  	<display-name>UploadServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.insigma.siis.local.pagemodel.sysmanager.ZWHZYQ_001_006.UploadServlet</servlet-class>
+  </servlet>
+   <servlet>  
+    <servlet-name>upload</servlet-name>  
+    <servlet-class>com.insigma.siis.local.pagemodel.sysmanager.verificationschemepublish.UploadPublishServlet</servlet-class>  
+  </servlet>  
+  <!-- 单击工具 -->
+  <servlet>
+    <servlet-name>KingZZBServlet</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.repandrec.local.KingZZBServlet</servlet-class>
+  </servlet>
+  
+    <!-- 呈报单文件导出 -->
+  <servlet>
+		<servlet-name>CBDFiledownServlet</servlet-name>
+		<display-name>CBDFiledownServlet</display-name>
+		<description>文件下载Servlet</description>
+		<servlet-class>com.insigma.siis.local.pagemodel.cbdHandler.CBDFiledownServlet</servlet-class>
+	</servlet>
+	
+	   <!-- 附件上传 -->
+	<servlet>
+		<servlet-name>UploadAttachmentServlet</servlet-name>
+		<display-name>UploadAttachmentServlet</display-name>
+		<description>附件上传Servlet</description>
+		<servlet-class>com.insigma.siis.local.pagemodel.cbdHandler.UploadAttachmentServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UpLoadLrmsServlet</servlet-name>
+		<display-name>UpLoadLrmsServlet</display-name>
+		<description></description>
+		<servlet-class>com.picCut.servlet.UpLoadLrmsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UpLoadLrmsshServlet</servlet-name>
+		<display-name>UpLoadLrmsshServlet</display-name>
+		<description></description>
+		<servlet-class>com.picCut.servlet.UpLoadLrmsshServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DownUtilServlet</servlet-name>
+		<display-name>DownUtilServlet</display-name>
+		<description></description>
+		<servlet-class>com.insigma.siis.local.business.helperUtil.DownUtilServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>RegCheckServlet</servlet-name>
+		<display-name>RegCheckServlet</display-name>
+		<description></description>
+		<servlet-class>com.insigma.siis.local.pagemodel.xbrm.jcgl.RegCheckServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>OtherdbServlet</servlet-name>
+		<display-name>OtherdbServlet</display-name>
+		<description></description>
+		<servlet-class>com.insigma.siis.local.pagemodel.otherdb.OtherdbServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OtherdbServlet</servlet-name>
+		<url-pattern>/OtherdbServlet</url-pattern>
+     </servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>RegCheckServlet</servlet-name>
+		<url-pattern>/RegCheckServlet</url-pattern>
+     </servlet-mapping>
+	
+     <servlet>
+		<servlet-name>UpLoadPhotoServlet</servlet-name>
+		<display-name>UpLoadPhotoServlet</display-name>
+		<description></description>
+		<servlet-class>com.picCut.servlet.UpLoadPhotoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SorlQueryServlet</servlet-name>
+		<display-name>SorlQueryServlet</display-name>
+		<description></description>
+		<servlet-class>com.picCut.servlet.SorlQueryServlet</servlet-class>
+	</servlet>
+	<!-- 机构定位功能 -->
+	<servlet>
+		<servlet-name>JGQueryServlet</servlet-name>
+		<display-name>JGQueryServlet</display-name>
+		<description></description>
+		<servlet-class>com.insigma.siis.local.pagemodel.customquery.JGQueryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    	<servlet-name>JGQueryServlet</servlet-name>
+    	<url-pattern>/JGQueryServlet</url-pattern>
+  	</servlet-mapping>
+	<servlet>
+		<servlet-name>YearCheckServlet</servlet-name>
+		<display-name>YearCheckServlet</display-name>
+		<description></description>
+		<servlet-class>com.insigma.siis.local.pagemodel.sysorg.org.util.YearCheckServlet</servlet-class>
+	</servlet>
+	 <servlet-mapping>
+		<servlet-name>YearCheckServlet</servlet-name>
+		<url-pattern>/YearCheckServlet</url-pattern>
+     </servlet-mapping>
+	 <servlet>
+		<servlet-name>SjfxServlet</servlet-name>
+		<display-name>SjfxServlet</display-name>
+		<description></description>
+		<servlet-class>com.insigma.siis.local.pagemodel.dataverify.SjfxServlet</servlet-class>
+	</servlet>
+	 <servlet>
+	 	<servlet-name>ExpTPBServlet</servlet-name>
+	 	<display-name>ExpTPBServlet</display-name>
+	 	<description></description>
+	 	<servlet-class>com.insigma.siis.local.pagemodel.gbmc.expexcel.ExpTPBServlet</servlet-class>
+	 </servlet>
+	 <!--PAD上会材料  -->
+	<servlet>
+		<servlet-name>huiyiUploadServlet</servlet-name>
+		<servlet-class>com.insigma.siis.local.pagemodel.huiyi.HuiyiUploadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>saveHuiyiServlet</servlet-name>
+		<servlet-class>com.insigma.siis.local.pagemodel.huiyi.SaveHuiyiServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>getHYZipServlet</servlet-name>
+		<servlet-class>com.insigma.siis.local.pagemodel.huiyi.GetHYZipServlet</servlet-class>
+	</servlet>
+	
+	 <servlet-mapping>
+		<servlet-name>SjfxServlet</servlet-name>
+		<url-pattern>/SjfxServlet</url-pattern>
+     </servlet-mapping>
+	
+	 <!-- 统计分析-干部基本情况word导出 -->
+	<servlet-mapping>
+	    <servlet-name>GbjbqkDownServlet</servlet-name>
+	    <url-pattern>/GbjbqkDownServlet</url-pattern>
+	  </servlet-mapping>
+	 <!-- 呈报单文件导出 -->
+	<servlet-mapping>
+    	<servlet-name>CBDFiledownServlet</servlet-name>
+    	<url-pattern>/CBDFiledownServlet</url-pattern>
+  	</servlet-mapping>
+	 <!-- 附件上传 -->
+	<servlet-mapping>
+    	<servlet-name>UploadAttachmentServlet</servlet-name>
+    	<url-pattern>/UploadAttachmentServlet</url-pattern>
+  	</servlet-mapping>
+	<servlet-mapping>
+    	<servlet-name>TagFileServlet</servlet-name>
+    	<url-pattern>/TagFileServlet</url-pattern>
+  	</servlet-mapping>
+  
+  <!-- 单击工具 -->
+  <servlet-mapping>
+    <servlet-name>KingZZBServlet</servlet-name>
+    <url-pattern>/KingZZBServlet</url-pattern>
+  </servlet-mapping>
+   <!-- excel导入导出数据 -->
+  <servlet-mapping>
+    <servlet-name>DataImpExcelServlet</servlet-name>
+    <url-pattern>/DataImpExcelServlet</url-pattern>
+  </servlet-mapping>
+  <!-- 自定义下载 -->
+  <servlet-mapping>
+    <servlet-name>ProblemDownServlet</servlet-name>
+    <url-pattern>/ProblemDownServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProblemDownServlet</servlet-name>
+    <url-pattern>/printPdfServlet.pdf</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>UpLoadUserHeadImage</servlet-name>
+    <url-pattern>/servlet/UpLoadUserHeadImage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DownloadUserHeadImage</servlet-name>
+    <url-pattern>/servlet/DownloadUserHeadImage</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ZoomImage</servlet-name>
+    <url-pattern>/servlet/ZoomImage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogonInfoServlet</servlet-name>
+    <url-pattern>/Logon/Info</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>UpLoadLrmServlet</servlet-name>
+    <url-pattern>/servlet/UpLoadLrmServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>UpLoadGBRSServlet</servlet-name>
+    <url-pattern>/servlet/UpLoadGBRSServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 自定义上传 -->
+  <servlet-mapping>
+    <servlet-name>UploadFileServlet</servlet-name>
+    <url-pattern>/UploadFileServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>UploadQueryServlet</servlet-name>
+    <url-pattern>/UploadQueryServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>TrainUploadServlet</servlet-name>
+    <url-pattern>/TrainUploadServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>PublishFileServlet</servlet-name>
+    <url-pattern>/PublishFileServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>PublishFileServlet</servlet-name>
+    <url-pattern>/video.mp4</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadHelpFileServlet</servlet-name>
+    <url-pattern>/UploadHelpFileServlet</url-pattern>
+  </servlet-mapping>
+  <!-- 自定义导入刷新 -->
+  <servlet-mapping>
+    <servlet-name>ImpRefeshServlet</servlet-name>
+    <url-pattern>/ImpRefeshServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>addFamServlet</servlet-name>
+    <url-pattern>/addFamServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>  
+    <servlet-name>upload</servlet-name>  
+    <url-pattern>/pages/sysmanager/verificationschemepublish/servlet/Upload</url-pattern>  
+  </servlet-mapping>
+  
+   <!-- 自定义Excel导出 CustomExcelServlet-->
+  <servlet-mapping>
+    <servlet-name>CustomExcelServlet</servlet-name>
+    <url-pattern>/CustomExcelServlet</url-pattern>
+  </servlet-mapping>
+ 
+	<servlet-mapping>
+		<servlet-name>RelateSearchServelt</servlet-name>
+		<url-pattern>/RelateSearchServelt</url-pattern>
+	</servlet-mapping>
+	
+  <servlet-mapping>
+    <servlet-name>JUploadServletr</servlet-name>
+    <url-pattern>/servlet/JUpload</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>OnlineViewServlet</servlet-name>
+    <url-pattern>/sys/onlineview/OnlineViewServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>ImpServlet</servlet-name>
+    <url-pattern>/ImpServlet</url-pattern>
+  </servlet-mapping> 
+<servlet-mapping>
+    <servlet-name>FileDownServlet</servlet-name>
+    <url-pattern>/FileDownServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>TreeLoadServlet</servlet-name>
+    <url-pattern>/TreeLoadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>mygridservlet</servlet-name>
+    <url-pattern>/mygridservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>treeServlet</servlet-name>
+    <url-pattern>/treeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>functionTreeServlet</servlet-name>
+    <url-pattern>/functionTreeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>downloadServlet</servlet-name>
+    <url-pattern>/downloadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>verifyCodeServlet</servlet-name>
+    <url-pattern>/verifyCode</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ExcelServlet</servlet-name>
+    <url-pattern>/excel/excelServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>commformExcelServlet</servlet-name>
+    <url-pattern>/excel/commformexcelServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TextServlet</servlet-name>
+    <url-pattern>/text/textServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DbfServlet</servlet-name>
+    <url-pattern>/dbf/dbfServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CaManageServlet</servlet-name>
+    <url-pattern>/auth/CaManageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/register/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProxoolAdmin</servlet-name>
+    <url-pattern>/proxool</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FileUploadServlet</servlet-name>
+    <url-pattern>/file/fileUploadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadHandleServlet</servlet-name>
+    <url-pattern>/servlet/UploadHandleServlet</url-pattern>
+ </servlet-mapping> 
+ <servlet-mapping>
+    <servlet-name>DownloadHandleServlet</servlet-name>
+    <url-pattern>/servlet/DownloadHandleServlet</url-pattern>
+ </servlet-mapping>   
+  <servlet-mapping>
+  	<servlet-name>AxisServlet</servlet-name>
+  	<url-pattern>/servlet/AxisServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AxisServlet</servlet-name>
+  	<url-pattern>*.jws</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AxisServlet</servlet-name>
+  	<url-pattern>/services/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminServlet</servlet-name>
+  	<url-pattern>/servlet/AdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddTypeDownServlet</servlet-name>
+  	<url-pattern>/AddTypeDownServlet</url-pattern>
+  </servlet-mapping>
+  <!--表册下载-->
+  <servlet-mapping>
+		<servlet-name>FiledownServlet</servlet-name>
+		<url-pattern>/FiledownServlet</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UploadServlet</servlet-name>
+  	<url-pattern>/UploadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpLoadLrmsServlet</servlet-name>
+  	<url-pattern>/UpLoadLrmsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpLoadLrmsshServlet</servlet-name>
+  	<url-pattern>/UpLoadLrmsshServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DownUtilServlet</servlet-name>
+  	<url-pattern>/DownUtilServlet</url-pattern>
+  </servlet-mapping>  
+  <servlet-mapping>
+  	<servlet-name>UpLoadPhotoServlet</servlet-name>
+  	<url-pattern>/UpLoadPhotoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SorlQueryServlet</servlet-name>
+  	<url-pattern>/SorlQueryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ExpTPBServlet</servlet-name>
+  	<url-pattern>/ExpTPBServlet</url-pattern>
+  </servlet-mapping>
+<!--PAD上会材料  -->
+  <servlet-mapping>
+        <servlet-name>huiyiUploadServlet</servlet-name>
+        <url-pattern>/huiyiUpload</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>saveHuiyiServlet</servlet-name>
+        <url-pattern>/saveHuiyi</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getHYZipServlet</servlet-name>
+        <url-pattern>/getHYZip</url-pattern>
+    </servlet-mapping>
+<!-- 视频播放 -->
+	<servlet>
+		<servlet-name>playVideoServlet</servlet-name>
+		<servlet-class>com.insigma.siis.local.pagemodel.publicServantManage.PlayInVideoServlet</servlet-class>
+	</servlet> 
+	<servlet-mapping>
+    <servlet-name>playVideoServlet</servlet-name>
+    <url-pattern>/getMediaInfo</url-pattern>
+  </servlet-mapping>
+  <session-config>
+    <session-timeout>1500</session-timeout>
+    <!-- 定义session超时时间，单位为分钟 -->
+  </session-config>
+  <mime-mapping>
+    <extension>htc</extension>
+    <mime-type>text/x-component</mime-type>
+  </mime-mapping>
+  
+  <mime-mapping> 
+		<extension>doc</extension> 
+		<mime-type>application/msword</mime-type> 
+	</mime-mapping>
+  <mime-mapping>
+    <extension>xls</extension>
+    <mime-type>application/msexcel</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>txt</extension>
+    <mime-type>text/plain</mime-type>
+  </mime-mapping>
+  <welcome-file-list>
+    <welcome-file>LogonDialog.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/error/500.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>403</error-code>
+    <location>/error/403.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error/404.jsp</location>
+  </error-page>
+  <taglib>
+    <taglib-uri>/WEB-INF/odin.tld</taglib-uri>
+    <taglib-location>/WEB-INF/odin.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/sicp3.tld</taglib-uri>
+    <taglib-location>/WEB-INF/sicp3.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-bean.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-logic.tld</taglib-uri>
+    <taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+  </taglib>
+  <resource-ref>
+    <description>Orale DB Connection Pool</description>
+    <res-ref-name>jdbc/insiis</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+  </resource-ref>
+</web-app>

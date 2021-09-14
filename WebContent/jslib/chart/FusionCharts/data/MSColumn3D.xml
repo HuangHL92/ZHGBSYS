@@ -1,0 +1,19 @@
+<chart caption='2010年政务应用开发中心1-5月份考核情况' yAxisName='分' shownames='1' showvalues='1' decimals='1' numberSuffix='分'  baseFontSize='14'>
+<categories><category label='市场签约金额' /><category label='项目执行情况' /><category label='财务控制状况' /><category label='团队建设状况' /><category label='领导班子状况' />
+</categories><dataset seriesName='标准分数' color='8BBA00' showValues='0'>
+<set value='40' />
+<set value='40' />
+<set value='5' />
+<set value='10' />
+<set value='5' />
+
+</dataset>
+<dataset seriesName='考核分数' color='AFD8F8' showValues='0'>
+<set value='31.4' />
+<set value='43.7' />
+<set value='4' />
+<set value='10' />
+<set value='5' />
+
+</dataset>
+</chart>

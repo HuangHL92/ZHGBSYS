@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.HY03" table="HY03">
+        <comment>会议阶段基本信息表</comment>
+        <id name="hy0300" type="java.lang.String">
+            <column name="HY0300" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="hy0100" type="java.lang.String">
+            <column name="HY0100" length="64" not-null="true">
+                <comment>会议id</comment>
+            </column>
+        </property>
+        <property name="hy0200" type="java.lang.String">
+            <column name="HY0200" length="64" not-null="true">
+                <comment>会议阶段id</comment>
+            </column>
+        </property>
+        <property name="hy0301" type="java.lang.String">
+            <column name="HY0301" length="1000" not-null="true">
+                <comment>会议阶段议题内容</comment>
+            </column>
+        </property>
+        <property name="hy0303" type="java.lang.Integer">
+            <column name="HY0303" length="100" not-null="true">
+                <comment>会议阶段议题排序</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

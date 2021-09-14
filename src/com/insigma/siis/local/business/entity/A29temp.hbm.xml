@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A29temp"
+    lazy="false"
+    table="A29_TEMP">
+    <id column="A0000" name="a0000" type="java.lang.String">
+      <generator class="assigned"/>
+    </id>
+    <property column="A2907" length="8" name="a2907" type="java.lang.String" />
+    <property column="A2911" length="8" name="a2911" type="java.lang.String" />
+    <property column="A2921A" length="60" name="a2921a" type="java.lang.String" />
+    <property column="A2941" length="40" name="a2941" type="java.lang.String" />
+    <property column="A2944" length="40" name="a2944" type="java.lang.String" />
+    <property column="A2947" length="8" name="a2947" type="java.lang.String" />
+    <property column="A2947A" length="4" name="a2947a" type="java.lang.Long" />
+    <property column="A2949" length="8" name="a2949" type="java.lang.String" />
+    <property column="A2950" length="2" name="a2950" type="java.lang.String" />
+    <property column="A2951" length="2" name="a2951" type="java.lang.String" />
+    <property column="A2970" length="2" name="a2970" type="java.lang.String" />
+    <property column="A2970A" length="2" name="a2970a" type="java.lang.String" />
+    <property column="A2970B" length="200" name="a2970b" type="java.lang.String" />
+    <property column="A2970C" length="4" name="a2970c" type="java.lang.Long" />
+    <property column="ERROR_INFO" length="200" name="errorinfo" type="java.lang.String" />
+    <property column="IMPRECORDID" length="32" name="imprecordid" type="java.lang.String" />
+    <property column="IS_QUALIFIED" length="1" name="isqualified" type="java.lang.String" />
+    <property column="UPDATED" length="1" name="updated" type="java.lang.String" />
+    <property column="A2921B" length="2" name="a2921b" type="java.lang.String" />
+    <property column="A2947B" length="4" name="a2947b" type="java.lang.Long" />
+    <property column="A2921C" length="8" name="a2921c" type="java.lang.String" />
+    <property column="A2921D" length="8" name="a2921d" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

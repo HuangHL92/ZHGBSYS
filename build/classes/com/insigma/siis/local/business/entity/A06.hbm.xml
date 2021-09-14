@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A06"
+    lazy="false"
+    table="A06">
+    <id column="A0600" name="a0600" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="A0000" length="60" name="a0000" type="java.lang.String" />
+    <property column="A0601" length="8" name="a0601" type="java.lang.String" />
+    <property column="A0602" length="60" name="a0602" type="java.lang.String" />
+    <property column="A0604" length="8" name="a0604" type="java.lang.String" />
+    <property column="A0607" length="8" name="a0607" type="java.lang.String" />
+    <property column="A0611" length="100" name="a0611" type="java.lang.String" />
+    <property column="A0614" length="1" name="a0614" type="java.lang.String" />
+    <property column="SORTID" length="6" name="sortid" type="java.lang.Long" />
+    <property column="UPDATED" length="1" name="updated" type="java.lang.String" />
+    
+    <property column="A0699" length="8" name="a0699" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

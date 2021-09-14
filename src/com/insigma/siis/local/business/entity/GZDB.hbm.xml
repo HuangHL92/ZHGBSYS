@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.GZDB"
+    lazy="false"
+    table="GZDB">
+	<id column="GZDBID" name="gzdbid" length="120" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+	<property column="SXMC" length="2000" name="sxmc" type="java.lang.String" />
+	<property column="JTWT" length="2000" name="jtwt" type="java.lang.String" />
+	<property column="ZGMB" length="2000" name="zgmb" type="java.lang.String" />
+	<property column="QTLD" length="2000" name="qtld" type="java.lang.String" />
+	<property column="ZRCS" length="2000" name="zrcs" type="java.lang.String" />
+	<property column="ZGRW" length="2000" name="zgrw" type="java.lang.String" />
+	<property column="WCSX" length="200" name="wcsx" type="java.lang.String" />
+	<property column="WCL" length="22" name="wcl" type="java.lang.Integer" />
+	<property column="WCBZ1" length="20" name="wcbz1" type="java.lang.String" />
+	<property column="WCBZ2" length="20" name="wcbz2" type="java.lang.String" />
+	<property column="CS001" length="200" name="cs001" type="java.lang.String" />
+	<property column="CJR" length="10" name="cjr" type="java.lang.String" />
+	<property column="USERID" length="120" name="userid" type="java.lang.String" />
+	<property column="CREATEDON" length="7" name="createdon" type="java.util.Date" />
+  </class>
+</hibernate-mapping>
+

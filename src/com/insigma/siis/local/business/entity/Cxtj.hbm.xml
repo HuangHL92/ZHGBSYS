@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<!-- Generated 2019-5-15 15:20:26 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Cxtj" table="CXTJ" >
+        <comment>&#183;&#214;&#206;&#246;&#209;&#208;&#197;&#208;&#178;&#233;&#209;&#175;&#204;&#245;&#188;&#254;</comment>
+        <id name="cxtj00" type="string">
+            <column name="CXTJ00" length="70" />
+            <generator class="assigned" />
+        </id>
+        <property name="cxtj01" type="big_decimal">
+            <column name="CXTJ01" precision="22" scale="0">
+                <comment>&#197;&#197;&#208;&#242;</comment>
+            </column>
+        </property>
+        <property name="cxtj02" type="string">
+            <column name="CXTJ02" length="50">
+                <comment>&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="cxtj03" type="string">
+            <column name="CXTJ03" length="50">
+                <comment>&#212;&#203;&#203;&#227;&#183;&#251;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="cxtj04" type="string">
+            <column name="CXTJ04" length="100">
+                <comment>&#214;&#181;</comment>
+            </column>
+        </property>
+        <property name="cxtj05" type="string">
+            <column name="CXTJ05" length="10">
+                <comment>&#185;&#216;&#207;&#181;&#163;&#168;&#212;&#221;&#202;&#177;&#178;&#187;&#211;&#195;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="cxtj06" type="string">
+            <column name="CXTJ06" length="20">
+                <comment>&#177;&#237;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="cxtj07" type="string">
+            <column name="CXTJ07" length="20">
+                <comment>&#215;&#214;&#182;&#206;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="cxtj08" type="string">
+            <column name="CXTJ08" length="20">
+                <comment>&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="fxyp00" type="string">
+            <column name="FXYP00" length="70">
+                <comment>&#183;&#214;&#206;&#246;&#209;&#208;&#197;&#208;id</comment>
+            </column>
+        </property>
+        <property name="cxtj09" type="string">
+            <column name="CXTJ09" length="200">
+                <comment>&#206;&#196;&#215;&#214;&#214;&#181;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

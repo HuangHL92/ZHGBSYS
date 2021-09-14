@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.ComprehensiveSet"
+    lazy="false"
+    table="comprehensive_set">
+  	<id column="ID" name="id" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+     <property name="unit" type="java.lang.String">
+            <column name="UNIT" length="20">
+                <comment>所属单位</comment>
+            </column>
+     </property>
+     <property name="tableType" type="java.lang.String">
+            <column name="table_type" length="20">
+                <comment>表样类型</comment>
+            </column>
+     </property>
+     <property name="teamResponsibility" type="java.lang.String">
+            <column name="TEAM_RESPONSIBILITY" length="20">
+                <comment>班子职责</comment>
+            </column>
+     </property>
+     <property name="generalEvaluation" type="java.lang.String">
+            <column name="general_evaluation" length="20">
+                <comment>整体评价</comment>
+            </column>
+     </property>
+     <property name="optimizeDirection" type="java.lang.String">
+            <column name="OPTIMIZE_DIRECTION" length="20">
+                <comment>优化方向及措施</comment>
+            </column>
+     </property>
+     
+
+  </class>
+</hibernate-mapping>

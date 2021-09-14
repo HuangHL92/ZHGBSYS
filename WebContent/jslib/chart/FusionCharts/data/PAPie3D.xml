@@ -1,0 +1,8 @@
+<chart palette='4' decimals='0' enableSmartLabels='1' enableRotation='0' bgColor='99CCFF,FFFFFF' bgAlpha='40,100' bgRatio='0,100' bgAngle='360' showBorder='1' startingAngle='70' baseFontSize='14' caption='' subcaption='2010年各类案件排案分类统计'>
+            <set label='民事案件' value='136'  />
+            <set label='刑事案件' value='223' />
+            <set label='家庭纠纷' value='118' isSliced='1'/>
+			<set label='财产案件' value='223' />
+			<set label='合同案件' value='123' />
+			<set label='劳动纠纷' value='233' />
+</chart>

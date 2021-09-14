@@ -1,0 +1,50 @@
+<Context>
+  
+<!--     <Resource 
+      name="jdbc/insiis" 
+      type="javax.sql.DataSource" 
+      password="ZHGBSYS"
+      driverClassName="oracle.jdbc.driver.OracleDriver" 
+      maxIdle="2" 
+      maxWait="5000" 
+      validationQuery="select 1 from dual" 
+      username="ZHGBSYS" 
+      url="jdbc:oracle:thin:@190.160.1.240:1521/orcl" 
+      maxActive="10"/>  -->
+     <Resource 
+      name="jdbc/insiis" 
+      type="javax.sql.DataSource" 
+      password="ZHGBSYS"
+      driverClassName="oracle.jdbc.driver.OracleDriver" 
+      maxIdle="2" 
+      maxWait="5000" 
+      validationQuery="select 1 from dual" 
+      username="ZHGBSYS" 
+      url="jdbc:oracle:thin:@127.0.0.1:1521/orcl" 
+      maxActive="10"/>   
+<!--    <Resource 
+      name="jdbc/insiis" 
+      type="javax.sql.DataSource" 
+      password="zhgbsys"
+      driverClassName="oracle.jdbc.driver.OracleDriver" 
+      maxIdle="2" 
+      maxWait="5000" 
+      validationQuery="select 1 from dual" 
+      username="zhgbsys" 
+      url="jdbc:oracle:thin:@127.0.0.1:1521/orcl" 
+      maxActive="10"/>  -->
+<!--        <Resource 
+      name="jdbc/insiis" 
+      type="javax.sql.DataSource" 
+      password="123456789"
+      driverClassName="dm.jdbc.driver.DmDriver" 
+      maxIdle="2" 
+      maxWait="5000" 
+      validationQuery="select 1 from dual" 
+      username="ZHGBSYS" 
+      url="jdbc:dm://localhost:5236/DMSERVER" 
+      maxActive="10"/>  -->
+  
+    
+</Context>
+

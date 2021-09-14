@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Infotdrecord"
+    lazy="false"
+    table="INFOTODORECORD">
+    <id column="ITDR000" name="itdr000" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="ITDR001" length="32"  name="itdr001" type="java.lang.String" />
+    <property column="ITDR002" length="32"  name="itdr002" type="java.lang.String" />
+    <property column="ITDR003" length="10"  name="itdr003" type="java.sql.Timestamp" />
+  	<property column="ITDR004" length="50"  name="itdr004" type="java.lang.String" />
+	<property column="ITDR005" length="36"  name="itdr005" type="java.lang.String" />
+	<property column="ITDR006" length="200" name="itdr006" type="java.lang.String" />
+	<property column="ITDR007" length="64"  name="itdr007" type="java.lang.String" />
+	<property column="ITDR008" length="500" name="itdr008" type="java.lang.String" />
+	<property column="ITDR009" length="32"  name="itdr009" type="java.lang.String" />
+	<property column="ITDR010" length="32"  name="itdr010" type="java.lang.String" />
+	<property column="ITDR011" length="200" name="itdr011" type="java.lang.String" />
+	<property column="ITDR012" length="10"  name="itdr012" type="java.sql.Timestamp" />
+	<property column="ITDR013" length="64"  name="itdr013" type="java.lang.String" />
+	<property column="ITDR014" length="200" name="itdr014" type="java.lang.String" />
+	<property column="ITDR015" length="10"  name="itdr015" type="java.sql.Timestamp" />
+	<property column="ITDR016" length="1"   name="itdr016" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

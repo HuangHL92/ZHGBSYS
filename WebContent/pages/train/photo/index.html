@@ -1,0 +1,107 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title></title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+<div class="demo" style="width:99%;height:70%">
+	<a class="control prev"></a><a class="control next abs"></a><!--自定义按钮，移动端可不写-->
+	<div class="slider"><!--主体结构，请用此类名调用插件，此类名可自定义-->
+		<ul id="photoData">
+			<!--<li><img src="images/1.jpg" alt="1两弯似蹙非蹙笼烟眉，一双似喜非喜含情目。" /></li>
+			<li><a href=""><img src="images/2.jpg" alt="态生两靥之愁，娇袭一身之病。" /></a></li>
+			<li><a href=""><img src="images/3.jpg" alt="泪光点点，娇喘微微。" /></a></li>
+			<li><a href=""><img src="images/4.jpg" alt="闲静似娇花照水，行动如弱柳扶风。" /></a></li>-->
+		</ul>
+	</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/YuxiSlider.jQuery.min.js"></script>
+<script>
+function loadData(data){
+	var pdata = "";
+	var temp = data.split(",");
+	for(var i = 0;i<temp.length;i++){
+		pdata = pdata + "<li><img src='resources/"+temp[i]+"' alt='"+"场景"+Utils.numberToChinese((i+1))+"' /></li>";
+	}
+	$("#photoData").append(pdata);
+	$(".slider").YuxiSlider({
+	width:document.body.clientWidth, //容器宽度
+	height:360, //容器高度
+	control:$('.control'), //绑定控制按钮
+	during:4000, //间隔4秒自动滑动
+	speed:800, //移动速度0.8秒
+	mousewheel:true, //是否开启鼠标滚轮控制
+	direkey:true //是否开启左右箭头方向控制
+});
+}
+
+/*
+    工具包
+*/
+var Utils={
+    /*
+        单位
+    */
+    units:'个十百千万@#%亿^&~',
+    /*
+        字符
+    */
+    chars:'零一二三四五六七八九',
+    /*
+        数字转中文
+        @number {Integer} 形如123的数字
+        @return {String} 返回转换成的形如 一百二十三 的字符串            
+    */
+    numberToChinese:function(number){
+        var a=(number+'').split(''),s=[],t=this;
+        if(a.length>12){
+            throw new Error('too big');
+        }else{
+            for(var i=0,j=a.length-1;i<=j;i++){
+                if(j==1||j==5||j==9){//两位数 处理特殊的 1*
+                    if(i==0){
+                        if(a[i]!='1')s.push(t.chars.charAt(a[i]));
+                    }else{
+                        s.push(t.chars.charAt(a[i]));
+                    }
+                }else{
+                    s.push(t.chars.charAt(a[i]));
+                }
+                if(i!=j){
+                    s.push(t.units.charAt(j-i));
+                }
+            }
+        }
+        //return s;
+        return s.join('').replace(/零([十百千万亿@#%^&~])/g,function(m,d,b){//优先处理 零百 零千 等
+            b=t.units.indexOf(d);
+            if(b!=-1){
+                if(d=='亿')return d;
+                if(d=='万')return d;
+                if(a[j-b]=='0')return '零'
+            }
+            return '';
+        }).replace(/零+/g,'零').replace(/零([万亿])/g,function(m,b){// 零百 零千处理后 可能出现 零零相连的 再处理结尾为零的
+            return b;
+        }).replace(/亿[万千百]/g,'亿').replace(/[零]$/,'').replace(/[@#%^&~]/g,function(m){
+            return {'@':'十','#':'百','%':'千','^':'十','&':'百','~':'千'}[m];
+        }).replace(/([亿万])([一-九])/g,function(m,d,b,c){
+            c=t.units.indexOf(d);
+            if(c!=-1){
+                if(a[j-c]=='0')return d+'零'+b
+            }
+            return m;
+        });
+    }
+};
+</script>
+</body>
+</html>
+

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-21 11:02:42 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.A84" table="A84" schema="ZHGB">
+        <id name="a8400" type="string">
+            <column name="A8400" length="60" />
+            <generator class="uuid" />
+        </id>
+        <property name="a0000" type="string">
+            <column name="A0000" length="120" not-null="true">
+                <comment>人员唯一标识符</comment>
+            </column>
+        </property>
+        <property name="a03011" type="string">
+            <column name="A03011" length="50">
+                <comment>报考准考证号 等</comment>
+            </column>
+        </property>
+        <property name="a03021" type="string">
+            <column name="A03021" length="3">
+                <comment>行政职业能力分数 等</comment>
+            </column>
+        </property>
+        <property name="a03095" type="string">
+            <column name="A03095" length="3">
+                <comment>申论分数 等</comment>
+            </column>
+        </property>
+        <property name="a03027" type="string">
+            <column name="A03027" length="3">
+                <comment>其他科目分数 等</comment>
+            </column>
+        </property>
+        <property name="a03014" type="string">
+            <column name="A03014" length="3">
+                <comment>专业能力测试分数 等</comment>
+            </column>
+        </property>
+        <property name="a03017" type="string">
+            <column name="A03017" length="3">
+                <comment>公共科目笔试成绩总分 等</comment>
+            </column>
+        </property>
+        <property name="a03018" type="string">
+            <column name="A03018" length="3">
+                <comment>专业考试成绩 等</comment>
+            </column>
+        </property>
+        <property name="a03024" type="string">
+            <column name="A03024" length="3">
+                <comment>面试成绩 等</comment>
+            </column>
+        </property>
+        <property name="a84type" type="string">
+            <column name="A84TYPE" length="4">
+                <comment>考试类别 少</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,447 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>字段控件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="generator" content="www.bits.net.cn" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/ie.css">
+    <![endif]-->
+    <link rel="stylesheet" href="bits.style.css">
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../dialogs/internal.js"></script>
+    <script type="text/javascript">
+/* Thank you by  
+http://www.alt-tag.com/blog/2006/02/ie-dom-bugs/ */
+function createElement(type, name)
+{     
+    var element = null;     
+    try {        
+		if (name) 
+			element = document.createElement('<'+type+' name="'+name+'">'); 
+		else
+			element = document.createElement('<'+type+'">'); 
+    } 
+	catch (e) {} 
+	
+    if (element==null) {     
+        element = document.createElement(type);     
+        if (name) element.name = name;     
+    } 
+    return element;     
+}
+
+function getUrlParms(name){
+   var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+   var r = window.location.search.substr(1).match(reg);
+   if(r!=null)
+   return unescape(r[2]);
+   return null;
+}
+
+    </script>
+	
+	<script type="text/javascript">
+	var g_root;
+	var g_tables;
+	var g_table;
+	var g_fields;
+	var g_field;
+	
+	function changeGroupKey(defaultTable, defaultField, isUpdate){
+		$("#orgtable").attr('disabled', isUpdate);
+		
+		var groupkey = 'A';
+		$.post(g_root + "/query/level-query!getTablesByGroupKey.action",{'groupkey':groupkey},function(tables){
+			// 删掉多信息集
+			var newTables = [];
+			
+			$.each(tables,function(i,item){
+				if (item.relation_flag==1) newTables.push(item);
+			});
+			tables = newTables;
+			
+			g_tables = tables;
+			var options = "";
+			if (tables.length <=0) {
+				$("#orgtable").empty();
+			}else{
+				$.each(tables,function(i,item){
+					options += "<option value='"+item.table_name+"'";
+					if (defaultTable != null && item.table_name == defaultTable) {
+						options += " selected ";
+					}
+					options += ">"+item.table_name_cn+"</option>";
+				});
+				
+				$("#orgtable").empty().append(options);
+			}
+			changeTableKey(defaultField, isUpdate);
+		});
+	}
+	
+	function changeTableKey(defaultField, isUpdate){
+		$("#orgfield").attr('disabled', isUpdate);
+		var tablekey = $("#orgtable option:selected").val();
+		$.post(g_root + "/query/level-query!getDesignFiledsByTableKey.action",{'tablekey':tablekey},function(fields){
+			g_fields = fields;
+			var options = "";
+			if(fields.length <=0){
+				$("#orgfield").empty();
+			}else{
+				$.each(fields,function(i,item){
+					options += "<option value='"+item.field_dbname+"'";
+					if (defaultField != null && item.field_dbname == defaultField) {
+						options += " selected ";
+					}
+					options += ">"+item.field_name_cn+"</option>";
+				});
+				
+				$("#orgfield").empty().append(options);
+			}
+			
+			changeFieldKey();
+		});
+	}
+
+	function changeFieldKey(){
+		var chk = $("#orgfield option:selected").val();
+		var fields = g_fields;
+		var field = fields[0];
+		for (var i = 0; i < fields.length; i++) {
+			if (fields[i].field_dbname == chk) {
+				field = fields[i];
+				break;
+			}
+		}
+		g_field = field;
+		$("#orgtype").val(field.dbtype_ref);
+		$("#orgfieldname").val(field.field_name_cn);
+		
+		chk = $("#orgtable option:selected").val();
+		var tables = g_tables;
+		var table = tables[0];
+		g_table = table;
+		for (var i = 0; i < tables.length; i++) {
+			if (tables[i].table_dbname == chk) {
+				table = tables[i];
+				break;
+			}
+		}
+		
+		$("#orgtablename").val(table.table_name_cn);
+	}
+
+	</script>
+</head>
+<body>
+<div class="content">
+    <table class="table table-bordered table-striped table-hover">
+     <tr>
+        <th><span>信息集</span><span class="label label-important">*</span></th>
+        <th><span>信息项</span><span class="label label-important">*</span></th>
+    </tr>
+    <tr>
+        <th><select id="orgtable" name="orgtable" onchange="changeTableKey()"></select></th>
+        <th><select id="orgfield" name="orgfield" onchange="changeFieldKey()"></select></th>
+    </tr>
+    <tr>
+        <th><span>数据类型</span></th>
+        <th><span>对齐方式</span></th>
+    </tr>
+    <tr>
+        <td>
+             <select id="orgtype" name="orgtype" disabled="disabled">
+				<option value="1">文本</option>
+				<option value="2">代码</option>
+				<option value="70">多选代码</option>
+				<option value="3">整数</option>
+				<option value="30">小数</option>
+				<option value="4">日期</option>
+				<option value="5">是/否</option>
+				<option value="6">图像</option>
+				<option value="60">影像</option>
+				<option value="600">二进制类型</option>
+				<option value="7">备注</option>
+			</select>
+			<input type="hidden" id="orgtablename"/>
+			<input type="hidden" id="orgfieldname"/>
+        </td>
+        <td>
+            <select id="orgalign">
+                <option value="left" >左对齐</option>
+                <option value="center">居中对齐</option>
+                <option value="right">右对齐</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th><span>&nbsp;&nbsp;&nbsp;&nbsp;长&nbsp;&nbsp;X&nbsp;&nbsp;宽&nbsp;&nbsp;&nbsp;&&nbsp;&nbsp;&nbsp;字体大小</span> </th>
+        <th><span>可编辑性</span> </th>
+    </tr>
+    <tr>
+        <td>
+            <input id="orgwidth" type="text" value="150" class="input-small span1" placeholder="auto"/>
+            X
+            <input id="orgheight" type="text" value="" class="input-small span1" placeholder="auto"/>
+            &
+            <input id="orgfontsize" type="text"  value="" class="input-small span1" placeholder="auto"/> px
+
+        </td>
+        <td>
+            <label class="checkbox inline"><input id="orgreadonly" type="checkbox"/> 只读 </label>
+        </td>
+    </tr>
+
+    </table>
+</div>
+<script type="text/javascript">
+var oNode = null,thePlugins = 'bitsfield';
+window.onload = function() {
+	g_root = getUrlParms('root');
+	
+	if( UE.plugins[thePlugins].editdom ){
+        oNode = UE.plugins[thePlugins].editdom;
+		
+		var gTable = oNode.getAttribute('orgtable');
+		var gField = oNode.getAttribute('orgfield');
+		var gReadonly=oNode.getAttribute('orgreadonly');
+		var gFontSize=oNode.getAttribute('orgfontsize');
+		var gAlign=oNode.getAttribute('orgalign');
+		var gWidth=oNode.getAttribute('orgwidth');
+		var gHeight=oNode.getAttribute('orgheight');
+		
+		$G('orgreadonly').checked = gReadonly == '1';
+        $G('orgfontsize').value = gFontSize;
+        $G('orgwidth').value = gWidth;
+        $G('orgheight').value = gHeight;
+        $G('orgalign').value = gAlign;
+        
+		changeGroupKey(gTable, gField, true);
+    }
+	else {
+		changeGroupKey(null, null, false);
+	}
+}
+dialog.oncancel = function () {
+    if( UE.plugins[thePlugins].editdom ) {
+        delete UE.plugins[thePlugins].editdom;
+    }
+};
+dialog.onok = function (){
+    if($G('orgtable').value==''){
+        alert('请选择信息集！');
+        return false;
+    }
+	if($G('orgfield').value==''){
+        alert('请选择信息项！');
+        return false;
+    }
+	
+	var gTable = $G('orgtable').value;
+	var gField = $G('orgfield').value;
+	
+	var gFontSize=$G('orgfontsize').value;
+	var gAlign=$G('orgalign').value;
+	var gWidth=$G('orgwidth').value;
+	var gHeight=$G('orgheight').value;
+	var gType=$G('orgtype').value;
+	var gReadonly = $G('orgreadonly').checked;
+    
+    if( !oNode ) {
+		// 如果已经包含字段，不能继续添加了
+		var content = editor.getContent();
+		if (content != '' && content.indexOf(gField) >= 0) {
+			alert('已经添加了这个字段！');
+			return false;
+		}
+	
+        try {
+			// 文本
+			if (gType == "1") {
+				oNode = createElement('input', gField);
+				oNode.setAttribute('type', 'text');
+			}
+			// 代码
+			else if (gType == "2") {
+				oNode = createElement('input', gField);
+				oNode.setAttribute('type', 'text');
+				oNode.setAttribute('orglinkname', g_field.link_name);
+				//oNode.setAttribute('onclick',  "pickCode(this, false);");
+			}
+			// 多选代码
+			else if (gType == "70") {
+				oNode = createElement('input', gField);
+				oNode.setAttribute('type', 'text');
+				//oNode.setAttribute('onclick',  "pickCode(this, true);");
+			}
+			// 整数
+			else if (gType == "3") {
+				oNode = createElement('input', gField);
+				oNode.setAttribute('type', 'text');
+				//oNode.className = 'easyui-numberbox';
+			}
+			// 小数
+			else if (gType == "30") {
+				oNode = createElement('input', gField);
+				oNode.setAttribute('type', 'text');
+				//oNode.className = 'easyui-numberbox';
+				//oNode.setAttribute('precision', g_field.field_scale);
+			}
+			// 日期
+			else if (gType == "4") {
+				oNode = createElement('input', gField);
+				oNode.setAttribute('type', 'text');
+				oNode.className = 'Wdate';
+				if (g_field.field_precision == 4) {
+					oNode.setAttribute('onclick',  'setday(4);');
+				}
+				else if (g_field.field_precision == 6) {
+					oNode.setAttribute('onclick',  'setday(6);');
+				}
+				else if (g_field.field_precision == 8) {
+					oNode.setAttribute('onclick',  'setday(8);');
+				}
+			}
+			// 是否
+			else if (gType == "5") {
+				oNode = createElement('select', gField);
+				var opt = new Option('', '');
+				oNode.options.add(opt);
+				opt = new Option('是', '1');
+				oNode.options.add(opt);
+				opt = new Option('否', '0');
+				oNode.options.add(opt);
+			}
+			// 图像
+			else if (gType == "6") {
+				oNode = createElement('img', gField + '_photo');
+				oNode.className = 'bitsphotofield';
+				oNode.setAttribute('src', g_root + '/common/photo.jpg');
+			}
+			// 影像
+			else if (gType == "60") {
+				alert('暂时不支持此类型字段！');
+				return false;
+			}
+			// 二进制
+			else if (gType == "600") {
+				alert('暂时不支持此类型字段！');
+				return false;
+			}
+			// 备注
+			else if (gType == "7") {
+				oNode = createElement('textarea', gField);
+			}
+			
+			
+			oNode.setAttribute('ref', g_field.field_name_cn);
+			oNode.setAttribute('allownull', g_field.allownull);
+			
+			oNode.setAttribute('title', $("#orgfieldname").val() );
+			if (gType != "6") {
+				oNode.setAttribute('name', gField);
+				oNode.setAttribute('id', gField);
+			}
+			else {
+				oNode.setAttribute('name', gField + "_photo");
+				oNode.setAttribute('id', gField + "_photo");
+			}
+			
+            oNode.setAttribute('bitsPlugins',thePlugins);
+			oNode.setAttribute('orgtype', gType);
+			
+			oNode.setAttribute('orgtable', gTable);
+			oNode.setAttribute('orgfield', gField);
+			
+			oNode.setAttribute('orgtablename', $("#orgtablename").val());
+			oNode.setAttribute('orgfieldname', $("#orgfieldname").val());
+			
+            if (gReadonly) {
+				oNode.setAttribute('orgreadonly',1);
+				oNode.setAttribute('readonly', 'readonly');
+			} else {
+				oNode.setAttribute('orgreadonly',0);
+				oNode.removeAttribute('readonly');
+			}
+            if( gFontSize != '' ) {
+                oNode.style.fontSize = gFontSize + 'px';
+                //style += 'font-size:' + gFontSize + 'px;';
+                oNode.setAttribute('orgfontsize',gFontSize );
+            }
+            if( gAlign != '' ) {
+                //style += 'text-align:' + gAlign + ';';
+                oNode.style.textAlign = gAlign;
+                oNode.setAttribute('orgalign',gAlign );
+            }
+            if( gWidth != '' ) {
+                oNode.style.width = gWidth+ 'px';
+                //style += 'width:' + gWidth + 'px;';
+                oNode.setAttribute('orgwidth',gWidth );
+            }
+            if( gHeight != '' ) {
+                oNode.style.height = gHeight+ 'px';
+                //style += 'height:' + gHeight + 'px;';
+                oNode.setAttribute('orgheight',gHeight );
+            }
+            
+			//oNode.setAttribute('style',style );
+            //oNode.style.cssText=style;//ie7
+            editor.execCommand('insertHtml', oNode.outerHTML);
+        } catch (e) {
+            try {
+				alert(e);
+				editor.execCommand('error');
+            } catch ( e ) {
+                alert('控件异常，如有疑问，请联系系统管理员！');
+            }
+            return false;
+        }
+    } else {
+        // 注意： 修改的话，只能更改外观和行为
+        if (gReadonly) {
+			oNode.setAttribute('orgreadonly',1);
+			oNode.setAttribute('readonly', 'readonly');
+		} else {
+			oNode.setAttribute('orgreadonly',0);
+			oNode.removeAttribute('readonly');
+        }
+        if( gFontSize != '' ) {
+            oNode.style.fontSize = gFontSize+ 'px';
+            oNode.setAttribute('orgfontsize',gFontSize );
+        }else{
+            oNode.style.fontSize = '';
+            oNode.setAttribute('orgfontsize', '');
+        }
+        if( gAlign != '' ) {
+            oNode.style.textAlign = gAlign;
+            oNode.setAttribute('orgalign',gAlign );
+        }else{
+            oNode.setAttribute('orgalign', '');
+        }
+        if( gWidth != '' ) {
+            oNode.style.width = gWidth+ 'px';
+            oNode.setAttribute('orgwidth',gWidth );
+        }else{
+            oNode.style.width = '';
+            oNode.setAttribute('orgwidth', '');
+        }
+        if( gHeight != '' ) {
+            oNode.style.height = gHeight+ 'px';
+            oNode.setAttribute('orgheight',gHeight );
+        }else{
+            oNode.style.height = '';
+            oNode.setAttribute('orgheight', '');
+        }
+        
+        delete UE.plugins[thePlugins].editdom;
+    }
+};
+</script>
+</body>
+</html>

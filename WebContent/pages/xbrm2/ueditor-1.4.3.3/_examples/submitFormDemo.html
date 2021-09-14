@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+
+<script src="D:\EPWork\eclipse\workspace\odin6\hzb_wx\WebContent/pages/xbrm2/js/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="D:\EPWork\eclipse\workspace\odin6\hzb_wx\WebContent/pages/xbrm2/js/CoordTable/js/jquery-ui-1.8.9.custom.min.js" type="text/javascript"></script>
+    <script src="D:\EPWork\eclipse\workspace\odin6\hzb_wx\WebContent/pages/xbrm2/js/CoordTable/js/jquery.contextmenu.r2.js" type="text/javascript"></script>
+    <script src="D:\EPWork\eclipse\workspace\odin6\hzb_wx\WebContent/pages/xbrm2/js/CoordTable/js/coordTable.js" type="text/javascript"></script>
+    <script src="D:\EPWork\eclipse\workspace\odin6\hzb_wx\WebContent/pages/xbrm2/js/tableEditer.js" type="text/javascript"></script>
+  
+    <script src="D:\EPWork\eclipse\workspace\odin6\hzb_wx\WebContent/pages/xbrm2/js/colResizable-1.6.js" type="text/javascript"></script>
+  
+  	<script src="D:\EPWork\eclipse\workspace\odin6\hzb_wx\WebContent/pages/xbrm2/js/base64.min.js" type="text/javascript"></script>
+  
+  
+<link rel="stylesheet" type="text/css" href="D:\EPWork\eclipse\workspace\odin6\hzb_wx\WebContent/mainPage/css/font-awesome.css">
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="D:\EPWork\eclipse\workspace\odin6\hzb_wx\WebContent/mainPage/css/font-awesome-ie7.min.css">    
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="D:\EPWork\eclipse\workspace\odin6\hzb_wx\WebContent/mainPage/css/bootstrap.min.css"> 
+
+<object ID='WebBrowser' WIDTH=0 HEIGHT=0 CLASSID='CLSID:8856F961-340A-11D0-A96B-00C04FD705A2'></object>
+	
+<script type="text/javascript" src="D:\EPWork\eclipse\workspace\odin6\hzb_wx\WebContent/basejs/helperUtil.js"></script>
+<link rel="stylesheet" href="D:\EPWork\eclipse\workspace\odin6\hzb_wx\WebContent/pages/xbrm2/gbtp.css">
+
+<style>
+*{margin:0px!important;padding:0px!important;}
+body{
+margin: 1px;overflow-y: scroll;overflow-x: hidden;
+font-family:'宋体',Simsun;
+word-break:break-all;
+margin-bottom: 250px;
+overflow-y:hidden;
+}
+
+#jqContextMenu{
+	border-style:groove;
+	background-color: gary;
+	border-width: 1px;
+}
+
+.txt_editer{
+	border-style: none;
+}
+
+.kcclClass{
+background-color: rgb(102,204,255) !important;
+}
+.drag_color{
+	background-color: rgb(232,232,232) !important;
+}
+.drag_pre_color{
+	background-color: rgb(233,250,238)!important;
+}
+.default_color{
+	background-color: #FFFFFF !important;
+}
+</style>
+
+<style>
+@media print{
+　　.noprint{
+  　　display:none
+　　}
+}
+</style>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript" charset="utf-8" src="../ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="editor_api.js"></script>
+    <style type="text/css">
+        body{
+            font-size:14px;
+        }
+    </style>
+</head>
+<body>
+    <h2>UEditor提交示例</h2>
+    <form id="form" method="post" target="_blank">
+        <script type="text/plain" id="myEditor" name="myEditor">
+            <p>欢迎使用UEditor！</p>
+        </script>
+        <input type="submit" value="通过input的submit提交">
+    </form>
+   <p>
+       从1.2.6开始，会自动同步数据无需再手动调用sync方法
+       <button onclick="document.getElementById('form').submit()">通过js调用submit提交</button>
+
+   </p>
+
+    <script type="text/javascript">
+        var editor_a = UE.getEditor('myEditor',{initialFrameHeight:500});
+
+        //--自动切换提交地址----
+        var doc=document,
+                version = editor_a.options.serverUrl || editor_a.options.imageUrl || "php",
+                form=doc.getElementById("form");
+
+        if(version.match(/php/)){
+            form.action="./server/getContent.php";
+        }else if(version.match(/net/)){
+            form.action="./server/getContent.ashx";
+        }else if(version.match(/jsp/)){
+            form.action="./server/getContent.jsp";
+        }else if(version.match(/asp/)){
+            form.action="./server/getContent.asp";
+        }
+        //-----
+
+
+    </script>
+
+</body>
+
+
+</html>

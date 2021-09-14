@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.UserPerson"
+    lazy="false"
+    table="COMPETENCE_USERPERSON">
+    <id column="USERPERSONID" name="userpersonid" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="USERID" length="32" name="userid" type="java.lang.String" />
+    <property column="A0000" length="60" name="a0000" type="java.lang.String" />
+    <property column="B0111" length="68" name="B0111" type="java.lang.String" />
+    <property column="OPERATETYPE" length="10" name="OPERATETYPE" type="java.lang.String" />
+    
+  </class>
+</hibernate-mapping>

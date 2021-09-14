@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:03:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Supervision" table="SUPERVISION" schema="ZHGB">
+        <comment>监督信息表</comment>
+        <id name="id" type="string">
+            <column name="ID" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="a0000" type="string">
+            <column name="A0000" length="64" not-null="true">
+                <comment>人员ID</comment>
+            </column>
+        </property>
+        <property name="position" type="string">
+            <column name="POSITION" length="50" >
+                <comment>当时职务</comment>
+            </column>
+        </property>
+        <property name="informationtype" type="string">
+            <column name="INFORMATIONTYPE" length="10" >
+                <comment>类型</comment>
+            </column>
+        </property>
+        <property name="matter" type="string">
+            <column name="MATTER" length="200">
+                <comment>主要事项</comment>
+            </column>
+        </property>
+        <property name="startdate" type="string">
+            <column name="STARTDATE" length="20">
+                <comment>开始时间</comment>
+            </column>
+        </property>
+        <property name="dealorg" type="string">
+            <column name="DEALORG" length="40">
+                <comment>处理单位</comment>
+            </column>
+        </property>
+        <property name="result" type="string">
+            <column name="RESULT" length="40">
+                <comment>处理结果</comment>
+            </column>
+        </property>
+        <property name="influencetime" type="string">
+            <column name="INFLUENCETIME" length="20">
+                <comment>影响时间</comment>
+            </column>
+        </property>
+        <property name="filenumber" type="string">
+            <column name="FILENUMBER" length="30">
+                <comment>文件号</comment>
+            </column>
+        </property>
+        
+    </class>
+</hibernate-mapping>

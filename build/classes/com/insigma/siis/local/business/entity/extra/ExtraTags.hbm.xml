@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.extra.ExtraTags"
+    lazy="false"
+    table="Extra_Tags">
+  	<id column="A0000" name="a0000" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="A0195Z" length="1" name="a0195z" type="java.lang.String" />
+    <property column="A1401A" length="1" name="a1401a" type="java.lang.String" />
+    <property column="A1401B" length="4000" name="a1401b" type="java.lang.String" />
+    <property column="A1401C" length="4000" name="a1401c" type="java.lang.String" />
+    <property column="A1401D" length="4000" name="a1401d" type="java.lang.String" />
+    <property column="A1401F" length="4000" name="a1401f" type="java.lang.String" />
+    <property column="A1401G" length="1" name="a1401g" type="java.lang.String" />
+    <property column="A1401H" length="2000" name="a1401h" type="java.lang.String" />
+    <property column="A0193Z" length="2000" name="a0193z" type="java.lang.String" />
+    <property column="A0194Z" length="2000" name="a0194z" type="java.lang.String" />
+    <property column="A0194ZCODE" length="2000" name="a0194zcode" type="java.lang.String" />
+    <property column="A0194C" length="2000" name="a0194c" type="java.lang.String" />
+    <property column="A0196Z" length="2000" name="a0196z" type="java.lang.String" />
+    <property column="A0196ZCODE" length="2000" name="a0196zcode" type="java.lang.String" />
+    <property column="A0196C" length="2000" name="a0196c" type="java.lang.String" />
+    <property column="CREATEDATE" length="20" name="createdate" type="com.insigma.siis.local.pagemodel.publicServantManage.Data2Long" />
+    <property column="UPDATEDATE" length="20" name="updatedate" type="com.insigma.siis.local.pagemodel.publicServantManage.Data2Long" />
+    <property column="tag_zybj" length="8" name="tagzybj" type="java.lang.String" />
+    <property column="tag_zc" length="8" name="tagzc" type="java.lang.String" />
+    <property column="tag_rclxzs" length="2000" name="tagrclxzs" type="java.lang.String" />
+    <property column="tag_rclxcs" length="1000" name="tagrclxcs" type="java.lang.String" />
+    <property column="tag_cjlxzs" length="2000" name="tagcjlxzs" type="java.lang.String" />
+    <property column="tag_cjlxcs" length="1000" name="tagcjlxcs" type="java.lang.String" />
+    <property column="tag_sbjysjlzs" length="2000" name="tagsbjysjlzs" type="java.lang.String" />
+    <property column="tag_sbjysjlcs" length="1000" name="tagsbjysjlcs" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

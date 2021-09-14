@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-8-31 16:25:26 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.hzentity.B01ZzsLd" table="B01_ZZS_LD" schema="ZHGBSYS">
+        <comment>&#181;&#165;&#206;&#187;&#193;&#236;&#181;&#188;</comment>
+        <id name="ld00" type="string">
+            <column name="LD00" length="40" />
+            <generator class="assigned" />
+        </id>
+        <property name="zzs00" type="string">
+            <column name="ZZS00" length="40" not-null="true">
+                <comment>&#215;&#233;&#214;&#175;&#202;&#183;id</comment>
+            </column>
+        </property>
+        <property name="ld01" type="string">
+            <column name="LD01" length="100">
+                <comment>&#208;&#213;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="a0000" type="string">
+            <column name="A0000" length="40">
+                <comment>&#212;&#221;&#202;&#177;&#178;&#187;&#211;&#195;</comment>
+            </column>
+        </property>
+        <property name="ld02" type="string">
+            <column name="LD02" length="2000">
+                <comment>&#214;&#176;&#206;&#241;</comment>
+            </column>
+        </property>
+        <property name="ld03" type="string">
+            <column name="LD03" length="8">
+                <comment>&#200;&#213;&#198;&#218;&#198;&#240;</comment>
+            </column>
+        </property>
+        <property name="ld04" type="string">
+            <column name="LD04" length="8">
+                <comment>&#200;&#213;&#198;&#218;&#214;&#185;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

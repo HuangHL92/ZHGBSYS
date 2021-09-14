@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Sp_Bus"
+    lazy="false"
+    table="SP_BUS">
+	<id column="SPB00" name="spb00" type="java.lang.String">
+	  <generator class="assigned" />
+	</id>
+	<property column="SPB01" length="64" name="spb01" type="java.lang.String" />
+	<property column="SPB02" length="5" name="spb02" type="java.lang.String" />
+	<property column="SPB03" length="64" name="spb03" type="java.lang.String" />
+	<property column="SPB04" length="64" name="spb04" type="java.lang.String" />
+	<property column="SPB05" length="5" name="spb05" type="java.lang.String" />
+	<property column="SPB06" length="5" name="spb06" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

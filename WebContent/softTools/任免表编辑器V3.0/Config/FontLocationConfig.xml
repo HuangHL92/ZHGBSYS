@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--配置说明：-->
+<!--         Font是字号，形式为"14",意思是14号字。-->
+<!--         LineSpace行间距，形式为"15",意思是行间距是15。-->
+<!--         Value是偏移量，正值是向上偏移，负值是向下偏移，0是标准，表示不偏移。-->
+<items>
+  <item Font="8" LineSpace="8" Value="-0.5" ></item>
+</items>
+

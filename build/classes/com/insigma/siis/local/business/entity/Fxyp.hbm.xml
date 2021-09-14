@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<!-- Generated 2019-5-15 15:20:26 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Fxyp" table="FXYP">
+        <comment>&#183;&#214;&#206;&#246;&#209;&#208;&#197;&#208;&#177;&#237;</comment>
+        <id name="fxyp00" type="string">
+            <column name="FXYP00" length="70" />
+            <generator class="assigned" />
+        </id>
+        <property name="fxyp01" type="big_decimal">
+            <column name="FXYP01" precision="22" scale="0">
+                <comment>&#197;&#197;&#208;&#242;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="fxyp02" type="string">
+            <column name="FXYP02" length="500">
+                <comment>&#184;&#218;&#206;&#187;&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="fxyp03" type="string">
+            <column name="FXYP03" length="1000">
+                <comment>&#204;&#245;&#188;&#254;&#195;&#232;&#202;&#246; &#215;&#212;&#182;&#175;&#201;&#250;&#179;&#201;</comment>
+            </column>
+        </property>
+        <property name="fxyp04" type="date">
+            <column name="FXYP04" length="7">
+                <comment>&#181;&#199;&#188;&#199;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="fxyp05" type="string">
+            <column name="FXYP05" length="70">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="fxyp06" type="string">
+            <column name="FXYP06" length="70">
+            </column>
+        </property>
+        <property name="b01id" type="string">
+            <column name="b01id" length="70">
+            </column>
+        </property>
+        <property name="mntp00" type="string">
+            <column name="mntp00" length="70">
+            </column>
+        </property>
+        
+        <property name="fxyp07" type="string">
+            <column name="fxyp07" length="70">
+            </column>
+        </property>
+        <property name="a0200" type="string">
+            <column name="a0200" length="70">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

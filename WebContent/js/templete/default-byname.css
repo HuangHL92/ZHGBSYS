@@ -1,0 +1,84 @@
+/* @author zhub */
+@charset "GBK";
+
+@font-face {
+	font-family: FZFengYaSongS;
+	src: url('../font/FZFengYaSongS.eot?#iefix') format('embedded-opentype'), url(../font/FZFengYaSongS.TTF), url(../font/FZFengYaSongS.otf), url(../font/FZFengYaSongS.svg), url(../font/FZFengYaSongS.woff), url(../font/FZFengYaSongS.woff2), url(../font/FZFengYaSongS.dfont);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#groupTreeContent {
+	width: 100%;
+	height: 388px;
+}
+
+#gridcq-tbl {
+	width: 100%;
+	height: 388px;
+}
+
+#gridcq-btn-tbl {
+	width: 100%;
+}
+
+#queryName {
+	width: 470px;
+	height: 25px;
+	margin-top: 1px;
+}
+
+#queryName-warn {
+	height: 40px;
+	width: 120px;
+	font-size: 12px;
+	margin-top: 10px;
+	margin-left: 10px;
+	color: red;
+}
+
+#btn-div {
+	width: 100%;
+	height: 30px;
+}
+
+#btn-div table {
+	width: 200px;
+}
+
+.x-btn-noicon .x-btn-small .x-btn-text {
+	height: 20px !important;
+	color: white;
+	letter-spacing: 2px;
+}
+
+#rigthBtn .x-btn {
+	background-color: #ffffff;
+}
+
+#rigthAllBtn .x-btn {
+	background-color: #ffffff;
+}
+
+#liftBtn .x-btn {
+	background-color: #ffffff;
+}
+
+#liftAllBtn .x-btn {
+	background-color: #ffffff;
+}
+
+.x-panel-bwrap {
+	height: 100%
+}
+
+.x-panel-body {
+	height: 100%
+}
+
+.x-grid3-scroller {
+	overflow-y: scroll;
+}

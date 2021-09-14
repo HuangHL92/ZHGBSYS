@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasourceManager xmlVersion="20140501" releaseVersion="7.1.1">
+<ConnectionMap>
+<Connection name="FRDemo" class="com.fr.data.impl.JDBCDatabaseConnection">
+<DatabaseAttr/>
+<JDBCDatabaseAttr url="jdbc:odbc:Driver={Microsoft Access Driver (*.mdb)};DBQ=${ENV_HOME}\..\FRDemo.mdb" driver="sun.jdbc.odbc.JdbcOdbcDriver" user="" password="___" encryptPassword="true">
+<DBCPAttr/>
+</JDBCDatabaseAttr>
+</Connection>
+</ConnectionMap>
+<TableDataMap>
+<TableData name="员工信息表" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM 员工信息表]]></Query>
+</TableData>
+<TableData name="用户信息表" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FRDemo]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM [userinfo]A]]></Query>
+</TableData>
+<TableData name="staff" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<DSName>
+<![CDATA[]]></DSName>
+<ColumnNames>
+<![CDATA[name,,.,,password,,.,,fullname,,.,,department,,.,,position,,.,,email]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[ND`PJ_CurmG9<[g.\9'^L>Z4pD2u^V7V=W'JC=pA#b(N9,9AZRN$p(#6m<Kc^'sD]A[ubK5)*
+nlgmJHSNhYY!`c!W)TeCsagH4sh$)",SW!,12^:He":kk,g\$ln.D0-"P7V7:Z,Y\L0cL3]A5
+>MG]APh@;Nn:bTV>\M)rQ=8!S=;IiDp?Uo5IG/!_c=C+!\RU[F;]ANi&7W3Hee1)'3Pm\PT),1
+<^nIfJ1V+-D!`mO44(gokreXdN0lqn-m2:)j$1LDXIX=)sMFYY^j?;'Q)pCm<>_STE_3nMQp
+QE"jG(JVYe7a>(98no4lC'fccq?P+nWp3u)sfpNbc3PAZ::#@Q8&OkMrkpsAQe55f;LOBi02
+b*73MaU$t*5q^kAPe(_c5gg5sjCOH$Ge#*5&`71-&GIJ$)(c:!f-,$u7uN7<JAim<a`,g?3\
+HH@XV+/".L%M=iji\$P)l+XcM.P~
+]]></RowData>
+</TableData>
+<TableData name="上报用户" class="com.fr.data.impl.EmbeddedTableData">
+<Parameters/>
+<DSName>
+<![CDATA[]]></DSName>
+<ColumnNames>
+<![CDATA[一级用户,,.,,二级用户,,.,,三级用户]]></ColumnNames>
+<ColumnTypes>
+<![CDATA[java.lang.String,java.lang.String,java.lang.String]]></ColumnTypes>
+<RowData>
+<![CDATA[.k]A)iairdebf`Z?%*?iWWldlV9.pJ^#bc:389nqsVb^nZ6i\W>SsfoI!rr~
+]]></RowData>
+</TableData>
+</TableDataMap>
+<ADHOCMap>
+<TableData name="员工信息表" class="com.fr.data.impl.ADHOCNamedTableData">
+<DBTableDataName>
+<![CDATA[员工信息表]]></DBTableDataName>
+</TableData>
+<TableData name="员工信息表_SQL视图" class="com.fr.data.impl.ADHOCSQLTableData">
+<DBConnectionName>
+<![CDATA[FRDemo]]></DBConnectionName>
+<Query>
+<![CDATA[select * from 员工信息表]]></Query>
+</TableData>
+</ADHOCMap>
+</DatasourceManager>

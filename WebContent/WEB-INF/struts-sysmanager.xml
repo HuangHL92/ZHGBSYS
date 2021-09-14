@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="roleForm" type="com.lbs.cp.sysmanager.role.rp.RoleForm" />
+    <form-bean name="codeListForm" type="com.lbs.cp.sysmanager.codelist.rp.CodeListForm" />
+    <form-bean name="codeListQueryForm" type="com.lbs.cp.sysmanager.codelist.rp.CodeListForm" />
+    <form-bean name="parameterForm" type="com.lbs.cp.sysmanager.parameter.rp.ParameterForm" />
+    <form-bean name="parameterQueryForm" type="com.lbs.cp.sysmanager.parameter.rp.ParameterForm" />
+    <form-bean name="functionForm" type="com.lbs.cp.sysmanager.function.rp.FunctionForm" />
+    <form-bean name="functionQueryForm" type="com.lbs.cp.sysmanager.function.rp.FunctionForm" />
+    <form-bean name="bizLogForm" type="com.lbs.cp.sysmanager.log.rp.BizLogForm" />
+    <form-bean name="logonHistoryForm" type="com.lbs.cp.sysmanager.log.rp.LogonHistoryForm" />
+    <form-bean name="sysLogForm" type="com.lbs.cp.sysmanager.log.rp.SysLogForm" />
+    <form-bean name="roleQueryForm" type="com.lbs.cp.sysmanager.role.rp.RoleForm" />
+    <form-bean name="userForm" type="com.lbs.cp.sysmanager.user.rp.UserForm" />
+    <form-bean name="userQueryForm" type="com.lbs.cp.sysmanager.user.rp.UserForm" />
+    <form-bean name="groupForm" type="com.lbs.cp.sysmanager.group.rp.GroupForm" />
+    <form-bean name="userListForm" type="com.lbs.cp.sysmanager.userlist.rp.UserListForm" />
+    <form-bean name="MessageForm" type="com.lbs.cp.sysmanager.message.rp.MessageForm" />
+    <form-bean name="shortcutkeyForm" type="com.lbs.cp.sysmanager.shortcutkey.rp.ShortcutkeyForm" />
+    <form-bean name="dataPopedomQueryForm" type="com.lbs.cp.sysmanager.dprole.rp.DataPopedomForm" />
+    <form-bean name="dataPopedomForm" type="com.lbs.cp.sysmanager.dprole.rp.DataPopedomForm" />
+    <form-bean name="rolLogForm" type="com.lbs.cp.sysmanager.dbrol.rp.RolLogForm" />
+	<form-bean name="bizDigestForm" type="com.lbs.cp.sysmanager.bizdigest.rp.BizDigestForm" />
+  </form-beans>
+  <global-forwards>
+    <forward contextRelative="true" name="exportlogdata" path="/downloadServlet?type=txt&amp;name=logData" />
+    <forward contextRelative="true" name="validate" path="/js/validate.jsp" />
+    <forward contextRelative="true" name="globals" path="/js/Globals.jsp" />
+    <forward contextRelative="true" name="css" path="/css/style.jsp" />
+    <forward contextRelative="true" name="leaftree" path="/js/leafTree.jsp"/>
+    <forward contextRelative="true" name="treecss" path="/css/tree.jsp" />
+    <forward contextRelative="true" name="xtree" path="/js/xtree.jsp" />
+    <forward contextRelative="true" name="xmlextras" path="/js/xmlextras.jsp" />
+    <forward contextRelative="true" name="xloadtree" path="/js/xloadtree.jsp" />
+    <forward contextRelative="true" name="maillist" path="/js/mailList.jsp" />
+
+    <forward contextRelative="true" name="leaf_Checkbox" path="/js/leaf_Checkbox.jsp"/>
+    <forward contextRelative="true" name="leaf_Misc" path="/js/leaf_Misc.jsp"/>
+    <forward contextRelative="true" name="leaf_TreeElement" path="/js/leafcheckboxtreeitem.js"/>
+    <forward contextRelative="true" name="leaf_Tree" path="/js/leafxloadtreewithcheckbox.js"/>
+    <forward contextRelative="true" name="groupTree" path="/js/GroupTree.jsp"/>
+
+    <forward contextRelative="true" name="quickSelectBase" path="/js/BaseObj.jsp"/>
+    <forward contextRelative="true" name="quickSelectMgr" path="/js/EAPObjsMgr.jsp"/>
+    <forward contextRelative="true" name="select" path="/js/SelectObj.jsp"/>
+    <forward contextRelative="true" name="quickSelect" path="/js/QuickSelectObj.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action  forward="/right/RightTree.jsp" path="/rightTree" />
+    <action forward="/function/FunctionTree.jsp" path="/functionTree" />
+    <action forward="/right/cookbook.jsp" path="/authcookbook"/>
+    <action forward="/codelist/AddCodeList.jsp" path="/addCodeList" />
+    <action forward="/function/AddFunction.jsp" path="/addFunction" />
+    <action forward="/function/Upload.jsp" path="/upload" />
+    <action forward="/parameter/AddParameter.jsp" path="/addParameter" />
+    <action forward="/group/AddGroup.jsp" path="/addGroup" />
+
+    <action name="codeListForm" parameter="method" path="/codeListAction" scope="request" type="com.lbs.cp.sysmanager.codelist.rp.CodeListAction" >
+      <forward name="edit" path="/codelist/EditCodeList.jsp" />
+      <forward name="add" path="/codelist/AddCodeList.jsp" />
+      <forward name="list" path="/codelist/CodeList.jsp" />
+    </action>
+     <action name="codeListQueryForm" parameter="method" path="/codeListQueryAction" scope="session" type="com.lbs.cp.sysmanager.codelist.rp.CodeListQueryAction" >
+       <forward  name="list" path="/codelist/CodeList.jsp" />
+    </action>
+     <action name="parameterForm" parameter="method" path="/parameterAction" scope="request" type="com.lbs.cp.sysmanager.parameter.rp.ParameterAction" >
+      <forward name="edit" path="/parameter/EditParameter.jsp" />
+      <forward name="add" path="/parameter/AddParameter.jsp" />
+    </action>
+    <action name="parameterQueryForm" parameter="method" path="/parameterQueryAction" scope="session" type="com.lbs.cp.sysmanager.parameter.rp.ParameterQueryAction" >
+      <forward name="list" path="/parameter/Parameter.jsp" />
+    </action>
+    <action name="functionForm" parameter="method" path="/functionAction" scope="request" type="com.lbs.cp.sysmanager.function.rp.FunctionAction" >
+      <forward name="edit" path="/function/EditFunction.jsp" />
+      <forward name="add" path="/function/AddFunction.jsp" />
+      <forward name="upload" path="/function/Upload.jsp" />
+    </action>
+    <action name="functionQueryForm" parameter="method" path="/functionQueryAction" scope="session" type="com.lbs.cp.sysmanager.function.rp.FunctionQueryAction" >
+      <forward name="list" path="/function/Function.jsp" />
+    </action>
+    <action name="bizLogForm" parameter="method" path="/bizLogAction" scope="request" type="com.lbs.cp.sysmanager.log.rp.BizLogAction" >
+     <forward name="list" path="/log/BizLog.jsp" />
+     <forward name="detailList" path="/log/BizLog.jsp" />
+    </action>
+    <action name="logonHistoryForm" parameter="method" path="/logonHistoryAction" scope="request" type="com.lbs.cp.sysmanager.log.rp.LogonHistoryAction" >
+     <forward name="list" path="/log/LogonHistory.jsp" />
+     <forward name="detailList" path="/log/LogonHistory.jsp" />
+    </action>
+    <action name="sysLogForm" parameter="method" path="/sysLogAction" scope="request" type="com.lbs.cp.sysmanager.log.rp.SysLogAction" >
+     <forward name="list" path="/log/SysLog.jsp" />
+     <forward name="detailList" path="/log/SysLog.jsp" />
+    </action>
+
+    <action name="userQueryForm" parameter="method" path="/userQueryAction" scope="request" type="com.lbs.cp.sysmanager.user.rp.UserQueryAction">
+	    <forward name="list" path="/user/User.jsp" />
+   	    <forward name="listcr" path="/user/Usercr.jsp" />
+    </action>
+    <action name="userForm" parameter="method" path="/userAction" scope="request" type="com.lbs.cp.sysmanager.user.rp.UserAction">
+      <forward name="alterPassword" path="/user/AlterPassword.jsp" />
+      <forward name="edit" path="/user/EditUser.jsp" />
+      <forward name="add" path="/user/AddUser.jsp" />
+      <forward name="editcr" path="/user/EditUsercr.jsp" />
+      <forward name="addcr" path="/user/AddUsercr.jsp" />
+    </action>
+    <action name="roleQueryForm" parameter="method" path="/roleQueryAction" scope="request" type="com.lbs.cp.sysmanager.role.rp.RoleQueryAction">
+ 	   <forward name="list" path="/role/Role.jsp" />
+    </action>
+    <action name="roleForm" parameter="method" path="/roleAction" scope="request" type="com.lbs.cp.sysmanager.role.rp.RoleAction">
+      <forward name="roleList" path="/right/RoleList.jsp" />
+      <forward name="rightTree" path="/right/RightTree.jsp" />
+      <forward name="edit" path="/role/EditRole.jsp" />
+      <forward name="add" path="/role/AddRole.jsp" />
+      <forward name="right" path="/right/Right.jsp" />
+      <forward name="modulelist" path="/right/ModuleList.jsp" />
+      <forward name="RefreshModuleList" path="/right/RefreshModuleList.jsp" />
+    </action>
+    <action name="groupForm" parameter="method" path="/groupAction" scope="request" type="com.lbs.cp.sysmanager.group.rp.GroupAction" >
+      <forward name="edit" path="/group/EditGroup.jsp" />
+      <forward name="add" path="/group/AddGroup.jsp" />
+      <forward name="groupTree" path="/group/GroupTree.jsp" />
+    </action>
+    <action forward="/function/MainFunction.jsp" path="/MainFunction" />
+    <action forward="/userlist/MainUser.jsp" path="/MainUser" />
+    <action name="userListForm" parameter="method" path="/userListAction" scope="request" type="com.lbs.cp.sysmanager.userlist.rp.UserListAction" >
+      <forward name="list" path="/sysmanager/userlist/ChoseUser.jsp" />
+    </action>
+    <action forward="/function/CookBook.jsp" path="/funauthcookbook" />
+    <action forward="/group/CookBook.jsp" path="/grpauthcookbook" />
+    <action forward="/userlist/test.jsp" path="/test" />
+    <action forward="/message/ViewMsg.jsp" path="/viewMsg" />
+    <action name="MessageForm" parameter="method" path="/messageAction" scope="request" type="com.lbs.cp.sysmanager.message.rp.MessageAction" >
+      <forward name="list" path="/sysmanager/message/MessageList.jsp" />
+      <forward name="view" path="/message/ViewMsg.jsp" />
+    </action>
+    <action name="shortcutkeyForm" parameter="method" path="/shortcutkeyAction" scope="request" type="com.lbs.cp.sysmanager.shortcutkey.rp.ShortcutkeyAction" >
+      <forward name="list" path="/shortcutkey/shortcutkey.jsp" />
+    </action>
+	<action name="dataPopedomQueryForm" parameter="method" path="/dataPopedomQueryAction" scope="request" type="com.lbs.cp.sysmanager.dprole.rp.DataPopedomQueryAction">
+ 	   <forward name="list" path="/role/dataPopedom.jsp" />
+    </action>
+    <action name="dataPopedomForm" parameter="method" path="/dataPopedomAction" scope="request" type="com.lbs.cp.sysmanager.dprole.rp.DataPopedomAction">
+      <forward name="roleList" path="/right/PopedomList.jsp" />
+      <forward name="rightTree" path="/right/PopedomRightTree.jsp" />
+      <forward name="right" path="/right/Right.jsp" />
+      <forward name="modulelist" path="/right/ModuleList.jsp" />
+      <forward name="RefreshModuleList" path="/right/RefreshModuleList.jsp" />
+    </action>
+    <action path="/rolLogAction" name="rolLogForm" parameter="method" scope="request" type="com.lbs.cp.sysmanager.dbrol.rp.RolLogAction">
+	  <forward name="list" path="/dbrol/RolLog.jsp" />
+	  <forward name="bizdigest" path="/dbrol/viewBizDigest.jsp" />
+	</action>
+	<action path="/rolInitAction" parameter="method" scope="request" type="com.lbs.cp.sysmanager.dbrol.rp.RolInitAction">
+	  <forward name="initBizTables" path="/dbrol/InitBizTables.jsp" />
+	</action>
+	<action path="/rolBizdigestAction" forward="/dbrol/index.jsp"></action>
+	<action path="/bizdigestAction" parameter="method" scope="request" name="bizDigestForm" type="com.lbs.cp.sysmanager.bizdigest.rp.BizDigestAction">
+	  <forward name="list" path="/dbrol/index.jsp" />
+	</action>
+
+  </action-mappings>
+  <controller>
+    <set-property property="nocache" value="true"/>
+  </controller>
+  <message-resources null="false" parameter="ApplicationResources_SysManager" />
+</struts-config>

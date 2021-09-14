@@ -1,0 +1,95 @@
+.BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #fff; PADDING-BOTTOM: 0px;  PADDING-TOP: 0px; 
+	margin-left: 4px;
+	margin-top: 4px;
+	margin-right: 0px;
+	margin-bottom: 0px; 
+	background-color:C0CDD9;	
+	}
+	
+	.BODY2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #fff; PADDING-BOTTOM: 0px;  PADDING-TOP: 0px; 
+	margin-left: 4px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px; 
+	background-color:C0CDD9;	
+	}
+	
+	.BODY1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #fff; PADDING-BOTTOM: 0px;  PADDING-TOP: 0px; 
+	margin-left: 4px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 4px; 
+	background-color:C0CDD9;	
+	}
+	
+.TABLE {
+	 COLOR: #000000; LINE-HEIGHT: 21px; TEXT-DECORATION: none;
+}
+
+.sjl1 {
+	BORDER-RIGHT: #DAE0ED 1px solid;  BORDER-BOTTOM: #DAE0ED 1px solid; BORDER-top: none;PADDING-bottom: 1px solid; BORDER-LEFT-STYLE: none;
+}
+
+.sjl2 {
+	BORDER-RIGHT: #356781 1px solid;  PADDING-RIGHT: 4px; BORDER-BOTTOM: #356781 1px solid; BORDER-left: #356781 1px solid; PADDING-LEFT: 4px; PADDING-top: 2px; BORDER-TOP: #356781 1px solid;
+	background-color:F0F8FF; font-size: 12px;
+}
+
+.sjl3 {
+	BORDER-RIGHT: #356781 1px solid;  BORDER-top: none; PADDING-RIGHT: 4px;  BORDER-left: #356781 1px solid; PADDING-LEFT: 4px; PADDING-top: none;
+	background-color:FFFFFF;
+}
+
+.sjl4 {
+	BORDER-RIGHT: #DAE0ED 1px solid;  BORDER-top: none; PADDING-bottom: 1px solid; BORDER-LEFT-STYLE: none; PADDING-top: none;
+}
+.sjl5 {
+	BORDER-top: none;PADDING-bottom: none;PADDING-RIGHT: 4px; PADDING-left: 5px; 
+}
+
+.e1 {
+	font-size: 12px;
+	line-height: 22px;
+	color: 35518D;
+	text-decoration: none;
+}
+.e2 {
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: bold;
+	color: FF4800;
+	text-decoration: none;
+}
+
+.e3 {
+	font-size: 14px;
+	line-height: 22px;
+	color: 000000;
+}
+
+.e4 {
+	font-size: 12px;
+	line-height: 26px;
+	color: FF4800;
+	text-decoration: none;
+}
+.e5 {
+	font-size: 12px;
+	line-height: 26px;
+	color: 35518D;
+	text-decoration: underline;
+}
+.e6 {
+	font-size: 12px;
+	line-height: 10px;
+	color: 35518D;
+}
+.input {
+	BORDER-RIGHT: #356781 1px solid; BORDER-TOP: #356781 1px solid; FONT-SIZE: 13px; BORDER-LEFT: #356781 1px solid; BORDER-BOTTOM: #356781 1px solid; background-color:#dfecf8; width:100%;
+}
+.input1 {
+	BORDER-RIGHT: #356781 1px solid; BORDER-TOP: #356781 1px solid; FONT-SIZE: 13px; BORDER-LEFT: #356781 1px solid; BORDER-BOTTOM: #356781 1px solid; background-color:#ffffff;width:100%;
+}

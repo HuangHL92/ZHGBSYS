@@ -1,0 +1,38 @@
+.bluebutton {
+	font-size:12px;
+     /* font-weight:bolder;  */
+	color:white;
+	width:100px;
+	height:25px;
+	line-height:20px;
+	border-top:0;
+	border-left:0;
+	/* background: url(../icos/Shape1.png); */
+	background-color: #0065ea;
+    border: none;
+    border-radius: 5px;
+    font-family:宋体;
+}
+.yellowbutton {
+	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+	font-size:11.5px;
+	/* font-weight:bolder; */
+	color:white;
+	width:38px;
+	height:25px;
+	/* line-height:20px; */
+	border:0;
+	cursor:pointer;
+	background-color:#F08000;
+}
+.graybutton {
+	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+	font-size:11.5px;
+	/* font-weight:bolder; */
+	color:rgb(160,160,160);
+	width:38px;
+	height:25px;
+	/* line-height:20px; */
+	border:0;
+	background-color:#EBEBEB;
+}

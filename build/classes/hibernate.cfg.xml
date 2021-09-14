@@ -1,0 +1,541 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		
+        <property name="connection.datasource">java:comp/env/jdbc/insiis</property>
+		
+		<property name="dialect">org.hibernate.dialect.OracleDialect</property>
+		<!--
+		<property name="hibernate.query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</property>
+		
+		<property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+		 -->
+		
+		<property name="show_sql">false</property>
+		<property name="jdbc.batch_size">200</property>
+		<property name="jdbc.fetch_size">50</property>
+		
+		<!-- 指定二级缓存实现类 -->
+		<property name="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</property>
+		<!--开启二级缓存-->
+		<property name="hibernate.cache.use_second_level_cache">false</property>
+		<!--查询缓存-->
+		<property name="hibernate.cache.use_query_cache">false</property>
+		<!--指定二级缓存策略配置文件路径-->
+		<property name="cache.provider_configuration_file_resource_path">ehcache.xml</property>
+
+
+		<!--
+		<property name="use_outer_join">true</property>
+		<property name="connection.pool_size">5</property>
+		<property name="statement_cache.size">0</property>
+		<property name="jdbc.use_scrollable_resultset">true</property>
+		<property name="cglib.user_reflection_optimizer">false</property>
+		<property name="hibernate.connection.release_mode">auto</property>-->
+
+		<!-- 系统框架 -->
+		<mapping resource="com/insigma/odin/framework/comm/entity/VAa10.hbm.xml" />
+		<!-- mapping resource="com/insigma/odin/framework/sys/entity/Sysfunction.hbm.xml" /-->
+		<mapping resource="com/insigma/odin/framework/sys/entity/SbdsUserlog.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/entity/Printlog.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/entity/Repreport.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/entity/Operationaudit.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/entity/Opaudit.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/entity/OpauditChangeHistory.hbm.xml" />
+		
+		
+		<!-- 系统管理 -->
+		<mapping resource="com/lbs/cp/sysmanager/entity/SYSUSER_CR.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SYSACL.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SYSACT.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SYSFUNCTION.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SYSROLE.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SYSGROUP.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/ROLEGROUP.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SYSTEMLOG.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SysMyMessage.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SysMyMessageReceiver.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/Filerepository.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/Code.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/District.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/LOGONHISTORY.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/USERGROUP.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/Sysdatapopedom.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/Sysdppdommap.hbm.xml" />
+        <mapping resource="com/lbs/cp/sysmanager/entity/Sysudp.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/BizLog.hbm.xml" />
+        <!-- 
+        <mapping resource="com/lbs/cp/sysmanager/dbrol/entity/SbdsUscrlog.hbm.xml" />
+        <mapping resource="com/lbs/cp/sysmanager/dbrol/entity/SbdsUserlog.hbm.xml" />
+        <mapping resource="com/lbs/cp/sysmanager/dbrol/entity/SbdsSyslog.hbm.xml" />
+        <mapping resource="com/lbs/cp/sysmanager/dbrol/entity/SbdsSyslogdt.hbm.xml" />
+         -->
+       <!--  <mapping resource="com/lbs/cp/sysmanager/bizdigest/entity/BizDigestdata.hbm.xml" /> -->
+        <!-- <mapping resource="com/lbs/cp/sysmanager/bizdigest/entity/BizDigestinfo.hbm.xml" /> -->
+		<!-- 外部数据访问接口 -->
+		<mapping resource="com/insigma/siis/local/business/entity/InterfaceConfig.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/InterfaceParameter.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/InterfaceScript.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/InterfaceLog.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/InterfaceUser.hbm.xml" />
+		<!-- 补充信息结构 -->
+		<mapping resource="com/insigma/siis/local/business/entity/AddValue.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/AddType.hbm.xml" />
+		<!-- 代码维护 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Aa09.hbm.xml"/>
+        <mapping resource="com/insigma/siis/local/business/entity/Aa10.hbm.xml"/>
+        <mapping resource="com/insigma/siis/local/business/entity/Aa01.hbm.xml"/>
+		
+		<!-- 新系统管理 -->
+		<mapping resource="com/insigma/odin/framework/sysmanager/comm/entity/Sysuser.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sysmanager/comm/entity/Sysrole.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sysmanager/comm/entity/Sysfunction.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sysmanager/comm/entity/Sysact.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sysmanager/comm/entity/Sysacl.hbm.xml" />
+		
+		<!-- 业务操作权限维护 -->
+		<mapping resource="com/insigma/odin/framework/sysmanager/comm/entity/Sysopright.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sysmanager/comm/entity/Sysoprightacl.hbm.xml" />
+		
+		<!-- 权限升级 实体映射 -->
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtGroup.hbm.xml"></mapping>
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtResource.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtUsergroupref.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtAct.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtScene.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtFunction.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtUser.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtOpright.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtAcl.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtUserextinfo.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtOplog.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtLog.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtRole.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtApp.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtUserselfcolumn.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtOauser.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtOaorg.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtUserGroup.hbm.xml" />
+
+		<mapping resource="com/insigma/odin/framework/comm/entity/SmtSqlinfo.hbm.xml" />
+	
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtFunctionButton.hbm.xml" />
+		
+		<!-- job -->
+		<mapping resource="com/insigma/odin/framework/comm/entity/SjJob.hbm.xml" />
+		<!-- his code -->
+		<mapping resource="com/insigma/odin/framework/his/entity/HisRegcode.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/his/entity/HisArea.hbm.xml" />
+		<!-- autotest -->
+		<mapping resource="com/insigma/odin/framework/sys/autotest/entity/SmtTestscene.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/autotest/entity/SmtTestunit.hbm.xml" />
+		
+		<!--数据权限-->
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtUserdatagroupref.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtDatagroup.hbm.xml" />
+		<!--并发任务-->
+		<mapping resource="com/insigma/odin/framework/comm/entity/SjPjobRunning.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/comm/entity/SjPjob.hbm.xml" />
+		
+		<!-- 智能审核 -->
+		<mapping resource="com/insigma/odin/framework/sys/audit/intelligent/entity/OpauditCondition.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/audit/intelligent/entity/OpauditRule.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/audit/intelligent/entity/OpauditAction.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/audit/intelligent/entity/OpauditLevel.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/audit/intelligent/entity/OpauditModel.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/audit/intelligent/entity/Opauditor.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/audit/intelligent/entity/OpauditWork.hbm.xml" />
+		<!--照片-->
+		<mapping resource="com/insigma/odin/framework/sys/entity/SbdsTempimg.hbm.xml" />
+		<!--主题分库-->
+		<mapping resource="com/insigma/siis/local/business/entity/Sublibrariesmodel.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Sublibrariescondition.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Sublibrariescolumns.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Sysmodelrole.hbm.xml" />
+		<!--Org组织信息-->
+		<mapping resource="com/insigma/siis/local/business/entity/B01.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/B01sort.hbm.xml" />
+		<!--权限管理-->
+		<mapping resource="com/insigma/siis/local/business/entity/UserDept.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/UserDeptLook.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/UserPerson.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Inf.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/InfoGroup.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/InfoGroupInfo.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/UserInfoGroup.hbm.xml" />
+		<!--日志管理-->
+		<mapping resource="com/insigma/siis/local/business/entity/LogMain.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/LogDetail.hbm.xml" />
+		<!--数据校验临时表-->
+		<mapping resource="com/insigma/siis/local/business/entity/B01temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A01temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A02temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A06temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A08temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A11temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A14temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A15temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A29temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A30temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A31temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A36temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A37temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A41temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A53temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A57temp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/B01tempb01.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/B01CheckTime.hbm.xml" />
+
+		<!--人员管理-->
+		<mapping resource="com/insigma/siis/local/business/entity/A01.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A02.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A06.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A08.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A11.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A14.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A15.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A29.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A30.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A36.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A36Z1.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A36_FILE.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A36Z1New.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A36New.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A36Log.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A31.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A32.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A33.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A37.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A41.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A53.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A57.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A57history.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/CodeType.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/CodeValue.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/CodeDownload.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/CodeRelation.hbm.xml" /><!--code_type与表字段对应关系表-->
+		<mapping resource="com/insigma/siis/local/business/entity/Codevaluesort.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Supervision.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/PersionFile.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Attribute.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/PhotoupError.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A86.hbm.xml" />
+		
+		
+		<!--人员业务信息表-->
+		<mapping resource="com/insigma/siis/local/business/entity/A60.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A61.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A62.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A63.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A64.hbm.xml" />
+		<!--导入记录表-->
+		<mapping resource="com/insigma/siis/local/business/entity/Imprecord.hbm.xml" />
+		
+		<!--数据校验-->
+		<mapping resource="com/insigma/siis/local/business/entity/VerifyRule.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/VerifyScheme.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/VerifySqlList.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/VerifyColVsl006.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/VVerifyColVsl006.hbm.xml" /><!--Verify_Col_Vsl006 无法保证列数据类型实时正确性，故创建视图v_Verify_Col_Vsl006-->
+		<mapping resource="com/insigma/siis/local/business/entity/VerifyError.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/VerifyErrorDetail.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/VerifyErrorList.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/VerifyProcess.hbm.xml" />
+		
+		<!-- 组合字段-->
+		<mapping resource="com/insigma/siis/local/business/entity/Grprcdsplmd.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Grpord.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Grpfld.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Grphicd.hbm.xml" />
+		
+		<!--查询编辑器-->
+		<mapping resource="com/insigma/siis/local/business/entity/CodeTable.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/CodeTableCol.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Customquery.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Customquerylist.hbm.xml" />
+	    <mapping resource="com/insigma/siis/local/business/entity/Rydjb.hbm.xml" />
+		
+		<!-- FTP配置信息 -->
+		<mapping resource="com/insigma/siis/local/business/entity/TransConfig.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Ftpuser.hbm.xml" />
+		
+		<!--公共控件 -->
+		<mapping resource="com/insigma/siis/local/business/entity/UserOpCode.hbm.xml" />
+		
+		<!--上报记录 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Reportftp.hbm.xml" />
+		<!--数据交换配置信息 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Dataexchangeconf.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/ImpProcess.hbm.xml" />
+		
+		<mapping resource="com/insigma/siis/local/business/entity/Datarecrejlog.hbm.xml" />
+		<!-- 公务员登记呈报单 -->
+		<mapping resource="com/insigma/siis/local/business/entity/CBDInfo.hbm.xml" />
+		<!-- 呈报单状态 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Cbdstatus.hbm.xml" />
+		<!-- 附件表 -->
+		<mapping resource="com/insigma/siis/local/business/entity/AttachmentInfo.hbm.xml" />
+		
+		<!-- FPT参数配置信息 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Fptconfig.hbm.xml" />
+		<!-- 版本信息 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Sversion.hbm.xml" />
+		
+		<!-- 用户认证 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Userauthentication.hbm.xml" />
+		<!-- 备注信息集 -->
+		<mapping resource="com/insigma/siis/local/business/entity/A71.hbm.xml" />
+		<!-- 职务职级信息集-->
+		<mapping resource="com/insigma/siis/local/business/entity/A05.hbm.xml" />
+		<!-- 社团兼职-->
+		<mapping resource="com/insigma/siis/local/business/entity/Association.hbm.xml" />
+		<!-- 班子分析-->
+		<mapping resource="com/insigma/siis/local/business/entity/BZFX.hbm.xml" />
+		<!-- 班子年度考核-->
+		<mapping resource="com/insigma/siis/local/business/entity/BZNDKH.hbm.xml" />
+		<!-- 班子专项考核-->
+		<mapping resource="com/insigma/siis/local/business/entity/BZZXKH.hbm.xml" />
+		<!-- 区县市班子分析-->
+		<mapping resource="com/insigma/siis/local/business/entity/QXSBZFX.hbm.xml" />
+		<!-- 区县市班子年度考核-->
+		<mapping resource="com/insigma/siis/local/business/entity/QXSBZNDKH.hbm.xml" />
+		<!-- 区县市班子调配-->
+		<mapping resource="com/insigma/siis/local/business/entity/QXSBZTP.hbm.xml" />
+		<!-- 国企高校班子分析-->
+		<mapping resource="com/insigma/siis/local/business/entity/GQBZFX.hbm.xml" />
+		<!-- 国企经营指标-->
+		<mapping resource="com/insigma/siis/local/business/entity/GQJYZB.hbm.xml" />
+		<!-- start weboffice自定义  -->
+		<mapping resource="com/insigma/siis/local/business/entity/WebOffice.hbm.xml" />
+		<!-- end weboffice自定义 -->
+		
+		<!-- 关心关爱 -->
+		<mapping resource="com/insigma/siis/local/business/entity/GBXLH.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/GBTH.hbm.xml" />
+		<!-- 考核评价 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Gbkh.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/GbkhAtt.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Gbkc.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/GbkcFile.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/WJGL.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/WJGLAdd.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/HJXJAdd.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/TJLXAdd.hbm.xml" />
+		<!-- 职务管理 -->
+		<mapping resource="com/insigma/siis/local/business/entity/A02Zwzc.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A02ZwzcMx.hbm.xml" />
+<!-- 		<mapping resource="com/insigma/siis/local/business/entity/A02ZwzcOrgref.hbm.xml" /> -->
+		<!-- 历史名单 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Historyper.hbm.xml" />
+		<!-- 纪实明细 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Jsmx.hbm.xml" />
+		<!-- 代表委员 -->
+		<mapping resource="com/insigma/siis/local/business/entity/DBWY.hbm.xml" />
+		<!-- 数据导入 比对结果表  2017 06 13-->
+		<mapping resource="com/insigma/siis/local/business/entity/TabDatacontrastresult.hbm.xml" />
+		
+		<mapping resource="com/insigma/siis/local/business/entity/FolderTree.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Folder.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Policy.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Notice.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/NoticeFile.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/NoticeRecipent.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A99Z1.hbm.xml" />
+	<!-- 机构授权-->
+		<mapping resource="com/insigma/siis/local/business/entity/Competenceuserdept.hbm.xml"/>
+		<!-- 机构回收站 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Datarecord.hbm.xml"/>
+		<!-- 机构考核 -->
+		<mapping resource="com/insigma/siis/local/business/entity/YearCheck.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/YearCheckFile.hbm.xml"/>
+		
+	<!-- 青岛查询功能 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Qryview.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Qryviewfld.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Qryuse.hbm.xml" />
+	<!-- 人员新增功能 -->
+		<mapping resource="com/insigma/siis/local/business/entity/A81.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/entity/A80.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/entity/A83.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/entity/A82.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/entity/A84.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/entity/N29.hbm.xml" />
+		
+	<!-- 批次管理功能 -->
+		<mapping resource="com/insigma/siis/local/business/entity/RecordBatch.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/RecordBatchMerge.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js01.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js02.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js03.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js04.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js05.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js06.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js07.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js08.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js09.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js10.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js11.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js12.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js13.hbm.xml"/>
+		<!--组织考察表-->
+		<mapping resource="com/insigma/siis/local/business/entity/Js14.hbm.xml"/>
+		<!--讨论决定表-->
+		<mapping resource="com/insigma/siis/local/business/entity/Js15.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js99.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/JsAtt.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/DeployClassify.hbm.xml"/>
+	    <!-- 会议议题-->
+		<mapping resource="com/insigma/siis/local/business/entity/MeetingTheme.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Publish.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/PublishAtt.hbm.xml"/>
+		<!-- 亮灯预警 -->
+		<mapping resource="com/insigma/siis/local/business/entity/JsYjtj.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/JsYjtjFld.hbm.xml"/>
+		<!-- 考核与听取意见  -->
+		<mapping resource="com/insigma/siis/local/business/entity/Js21.hbm.xml"/>
+		<!-- 民主推荐  -->
+		<mapping resource="com/insigma/siis/local/business/entity/Js18.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js20.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Js33.hbm.xml"/>
+		<!-- 拟任职务 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Js22.hbm.xml"/>
+		
+		<!-- 兼职审批 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Sp01.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Sp_Bus_Log.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Sp_Bus.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Sp_Att.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Sp01_Pc.hbm.xml"/>
+		<!-- 培训 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Train.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/TrainPersonnel.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/TrainLeader.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/TrainScore.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/TrainElearning.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/TrainUnit.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/TrainAtt.hbm.xml"/>
+		<!-- 工作督办 -->
+		<mapping resource="com/insigma/siis/local/business/entity/GZDB.hbm.xml" /> 
+    	<mapping resource="com/insigma/siis/local/business/entity/RWWCQK.hbm.xml" /> 
+    	<!-- 换届选举 -->
+		<mapping resource="com/insigma/siis/local/business/entity/HJXJ.hbm.xml" /> 
+		<mapping resource="com/insigma/siis/local/business/entity/JD.hbm.xml" /> 
+		<mapping resource="com/insigma/siis/local/business/entity/ZB.hbm.xml" /> 
+		<mapping resource="com/insigma/siis/local/business/entity/DHXJ.hbm.xml" /> 
+		<mapping resource="com/insigma/siis/local/business/entity/GI.hbm.xml" /> 
+		<!-- 简历条目 -->
+		<mapping resource="com/insigma/siis/local/business/entity/A1701entry.hbm.xml"/>
+		<!-- 岗位信息 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Jggwconf.hbm.xml"/>
+		<!-- 检查 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Checkreg.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Checkregperson.hbm.xml"/>
+		<!-- 代办消息 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Infotdrecord.hbm.xml"/>
+		<mapping resource="com/insigma/siis/local/business/entity/Infotdcfg.hbm.xml"/>
+		
+		<mapping resource="com/insigma/siis/local/business/entity/FxypBatch.hbm.xml"/>
+		<!-- 大学生村官 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Collegevofficail.hbm.xml"/>
+		
+		<!-- 标签实体类  -->
+		<mapping resource="com/insigma/siis/local/business/entity/extra/ExtraTags.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/extra/A0193Tag.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/extra/A0194Tag.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/extra/TagSbjysjl.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/extra/TagRclx.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/extra/TagCjlx.hbm.xml" />
+		
+		<mapping resource="com/insigma/siis/local/business/entity/Js2Yntp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/TpbAtt.hbm.xml"/>
+					
+		<!-- 领导班子  -->		
+		<mapping resource="com/insigma/siis/local/business/entity/WholeStatus.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/ModelConfig.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/NaturalStructure.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/ComprehensiveSet.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/Structure.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/DutyNum.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/PositionExplain.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/KnowField.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/TroupeScore.hbm.xml" />
+		
+		<!-- 日志联系记录  -->	
+		<mapping resource="com/insigma/siis/local/business/entity/A01Oplog.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/extra/ExtraTagsOplog.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/A36Oplog.hbm.xml" />
+		
+		<!-- 征求纪委意见 -->
+		<mapping resource="com/insigma/siis/local/business/entity/JwOpinion.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/JwBatch.hbm.xml" />
+		
+		<!--PAD上会材料 -->
+		<mapping resource="com/insigma/siis/local/business/entity/HY01.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/HY02.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/HY03.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/HY04.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/HY05.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/HY06.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/HY07.hbm.xml" />
+        
+        <!--简历相似度百分比  -->
+        <mapping resource="com/insigma/siis/local/business/entity/Percentage.hbm.xml" />
+        
+        <!-- 分析研判 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Fxyp.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/FxypSJFA.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/entity/Cxtj.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/entity/HzJs2Yntp.hbm.xml" />
+        
+        <!--杭州 标签  -->
+        <mapping resource="com/insigma/siis/local/business/entity/AttrLrzw.hbm.xml" />
+        
+        <!-- 组织史 -->  
+        <mapping resource="com/insigma/siis/local/business/hzentity/B01Zzs.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/hzentity/B01ZzsLd.hbm.xml" />
+        
+        <!--省功能  标签  -->
+        <mapping resource="com/insigma/siis/local/business/slabel/A0193Tag.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/slabel/A0194Tag.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/slabel/A0195Tag.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/slabel/A0196Tag.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/slabel/ExtraTags.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/slabel/TagCjlx.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/slabel/TagDazsbfj.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/slabel/TagKcclfj2.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/slabel/TagNdkhdjbfj.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/slabel/TagRclx.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/slabel/TagSbjysjl.hbm.xml" />
+        
+        <!-- 资格联审 -->
+        <mapping resource="com/insigma/siis/local/business/audit/AuditBatch.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/audit/AuditPerson.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/audit/PersonAuditInfo.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/audit/AuditPersonFamily.hbm.xml" />
+        
+        
+        <!-- 全程纪实 -->
+        <mapping resource="com/insigma/siis/local/business/entity/a00hz/HzTphjZw.hbm.xml" />
+        
+        <mapping resource="com/insigma/siis/local/business/entity/Wpgz.hbm.xml" />
+        
+        
+        <mapping resource="com/insigma/siis/local/business/entity/A17.hbm.xml" />
+        
+        <!-- 模拟调配新班子 -->
+        <mapping resource="com/insigma/siis/local/business/entity/a00hz/HzMntpOrgQt.hbm.xml" />
+        <mapping resource="com/insigma/siis/local/business/entity/a00hz/HzMntpOrgQxs.hbm.xml" />
+        
+        <!-- 教育相关 -->
+        <mapping resource="com/insigma/siis/local/business/entity/EduXrdx.hbm.xml" />
+        
+         <!-- 专业类型 评价相关 -->
+        <mapping resource="com/insigma/siis/local/business/entity/PJManagement.hbm.xml" />
+        
+         <!-- 使用建议 -->
+        <mapping resource="com/insigma/siis/local/business/slabel/A1401LTags.hbm.xml" />
+        
+    </session-factory>
+</hibernate-configuration>

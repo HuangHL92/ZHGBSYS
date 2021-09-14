@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:03:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.Js09" table="JS09" >
+        <comment>依法办理任免表</comment>
+        <id name="js0100" type="string">
+            <column name="JS0100" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="dc001" type="string">
+            <column name="DC001" length="64" >
+                <comment>分类ID</comment>
+            </column>
+        </property>
+        <property name="rbId" type="string">
+            <column name="RB_ID" length="64" >
+                <comment>任免批次ID</comment>
+            </column>
+        </property>
+        <property name="js0902" type="string">
+            <column name="JS0902" length="5">
+                <comment>应到人数</comment>
+            </column>
+        </property>
+        <property name="js0903" type="string">
+            <column name="JS0903" length="5">
+                <comment>实到人数</comment>
+            </column>
+        </property>
+        <property name="js0904" type="string">
+            <column name="JS0904" length="5">
+                <comment>赞成票</comment>
+            </column>
+        </property>
+        <property name="js0905" type="string">
+            <column name="JS0905" length="5">
+                <comment>反对票</comment>
+            </column>
+        </property>
+        <property name="js0906" type="string">
+            <column name="JS0906" length="5">
+                <comment>弃权票</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

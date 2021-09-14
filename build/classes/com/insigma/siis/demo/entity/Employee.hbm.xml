@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Wed Dec 19 16:04:11 CST 2007                         -->
+<hibernate-mapping package="com.insigma.siis.demo.entity">
+
+    <class name="Employee" table="EMPLOYEE" lazy="false">
+        <id name="aac001" column="AAC001" type="java.lang.String">
+            <generator class="assigned"/>
+        </id>
+ 
+        <property name="aac002" column="AAC002" type="java.lang.String" />
+        <property name="aac003" column="AAC003" type="java.lang.String" />
+        <property name="aac004" column="AAC004" type="java.lang.String" />
+        <property name="aac006" column="AAC006" type="java.util.Date" />
+    </class>
+    
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A37"
+    lazy="false"
+    table="A37">
+    <id column="A0000" name="a0000" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="A3701" length="120" name="a3701" type="java.lang.String" />
+    <property column="A3707A" length="20" name="a3707a" type="java.lang.String" />
+    <property column="A3707B" length="20" name="a3707b" type="java.lang.String" />
+    <property column="A3707C" length="20" name="a3707c" type="java.lang.String" />
+    <property column="A3707E" length="20" name="a3707e" type="java.lang.String" />
+    <property column="A3708" length="60" name="a3708" type="java.lang.String" />
+    <property column="A3711" length="120" name="a3711" type="java.lang.String" />
+    <property column="A3714" length="6" name="a3714" type="java.lang.String" />
+    <property column="UPDATED" length="1" name="updated" type="java.lang.String" />
+    <property column="A3721" length="120" name="a3721" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

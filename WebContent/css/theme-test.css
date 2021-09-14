@@ -1,0 +1,77 @@
+body{
+margin:0px; padding:0px;background-color: #FFFFFF; 
+ font-size:12px; font-family:Verdana, Arial, Helvetica, sans-serif,宋体;
+}
+#headerMenu a:link {
+	color:#FFF;
+	text-decoration: none;
+}
+#headerMenu a:visited {
+	text-decoration: none;
+	color:#FFF;
+}
+#headerMenu a:hover {
+	text-decoration: none;
+	color: #FF0000;
+}
+#headerMenu a:active {
+	text-decoration: none;
+}
+/*这里是全局CSS删除了会影响整页面*/
+#header{
+ margin:0px auto;width:1024px; height:auto;
+}
+#header_top{ 
+  float:left;width:1023px; height:34px;
+}
+#header_nav{ 
+  float:left;width:1023px; height:33px; 
+}
+#header_logo{ 
+  float:left;width:307px; height:33px; background:url(../images/index_02.jpg) no-repeat;
+}
+#header_bady{ 
+  float:left;/*width:716px;*/ height:33px; background:url(../images/home_03.jpg) repeat-x;
+}
+#bottom{
+	width:100%; height:30px;background:url(../images/home_03.jpg) repeat-x;
+}
+#bottom table{
+ font-size:12px; color: red;  margin:0px; padding:0px;
+}
+#header table{
+ font-size:12px; color:#FFF;  margin:0px; padding:0px;
+}
+.td{
+ padding:3px 0px 2px 0px; 
+}
+/*核心中间部分内容*/
+#center{
+ margin:0px auto;width:1003px; height:auto;
+}
+#center_left{
+ float:left;width:216px; height:501px; 
+}
+#center_right{
+ float:right;width:786px; height:501px; 
+}
+#center_right_top{
+ float:right;width:786px; height:27px; 
+}
+#center_right_xia{
+ float:right;width:787px; background:url(images/index_07.jpg) no-repeat; height:474px;
+}
+/*核心底部分内容*/
+#foot{
+ margin:0px auto;width:1003px;  
+}
+#foot_pic{ 
+ width:1003px; height:26px; background:url(images/foot.gif) repeat-x;
+ }
+#foot_font { 
+  font-size:12px; color:#05124d; text-align:center; margin:5px;
+}
+.iconwelcome{
+		background-image:url("../images/welcome.gif") !important;
+	
+}

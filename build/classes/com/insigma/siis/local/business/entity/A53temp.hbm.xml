@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A53temp"
+    lazy="false"
+    table="A53_TEMP">
+  	<id column="A5300" length="60" name="a5300" type="java.lang.String" >
+  		<generator class="assigned"/>
+  	</id>
+    <property column="A0000" length="60" name="a0000" type="java.lang.String" />
+    <property column="A5304" length="400" name="a5304" type="java.lang.String" />
+    <property column="A5315" length="400" name="a5315" type="java.lang.String" />
+    <property column="A5317" length="400" name="a5317" type="java.lang.String" />
+    <property column="A5319" length="400" name="a5319" type="java.lang.String" />
+    <property column="A5321" length="8" name="a5321" type="java.lang.String" />
+    <property column="A5323" length="8" name="a5323" type="java.lang.String" />
+    <property column="A5327" length="36" name="a5327" type="java.lang.String" />
+    <property column="A5399" length="60" name="a5399" type="java.lang.String" />
+    <property column="ERROR_INFO" length="200" name="errorinfo" type="java.lang.String" />
+    <property column="IS_QUALIFIED" length="1" name="isqualified" type="java.lang.String" />
+    <property column="UPDATED" length="1" name="updated" type="java.lang.String" />
+     <property column="IMPRECORDID" length="32" name="imprecordid" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

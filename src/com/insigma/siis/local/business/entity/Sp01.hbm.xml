@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Sp01"
+    lazy="false"
+    table="SP01">
+	<id column="SP0100" name="sp0100" type="java.lang.String">
+	  <generator class="assigned" />
+	</id>
+	<property column="SP0102" length="40" name="sp0102" type="java.lang.String" />
+	<property column="SP0103" length="3" name="sp0103" type="java.lang.String" />
+	<property column="A0000" length="64" name="a0000" type="java.lang.String" />
+	<property column="SP0104" length="20" name="sp0104" type="java.lang.String" />
+	<property column="SP0105" length="100" name="sp0105" type="java.lang.String" />
+	<property column="SP0106" length="200" name="sp0106" type="java.lang.String" />
+	<property column="SP0107" length="200" name="sp0107" type="java.lang.String" />
+	<property column="SP0108" length="50" name="sp0108" type="java.lang.String" />
+	<property column="SP0109" length="500" name="sp0109" type="java.lang.String" />
+	<property column="SP0110" length="500" name="sp0110" type="java.lang.String" />
+	<property column="SP0111" length="100" name="sp0111" type="java.lang.String" />
+	<property column="SP0112" length="100" name="sp0112" type="java.lang.String" />
+	<property column="SP0113" length="100" name="sp0113" type="java.lang.String" />
+	<property column="SP0114" length="3" name="sp0114" type="java.lang.String" />
+	<property column="SP0115" length="64" name="sp0115" type="java.lang.String" />
+	<property column="SP0116" length="7" name="sp0116" type="java.util.Date" />
+	<property column="SP0117" length="64" name="sp0117" type="java.lang.String" />
+	<property column="SP0130" length="200" name="sp0130" type="java.lang.String" />
+	<property column="SP0131" length="40" name="sp0131" type="java.lang.String" />
+	<property column="SP0132" length="200" name="sp0132" type="java.lang.String" />
+	<property column="SP0133" length="100" name="sp0133" type="java.lang.String" />
+	<property column="SP0134" length="3" name="sp0134" type="java.lang.String" />
+	<property column="SP0107B" length="200" name="sp0107b" type="java.lang.String" />
+	<property column="SPP00" length="64" name="spp00" type="java.lang.String" />
+	<property column="SP0118" length="5" name="sp0118" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

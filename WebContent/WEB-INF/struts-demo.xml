@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+  <form-bean name="perInfoForm" type="test.PerInfoForm" />
+  <form-bean name="perInsuInfoForm" type="test.PerInsuInfoForm" />
+  <form-bean name="TestSubmitActionForm" type="com.epsoft.siisapp.cp3.demo.ui.taglib.TestSubmitActionForm">
+  </form-bean>
+  </form-beans>
+<global-forwards>
+    <forward contextRelative="true" name="exportlogdata" path="/downloadServlet?type=txt&amp;name=logData" />
+    <forward contextRelative="true" name="validate" path="/js/validate.jsp" />
+    <forward contextRelative="true" name="globals" path="/js/Globals.jsp" />
+    <forward contextRelative="true" name="css" path="/css/style.jsp" />
+    <forward contextRelative="true" name="leaftree" path="/js/leafTree.jsp"/>
+    <forward contextRelative="true" name="treecss" path="/css/tree.jsp" />
+    <forward contextRelative="true" name="xtree" path="/js/xtree.jsp" />
+    <forward contextRelative="true" name="xmlextras" path="/js/xmlextras.jsp" />
+    <forward contextRelative="true" name="xloadtree" path="/js/xloadtree.jsp" />
+    <forward contextRelative="true" name="maillist" path="/js/mailList.jsp" />
+
+    <forward contextRelative="true" name="leaf_Checkbox" path="/js/leaf_Checkbox.jsp"/>
+    <forward contextRelative="true" name="leaf_Misc" path="/js/leaf_Misc.jsp"/>
+    <forward contextRelative="true" name="leaf_TreeElement" path="/js/leafcheckboxtreeitem.js"/>
+    <forward contextRelative="true" name="leaf_Tree" path="/js/leafxloadtreewithcheckbox.js"/>
+    <forward contextRelative="true" name="groupTree" path="/js/GroupTree.jsp"/>
+
+    <forward contextRelative="true" name="quickSelectBase" path="/js/BaseObj.jsp"/>
+    <forward contextRelative="true" name="quickSelectMgr" path="/js/EAPObjsMgr.jsp"/>
+    <forward contextRelative="true" name="select" path="/js/SelectObj.jsp"/>
+    <forward contextRelative="true" name="quickSelect" path="/js/QuickSelectObj.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action  forward="/right/RightTree.jsp" path="/rightTree" />
+    <action forward="/function/FunctionTree.jsp" path="/functionTree" />
+    <action forward="/right/cookbook.jsp" path="/authcookbook"/>
+    <action forward="/codelist/AddCodeList.jsp" path="/addCodeList" />
+    <action forward="/function/AddFunction.jsp" path="/addFunction" />
+    <action forward="/function/Upload.jsp" path="/upload" />
+    <action forward="/parameter/AddParameter.jsp" path="/addParameter" />
+    <action forward="/group/AddGroup.jsp" path="/addGroup" />
+
+    </action-mappings>
+  <controller>
+    <set-property property="nocache" value="true"/>
+  </controller>
+  <message-resources null="false" parameter="ApplicationResources" />
+</struts-config>

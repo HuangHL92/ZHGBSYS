@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-20 10:03:34 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.TpbAtt" table="TPB_ATT">
+        <comment>纪实附件表</comment>
+        <id name="jsa00" type="string">
+            <column name="JSA00" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="js0100" type="string">
+            <column name="JS0100" length="64" not-null="true">
+                <comment>拟任免人选ID</comment>
+            </column>
+        </property>
+        <property name="rbId" type="string">
+            <column name="RB_ID" length="64" >
+                <comment>任免批次ID</comment>
+            </column>
+        </property>
+        <property name="jsa02" type="string">
+            <column name="JSA02" length="64">
+                <comment>环节ID</comment>
+            </column>
+        </property>
+        <property name="jsa03" type="string">
+            <column name="JSA03" length="64">
+                <comment>环节信息项ID</comment>
+            </column>
+        </property>
+        <property name="jsa04" type="string">
+            <column name="JSA04" length="200">
+                <comment>附件名称</comment>
+            </column>
+        </property>
+        <property name="jsa05" type="string">
+            <column name="JSA05" length="100">
+                <comment>上传人</comment>
+            </column>
+        </property>
+        <property name="jsa06" type="string">
+            <column name="JSA06" length="8">
+                <comment>上传时间</comment>
+            </column>
+        </property>
+        <property name="jsa07" type="string">
+            <column name="JSA07" length="200">
+                <comment>附件地址</comment>
+            </column>
+        </property>
+         <property name="jsa08" type="string">
+            <column name="JSA08" length="30">
+                <comment>文件大小</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

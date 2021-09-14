@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A14"
+    lazy="false"
+    table="A14">
+    <id column="A1400" name="a1400" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="A0000" length="60" name="a0000" type="java.lang.String" />
+    <property column="A1404A" length="40" name="a1404a" type="java.lang.String" />
+    <property column="A1404B" length="8" name="a1404b" type="java.lang.String" />
+    <property column="A1407" length="8" name="a1407" type="java.lang.String" />
+    <property column="A1411A" length="60" name="a1411a" type="java.lang.String" />
+    <property column="A1414" length="8" name="a1414" type="java.lang.String" />
+    <property column="A1415" length="8" name="a1415" type="java.lang.String" />
+    <property column="A1424" length="8" name="a1424" type="java.lang.String" />
+    <property column="A1428" length="8" name="a1428" type="java.lang.String" />
+    <property column="SORTID" length="8" name="sortid" type="java.lang.Long" />
+    <property column="UPDATED" length="1" name="updated" type="java.lang.String" />
+    <property column="A1423" length="8" name="a1423" type="java.lang.String" />
+    <property column="A1499" length="2000" name="a1499" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.audit.AuditBatch"
+    lazy="false"
+    table="AUDIT_BATCH">
+	 <id name="oid" type="string">
+            <column length="64" name="OID"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="auditBatchNo" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="AUDIT_BATCH_NO">
+                <comment>联审批次号</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="auditDept" optimistic-lock="true" type="string" unique="false">
+            <column name="AUDIT_DEPT" precision="22" scale="0">
+                <comment>提交处室</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="deptSubTime" optimistic-lock="true" type="date" unique="false">
+            <column length="7" name="DEPT_SUB_TIME">
+                <comment>处室提交时间</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="auditSubTime" optimistic-lock="true" type="date" unique="false">
+            <column length="7" name="AUDIT_SUB_TIME">
+                <comment>联审提交时间</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="feedbackTime" optimistic-lock="true" type="date" unique="false">
+            <column length="7" name="FEEDBACK_TIME">
+                <comment>反馈时间</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="batchStatus" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="BATCH_STATUS">
+                <comment>批次状态</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="createBy" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="CREATE_BY">
+                <comment>创建人</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="createTime" optimistic-lock="true" type="date" unique="false">
+            <column length="7" name="CREATE_TIME">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="batchType" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="BATCH_TYPE">
+                <comment>联审类型</comment>
+            </column>
+        </property>
+  </class>
+</hibernate-mapping>

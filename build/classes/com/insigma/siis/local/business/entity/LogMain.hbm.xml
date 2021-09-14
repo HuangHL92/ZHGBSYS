@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.LogMain"
+    lazy="false"
+    table="LOG_MAIN">
+    <id column="SYSTEM_LOG_ID" name="systemlogid" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="USERLOG" length="50" name="userlog" type="java.lang.String" />
+    <property column="SYSTEM_OPERATE_DATE" length="7" name="systemoperatedate" type="java.util.Date" />
+    <property column="EVENTTYPE" length="100" name="eventtype" type="java.lang.String" />
+    <property column="EVENTOBJECT" length="50" name="eventobject" type="java.lang.String" />
+    <property column="OBJECTID" length="200" name="objectid" type="java.lang.String" />
+    <property column="OBJECTNAME" length="50" name="objectname" type="java.lang.String" />
+    <property column="OPERATE_COMMENTS" length="200" name="operatecomments" type="java.lang.String" />
+    <property column="IP" length="64" name="ip" type="java.lang.String" />
+    <property column="TABLE_NAME" length="200" name="tableName" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

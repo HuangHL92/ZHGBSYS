@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A01temp"
+    lazy="false"
+    table="A01_TEMP">
+    <id column="A0000" name="a0000" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="A0101" length="36" name="a0101" type="java.lang.String" />
+    <property column="A0102" length="2500" name="a0102" type="java.lang.String" />
+    <property column="A0104" length="2" name="a0104" type="java.lang.String" />
+    <property column="A0104A" length="60" name="a0104a" type="java.lang.String" />
+    <property column="A0107" length="8" name="a0107" type="java.lang.String" />
+    <property column="A0111" length="8" name="a0111" type="java.lang.String" />
+    <property column="A0111A" length="200" name="a0111a" type="java.lang.String" />
+    <property column="A0114" length="8" name="a0114" type="java.lang.String" />
+    <property column="A0114A" length="200" name="a0114a" type="java.lang.String" />
+    <property column="A0117" length="2" name="a0117" type="java.lang.String" />
+    <property column="A0117A" length="60" name="a0117a" type="java.lang.String" />
+    <property column="A0120" length="8" name="a0120" type="java.lang.String" />
+    <property column="A0121" length="8" name="a0121" type="java.lang.String" />
+    <property column="A0128" length="120" name="a0128" type="java.lang.String" />
+    <property column="A0128B" length="120" name="a0128b" type="java.lang.String" />
+    <property column="A0134" length="8" name="a0134" type="java.lang.String" />
+    <property column="A0140" length="100" name="a0140" type="java.lang.String" />
+    <property column="A0141" length="8" name="a0141" type="java.lang.String" />
+    <property column="A0141D" length="100" name="a0141d" type="java.lang.String" />
+    <property column="A0144" length="8" name="a0144" type="java.lang.String" />
+    <property column="A0144B" length="8" name="a0144b" type="java.lang.String" />
+    <property column="A0144C" length="8" name="a0144c" type="java.lang.String" />
+    <property column="A0148" length="20" name="a0148" type="java.lang.String" />
+    <property column="A0148C" length="8" name="a0148c" type="java.lang.String" />
+    <property column="A0149" length="80" name="a0149" type="java.lang.String" />
+    <property column="A0151" length="1" name="a0151" type="java.lang.String" />
+    <property column="A0153" length="1" name="a0153" type="java.lang.String" />
+    <property column="A0155" length="7" name="a0155" type="com.insigma.siis.local.pagemodel.publicServantManage.Date2String" />
+    <property column="A0157" length="120" name="a0157" type="java.lang.String" />
+    <property column="A0158" length="5" name="a0158" type="java.lang.String" />
+    <property column="A0159" length="50" name="a0159" type="java.lang.String" />
+    <property column="A015A" length="2" name="a015a" type="java.lang.String" />
+    <property column="A0160" length="8" name="a0160" type="java.lang.String" />
+    <property column="A0161" length="500" name="a0161" type="java.lang.String" />
+    <property column="A0162" length="8" name="a0162" type="java.lang.String" />
+    <property column="A0163" length="2" name="a0163" type="java.lang.String" />
+    <property column="A0165" length="8" name="a0165" type="java.lang.String" />
+    <property column="A0180" length="500" name="a0180" type="java.lang.String" />
+    <property column="A0184" length="18" name="a0184" type="java.lang.String" />
+    <property column="A0187A" length="100" name="a0187a" type="java.lang.String" />
+    <property column="A0191" length="1" name="a0191" type="java.lang.String" />
+    <property column="A0192" length="2000" name="a0192" type="java.lang.String" />
+    <property column="A0192A" length="2000" name="a0192a" type="java.lang.String" />
+    <property column="A0192B" length="2000" name="a0192b" type="java.lang.String" />
+    <property column="A0192D" length="80" name="a0192d" type="java.lang.String" />
+    <property column="A0193" length="5" name="a0193" type="java.lang.String" />
+    <property column="A0194" length="8" name="a0194" type="java.lang.Long" />
+    <property column="A0195" length="68" name="a0195" type="java.lang.String" />
+    <property column="A0196" length="120" name="a0196" type="java.lang.String" />
+    <property column="A0198" length="200" name="a0198" type="java.lang.String" />
+    <property column="A0199" length="1" name="a0199" type="java.lang.String" />
+    <property column="A01K01" length="1" name="a01k01" type="java.lang.String" />
+    <property column="A01K02" length="8" name="a01k02" type="java.lang.String" />
+    <property column="A14Z101" length="2000" name="a14z101" type="java.lang.String" />
+    <property column="A15Z101" length="2000" name="a15z101" type="java.lang.String" />
+    <property column="A1701" length="4000" name="a1701" type="java.lang.String" />
+    <property column="A3921" length="8" name="a3921" type="java.lang.String" />
+    <property column="A3927" length="8" name="a3927" type="java.lang.String" />
+    <property column="AGE" length="3" name="age" type="java.lang.Long" />
+    <property column="CBDW" length="100" name="cbdw" type="java.lang.String" />
+    <property column="ERROR_INFO" length="200" name="errorinfo" type="java.lang.String" />
+    <property column="IMPRECORDID" length="32" name="imprecordid" type="java.lang.String" />
+    <property column="ISVALID" length="20" name="isvalid" type="java.lang.String" />
+    <property column="IS_QUALIFIED" length="1" name="isqualified" type="java.lang.String" />
+    <property column="JSNLSJ" length="7" name="jsnlsj" type="java.sql.Date" />
+    <property column="NL" length="3" name="nl" type="java.lang.String" />
+    <property column="NMZW" length="100" name="nmzw" type="java.lang.String" />
+    <property column="NRZW" length="100" name="nrzw" type="java.lang.String" />
+    <property column="QRZXL" length="60" name="qrzxl" type="java.lang.String" />
+    <property column="QRZXLXX" length="120" name="qrzxlxx" type="java.lang.String" />
+    <property column="QRZXW" length="60" name="qrzxw" type="java.lang.String" />
+    <property column="QRZXWXX" length="120" name="qrzxwxx" type="java.lang.String" />
+    <property column="RESULTSORTID" length="4" name="resultsortid" type="java.lang.Long" />
+    <property column="RMLY" length="100" name="rmly" type="java.lang.String" />
+    <property column="SORTID" length="16" name="sortid" type="java.lang.Long" />
+    <property column="STATUS" length="1" name="status" type="java.lang.String" />
+    <property column="TBR" length="36" name="tbr" type="java.lang.String" />
+    <property column="TBRJG" length="80" name="tbrjg" type="java.lang.String" />
+    <property column="TBSJ" length="7" name="tbsj" type="com.insigma.siis.local.pagemodel.publicServantManage.Data2Long" />
+    <property column="USERLOG" length="20" name="userlog" type="java.lang.String" />
+    <property column="XGR" length="36" name="xgr" type="java.lang.String" />
+    <property column="XGSJ" length="7" name="xgsj" type="com.insigma.siis.local.pagemodel.publicServantManage.Data2Long" />
+    <property column="ZZXL" length="60" name="zzxl" type="java.lang.String" />
+    <property column="ZZXLXX" length="120" name="zzxlxx" type="java.lang.String" />
+    <property column="ZZXW" length="60" name="zzxw" type="java.lang.String" />
+    <property column="ZZXWXX" length="120" name="zzxwxx" type="java.lang.String" />
+    <property column="A0122" length="8" name="A0122" type="java.lang.String" />
+    <property column="A0192F" length="200" name="a0192f" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.HJXJ"
+    lazy="false"
+    table="HJXJ">
+	<id column="HJXJID" name="hjxjid" length="120" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+	<property column="XJQY" length="100" name="xjqy" type="java.lang.String" />
+	<property column="YJWC" length="20" name="yjwc" type="java.lang.String" />
+	<property column="EJWC" length="20" name="ejwc" type="java.lang.String" />
+	<property column="SAJWC" length="20" name="sajwc" type="java.lang.String" />
+	<property column="SIJWC" length="20" name="sijwc" type="java.lang.String" />
+	<property column="WJWC" length="20" name="wjwc" type="java.lang.String" />
+	<property column="JD" length="20" name="jd" type="java.lang.String" />
+	<property column="CZ" length="10" name="cz" type="java.lang.String" />
+	<property column="QUXZ" length="2" name="quxz" type="java.lang.String" />
+	<property column="CREATEDON" length="7" name="createdon" type="java.util.Date" />
+  </class>
+</hibernate-mapping>
+

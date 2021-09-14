@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+		<!-- wgw edit -->
+		<form-bean name="templeteForm"
+			type="com.lbs.cp3.templete.rp.mytemplete.TempleteForm" />
+		<form-bean name="dppdTestForm"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestForm" />
+		<form-bean name="rollogDemoForm"
+			type="com.lbs.cp3.samples.rolLog.rp.RollogDemoForm" />
+		<form-bean name="examForm"
+			type="com.lbs.cp3.samples.exam.rp.ExamForm" />
+		<form-bean name="areaTreeForm"
+			type="com.lbs.cp3.samples.areatree.rp.AreaTreeForm" />
+        
+    <!-- wgw edit -->
+    <form-bean name="editGridForm" type="com.lbs.cp3.samples.exam.rp.EditGridForm" />
+    <form-bean name="editGridXForm" type="com.lbs.cp3.samples.exam.rp.EditGridForm" />
+    
+    <!-- demo -->
+    <form-bean name="employeeForm" type="com.insigma.siis.demo.EmployeeForm" />
+    <form-bean name="insureRegForm" type="com.insigma.siis.local.module.organizationmgmt.insurereg.InsureRegForm"></form-bean>
+    <form-bean name="findOrgInfoRtnForm" type="com.insigma.siis.local.module.organizationmgmt.archivealter.FindOrgInfoRtnForm"></form-bean>
+	<form-bean name="fundTransInRegForm" type="com.insigma.siis.local.module.financemgmt.fundtransinreg.FundTransInRegForm"></form-bean>
+	</form-beans>
+	
+	
+	
+	
+	<global-forwards></global-forwards>
+	<action-mappings>
+		<action path="/test/testAction" parameter="method"
+			scope="request" type="test.TestAction">
+			<forward name="query" path="/test/test.jsp"></forward>
+			<forward name="employeeList"
+				path="/test/employeeList.jsp">
+			</forward>
+		</action>
+		<!-- gf 培训练习样例-->
+		<action path="/samples/exam"
+			forward="/test/exam/input.jsp">
+		</action>
+		<action name="examForm" parameter="method"
+			path="/samples/examAction" scope="request"
+			type="com.lbs.cp3.samples.exam.rp.ExamAction">
+			<forward name="add" path="/test/exam/input.jsp"></forward>
+			<forward name="query" path="/test/exam/query.jsp"></forward>
+		</action>
+    <!-- wgw edit -->
+    <action path="/editgrid" forward="/test/exam/grid/editgrid.jsp"></action>
+    <action path="/refreshgrid" forward="/test/exam/grid/refreshgrid.jsp"></action>
+    <action name="editGridForm" parameter="method" path="/editGridAction" scope="request" type="com.lbs.cp3.samples.exam.rp.EditGridAction" >
+       <forward name="list" path="/test/exam/grid/editgrid.jsp" />
+       <forward name="batchquery" path="/test/exam/grid/batchgrid.jsp" />
+       <forward name="queryall" path="/test/exam/grid/queryallgrid.jsp" />
+       <forward name="normalquery" path="/test/exam/grid/normalgrid.jsp"/>
+       <forward name="nonpagequery" path="/test/exam/grid/nonpagegrid.jsp"/>
+       <forward name="sumgrid" path="/test/exam/grid/sumgrid.jsp"/>
+    </action>
+    <action path="/multigrid" forward="/test/exam/grid/multigrid.jsp"></action>
+    <action path="/normalquery" forward="/test/exam/grid/normalgrid.jsp"></action>
+    <action path="/nonpagequery" forward="/test/exam/grid/nonpagegrid.jsp"></action>
+    <action path="/sumgrid" forward="/test/exam/grid/sumgrid.jsp"></action>
+    <action name="editGridXForm" parameter="method" path="/editGridXAction" scope="request" type="com.lbs.cp3.samples.exam.rp.EditGridAction" >
+       <forward name="list" path="/test/exam/grid/editgrid.jsp" />
+    </action>
+    <action path="/batchgrid" forward="/test/exam/grid/batchgrid.jsp"></action>
+    <action path="/queryallgrid" forward="/test/exam/grid/queryallgrid.jsp"></action>
+		<!-- wgw edit 页面样例模板-->
+		<action path="/samples/templete"
+			forward="/samples/codetemplete/templete.jsp">
+		</action>
+		<action name="templeteForm" parameter="method"
+			path="/samples/templeteAction" scope="request"
+			type="com.lbs.cp3.templete.rp.mytemplete.TempleteAction">
+			<forward name="list"
+				path="/samples/codetemplete/templete.jsp" />
+		</action>
+		<!-- chzm edit 数据权限样例-->
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/dppdtestAction" scope="request"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestAction">
+			<forward name="test"
+				path="/samples/dppdDemo/dppdtest.jsp">
+			</forward>
+		</action>
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/dppdtestallAction" scope="request"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestAllAction">
+			<forward name="test"
+				path="/samples/dppdDemo/dppdtest.jsp">
+			</forward>
+		</action>
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/dppdtestRAction" scope="request"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestAction">
+			<forward name="test"
+				path="/samples/dppdDemo/dppdtestRead.jsp">
+			</forward>
+		</action>
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/dppdtestreadAction" scope="request"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestReadAction">
+			<forward name="test"
+				path="/samples/dppdDemo/dppdtestRead.jsp">
+			</forward>
+		</action>
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/dppdtestWAction" scope="request"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestAction">
+			<forward name="test"
+				path="/samples/dppdDemo/dppdtestRW.jsp">
+			</forward>
+		</action>
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/dppdtestRWAction" scope="request"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestRWAction">
+			<forward name="test"
+				path="/samples/dppdDemo/dppdtestRW.jsp">
+			</forward>
+		</action>
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/dppdtestFAction" scope="request"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestAction">
+			<forward name="test"
+				path="/samples/dppdDemo/dppdtestfix.jsp">
+			</forward>
+		</action>
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/dppdtestfixAction" scope="request"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestFixAction">
+			<forward name="test"
+				path="/samples/dppdDemo/dppdtestfix.jsp">
+			</forward>
+		</action>
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/dppdtestFRAction" scope="request"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestAction">
+			<forward name="test"
+				path="/samples/dppdDemo/dppdtestfixRead.jsp">
+			</forward>
+		</action>
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/dppdtestfixreadAction" scope="request"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestFixReadAction">
+			<forward name="test"
+				path="/samples/dppdDemo/dppdtestfixRead.jsp">
+			</forward>
+		</action>
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/dppdtestFRWAction" scope="request"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestAction">
+			<forward name="test"
+				path="/samples/dppdDemo/dppdtestfixRW.jsp">
+			</forward>
+		</action>
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/dppdtestfixRWAction" scope="request"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestFixRWAction">
+			<forward name="test"
+				path="/samples/dppdDemo/dppdtestfixRW.jsp">
+			</forward>
+		</action>
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/dppdtestQueryFlagAction" scope="request"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestAction">
+			<forward name="test"
+				path="/samples/dppdDemo/dppdtestRWFlag.jsp">
+			</forward>
+		</action>
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/dppdtestRWFlagAction" scope="request"
+			type="com.lbs.cp3.samples.dppdtest.rp.DPPDTestRWFlagAction">
+			<forward name="test"
+				path="/samples/dppdDemo/dppdtestRWFlag.jsp">
+			</forward>
+		</action>
+		<!-- gf treeview样例 请求地区树-->
+		<action name="dppdTestForm" parameter="method"
+			path="/samples/treeCallBackAction" scope="request"
+			type="com.lbs.cp3.samples.areatree.rp.TreeCallBackAction">
+		</action>
+		<!-- gf treeview样例 输入地区，后台得到地区代码验证示例-->
+		<action name="areaTreeForm" parameter="method"
+			path="/samples/treeInputAction" scope="request"
+			type="com.lbs.cp3.samples.areatree.rp.TreeInputAction">
+			<forward name="af"
+				path="/samples/areaTreeDemo/treeInput.jsp">
+			</forward>
+		</action>
+		<!-- gf treeview样例 回显样例-->
+		<action name="areaTreeForm" parameter="method"
+			path="/samples/treeBackAction" scope="request"
+			type="com.lbs.cp3.samples.areatree.rp.TreeBackAction">
+			<forward name="back"
+				path="/samples/areaTreeDemo/treeBack.jsp">
+			</forward>
+		</action>
+		<!-- gf edit tab样例-->
+		<action path="/samples/tabDemo"
+			forward="/samples/tabDemo/tabstripDemo.jsp">
+		</action>
+		<!-- gf edit wizard样例-->
+		<action path="/samples/ajaxDemo"
+			forward="/samples/AjaxDemo/ajaxtest.jsp">
+		</action>
+		<action path="/samples/wizardDemo"
+			forward="/samples/WizardDemo/wizardTest.jsp">
+		</action>
+		<!-- gf edit ajax样例-->
+		<action path="/samples/testAction" parameter="method"
+			scope="request" type="com.lbs.cp3.samples.ajaxDemo.rp.TestAction">
+			<forward name="query" path="/samples/test.jsp"></forward>
+			<forward name="employeeList"
+				path="/samples/employeeList.jsp">
+			</forward>
+		</action>
+		<!-- gf 业务回退样例-->
+		<action name="rollogDemoForm" parameter="method"
+			path="/samples/rollogDemoQueryAction" scope="request"
+			type="com.lbs.cp3.samples.rolLog.rp.RollogDemoQueryAction">
+			<forward name="list"
+				path="/samples/BizDigestDemo/Rollog.jsp">
+			</forward>
+		</action>
+		<action name="rollogDemoForm" parameter="method"
+			path="/samples/rollogDemoAction" scope="request"
+			type="com.lbs.cp3.samples.rolLog.rp.RollogDemoAction">
+			<forward name="batchquery"
+				path="/samples/BizDigestDemo/BatchUpdate.jsp" />
+		</action>
+		
+		<!-- demo -->
+		<action path="/pages/demo/openEmployeeModifyAction" forward="/pages/demo/EmployeeModify.jsp"></action>
+		<action name="employeeForm" parameter="method"
+			path="/pages/demo/employeeModifyAction" scope="request"
+			type="com.insigma.siis.demo.EmployeeModifyAction">
+			<forward name="ok" path="/pages/demo/EmployeeModify.jsp" />
+		</action>
+		<!-- 单位参保 -->
+		<action path="/pages/organizationmgmt/insurereg/openInsureRegAction" forward="/pages/organizationmgmt/insurereg/InsureReg.jsp"></action>
+		<action name="insureRegForm" parameter="method"
+			path="/pages/organizationmgmt/insurereg/insureRegAction" scope="request"
+			type="com.insigma.siis.local.module.organizationmgmt.insurereg.InsureRegAction">
+			    <forward name="ok" path="/pages/organizationmgmt/insurereg/InsureReg.jsp" />
+		</action>	
+		<!-- 单位基本信息修改 -->
+		<action path="/pages/organizationmgmt/archivealter/openArchiveAlterAction" forward="/pages/organizationmgmt/archivealter/ArchiveAlter.jsp"></action>
+		<action name="findOrgInfoRtnForm" parameter="method"
+			path="/pages/organizationmgmt/archivealter/archiveAlterAction" scope="request"
+			type="com.insigma.siis.local.module.organizationmgmt.archivealter.ArchiveAlterAction">
+			    <forward name="ok" path="/pages/organizationmgmt/archivealter/ArchiveAlter.jsp" />
+		</action>
+		
+		<!-- 异地基金转入登记 -->
+		<action path="/pages/financemgmt/fundtransinreg/openFundTransInRegAction" forward="/pages/financemgmt/fundtransinreg/FundTransInReg.jsp"></action>
+		<action name="fundTransInRegForm" parameter="method"
+			path="/pages/financemgmt/fundtransinreg/fundTransInRegAction" scope="request"
+			type="com.insigma.siis.local.module.financemgmt.fundtransinreg.FundTransInRegAction">
+			    <forward name="ok" path="/pages/financemgmt/fundtransinreg/FundTransInRegAction.jsp" />
+		</action>
+		
+		<action path="/com/insigma/siis/local/module/medicalmgmt/reimburseexpense/SearchMedicineAction" type="com.insigma.siis.local.module.medicalmgmt.reimburseexpense.SearchMedicineAction" parameter="method" scope="request" />
+	</action-mappings>
+</struts-config>

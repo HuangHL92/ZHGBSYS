@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RMBTemplates FilePath="Templates">
+  <RMBTemplate name="任免表（A4）" FileName="A4.doc" Class="A4" FontSize="14" FontName="宋体">
+    <Normal FirstPageTop="11.1" FirstPageLeft="22.0" SecondPageTop="28.6" SecondPageLeft="21.0" />
+    <User FirstPageTop="11.1" FirstPageLeft="22.0" SecondPageTop="28.6" SecondPageLeft="21.0" />
+  </RMBTemplate>
+  <RMBTemplate name="任免表（B5）" FileName="B5.doc" Class="B5" FontSize="12" FontName="宋体">
+    <Normal FirstPageTop="10.5" FirstPageLeft="19.5" SecondPageTop="24.2" SecondPageLeft="17.5" />
+    <User FirstPageTop="10.5" FirstPageLeft="19.5" SecondPageTop="24.5" SecondPageLeft="17.5" />
+  </RMBTemplate>
+  <RMBTemplate name="任免表（档案审核）" FileName="A4_DangAn.doc" Class="A4_DangAn" FontSize="14" FontName="宋体">
+    <Normal FirstPageTop="26.2" FirstPageLeft="17" SecondPageTop="35.0" SecondPageLeft="25.5" />
+    <User FirstPageTop="26.2" FirstPageLeft="17" SecondPageTop="35.0" SecondPageLeft="25.5" />
+  </RMBTemplate>
+</RMBTemplates>

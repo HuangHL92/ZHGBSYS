@@ -1,0 +1,134 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		
+		<property name="connection.datasource">java:comp/env/jdbc/insiis</property>
+		<property name="hibernate.query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</property>
+		<property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+		<property name="show_sql">true</property>
+		<property name="jdbc.batch_size">200</property>
+		<property name="jdbc.fetch_size">50</property>
+		<!-- <property name="hibernate.connection.autocommit">false</property> -->
+		<!-- 
+		<property name="use_outer_join">true</property>
+		<property name="connection.pool_size">5</property>		 
+		<property name="statement_cache.size">0</property>
+		<property name="jdbc.use_scrollable_resultset">true</property>
+		<property name="cglib.user_reflection_optimizer">false</property>				
+		<property name="hibernate.connection.release_mode">auto</property>-->
+
+		<!-- 系统框架 -->
+		<mapping resource="com/insigma/odin/framework/comm/entity/VAa10.hbm.xml" />
+		<!-- mapping resource="com/insigma/odin/framework/sys/entity/Sysfunction.hbm.xml" /-->
+		<mapping resource="com/insigma/odin/framework/sys/entity/SbdsUserlog.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/entity/Printlog.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/entity/Repreport.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/entity/Operationaudit.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/entity/Opaudit.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/entity/OpauditChangeHistory.hbm.xml" />
+		
+		
+		<!-- 系统管理 -->
+		<mapping resource="com/lbs/cp/sysmanager/entity/SYSUSER_CR.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SYSACL.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SYSACT.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SYSFUNCTION.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SYSROLE.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SYSGROUP.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/ROLEGROUP.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SYSTEMLOG.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SysMyMessage.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/SysMyMessageReceiver.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/Filerepository.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/Code.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/District.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/LOGONHISTORY.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/USERGROUP.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/Sysdatapopedom.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/Sysdppdommap.hbm.xml" />
+        <mapping resource="com/lbs/cp/sysmanager/entity/Sysudp.hbm.xml" />
+		<mapping resource="com/lbs/cp/sysmanager/entity/BizLog.hbm.xml" />
+		<!-- 外部数据访问接口 -->
+		<mapping resource="com/insigma/siis/local/business/entity/InterfaceConfig.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/InterfaceParameter.hbm.xml" />
+		<mapping resource="com/insigma/siis/local/business/entity/InterfaceScript.hbm.xml" />
+        <!-- 
+        <mapping resource="com/lbs/cp/sysmanager/dbrol/entity/SbdsUscrlog.hbm.xml" />
+        <mapping resource="com/lbs/cp/sysmanager/dbrol/entity/SbdsUserlog.hbm.xml" />
+        <mapping resource="com/lbs/cp/sysmanager/dbrol/entity/SbdsSyslog.hbm.xml" />
+        <mapping resource="com/lbs/cp/sysmanager/dbrol/entity/SbdsSyslogdt.hbm.xml" />
+         -->
+        <mapping resource="com/lbs/cp/sysmanager/bizdigest/entity/BizDigestdata.hbm.xml" />
+        <mapping resource="com/lbs/cp/sysmanager/bizdigest/entity/BizDigestinfo.hbm.xml" />
+
+		<!-- 代码维护 -->
+		<mapping resource="com/insigma/siis/local/business/entity/Aa09.hbm.xml"/>
+        <mapping resource="com/insigma/siis/local/business/entity/Aa10.hbm.xml"/>
+        <mapping resource="com/insigma/siis/local/business/entity/Aa01.hbm.xml"/>
+        
+        	<!-- 机构授权-->
+		<mapping resource="com/insigma/siis/local/business/entity/Competenceuserdept.hbm.xml"/>
+		
+		<!-- 新系统管理 -->
+		<mapping resource="com/insigma/odin/framework/sysmanager/comm/entity/Sysuser.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sysmanager/comm/entity/Sysrole.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sysmanager/comm/entity/Sysfunction.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sysmanager/comm/entity/Sysact.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sysmanager/comm/entity/Sysacl.hbm.xml" />
+		
+		<!-- 业务操作权限维护 -->
+		<mapping resource="com/insigma/odin/framework/sysmanager/comm/entity/Sysopright.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sysmanager/comm/entity/Sysoprightacl.hbm.xml" />
+		
+		<!-- 权限升级 实体映射 -->
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtGroup.hbm.xml"></mapping>
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtResource.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtUsergroupref.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtAct.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtScene.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtFunction.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtUser.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtOpright.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtAcl.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtUserextinfo.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtOplog.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtLog.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtRole.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtApp.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtUserselfcolumn.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/comm/entity/SmtSqlinfo.hbm.xml" />
+	
+		<!-- job -->
+		<mapping resource="com/insigma/odin/framework/comm/entity/SjJob.hbm.xml" />
+		<!-- his code -->
+		<mapping resource="com/insigma/odin/framework/his/entity/HisRegcode.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/his/entity/HisArea.hbm.xml" />
+		<!-- autotest -->
+		<mapping resource="com/insigma/odin/framework/sys/autotest/entity/SmtTestscene.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/autotest/entity/SmtTestunit.hbm.xml" />
+		
+		<!--数据权限-->
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtUserdatagroupref.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/privilege/entity/SmtDatagroup.hbm.xml" />
+		<!--并发任务-->
+		<mapping resource="com/insigma/odin/framework/comm/entity/SjPjobRunning.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/comm/entity/SjPjob.hbm.xml" />
+		
+		<!-- 智能审核 -->
+		<mapping resource="com/insigma/odin/framework/sys/audit/intelligent/entity/OpauditCondition.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/audit/intelligent/entity/OpauditRule.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/audit/intelligent/entity/OpauditAction.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/audit/intelligent/entity/OpauditLevel.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/audit/intelligent/entity/OpauditModel.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/audit/intelligent/entity/Opauditor.hbm.xml" />
+		<mapping resource="com/insigma/odin/framework/sys/audit/intelligent/entity/OpauditWork.hbm.xml" />
+		<!--照片-->
+		<mapping resource="com/insigma/odin/framework/sys/entity/SbdsTempimg.hbm.xml" />
+		
+		<!-- 数据导入 比对结果表  2017 06 13-->
+		<mapping resource="com/insigma/siis/local/business/entity/TabDatacontrastresult.hbm.xml" />
+		
+	</session-factory>
+</hibernate-configuration>

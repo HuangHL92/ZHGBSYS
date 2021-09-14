@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.UserTemplate"
+    lazy="false"
+    table="user_template">
+    <id column="USER_TEMPLATE_ID" name="userTemplateId" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+	<property column="TPID" length="200" name="tpid" type="java.lang.String" />
+	<property column="USERID" length="200" name="userid" type="java.lang.String" />
+	</class>
+</hibernate-mapping>

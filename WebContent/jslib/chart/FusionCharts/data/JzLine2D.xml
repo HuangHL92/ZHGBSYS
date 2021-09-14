@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<chart caption="2011年立案情况走势图" formatNumberScale="0" formatNumber="0" subcaption="" numberSuffix="" yAxisName="" yAxisMinValue="0" numberPrefix="" showValues="50" alternateHGridColor="FCB541" alternateHGridAlpha="20" divLineColor="FCB541" divLineAlpha="50" canvasBorderColor="666666" baseFontColor="666666" lineColor="FCB541" baseFontSize="14"> 
+  <styles> 
+    <definition> 
+      <style name="Anim1" type="animation" param="_xscale" start="0" duration="1"/>  
+      <style name="Anim2" type="animation" param="_alpha" start="0" duration="0.6"/>  
+      <style name="DataShadow" type="Shadow" alpha="40"/> 
+    </definition>  
+    <application> 
+      <apply toObject="DIVLINES" styles="Anim1"/>  
+      <apply toObject="HGRID" styles="Anim2"/>  
+      <apply toObject="DATALABELS" styles="DataShadow,Anim2"/> 
+    </application> 
+  </styles>  
+  <set label="1月" value="1501"/>
+  <set label="2月" value="797"/>
+  <set label="3月" value="755"/>
+  <set label="4月" value="0"/>
+  <set label="5月" value="0"/>
+  <set label="6月" value="0"/>
+  <set label="7月" value="0"/>
+  <set label="8月" value="0"/>
+  <set label="9月" value="0"/>
+  <set label="10月" value="0"/>
+  <set label="11月" value="0"/>
+  <set label="12月" value="0"/>
+  <set label="" value=""/>
+</chart>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping auto-import="false">
+  <class name="com.insigma.siis.local.business.slabel.TagSbjysjl"
+    lazy="false"
+    table="zjs_tag_sbjysjl">
+  	<id column="TAGID" name="tagid" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="A0184" length="18" name="a0184" type="java.lang.String" />
+    <property column="A0000" length="120" name="a0000" type="java.lang.String" />
+    <property column="tag_sbjysjl" length="10" name="tagsbjysjl" type="java.lang.String" />
+    <property column="tag_sbjysjl_note" length="100" name="tagsbjysjlnote" type="java.lang.String" />
+    <property column="CREATEDATE" length="20" name="createdate" type="com.insigma.siis.local.pagemodel.publicServantManage.Data2Long" />
+    <property column="UPDATEDATE" length="20" name="updatedate" type="com.insigma.siis.local.pagemodel.publicServantManage.Data2Long" />
+  </class>
+</hibernate-mapping>

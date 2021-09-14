@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A61"
+    lazy="false"
+    table="A61">
+    <id column="A0000" name="a0000" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="A2970" length="2" name="a2970" type="java.lang.String" />
+    <property column="A2970A" length="2" name="a2970a" type="java.lang.String" />
+    <property column="A2970B" length="100" name="a2970b" type="java.lang.String" />
+    <property column="A2970C" length="8" name="a2970c" type="java.lang.String" />
+    <property column="A6104" length="8" name="a6104" type="java.lang.String" />
+    <property column="A6107" length="20" name="a6107" type="java.lang.String" />
+    <property column="A6108" length="60" name="a6108" type="java.lang.String" />
+    <property column="A6109" length="8" name="a6109" type="java.lang.String" />
+    <property column="A6110" length="20" name="a6110" type="java.lang.String" />
+    <property column="A6111" length="8" name="a6111" type="java.lang.String" />
+    <property column="A6112" length="2" name="a6112" type="java.lang.String" />
+    <property column="A6113" length="2" name="a6113" type="java.lang.String" />
+    <property column="A6114" length="2" name="a6114" type="java.lang.String" />
+    <property column="A6115" length="2" name="a6115" type="java.lang.String" />
+    <property column="A6116" length="20" name="a6116" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

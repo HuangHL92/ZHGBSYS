@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A17"
+    lazy="false"
+    table="HZ_A17">
+    <id column="A1700" name="a1700" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="A0000" length="64" name="a0000" type="java.lang.String" />
+    <property column="A1701" length="8" name="a1701" type="java.lang.String" />
+    <property column="A1702" length="8" name="a1702" type="java.lang.String" />
+    <property column="A1703" length="400" name="a1703" type="java.lang.String" />
+    <property column="USERID" length="64" name="userid" type="java.lang.String" />
+    <property column="A1799" length="4" name="a1799" type="java.lang.String" />
+    <property column="A0221" length="10" name="a0221" type="java.lang.String" />
+    <property column="A0192E" length="10" name="a0192e" type="java.lang.String" />
+    <property column="A1709" length="2" name="a1709" type="java.lang.String" />
+    <property column="BELONG_TO_A1700" length="64" name="belongToA1700" type="java.lang.String" />
+    <property column="COMPLETE" length="2000" name="complete" type="java.lang.String" />
+    <property column="A1704" length="8" name="a1704" type="java.lang.String" />
+    <property column="A1705" length="8" name="a1705" type="java.lang.String" />
+    <property column="A1706" length="120" name="a1706" type="java.lang.String" />
+    <property column="A1707" length="2000" name="a1707" type="java.lang.String" />
+    <property column="A1708" length="2000" name="a1708" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

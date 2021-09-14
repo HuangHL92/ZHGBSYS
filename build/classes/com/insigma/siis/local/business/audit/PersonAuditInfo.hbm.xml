@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.insigma.siis.local.business.audit.PersonAuditInfo" optimistic-lock="version" polymorphism="implicit"  select-before-update="false" table="PERSON_AUDIT_INFO">
+        <comment>人员联审情况</comment>
+        <id name="oid" type="string">
+            <column length="64" name="OID"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="a0000" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="A0000">
+                <comment>人员主键</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="a0101" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="A0101">
+                <comment>姓名</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="a0184" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="A0184">
+                <comment>身份证</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="a0192a" optimistic-lock="true" type="string" unique="false">
+            <column length="1024" name="A0192A">
+                <comment>工作单位及职务</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="auditType" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="AUDIT_TYPE">
+                <comment>联审类型</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="auditResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="AUDIT_RESULT">
+                <comment>联审意见</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="auditDetails" optimistic-lock="true" type="string" unique="false">
+            <column length="1024" name="AUDIT_DETAILS">
+                <comment>联审情况</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="auditRemark" optimistic-lock="true" type="string" unique="false">
+            <column length="1024" name="AUDIT_REMARK">
+                <comment>备注</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="PSortid" optimistic-lock="true" type="big_integer" unique="false">
+            <column name="P_SORTID" precision="22" scale="0">
+                <comment>人员序号</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="jwResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="JW_RESULT">
+                <comment>纪委监委</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="zzbGbResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="ZZB_GB_RESULT">
+                <comment>组织部-干部综合处</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="zzbJdResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="ZZB_JD_RESULT">
+                <comment>组织部-干部监督室</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="xfResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="XF_RESULT">
+                <comment>信访局</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="fyResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="FY_RESULT">
+                <comment>法院</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="jcyResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="JCY_RESULT">
+                <comment>检察院</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="fgwResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="FGW_RESULT">
+                <comment>发改委</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="gaResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="GA_RESULT">
+                <comment>公安</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="rlsbResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="RLSB_RESULT">
+                <comment>人力社保</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="zrzyResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="ZRZY_RESULT">
+                <comment>自然资源</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="sthjResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="STHJ_RESULT">
+                <comment>生态环境</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="wjwResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="WJW_RESULT">
+                <comment>卫健委</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="yjglResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="YJGL_RESULT">
+                <comment>应急管理</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="sjResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="SJ_RESULT">
+                <comment>审计</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="scjgResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="SCJG_RESULT">
+                <comment>市场监管</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="tjResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="TJ_RESULT">
+                <comment>统计</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="ghResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="GH_RESULT">
+                <comment>工会</comment>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="swResult" optimistic-lock="true" type="string" unique="false">
+            <column length="32" name="SW_RESULT">
+                <comment>税务</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

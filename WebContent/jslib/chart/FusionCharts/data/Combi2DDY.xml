@@ -1,0 +1,60 @@
+<chart palette='2' caption='近三年卷宗归档统计' subCaption='' showValues='0' divLineDecimalPrecision='1' limitsDecimalPrecision='1' PYAxisName='' SYAxisName='' numberPrefix='卷' formatNumberScale='0'>
+<categories>
+<category label='1月' />
+<category label='2月' />
+<category label='3月' />
+<category label='4月' />
+<category label='5月' />
+<category label='6月' />
+<category label='7月' />
+<category label='8月' />
+<category label='9月' />
+<category label='10月' />
+<category label='11月' />
+<category label='12月' />
+</categories>
+
+<dataset seriesName='前年'>
+<set value='5854' />
+<set value='4171' />
+<set value='1375' />
+<set value='1875' />
+<set value='2246' />
+<set value='2696' />
+<set value='1287' />
+<set value='2140' />
+<set value='1603' />
+<set value='1628' />
+<set value='1603' />
+<set value='1628' />
+</dataset>
+<dataset seriesName='去年' renderAs='Area' parentYAxis='P'>
+<set value='3242' />
+<set value='3171' />
+<set value='700' />
+<set value='1287' />
+<set value='1856' />
+<set value='1126' />
+<set value='987' />
+<set value='1603' />
+<set value='1628' />
+<set value='1610' />
+<set value='903' />
+<set value='928' />
+</dataset>
+
+<dataset lineThickness='3' seriesName='今年' parentYAxis='S'>
+<set value='174' />
+<set value='197' />
+<set value='155' />
+<set value='15' />
+<set value='66' />
+<set value='85' />
+<set value='37' />
+<set value='10' />
+<set value='44' />
+<set value='10' />
+<set value='44' />
+<set value='322' />
+</dataset>
+</chart>

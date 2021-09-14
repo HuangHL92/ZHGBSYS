@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-8-31 16:25:26 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.hzentity.B01Zzs" table="B01_ZZS" schema="ZHGBSYS">
+        <comment>&#181;&#165;&#206;&#187;&#215;&#233;&#214;&#175;&#202;&#183;</comment>
+        <id name="zzs00" type="string">
+            <column name="ZZS00" length="40" />
+            <generator class="assigned" />
+        </id>
+        <property name="b01id" type="string">
+            <column name="B01ID" length="40">
+                <comment>&#181;&#165;&#206;&#187;id</comment>
+            </column>
+        </property>
+        <property name="zzs01" type="string">
+            <column name="ZZS01" length="100">
+                <comment>&#192;&#224;&#177;&#240;</comment>
+            </column>
+        </property>
+        <property name="zzs02" type="java.lang.String">
+            <column name="ZZS02">
+                <comment>&#196;&#218;&#201;&#232;&#187;&#250;&#185;&#185;&#188;&#176;&#183;&#214;&#185;&#164;</comment>
+            </column>
+        </property>
+        <property name="zzs03" type="string">
+            <column name="ZZS03" length="4000">
+                <comment>&#214;&#176;&#202;&#253;&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="zzs04" type="java.lang.Long">
+            <column name="ZZS04" precision="22" scale="0">
+                <comment>&#213;&#253;&#214;&#176;</comment>
+            </column>
+        </property>
+        <property name="zzs05" type="java.lang.Long">
+            <column name="ZZS05" precision="22" scale="0">
+                <comment>&#184;&#177;&#214;&#176;</comment>
+            </column>
+        </property>
+        <property name="zzs06" type="java.lang.Long">
+            <column name="ZZS06" precision="22" scale="0">
+                <comment>&#215;&#220;&#202;&#166;</comment>
+            </column>
+        </property>
+        <property name="zzs07" type="string">
+            <column name="ZZS07" length="4000">
+                <comment>&#214;&#176;&#202;&#253;&#195;&#232;&#202;&#246;&#178;&#185;&#179;&#228;</comment>
+            </column>
+        </property>
+        <property name="zzs08" type="java.lang.Long">
+            <column name="ZZS08" precision="22" scale="0">
+                <comment>&#213;&#253;&#214;&#176;</comment>
+            </column>
+        </property>
+        <property name="zzs09" type="java.lang.Long">
+            <column name="ZZS09" precision="22" scale="0">
+                <comment>&#184;&#177;&#214;&#176;</comment>
+            </column>
+        </property>
+        <property name="zzs10" type="java.lang.Long">
+            <column name="ZZS10" precision="22" scale="0">
+                <comment>&#215;&#220;&#202;&#166;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

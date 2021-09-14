@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Grprcdsplmd"
+    lazy="false"
+    table="GRPRCDSPLMD">
+    <id column="RSM001" name="rsm001" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="CENTERBRANCH" length="1" name="centerbranch" type="java.lang.String" />
+    <property column="CONNECTOR" length="2" name="connector" type="java.lang.String" />
+    <property column="CTCI" length="20" name="ctci" type="java.lang.String" />
+    <property column="ENDROW" length="2" name="endrow" type="java.lang.String" />
+    <property column="FIRSTINDEX" length="1" name="firstindex" type="java.lang.String" />
+    <property column="INDENTROW" length="3" name="indentrow" type="java.lang.String" />
+    <property column="INDEXTNUM" length="3" name="indextnum" type="java.lang.String" />
+    <property column="ISSQLFUNC" length="1" name="issqlfunc" type="java.lang.String" />
+    <property column="STARTROW" length="2" name="startrow" type="java.lang.String" />
+    <property column="SLFCFG" length="1" name="slfcfg" type="java.lang.String" />
+    <property column="QRYSQL" length="4000" name="qrysql" type="java.lang.String" />
+    <property column="CONDITION" length="2000" name="condition" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

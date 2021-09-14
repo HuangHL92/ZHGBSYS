@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A11temp"
+    lazy="false"
+    table="A11_TEMP">
+  	<id column="A1100" length="60" name="a1100" type="java.lang.String" >
+  		<generator class="assigned"/>
+  	</id>
+    <property column="A0000" length="60" name="a0000" type="java.lang.String" />
+    <property column="A1101" length="8" name="a1101" type="java.lang.String" />
+    <property column="A1104" length="8" name="a1104" type="java.lang.String" />
+    <property column="A1107" length="8" name="a1107" type="java.lang.String" />
+    <property column="A1107A" length="20" name="a1107a" type="java.lang.Long" />
+    <property column="A1107B" length="20" name="a1107b" type="java.lang.Long" />
+    <property column="A1107C" length="8" name="a1107c" type="java.lang.Long" />
+    <property column="A1111" length="8" name="a1111" type="java.lang.String" />
+    <property column="A1114" length="120" name="a1114" type="java.lang.String" />
+    <property column="A1121A" length="120" name="a1121a" type="java.lang.String" />
+    <property column="A1127" length="8" name="a1127" type="java.lang.String" />
+    <property column="A1131" length="60" name="a1131" type="java.lang.String" />
+    <property column="A1134" length="1" name="a1134" type="java.lang.String" />
+    <property column="A1151" length="1" name="a1151" type="java.lang.String" />
+    <property column="ERROR_INFO" length="200" name="errorinfo" type="java.lang.String" />
+    <property column="IS_QUALIFIED" length="1" name="isqualified" type="java.lang.String" />
+    <property column="UPDATED" length="1" name="updated" type="java.lang.String" />
+     <property column="IMPRECORDID" length="32" name="imprecordid" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

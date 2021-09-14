@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.Js33"
+    lazy="false"
+    table="JS33">
+    <id column="JS3301" name="js3301" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="JS0100" length="64" name="js0100" type="java.lang.String" />
+    <property column="DC001" length="64" name="dc001" type="java.lang.String" />
+    <property column="RB_ID" length="64" name="rb_id" type="java.lang.String" />
+    <property column="JS1801" length="64" name="js1801" type="java.lang.String" />
+    <property column="JS3302" length="50" name="js3302" type="java.lang.String" />
+    <property column="JS3303" length="50" name="js3303" type="java.lang.String" />
+    <property column="JS3304" length="50" name="js3304" type="java.lang.String" />
+    <property column="JS3305" length="50" name="js3305" type="java.lang.String" />
+    <property column="JS3306" length="200" name="js3306" type="java.lang.String" />
+    <property column="JS3307" length="50" name="js3307" type="java.lang.String" />
+    <property column="JS3308" length="50" name="js3308" type="java.lang.String" />
+    <property column="JS3309" length="200" name="js3309" type="java.lang.String" />
+    <property column="JS3310" length="500" name="js3310" type="java.lang.String" />
+    <property column="JS3311" length="500" name="js3311" type="java.lang.String" />
+    <property column="JS3312" length="500" name="js3312" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

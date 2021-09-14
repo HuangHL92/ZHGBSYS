@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.TrainAtt"
+    lazy="false"
+    table="TRAIN_ATT">
+	<id column="ATTID" name="attid" type="java.lang.String">
+	  <generator class="uuid" />
+	</id>
+	<property column="TRAINID" length="120" name="trainid" type="java.lang.String" />
+	<property column="G11031" length="200" name="g11031" type="java.lang.String" />
+	<property column="G11052" length="200" name="g11052" type="java.lang.String" />
+	<property column="G11053" length="30" name="g11053" type="java.lang.String" />
+	<property column="USERID" length="120" name="userid" type="java.lang.String" />
+	<property column="USERNAME" length="120" name="username" type="java.lang.String" />
+	<property column="UPDATETIME" length="120" name="updatetime" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping auto-import="false">
+  <class name="com.insigma.siis.local.business.slabel.TagKcclfj2"
+    lazy="false"
+    table="zjs_tag_kcclfj2">
+  	<id column="TAGID" name="tagid" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+    <property column="A0184" length="18" name="a0184" type="java.lang.String" />
+    <property column="a0000" length="120" name="a0000" type="java.lang.String" />
+    <property column="file_name" length="200" name="filename" type="java.lang.String" />
+    <property column="file_size" length="20" name="filesize" type="java.lang.String" />
+    <property column="file_url" length="1000" name="fileurl" type="java.lang.String" />
+    <property column="note" length="200" name="note" type="java.lang.String" />
+    <property column="updatedate" length="20" name="updatedate" type="com.insigma.siis.local.pagemodel.publicServantManage.Data2Long" />
+  </class>
+</hibernate-mapping>

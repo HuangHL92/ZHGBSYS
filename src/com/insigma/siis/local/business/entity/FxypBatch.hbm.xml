@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-17 10:54:54 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.FxypBatch" table="FXYP_BATCH" >
+        <comment>干部选任纪实批次</comment>
+        <id name="fyId" type="string">
+            <column name="FY_ID" length="64" />
+            <generator class="assigned" />
+        </id>
+        <property name="fyName" type="string">
+            <column name="FY_NAME" length="500">
+                <comment>批次名称</comment>
+            </column>
+        </property>
+        <property name="fyDate" type="string">
+            <column name="FY_DATE" length="8">
+                <comment>申报日期</comment>
+            </column>
+        </property>
+        <property name="fyType" type="string">
+            <column name="FY_TYPE" length="1">
+                <comment>类型 班子换届 个人提拔</comment>
+            </column>
+        </property>
+        <property name="fyUserid" type="string">
+            <column name="FY_USERID" length="64">
+                <comment>用户id</comment>
+            </column>
+        </property>
+        <property name="fyNo" type="string">
+            <column name="FY_NO" length="20">
+                <comment>批次编号</comment>
+            </column>
+        </property>
+        <property name="fyApplicant" type="string">
+            <column name="FY_APPLICANT" length="64">
+                <comment>申报人</comment>
+            </column>
+        </property>
+        <property name="fyOrg" type="string">
+            <column name="FY_ORG" length="120">
+                <comment>申报单位</comment>
+            </column>
+        </property>
+        <property name="fySysno" type="big_decimal">
+            <column name="FY_SYSNO" length="20">
+                <comment>系统编号</comment>
+            </column>
+        </property>
+        <property name="fyUpdated" type="string">
+            <column name="FY_UPDATED" length="1">
+                <comment>申报单位</comment>
+            </column>
+        </property>
+        <property name="fymeettype" type="string">
+            <column name="FY_MEETTYPE" length="10">
+                <comment>会议类型</comment>
+            </column>
+        </property>
+        <property name="fydeplytype" type="string">
+            <column name="FY_DEPLOYTYPE" length="10">
+                <comment>调配类型</comment>
+            </column>
+        </property>
+        <property name="fyapprove" type="string">
+            <column name="FY_APPROVE" length="10">
+                <comment>是否需要事前报告(1是，2否)</comment>
+            </column>
+        </property>
+        <property name="fyreportreson" type="string">
+            <column name="FY_REPORTRESON" length="10">
+                <comment>报告是由(codevalue的type</comment>
+            </column>
+        </property>
+         <property name="fyreportvalue" type="string">
+            <column name="FY_REPORTVALUE" length="900">
+                <comment>其他是由</comment>
+            </column>
+        </property>
+        <property name="fyleadview" type="string">
+            <column name="FY_LEADVIEW" length="10">
+                <comment>领导审批结果（1通过，2未通过）</comment>
+            </column>
+        </property>
+        <property name="fystatus" type="string">
+            <column name="FY_STATUS" length="10">
+                <comment>状态（1完成导出了发文表，其他进行中）</comment>
+            </column>
+        </property>
+        <property name="fymId" type="string">
+            <column name="FYM_ID" length="64">
+                <comment>合并批次ID</comment>
+            </column>
+        </property>
+        <property name="fymStatus" type="string">
+            <column name="FYM_STATUS" length="1">
+                <comment>合并状态(2已合并，1已发起未合并，0未发起)</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

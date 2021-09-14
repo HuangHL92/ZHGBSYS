@@ -1,0 +1,25 @@
+/*!
+ * Ext JS Library 3.2.0
+ * Copyright(c) 2006-2010 Ext JS, Inc.
+ * licensing@extjs.com
+ * http://www.extjs.com/license
+ */
+td.ux-grid-hd-group-cell {
+    background: url(../../ext/resources/images/default/grid/grid3-hrow.gif) repeat-x bottom;
+}
+
+.task-restart { background-image: url(icons/arrow_undo.png) !important; background-repeat: no-repeat; }
+td.ux-grid-hd-group-cell .x-grid3-hd-checker {display:none;}
+ 
+.col-grid td {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GBK"?>
+<jardesc>
+<jar path="jxkh/WebContent/WEB-INF/lib/odin-hrss_taglib.jar"/>
+<options buildIfNeeded="true" compress="true" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+<storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+<selectedProjects/>
+<manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+<sealing sealJar="false">
+<packagesToSeal/>
+<packagesToUnSeal/>
+</sealing>
+</manifest>
+<selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+<javaElement handleIdentifier="=insiis5/src_hrss_taglib"/>
+</selectedElements>
+</jardesc>

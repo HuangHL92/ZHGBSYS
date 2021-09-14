@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.TroupeScore"
+    lazy="false"
+    table="troupe_score">
+  	<id column="ID" name="id" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+     <property name="b0111" type="java.lang.String">
+            <column name="B0111" length="20">
+                <comment>机构ID</comment>
+            </column>
+     </property>
+     <property name="bzf" type="java.lang.String">
+            <column name="BZF" length="3">
+                <comment>班子分值</comment>
+            </column>
+     </property>
+     <property name="xbf" type="java.lang.String">
+            <column name="XBF" length="3">
+                <comment>性别分值</comment>
+            </column>
+     </property>
+     <property name="dpf" type="java.lang.String">
+            <column name="DPF" length="3">
+                <comment>党派分值</comment>
+            </column>
+     </property>
+     <property name="mzf" type="java.lang.String">
+            <column name="MZF" length="3">
+                <comment>民族分值</comment>
+            </column>
+     </property>
+     <property name="nlf" type="java.lang.String">
+            <column name="NLF" length="3">
+                <comment>年龄分值</comment>
+            </column>
+     </property>
+     <property name="xlf" type="java.lang.String">
+            <column name="XLF" length="3">
+                <comment>学历分值</comment>
+            </column>
+     </property>
+     <property name="zyf" type="java.lang.String">
+            <column name="ZYF" length="3">
+                <comment>专业分值</comment>
+            </column>
+     </property>
+     <property name="dyf" type="java.lang.String">
+            <column name="DYF" length="3">
+                <comment>地域分值</comment>
+            </column>
+     </property>
+     <property name="knowf" type="java.lang.String">
+            <column name="KNOWF" length="3">
+                <comment>熟悉领域分值</comment>
+            </column>
+     </property>
+     <property name="jlf" type="java.lang.String">
+            <column name="JLF" length="3">
+                <comment>经历分值</comment>
+            </column>
+     </property>
+     <property name="remarks" type="java.lang.String">
+            <column name="REMARKS" length="200">
+                <comment>备注</comment>
+            </column>
+     </property>
+     <property name="redf" type="java.lang.String">
+            <column name="REDF" length="3">
+                <comment>红 分值</comment>
+            </column>
+     </property>
+     <property name="greenf" type="java.lang.String">
+            <column name="GREENF" length="3">
+                <comment>绿 分值</comment>
+            </column>
+     </property>
+  </class>
+</hibernate-mapping>

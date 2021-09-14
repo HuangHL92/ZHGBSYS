@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.listoutput"
+    lazy="false"
+    table="listoutput">
+    <id column="ID" name="id" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+	<property column="TPID" length="68" name="tpid" type="java.lang.String" />
+	<property column="TPNAME" length="68" name="tpname" type="java.lang.String" />
+	<property column="TPTYPE" length="68" name="tptype" type="java.lang.String" />
+	<property column="MESSAGEC" length="68" name="messagec" type="java.lang.String" />
+	<property column="MESSAGEE" length="68" name="messagee" type="java.lang.String" />
+	<property column="ZBROW" length="68" name="zbrow" type="java.lang.String" />
+	<property column="ZBLINE" length="68" name="zbline" type="java.lang.String" />
+	<property column="ENDTIME" length="68" name="endtime" type="java.lang.String" />
+	<property column="TPKIND" length="68" name="tpkind" type="java.lang.String" />
+	</class>
+</hibernate-mapping>

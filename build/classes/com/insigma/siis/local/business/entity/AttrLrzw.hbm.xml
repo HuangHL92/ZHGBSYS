@@ -1,0 +1,297 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-5-31 16:29:37 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.AttrLrzw" table="ATTR_LRZW" >
+        <comment>
+        &#192;&#250;&#200;&#206;&#214;&#216;&#210;&#170;&#214;&#176;&#206;&#241;&#214;&#216;&#210;&#170;&#190;&#173;&#192;&#250;&#177;&#234;&#214;&#190;(&#192;&#250;&#200;&#206;&#214;&#176;&#206;&#241;)</comment>
+        <id name="a0000" type="string">
+            <column name="A0000" length="80" />
+            <generator class="assigned" />
+        </id>
+        <property name="attr2101" type="string">
+            <column name="ATTR2101" length="1">
+                <comment>&#199;&#248;&#207;&#216;&#202;&#208;&#176;&#224;&#215;&#211;&#179;&#201;&#212;&#177;</comment>
+            </column>
+        </property>
+        <property name="attr2102" type="string">
+            <column name="ATTR2102" length="1">
+                <comment>&#207;&#231;&#213;&#242;&#189;&#214;&#181;&#192;&#176;&#224;&#215;&#211;</comment>
+            </column>
+        </property>
+        <property name="attr2103" type="string">
+            <column name="ATTR2103" length="1">
+                <comment>&#207;&#231;&#213;&#242;&#189;&#214;&#181;&#192;&#181;&#179;&#213;&#254;&#214;&#247;&#210;&#170;&#184;&#186;&#212;&#240;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="attr2104" type="string">
+            <column name="ATTR2104" length="1">
+                <comment>&#213;&#254;&#183;&#168;&#206;&#175;&#187;&#242;&#213;&#254;&#183;&#168;&#178;&#191;&#195;&#197;&#185;&#164;&#215;&#247;&#190;&#173;&#192;&#250;</comment>
+            </column>
+        </property>
+        <property name="attr2105" type="string">
+            <column name="ATTR2105" length="1">
+                <comment>&#183;&#168;&#194;&#201;&#185;&#164;&#215;&#247;&#190;&#173;&#192;&#250;&#206;&#229;&#196;&#234;&#210;&#212;&#201;&#207;</comment>
+            </column>
+        </property>
+        <property name="attr2106" type="string">
+            <column name="ATTR2106" length="1">
+                <comment>
+                &#213;&#242;&#189;&#214;&#205;&#197;&#206;&#175;&#202;&#233;&#188;&#199;&#187;&#242;&#199;&#248;&#207;&#216;&#202;&#208;&#205;&#197;&#206;&#175;&#176;&#224;&#215;&#211;&#179;&#201;&#212;&#177;</comment>
+            </column>
+        </property>
+        <property name="attr2107" type="string">
+            <column name="ATTR2107" length="1">
+                <comment>&#188;&#205;&#188;&#236;&#188;&#224;&#178;&#236;&#178;&#191;&#195;&#197;</comment>
+            </column>
+        </property>
+        <property name="attr2108" type="string">
+            <column name="ATTR2108" length="1">
+                <comment>&#193;&#189;&#196;&#234;&#188;&#176;&#210;&#212;&#201;&#207;&#187;&#249;&#178;&#227;&#185;&#164;&#215;&#247;&#190;&#173;&#192;&#250;</comment>
+            </column>
+        </property>
+        <property name="attr2201" type="string">
+            <column name="ATTR2201" length="1">
+                <comment>&#195;&#241;&#211;&#170;&#198;&#243;&#210;&#181;&#184;&#186;&#212;&#240;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="attr2202" type="string">
+            <column name="ATTR2202" length="1">
+                <comment>&#195;&#241;&#211;&#170;&#198;&#243;&#210;&#181;&#214;&#208;&#178;&#227;</comment>
+            </column>
+        </property>
+        <property name="attr2203" type="string">
+            <column name="ATTR2203" length="1">
+                <comment>&#205;&#226;&#215;&#202;&#198;&#243;&#210;&#181;&#214;&#208;&#183;&#189;&#184;&#186;&#212;&#240;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="attr2204" type="string">
+            <column name="ATTR2204" length="1">
+                <comment>&#205;&#226;&#215;&#202;&#198;&#243;&#210;&#181;&#205;&#226;&#183;&#189;&#180;&#250;&#177;&#237;</comment>
+            </column>
+        </property>
+        <property name="attr2205" type="string">
+            <column name="ATTR2205" length="1">
+                <comment>&#205;&#226;&#215;&#202;&#198;&#243;&#210;&#181;&#214;&#208;&#178;&#227;</comment>
+            </column>
+        </property>
+        <property name="attr2206" type="string">
+            <column name="ATTR2206" length="1">
+                <comment>&#185;&#250;&#211;&#208;&#198;&#243;&#210;&#181;&#184;&#186;&#212;&#240;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="attr2207" type="string">
+            <column name="ATTR2207" length="1">
+                <comment>&#185;&#250;&#211;&#208;&#198;&#243;&#210;&#181;&#178;&#191;&#195;&#197;&#184;&#186;&#212;&#240;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="attr2208" type="string">
+            <column name="ATTR2208" length="1">
+                <comment>&#202;&#194;&#206;&#241;&#203;&#249;&#188;&#176;&#198;&#228;&#203;&#251;&#201;&#231;&#187;&#225;&#215;&#233;&#214;&#175;</comment>
+            </column>
+        </property>
+        <property name="attr2209" type="string">
+            <column name="ATTR2209" length="1">
+                <comment>&#185;&#250;&#188;&#202;&#215;&#233;&#214;&#175;</comment>
+            </column>
+        </property>
+        <property name="attr2301" type="string">
+            <column name="ATTR2301" length="1">
+                <comment>&#213;&#253;&#214;&#176;</comment>
+            </column>
+        </property>
+        <property name="attr2302" type="string">
+            <column name="ATTR2302" length="1">
+                <comment>&#184;&#177;&#214;&#176;</comment>
+            </column>
+        </property>
+        <property name="attr2303" type="string">
+            <column name="ATTR2303" length="1">
+                <comment>&#178;&#191;&#195;&#197;&#213;&#253;&#214;&#176;</comment>
+            </column>
+        </property>
+        <property name="attr2304" type="string">
+            <column name="ATTR2304" length="1">
+                <comment>&#178;&#191;&#195;&#197;&#184;&#177;&#214;&#176;</comment>
+            </column>
+        </property>
+        <property name="attr2305" type="string">
+            <column name="ATTR2305" length="1">
+                <comment>&#182;&#254;&#188;&#182;&#209;&#167;&#212;&#186;&#181;&#179;&#215;&#233;&#214;&#175;&#202;&#233;&#188;&#199;</comment>
+            </column>
+        </property>
+        <property name="attr2306" type="string">
+            <column name="ATTR2306" length="1">
+                <comment>&#182;&#254;&#188;&#182;&#209;&#167;&#212;&#186;&#212;&#186;&#179;&#164;</comment>
+            </column>
+        </property>
+        <property name="attr2307" type="string">
+            <column name="ATTR2307" length="1">
+                <comment>&#182;&#254;&#188;&#182;&#209;&#167;&#212;&#186;&#184;&#177;&#214;&#176;</comment>
+            </column>
+        </property>
+        <property name="attr2308" type="string">
+            <column name="ATTR2308" length="1">
+                <comment>&#208;&#163;&#205;&#197;&#206;&#175;</comment>
+            </column>
+        </property>
+        <property name="attr2401" type="string">
+            <column name="ATTR2401" length="1">
+                <comment>&#186;&#163;&#205;&#226;&#209;&#167;&#207;&#176;&#190;&#173;&#192;&#250;</comment>
+            </column>
+        </property>
+        <property name="attr2402" type="string">
+            <column name="ATTR2402" length="1">
+                <comment>&#186;&#163;&#205;&#226;&#185;&#164;&#215;&#247;&#190;&#173;&#192;&#250;</comment>
+            </column>
+        </property>
+        <property name="attr2403" type="string">
+            <column name="ATTR2403" length="1">
+                <comment>&#198;&#184;&#200;&#206;&#214;&#198;&#185;&#171;&#206;&#241;&#212;&#177;</comment>
+            </column>
+        </property>
+        <property name="attr2404" type="string">
+            <column name="ATTR2404" length="1">
+                <comment>&#185;&#171;&#191;&#170;&#209;&#161;&#176;&#206;</comment>
+            </column>
+        </property>
+        <property name="attr2405" type="string">
+            <column name="ATTR2405" length="1">
+                <comment>&#180;&#243;&#209;&#167;&#201;&#250;&#180;&#229;&#185;&#217;</comment>
+            </column>
+        </property>
+        <property name="attr2406" type="string">
+            <column name="ATTR2406" length="1">
+                <comment>&#205;&#197;&#210;&#212;&#207;&#194;&#215;&#170;&#210;&#181;&#205;&#203;&#206;&#233;</comment>
+            </column>
+        </property>
+        <property name="attr2407" type="string">
+            <column name="ATTR2407" length="1">
+                <comment>&#184;&#177;&#202;&#166;&#214;&#176;&#210;&#212;&#201;&#207;&#190;&#252;&#215;&#170;</comment>
+            </column>
+        </property>
+        <!-- <property name="attr2408" type="string">
+            <column name="ATTR2408" length="1">
+            </column>
+        </property>
+        <property name="attr2409" type="string">
+            <column name="ATTR2409" length="120">
+            </column>
+        </property> -->
+        <property name="attr41" type="string">
+            <column name="ATTR41" length="1">
+                <comment>&#205;&#248;&#194;&#231;&#176;&#178;&#200;&#171;&#211;&#235;&#208;&#197;&#207;&#162;</comment>
+            </column>
+        </property>
+        <property name="attr42" type="string">
+            <column name="ATTR42" length="1">
+                <comment>&#208;&#208;&#213;&#254;&#215;&#219;&#186;&#207;</comment>
+            </column>
+        </property>
+        <property name="attr43" type="string">
+            <column name="ATTR43" length="1">
+                <comment>&#187;&#249;&#178;&#227;&#214;&#206;&#192;&#237;</comment>
+            </column>
+        </property>
+        <property name="attr44" type="string">
+            <column name="ATTR44" length="1">
+                <comment>&#183;&#168;&#194;&#201;</comment>
+            </column>
+        </property>
+        <property name="attr45" type="string">
+            <column name="ATTR45" length="1">
+                <comment>&#215;&#233;&#214;&#175;&#200;&#203;&#202;&#194;&#186;&#205;&#181;&#179;&#206;&#241;</comment>
+            </column>
+        </property>
+        <property name="attr46" type="string">
+            <column name="ATTR46" length="1">
+                <comment>"&#190;&#173;&#188;&#195;&#189;&#240;&#200;&#218;&#163;&#168;&#181;&#179;&#213;&#254;&#187;&#250;&#185;&#216;&#163;&#169;"</comment>
+            </column>
+        </property>
+        <property name="attr31" type="string">
+            <column name="ATTR31" length="1">
+                <comment>&#198;&#243;&#210;&#181;&#190;&#173;&#211;&#170;&#185;&#220;&#192;&#237;</comment>
+            </column>
+        </property>
+        <property name="attr47" type="string">
+            <column name="ATTR47" length="1">
+                <comment>&#198;&#243;&#210;&#181;&#189;&#240;&#200;&#218;&#205;&#182;&#215;&#202;</comment>
+            </column>
+        </property>
+        <property name="attr48" type="string">
+            <column name="ATTR48" length="1">
+                <comment>&#178;&#198;&#206;&#241;&#201;&#243;&#188;&#198;</comment>
+            </column>
+        </property>
+        <property name="attr49" type="string">
+            <column name="ATTR49" length="1">
+                <comment>&#209;&#178;&#202;&#211;&#186;&#205;&#188;&#205;&#188;&#236;&#188;&#224;&#178;&#236;</comment>
+            </column>
+        </property>
+        <property name="attr50" type="string">
+            <column name="ATTR50" length="1">
+                <comment>&#185;&#230;&#187;&#174;&#186;&#205;&#185;&#164;&#179;&#204;&#187;&#249;&#189;&#168;</comment>
+            </column>
+        </property>
+        <property name="attr05" type="string">
+            <column name="ATTR05" length="1">
+                <comment>&#205;&#179;&#213;&#189;</comment>
+            </column>
+        </property>
+        <property name="attr06" type="string">
+            <column name="ATTR06" length="1">
+                <comment>&#213;&#254;&#183;&#168;</comment>
+            </column>
+        </property>
+        <property name="attr07" type="string">
+            <column name="ATTR07" length="1">
+                <comment>&#200;&#186;&#205;&#197;</comment>
+            </column>
+        </property>
+        <property name="attr19" type="string">
+            <column name="ATTR19" length="1">
+                <comment>&#191;&#198;&#188;&#188;</comment>
+            </column>
+        </property>
+        <property name="attr51" type="string">
+            <column name="ATTR51" length="1">
+                <comment>&#201;&#250;&#206;&#239;&#210;&#189;&#210;&#169;&#206;&#192;&#201;&#250;</comment>
+            </column>
+        </property>
+        <property name="attr52" type="string">
+            <column name="ATTR52" length="1">
+                <comment>&#208;&#194;&#206;&#197;&#195;&#189;&#204;&#229;&#186;&#205;&#208;&#251;&#180;&#171;</comment>
+            </column>
+        </property>
+        <property name="attr13" type="string">
+            <column name="ATTR13" length="1">
+                <comment>&#206;&#196;&#187;&#175;&#194;&#195;&#211;&#206;</comment>
+            </column>
+        </property>
+        <property name="attr21" type="string">
+            <column name="ATTR21" length="1">
+                <comment>&#189;&#204;&#211;&#253;</comment>
+            </column>
+        </property>
+        <property name="attr99" type="string">
+            <column name="ATTR99" length="1">
+                <comment>&#198;&#228;&#203;&#251;</comment>
+            </column>
+        </property>
+        <property column="attr101" length="1" name="attr101" type="java.lang.String" />
+        <property column="attr102" length="1" name="attr102" type="java.lang.String" />
+        <property column="attr103" length="1" name="attr103" type="java.lang.String" />
+        <property column="attr104" length="1" name="attr104" type="java.lang.String" />
+        <property column="attr105" length="1" name="attr105" type="java.lang.String" />
+        <property column="attr106" length="1" name="attr106" type="java.lang.String" />
+        <property column="attr107" length="1" name="attr107" type="java.lang.String" />
+        <property column="attr108" length="1" name="attr108" type="java.lang.String" />
+        <property column="attr109" length="1" name="attr109" type="java.lang.String" />
+        <property column="attr110" length="1" name="attr110" type="java.lang.String" />
+        <property column="attr111" length="1" name="attr111" type="java.lang.String" />
+        <property column="attr112" length="1" name="attr112" type="java.lang.String" />
+        <property column="attr2408" length="1" name="attr2408" type="java.lang.String" />
+        <property column="attr2409" length="120" name="attr2409" type="java.lang.String" />
+    </class>
+</hibernate-mapping>

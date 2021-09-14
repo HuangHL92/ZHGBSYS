@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-8-21 11:02:42 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="com.insigma.siis.local.business.entity.A80" table="A80" schema="ZHGB">
+        <comment>考试录用人员</comment>
+        <id name="a0000" type="string">
+            <column name="A0000" length="120" />
+            <generator class="assigned" />
+        </id>
+        <property name="a29314" type="string">
+            <column name="A29314" length="1">
+                <comment>考试录用人员 等</comment>
+            </column>
+        </property>
+        <property name="a03033" type="string">
+            <column name="A03033" length="8">
+                <comment>录用时间 等</comment>
+            </column>
+        </property>
+        <property name="a29321" type="string">
+            <column name="A29321" length="2">
+                <comment>录用时政治面貌 等</comment>
+            </column>
+        </property>
+        <property name="a29324a" type="string">
+            <column name="A29324A" length="40">
+                <comment>录用时学历名称 等</comment>
+            </column>
+        </property>
+        <property name="a29324b" type="string">
+            <column name="A29324B" length="2">
+                <comment>录用时学历代码 等</comment>
+            </column>
+        </property>
+        <property name="a29327a" type="string">
+            <column name="A29327A" length="40">
+                <comment>录用时学位名称 等</comment>
+            </column>
+        </property>
+        <property name="a29327b" type="string">
+            <column name="A29327B" length="4">
+                <comment>录用时学位代码 等</comment>
+            </column>
+        </property>
+        <property name="a29334" type="java.lang.Byte">
+            <column name="A29334" precision="2" scale="0">
+                <comment>录用时基层工作时间 等</comment>
+            </column>
+        </property>
+        <property name="a29337" type="string">
+            <column name="A29337" length="2">
+                <comment>人员来源情况 等</comment>
+            </column>
+        </property>
+        <property name="a39061" type="string">
+            <column name="A39061" length="1">
+                <comment>是否服务基层项目人员 等</comment>
+            </column>
+        </property>
+        <property name="a39064" type="string">
+            <column name="A39064" length="1">
+                <comment>是否退役士兵 等</comment>
+            </column>
+        </property>
+        <property name="a39067" type="string">
+            <column name="A39067" length="1">
+                <comment>是否退役大学生士兵 等</comment>
+            </column>
+        </property>
+        <property name="a39071" type="string">
+            <column name="A39071" length="1">
+                <comment>是否残疾人 等</comment>
+            </column>
+        </property>
+        <property name="a44027" type="string">
+            <column name="A44027" length="1">
+                <comment>是否有海外留学经历 等</comment>
+            </column>
+        </property>
+        <property name="a39077" type="java.lang.Byte">
+            <column name="A39077" precision="2" scale="0">
+                <comment>留学年限 等</comment>
+            </column>
+        </property>
+        <property name="a44031" type="string">
+            <column name="A44031" length="1">
+                <comment>是否有海外工作经历 等</comment>
+            </column>
+        </property>
+        <property name="a39084" type="java.lang.Byte">
+            <column name="A39084" precision="2" scale="0">
+                <comment>海外工作年限 等</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

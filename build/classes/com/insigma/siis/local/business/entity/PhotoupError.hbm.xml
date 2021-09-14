@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.PhotoupError"
+    lazy="false"
+    table="PHOTOUP_ERROR">
+    <id column="PER001" name="per001" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="PER002" length="18" name="per002" type="java.lang.String" />
+    <property column="PER003" length="50" name="per003" type="java.lang.String" />
+    <property column="PER004" length="8" name="per004" type="java.lang.String" />
+    <property column="PER005" length="2000" name="per005" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ZWHZYQ_001_007.sysmanager.pagemodel.local.siis.insigma.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ZWHZYQ_001_007.sysmanager.pagemodel.local.siis.insigma.com" xmlns:intf="http://ZWHZYQ_001_007.sysmanager.pagemodel.local.siis.insigma.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ZWHZYQ_001_007.sysmanager.pagemodel.local.siis.insigma.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="zwhzyqAccessit">
+    <complexType>
+     <sequence>
+      <element name="INTERFACE_CONFIG_ID" type="xsd:string"/>
+      <element name="INTERFACE_SCRIPT_ID" type="xsd:string"/>
+      <element name="QUERY_PARAM" type="xsd:string"/>
+      <element name="INTERFACE_ACCESS_IP" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="zwhzyqAccessitResponse">
+    <complexType>
+     <sequence>
+      <element name="zwhzyqAccessitReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="zwhzyqAccessitRequest">
+
+      <wsdl:part element="impl:zwhzyqAccessit" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="zwhzyqAccessitResponse">
+
+      <wsdl:part element="impl:zwhzyqAccessitResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ZWWebserviceImpl">
+
+      <wsdl:operation name="zwhzyqAccessit">
+
+         <wsdl:input message="impl:zwhzyqAccessitRequest" name="zwhzyqAccessitRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:zwhzyqAccessitResponse" name="zwhzyqAccessitResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ZWWebserviceImplSoapBinding" type="impl:ZWWebserviceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="zwhzyqAccessit">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="zwhzyqAccessitRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="zwhzyqAccessitResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ZWWebserviceImplService">
+
+      <wsdl:port binding="impl:ZWWebserviceImplSoapBinding" name="ZWWebserviceImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/insiis6/services/ZWWebserviceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

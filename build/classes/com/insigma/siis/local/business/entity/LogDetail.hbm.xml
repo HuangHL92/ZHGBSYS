@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.LogDetail"
+    lazy="false"
+    table="LOG_DETAIL">
+    <id column="SYSTEM_LOG_DETAIL_ID" name="systemlogdetailid" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="SYSTEM_LOG_ID" length="50" name="systemlogid" type="java.lang.String" />
+    <property column="CHANGEDATETIME" length="7" name="changedatetime" type="java.sql.Date" />
+    <property column="DATANAME" length="100" name="dataname" type="java.lang.String" />
+    <property column="OLDVALUE" length="50" name="oldvalue" type="java.lang.String" />
+    <property column="NEWVALUE" length="200" name="newvalue" type="java.lang.String" />
+    <property column="TABLE_NAME" length="50" name="tableName" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.JD"
+    lazy="false"
+    table="JD">
+	<id column="JDID" name="jdid" length="120" type="java.lang.String">
+      <generator class="assigned" />
+    </id>
+	<property column="JDMC" length="500" name="jdmc" type="java.lang.String" />
+	<property column="HJXJID" length="120" name="hjxjid" type="java.lang.String" />
+	<property column="JDWC" length="30" name="jdwc" type="java.lang.String" />
+	<property column="WCBZ" length="20" name="wcbz" type="java.lang.String" />
+	<property column="J0808" length="20" name="j0808" type="java.lang.String" />
+	<property column="J0809" length="20" name="j0809" type="java.lang.String" />
+	<property column="JD" length="20" name="jd" type="java.lang.String" />
+  </class>
+</hibernate-mapping>
+

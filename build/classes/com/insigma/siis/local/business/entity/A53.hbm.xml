@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.A53"
+    lazy="false"
+    table="A53">
+    <id column="A5300" name="a5300" type="java.lang.String">
+      <generator class="uuid" />
+    </id>
+    <property column="A0000" length="60" name="a0000" type="java.lang.String" />
+    <property column="A5304" length="400" name="a5304" type="java.lang.String" />
+    <property column="A5315" length="400" name="a5315" type="java.lang.String" />
+    <property column="A5317" length="400" name="a5317" type="java.lang.String" />
+    <property column="A5319" length="400" name="a5319" type="java.lang.String" />
+    <property column="A5321" length="8" name="a5321" type="java.lang.String" />
+    <property column="A5323" length="8" name="a5323" type="java.lang.String" />
+    <property column="A5327" length="36" name="a5327" type="java.lang.String" />
+    <property column="A5399" length="60" name="a5399" type="java.lang.String" />
+    <property column="UPDATED" length="1" name="updated" type="java.lang.String" />
+    <property column="RB_ID" length="1" name="rbId" type="java.lang.String" />
+    <property name="rbSysno" type="big_decimal">
+        <column name="RB_SYSNO" length="20">
+            <comment>系统编号</comment>
+        </column>
+    </property>
+
+
+    <property name="a5366" type="java.lang.String">
+      <column name="A5366" length="68">
+        <comment>拟任职务层次</comment>
+      </column>
+    </property>
+    <property name="a5367" type="java.lang.String">
+      <column name="A5367" length="1">
+        <comment>是否领导职务</comment>
+      </column>
+    </property>
+    <property name="a5368" type="java.lang.String">
+      <column name="A5368" length="199">
+        <comment>拟任单位</comment>
+      </column>
+    </property>
+    <property name="a5369" type="java.lang.String">
+      <column name="A5369" length="199">
+        <comment>拟免职务id</comment>
+      </column>
+    </property>
+    <property name="a5365" type="java.lang.String">
+      <column name="A5365" length="199">
+        <comment>拟任状态</comment>
+      </column>
+    </property>
+  </class>
+</hibernate-mapping>

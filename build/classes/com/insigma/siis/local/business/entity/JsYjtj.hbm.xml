@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.insigma.siis.local.business.entity.JsYjtj"   table="JS_YJTJ">
+    <id name="qvid" type="java.lang.String">
+      <column name="QVID"  />
+      <generator class="uuid" />
+    </id>
+    <property column="CHINESENAME" length="100" name="chinesename" type="java.lang.String" />
+    <property column="FUNCDESC" length="1000" name="funcdesc" type="java.lang.String" />
+    <property column="TYPE" length="1" name="type" type="java.lang.String" />
+    <property column="CREATETIME" length="14" name="createtime" type="java.lang.String" />
+    <property column="USES" length="1000" name="uses" type="java.lang.String" />
+    <property column="CONDITIONS" length="500" name="conditions" type="java.lang.String" />
+    <property column="VIEWNAME" length="100" name="viewname" type="java.lang.String" />
+    <property column="VIEWNAMETB" length="100" name="viewnametb" type="java.lang.String" />
+    <property column="QRYSQL" length="1000" name="qrysql" type="java.lang.String" />
+    <property column="USERID" length="32" name="userid" type="java.lang.String" />
+    <property column="YJTYPE" length="3" name="yjtype" type="java.lang.String" />
+    <property column="QRYSQL2" length="1000" name="qrysql2" type="java.lang.String" />
+  </class>
+</hibernate-mapping>

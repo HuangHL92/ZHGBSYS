@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<description>这是定义XartWebui标签属性默认值的配置文件</description>
+	<bean id="grid" class="com.lbs.leaf.ui.taglib.grid.NewGridTag">
+		<description>Grid表格标签</description>
+		<property name="enableViewState">
+			<description></description>
+			<value>true</value>
+		</property>
+		<property name="allowMultipleSelect">
+			<description></description>
+			<value>true</value>
+		</property>
+		<property name="editOnClickSelectedItem">
+			<description>是否允许编辑选定项目</description>
+			<value>false</value>
+		</property>
+		<property name="allowEditing">
+			<description></description>
+			<value>true</value>
+		</property>
+		<property name="cssClass">
+			<description></description>
+			<value>Grid</value>
+		</property>
+		<property name="footerCssClass">
+			<description></description>
+			<value>GridFooter</value>
+		</property>
+		<property name="runningMode">
+			<description>标签的数据访问方式</description>
+			<value>Callback</value>
+		</property>
+		<property name="pagerStyle">
+			<description></description>
+			<value>Slider</value>
+		</property>
+		<property name="headerCssClass">
+			<description></description>
+			<value>GridHeader</value>
+		</property>
+		<property name="pagerTextCssClass">
+			<description></description>
+			<value>PagerText</value>
+		</property>
+		<property name="pagerButtonWidth">
+			<description></description>
+			<value>41</value>
+		</property>
+		<property name="pagerButtonHeight">
+			<description></description>
+			<value>22</value>
+		</property>
+		<property name="sliderHeight">
+			<description></description>
+			<value>22</value>
+		</property>
+		<property name="sliderWidth">
+			<description></description>
+			<value>100</value>
+		</property>
+		<property name="sliderGripWidth">
+			<description></description>
+			<value>9</value>
+		</property>
+		<property name="sliderPopupOffsetX">
+			<description></description>
+			<value>100</value>
+		</property>
+		<property name="sliderPopupClientTemplateId">
+			<description>slider弹出信息所引用的模版标示</description>
+			<value>SliderTemplate</value>
+		</property>
+		<property name="pagerImagesFolderUrl">
+			<description></description>
+			<value>images/pager/</value>
+		</property>
+		<property name="pageSize">
+			<description></description>
+			<value>10</value>
+		</property>
+		<property name="autoCallBackOnInsert">
+			<description></description>
+			<value>true</value>
+		</property>
+		<property name="autoCallBackOnUpdate">
+			<description></description>
+			<value>true</value>
+		</property>
+		<property name="autoCallBackOnDelete">
+			<description></description>
+			<value>true</value>
+		</property>
+		<property name="clientSideOnCallbackError">
+			<description></description>
+			<value></value>
+		</property>
+		<property name="width">
+			<description></description>
+			<value>100%</value>
+		</property>
+		<property name="height">
+			<description></description>
+			<value>260</value>
+		</property>
+		<property name="requestURI">
+			<description></description>
+			<value>/mygridservlet?ds=editing_dataCallbackMode</value>
+		</property>
+		<property name="allowHorizontalScrolling">
+			<description></description>
+			<value>false</value>
+		</property>
+	</bean>
+	<bean id="gridlevel"
+		class="com.lbs.leaf.ui.taglib.grid.GridLevelTag">
+		<description>该标签用于输出标签中的层信息(用于gridlevels标签内部)</description>
+		<property name="showTableHeading">
+			<description></description>
+			<value>false</value>
+		</property>
+		<property name="columnReorderIndicatorImageUrl">
+			<description></description>
+			<value>/sicp3/images/grid/reorder.gif</value>
+		</property>
+		<property name="showSelectorCells">
+			<description></description>
+			<value>false</value>
+		</property>
+		<property name="headingSelectorCellCssClass">
+			<description></description>
+			<value>SelectorCell</value>
+		</property>
+		<property name="headingCellCssClass">
+			<description></description>
+			<value>HeadingCell</value>
+		</property>
+		<property name="headingRowCssClass">
+			<description></description>
+			<value>HeadingRow</value>
+		</property>
+		<property name="headingTextCssClass">
+			<description>头部显示文本所引用的class</description>
+			<value>HeadingCellText</value>
+		</property>
+		<property name="dataCellCssClass">
+			<description></description>
+			<value>DataCell</value>
+		</property>
+		<property name="rowCssClass">
+			<description></description>
+			<value>Row</value>
+		</property>
+		<property name="selectedRowCssClass">
+			<description></description>
+			<value>SelectedRow</value>
+		</property>
+		<property name="sortAscendingImageUrl">
+			<description></description>
+			<value>/images/asc.gif</value>
+		</property>
+		<property name="sortDescendingImageUrl">
+			<description></description>
+			<value>/images/desc.gif</value>
+		</property>
+		<property name="sortImageWidth">
+			<description></description>
+			<value>9</value>
+		</property>
+		<property name="sortImageHeight">
+			<description></description>
+			<value>9</value>
+		</property>
+		<property name="editCellCssClass">
+			<description></description>
+			<value>EditDataCell</value>
+		</property>
+		<property name="editFieldCssClass">
+			<description></description>
+			<value>EditDataField</value>
+		</property>
+		<property name="editCommandClientTemplateId">
+			<description></description>
+			<value>EditCommandTemplate</value>
+		</property>
+		<property name="alternatingRowCssClass">
+			<description></description>
+			<value>AlternatingRow</value>
+		</property>
+		<property name="dataMember">
+			<description></description>
+			<value>querydata</value>
+		</property>
+		<property name="selectorCellWidth">
+			<description></description>
+			<value>10</value>
+		</property>
+	</bean>
+	<bean id="tabstrip"
+		class="com.lbs.leaf.ui.taglib.tabstrip.TabStripTag">
+		<description>TabStrip标签</description>
+		<property name="cssClass">
+			<description></description>
+			<value>TopGroup</value>
+		</property>
+		<property name="defaultItemLookId">
+			<description></description>
+			<value>DefaultTabLook</value>
+		</property>
+		<property name="defaultSelectedItemLookId">
+			<description></description>
+			<value>SelectedTabLook</value>
+		</property>
+		<property name="defaultGroupTabSpacing">
+			<description></description>
+			<value>1</value>
+		</property>
+		<property name="imagesBaseUrl">
+			<description></description>
+			<value>images/</value>
+		</property>
+		<property name="width">
+			<description></description>
+			<value>100%</value>
+		</property>
+	</bean>
+	<bean id="itemlook1"
+		class="com.lbs.leaf.ui.taglib.common.ItemLookTag">
+		<description>专门为Menu,TabStrip等导航标签定义样式</description>
+		<property name="lookId">
+			<description></description>
+			<value>DefaultTabLook</value>
+		</property>
+		<property name="cssClass">
+			<description></description>
+			<value>DefaultTab</value>
+		</property>
+		<property name="hoverCssClass">
+			<description></description>
+			<value>DefaultTabHover</value>
+		</property>
+		<property name="labelPaddingLeft">
+			<description></description>
+			<value>10</value>
+		</property>
+		<property name="labelPaddingRight">
+			<description></description>
+			<value>10</value>
+		</property>
+		<property name="labelPaddingTop">
+			<description></description>
+			<value>5</value>
+		</property>
+		<property name="labelPaddingBottom">
+			<description></description>
+			<value>4</value>
+		</property>
+		<property name="rightIconUrl">
+			<description></description>
+			<value>/images/tabstrip/tab_right_icon.gif</value>
+		</property>
+		<property name="hoverLeftIconUrl">
+			<description></description>
+			<value>/images/tabstrip/hover_tab_left_icon.gif</value>
+		</property>
+		<property name="hoverRightIconUrl">
+			<description></description>
+			<value>/images/tabstrip/hover_tab_right_icon.gif</value>
+		</property>
+		<property name="leftIconWidth">
+			<description></description>
+			<value>3</value>
+		</property>
+		<property name="leftIconHeight">
+			<description></description>
+			<value>21</value>
+		</property>
+		<property name="rightIconWidth">
+			<description></description>
+			<value>3</value>
+		</property>
+		<property name="rightIconHeight">
+			<description></description>
+			<value>21</value>
+		</property>
+	</bean>
+	<bean id="itemlook2"
+		class="com.lbs.leaf.ui.taglib.common.ItemLookTag">
+		<description>专门为Menu,TabStrip等导航标签定义样式</description>
+		<property name="lookId">
+			<description></description>
+			<value>SelectedTabLook</value>
+		</property>
+		<property name="cssClass">
+			<description></description>
+			<value>SelectedTab</value>
+		</property>
+		<property name="labelPaddingLeft">
+			<description></description>
+			<value>10</value>
+		</property>
+		<property name="labelPaddingRight">
+			<description></description>
+			<value>10</value>
+		</property>
+		<property name="labelPaddingTop">
+			<description></description>
+			<value>5</value>
+		</property>
+		<property name="labelPaddingBottom">
+			<description></description>
+			<value>4</value>
+		</property>
+		<property name="leftIconUrl">
+			<description></description>
+			<value>/images/tabstrip/selected_tab_left_icon.gif</value>
+		</property>
+		<property name="rightIconUrl">
+			<description></description>
+			<value>/images/tabstrip/selected_tab_right_icon.gif</value>
+		</property>
+		<property name="leftIconWidth">
+			<description></description>
+			<value>3</value>
+		</property>
+		<property name="leftIconHeight">
+			<description></description>
+			<value>21</value>
+		</property>
+		<property name="rightIconWidth">
+			<description></description>
+			<value>3</value>
+		</property>
+		<property name="rightIconHeight">
+			<description></description>
+			<value>21</value>
+		</property>
+	</bean>
+	<bean id="pageview"
+		class="com.lbs.leaf.ui.taglib.multipage.PageViewTag">
+		<description>分页标签</description>
+		<property name="cssClass">
+			<description></description>
+			<value>PageContent</value>
+		</property>
+		<property name="border">
+			<description></description>
+			<value>0</value>
+		</property>
+		<property name="cellpadding">
+			<description></description>
+			<value>0</value>
+		</property>
+		<property name="cellspacing">
+			<description></description>
+			<value>0</value>
+		</property>
+	</bean>
+	<bean id="multipage"
+		class="com.lbs.leaf.ui.taglib.multipage.MultiPageTag">
+		<description>多页显示标签</description>
+		<property name="cssClass">
+			<description></description>
+			<value>MultiPage</value>
+		</property>
+		<property name="width">
+			<description></description>
+			<value>100%</value>
+		</property>
+	</bean>
+	<bean id="calendar1"
+		class="com.lbs.leaf.ui.taglib.calendar.CalenderTag">
+		<description>日历标签</description>
+		<property name="pickerformat">
+			<description></description>
+			<value>Custom</value>
+		</property>
+		<property name="pickercustomformat">
+			<description></description>
+			<value>MMMM d yyyy</value>
+		</property>
+		<property name="controltype">
+			<description></description>
+			<value>Picker</value>
+		</property>
+		<property name="selecteddate">
+			<description></description>
+			<value>2005-12-17</value>
+		</property>
+		<property name="clientsideonselectionchanged">
+			<description></description>
+			<value>PickerTo_OnDateChange</value>
+		</property>
+		<property name="pickercssclass">
+			<description></description>
+			<value>picker</value>
+		</property>
+	</bean>
+	<bean id="calendar2"
+		class="com.lbs.leaf.ui.taglib.calendar.CalenderTag">
+		<description>日历标签</description>
+		<property name="allowmultipleselection">
+			<description></description>
+			<value>false</value>
+		</property>
+		<property name="allowweekselection">
+			<description></description>
+			<value>false</value>
+		</property>
+		<property name="allowmonthselection">
+			<description></description>
+			<value>false</value>
+		</property>
+		<property name="controltype">
+			<description></description>
+			<value>Calendar</value>
+		</property>
+		<property name="calendartitletype">
+			<description></description>
+			<value>VisibleDateText</value>
+		</property>
+		<property name="popup">
+			<description></description>
+			<value>Custom</value>
+		</property>
+		<property name="popupexpandcontrolid">
+			<description></description>
+			<value>calendar_to_button</value>
+		</property>
+		<property name="calendartitlecssclass">
+			<description></description>
+			<value>title</value>
+		</property>
+		<property name="selecteddate">
+			<description></description>
+			<value>2005-12-17</value>
+		</property>
+		<property name="visibledate">
+			<description></description>
+			<value>2005-12-17</value>
+		</property>
+		<property name="clientsideonselectionchanged">
+			<description></description>
+			<value>CalendarTo_OnChange</value>
+		</property>
+		<property name="dayheadercssclass">
+			<description></description>
+			<value>dayheader</value>
+		</property>
+		<property name="daycssclass">
+			<description></description>
+			<value>day</value>
+		</property>
+		<property name="dayhovercssclass">
+			<description></description>
+			<value>dayhover</value>
+		</property>
+		<property name="othermonthdaycssclass">
+			<description></description>
+			<value>othermonthday</value>
+		</property>
+		<property name="selecteddaycssclass">
+			<description></description>
+			<value>selectedday</value>
+		</property>
+		<property name="calendarcssclass">
+			<description></description>
+			<value>calendar</value>
+		</property>
+		<property name="nextprevcssclass">
+			<description></description>
+			<value>nextprev</value>
+		</property>
+		<property name="monthcssclass">
+			<description></description>
+			<value>month</value>
+		</property>
+		<property name="swapslide">
+			<description></description>
+			<value>Linear</value>
+		</property>
+		<property name="swapduration">
+			<description></description>
+			<value>300</value>
+		</property>
+		<property name="daynameformat">
+			<description></description>
+			<value>Full</value>
+		</property>
+		<property name="imagesbaseurl">
+			<description></description>
+			<value>images/</value>
+		</property>
+		<property name="previmageurl">
+			<description></description>
+			<value>/sicp3/images/calendar/cal_prevMonth.gif</value>
+		</property>
+		<property name="nextimageurl">
+			<description></description>
+			<value>/sicp3/images/calendar/cal_nextMonth.gif</value>
+		</property>
+	</bean>
+	<bean id="CodeList"
+		class="com.lbs.leaf.ui.taglib.combobox.ComboboxTag">
+		<description>专门为CodeList标签定义样式</description>
+		<property name="autoHighlight">
+			<description></description>
+			<value>false</value>
+		</property>
+		<property name="dataTextField">
+			<description>代码名称</description>
+			<value>aaa103</value>
+		</property>
+		<property name="dataMember">
+			<description></description>
+			<value>CodeList</value>
+		</property>
+		<property name="dataValueField">
+			<description>代码值</description>
+			<value>aaa102</value>
+		</property>
+		<property name="dataFields">
+			<description>字段值</description>
+			<value>aaa103,aaa102</value>
+		</property>
+		<property name="cssClass">
+			<description></description>
+			<value>comboBox</value>
+		</property>
+		<property name="hoverCssClass">
+			<description></description>
+			<value>comboBoxHover</value>
+		</property>
+		<property name="focusedCssClass">
+			<description></description>
+			<value>comboBoxHover</value>
+		</property>
+		<property name="textBoxCssClass">
+			<description></description>
+			<value>comboTextBox</value>
+		</property>
+		<property name="textBoxHoverCssClass">
+			<description></description>
+			<value>comboBoxHover</value>
+		</property>
+		<property name="dropDownCssClass">
+			<description></description>
+			<value>comboDropDown</value>
+		</property>
+		<property name="itemCssClass">
+			<description></description>
+			<value>comboItem</value>
+		</property>
+		<property name="itemHoverCssClass">
+			<description></description>
+			<value>comboItemHover</value>
+		</property>
+		<property name="selectedItemCssClass">
+			<description></description>
+			<value>comboItemHover</value>
+		</property>
+		<property name="dropDownResizingMode">
+			<description></description>
+			<value>Corner</value>
+		</property>
+		<property name="dropHoverImageUrl">
+			<description></description>
+			<value></value>
+		</property>
+		<property name="dropImageUrl">
+			<description></description>
+			<value></value>
+		</property>
+		<property name="itemClientTemplateId">
+			<description></description>
+			<value>itemTemplate</value>
+		</property>
+		<property name="dropDownPageSize">
+			<description></description>
+			<value>10</value>
+		</property>
+		<property name="dropDownWidth">
+			<description></description>
+			<value>200</value>
+		</property>
+		<property name="runningMode">
+			<description></description>
+			<value>0</value>
+		</property>
+		<property name="autoShowCode">
+			<description></description>
+			<value>true</value>
+		</property>
+		<property name="enabled">
+			<description></description>
+			<value>true</value>
+		</property>
+		<property name="width">
+			<description></description>
+			<value>100%</value>
+		</property>
+		<property name="templateContext">
+			<description>模板内容</description>
+			<value>
+				&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot;
+				cellspacing=&quot;0&quot; width=&quot;100%&quot;>&lt;tr
+				class=&quot;combodataRow&quot;&gt;&lt;td
+				class=&quot;combodataCell&quot;
+				style=&quot;width:100px;&quot;&gt;##
+				DataItem.getProperty(&apos;aaa102&apos;)
+				##&lt;/td&gt;&lt;td class=&quot;combodataCell&quot; &gt;##
+				DataItem.getProperty(&apos;Text&apos;)
+				##&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+			</value>
+		</property>
+		<property name="dropDownHeaderContext">
+			<description>下拉模板内容</description>
+			<value>
+				&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot;
+				cellspacing=&quot;0&quot;
+				width=&quot;100%&quot;&gt;&lt;tr
+				class=&quot;comboheadingRow&quot;&gt;&lt;td
+				class=&quot;comboheadingCell&quot;
+				style=&quot;width:50%;&quot;&gt;代码值&lt;/td&gt;&lt;td
+				class=&quot;comboheadingCell&quot;
+				&gt;代码名称&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+			</value>
+		</property>
+	</bean>
+
+</beans>
