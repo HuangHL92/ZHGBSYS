@@ -3,7 +3,7 @@ package com.insigma.siis.local.pagemodel.sysmanager.importExcel;
 import com.insigma.odin.framework.radow.PageModel;
 import com.insigma.odin.framework.radow.RadowException;
 
-public class ImportExcel extends PageModel {
+public class ImportExcelPageModel extends PageModel {
 
 
 	@Override

@@ -399,7 +399,17 @@
     <servlet-class>com.insigma.siis.local.pagemodel.zj.slabel.TagFileServlet</servlet-class>
     
   </servlet>
+
   <servlet>
+    <servlet-name>ZhgbFileServlet</servlet-name>
+    <servlet-class>com.insigma.siis.local.pagemodel.zj.tags.ZhgbFileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ZhgbFileServlet</servlet-name>
+    <url-pattern>/ZhgbFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    
     <servlet-name>verifyCodeServlet</servlet-name>
     <description>图形校验码生成器，是使用图形校验码功能的必需组件</description>
     <servlet-class>com.lbs.commons.verifycode.VerifyCodeServlet</servlet-class>
